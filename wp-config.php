@@ -74,8 +74,8 @@ if(strstr($_SERVER['SERVER_NAME'], 'dev') != false) {
 else {
 	define('WP_DEBUG', true);
 }
-define('WP_HOME','http://66.147.247.44');
-define('WP_SITEURL','http://66.147.247.44');
+define('WP_HOME','http://66.147.247.44/dev');
+define('WP_SITEURL','http://66.147.247.44/dev');
 
 /* That's all, stop editing! Happy blogging. */
 
