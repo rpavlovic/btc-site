@@ -27,7 +27,7 @@
                             <!-- <h1>we are THE BROOKLYN TRI CLUB.</h1> -->
                             <h1><?php echo avia_title(); ?></h1>
                             <p>
-                                <?php echo the_content(); ?>
+                                <?php echo the_post(); ?>
                             </p>
                             <footer>
                                 <span>Is the Brooklyn Tri Club right for you?</span>
@@ -37,7 +37,7 @@
 
                     <?php
                     //display the actual post content
-                    the_post();
+                    the_content();
                     
 
                     ?>
