@@ -46,7 +46,7 @@
                    
                     echo '<div class="tab_content active_tab_content" >'."\n";
                     echo '<div class="tab_inner_content">'."\n";
-
+/*
 					 if (have_posts()) :
                     echo "<h3>" . __('The 20 latest Blog Posts','avia_framework') . "</h3>";
                     echo "<ul>";
@@ -61,7 +61,7 @@
                       echo "<h3>" . __('No Blog Posts found','avia_framework') . "</h3>";
                     
                     endif;
-
+*/
                     echo '</div>'."\n";
                     echo '</div>'."\n";
 
