@@ -275,7 +275,7 @@ if(!function_exists('avia_title'))
 			'title' 		=> get_the_title($id),
 			'subtitle' 		=> "", //avia_post_meta($id, 'subtitle'),
 			'link'			=> get_permalink($id),
-			'html'			=> "<div class='{class} title_container'><div class='container'><{heading} class='main-title entry-title'>{title}</{heading}>{additions}</div></div>",
+			'html'			=> ''//"<div class='{class} title_container'><div class='container'><{heading} class='main-title entry-title'>{title}</{heading}>{additions}</div></div>",
 			'class'			=> 'stretch_full container_wrap alternate_color '.avia_is_dark_bg('alternate_color', true),
 			'breadcrumb'	=> true,
 			'additions'		=> "",
