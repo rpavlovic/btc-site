@@ -16,22 +16,55 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'brookmq9_dev');
 
-/** MySQL database username */
-define('DB_USER', 'brookmq9_derfnut');
+if (strstr($_SERVER['SERVER_NAME'], '.local')) {
+	define('DB_NAME', 'btc');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'm~*]QzsTU9B,');
+	/** MySQL database username */
+	define('DB_USER', 'vagrant');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'vagrant');
 
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+
+	define('WP_HOME','http://devstack-wordpress.local/dev');
+	define('WP_SITEURL','http://devstack-wordpress.local/dev');
+	define('WP_DEBUG', true);
+
+}
+else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44')) {
+	define('DB_NAME', 'brookmq9_dev');
+
+	/** MySQL database username */
+	define('DB_USER', 'brookmq9_derfnut');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'm~*]QzsTU9B,');
+
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+
+	define('WP_HOME','http://66.147.247.44/dev');
+	define('WP_SITEURL','http://66.147.247.44/dev');
+	define('WP_DEBUG', true);
+}
+else {
+	define('WP_DEBUG', true);
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -69,13 +102,11 @@ $table_prefix = 'wp_ttyr_';
  * in their development environments.
  */
 if(strstr($_SERVER['SERVER_NAME'], 'dev') != false) {
-	define('WP_DEBUG', false);
+	
 }
 else {
 	define('WP_DEBUG', true);
 }
-define('WP_HOME','http://66.147.247.44/dev');
-define('WP_SITEURL','http://66.147.247.44/dev');
 
 /* That's all, stop editing! Happy blogging. */
 
