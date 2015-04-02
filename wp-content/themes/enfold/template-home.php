@@ -26,7 +26,7 @@
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
-                        <?php layerslider(3) ?>
+                        <?php /* layerslider(3) */ ?>
 
                         <section class="intro">
                             <h1>we are THE BROOKLYN TRI CLUB.</h1>
