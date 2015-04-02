@@ -15,9 +15,9 @@
      ?>
 
 
-<!--
-        <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 
+        <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+<!--
             <div class='container'>
 -->
                 <main id="main" role="main">
@@ -84,6 +84,10 @@
                 get_sidebar();
 
                 ?>
+
+            <!-- </div>end container-->
+
+        </div><!-- close default .container_wrap element -->
 
 
 <?php get_footer(); ?>
