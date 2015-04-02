@@ -31,9 +31,11 @@ the_title('<h3>', '</h3>');
 
 ?>
 
-                        <p><?php the_content(); ?></p>
+                        <p>content <?php the_content(); ?></p>
 
                     <?php
+
+                    echo 'post';
                     //display the actual post content
                     the_post();
                     
