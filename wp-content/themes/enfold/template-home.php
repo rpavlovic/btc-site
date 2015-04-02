@@ -20,11 +20,11 @@
 
             <div class='container'>
 
-                <main id="main" role="main">
+                <main id="main" role="main" class="content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>">
 
                 <!-- <main class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>> -->
 
-                    <div class="entry-content-wrapper entry-content clearfix">
+                    <!-- <div class="entry-content-wrapper entry-content clearfix"> -->
 [slideshow_deploy id='49']
                     <section class="intro">
                         <h1>we are THE BROOKLYN TRI CLUB.</h1>
@@ -72,7 +72,7 @@
                     ?>
 
 
-                    </div>
+                    <!-- </div> -->
 
                 <!--end content-->
                 </main>
