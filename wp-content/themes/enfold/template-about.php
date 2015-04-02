@@ -24,7 +24,12 @@
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
-                        <?php the_title('<h3>', '</h3>'); ?>
+                        <?php 
+                             echo avia_title();
+
+the_title('<h3>', '</h3>'); 
+
+?>
 
                         <p><?php the_content(); ?></p>
 
