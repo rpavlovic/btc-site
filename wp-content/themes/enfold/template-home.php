@@ -15,12 +15,12 @@
      ?>
 
 
-<!--
+
         <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 
             <div class='container'>
--->
-                <main id="main" role="main" class="content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>">
+
+                <main id="main" role="main">
 
                 <!-- <main class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>> -->
 
@@ -85,9 +85,9 @@
 
                 ?>
 
-            <!-- </div>end container-->
+            </div><!-- end container-->
 
-        <!-- </div>close default .container_wrap element -->
+        </div><!-- close default .container_wrap element -->
 
 
 <?php get_footer(); ?>
