@@ -24,9 +24,9 @@
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
-                        <h2><?php echo the_title(); ?></h2>
+                        <h2><?php the_title(); ?></h2>
 
-                        <p><?php echo the_content(); ?></p>
+                        <p><?php the_content(); ?></p>
 
                     <?php
                     //display the actual post content
