@@ -23,6 +23,8 @@
                 <main class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
                     <div class="entry-content-wrapper entry-content clearfix">
+                        <h2><?php the_title(); ?></h2>
+                        <p><?php the_content(); ?></p>
 
                     <?php
                     //display the actual post content

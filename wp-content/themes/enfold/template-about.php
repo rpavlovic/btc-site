@@ -24,10 +24,14 @@
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
+                        <h2><?php echo the_title(); ?></h2>
+
+                        <p><?php echo the_content(); ?></p>
+
                     <?php
                     //display the actual post content
                     the_post();
-                    the_content();
+                    
 
                     ?>
 
