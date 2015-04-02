@@ -25,44 +25,46 @@
                 <!-- <main class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>> -->
 
                     <div class="entry-content-wrapper entry-content clearfix">
-[slideshow_deploy id='49']
-                    <section class="intro">
-                        <h1>we are THE BROOKLYN TRI CLUB.</h1>
-                        <p>
-                            <?php echo the_content(); ?>
-                        </p>
-                        <footer>
-                            <span>Is the Brooklyn Tri Club right for you?</span>
-                            <a href="/register" class="btn-join">JOIN US</a>
-                        </footer>
-                    </section>
-                    <section class="box-area">
-                        <div class="holder">
-                            <div class="frame">
-                                <div class="col">
-                                    <div class="col-holder">
-                                        <div class="icon-holder"><i class="icon-star">&nbsp;</i></div>
-                                        <h2>our mission</h2>
-                                        <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
+
+                        <?php layerslider(3) ?>
+
+                        <section class="intro">
+                            <h1>we are THE BROOKLYN TRI CLUB.</h1>
+                            <p>
+                                <?php echo the_content(); ?>
+                            </p>
+                            <footer>
+                                <span>Is the Brooklyn Tri Club right for you?</span>
+                                <a href="/register" class="btn-join">JOIN US</a>
+                            </footer>
+                        </section>
+                        <section class="box-area">
+                            <div class="holder">
+                                <div class="frame">
+                                    <div class="col">
+                                        <div class="col-holder">
+                                            <div class="icon-holder"><i class="icon-star">&nbsp;</i></div>
+                                            <h2>our mission</h2>
+                                            <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col">
-                                    <div class="col-holder">
-                                        <div class="icon-holder picton-blue"><i class="icon-star">&nbsp;</i></div>
-                                        <h2>member perks</h2>
-                                        <p>We enjoy <a href="#">member discounts</a> on products, services and race entries with dozens of companies, here in Brooklyn and online.</p>
+                                    <div class="col">
+                                        <div class="col-holder">
+                                            <div class="icon-holder picton-blue"><i class="icon-star">&nbsp;</i></div>
+                                            <h2>member perks</h2>
+                                            <p>We enjoy <a href="#">member discounts</a> on products, services and race entries with dozens of companies, here in Brooklyn and online.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col">
-                                    <div class="col-holder">
-                                        <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
-                                        <h2>faq<span class="lowercase">s</span></h2>
-                                        <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
+                                    <div class="col">
+                                        <div class="col-holder">
+                                            <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
+                                            <h2>faq<span class="lowercase">s</span></h2>
+                                            <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
 
                     <?php
                     //display the actual post content
