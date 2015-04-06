@@ -13,6 +13,10 @@ Desktop Styles
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
+ .stretch_full .container_wrap .alternate_color .dark_bg_color .title_container {
+background-color: #333;
+ }
+
 }
 
 
