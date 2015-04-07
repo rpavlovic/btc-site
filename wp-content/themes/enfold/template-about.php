@@ -39,13 +39,15 @@
                     </div>
 <?php
 $parent = get_post( $post->post_parent );
-var_dump($parent);
+
 $section_pages = get_pages(array(
     'parent' => $parent->ID,
     'sort_column' => 'post_date',
     'child_of' => $parent->ID,
     'sort_order' => 'ASC',
 ));
+
+var_dump($section_pages);
 ?>
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
