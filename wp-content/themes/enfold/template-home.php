@@ -12,6 +12,9 @@
      global $avia_config, $more;
      get_header();
      echo avia_title();
+
+     $infoboxes = get_fields( get_the_ID() );
+
      ?>
 
 
@@ -33,51 +36,58 @@
                             <p>
                                 <?php echo the_content(); ?>
                             </p>
+
+                            <?php if ( isset( $infoboxes['join_us_text'] ) && !empty( $infoboxes['join_us_text'] ) ): ?>
                             <footer>
-                                <span>Is the Brooklyn Tri Club right for you?</span>
-                                <a href="/register" class="btn-join">JOIN US</a>
+                                <span><?php echo $infoboxes['join_us_text'] ?></span>
+                                <a href="/register" class="btn-join"><?php echo $infoboxes['join_us_button'] ?></a>
                             </footer>
+                            <?php endif; ?>
+
                         </section>
-
-<?php
-
-$infoboxes = get_fields( get_the_ID() );
-if ( $infoboxes && count( $infoboxes ) > 1 ):
-
-?>
 
                         <section class="box-area">
                             <div class="holder">
                                 <div class="frame">
+
+                                    <?php if ( isset( $infoboxes['infobox_1_copy'] ) && !empty( $infoboxes['infobox_1_copy'] ) ): ?>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder"><i class="icon-star">&nbsp;</i></div>
-                                            <h2><?php echo $infoboxes['infobox_1_heading'] ?></h2>
+                                            <h2><a href="<?php echo $infoboxes['infobox_1_url'] ?>"><?php echo $infoboxes['infobox_1_heading'] ?></a></h2>
                                             <p><?php echo $infoboxes['infobox_1_copy'] ?></p>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+
+                                    <?php if ( isset( $infoboxes['infobox_2_copy'] ) && !empty( $infoboxes['infobox_2_copy'] ) ): ?>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder picton-blue"><i class="icon-star">&nbsp;</i></div>
-                                            <h2><?php echo $infoboxes['infobox_2_heading'] ?></h2>
+                                            <h2><a href="<?php echo $infoboxes['infobox_2_url'] ?>"><?php echo $infoboxes['infobox_2_heading'] ?></a></h2>
                                             <p><?php echo $infoboxes['infobox_2_copy'] ?></p>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+
+                                    <?php if ( isset( $infoboxes['infobox_3_copy'] ) && !empty( $infoboxes['infobox_3_copy'] ) ): ?>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
-                                            <h2><?php echo $infoboxes['infobox_3_heading'] ?></h2>
+                                            <h2><a href="<?php echo $infoboxes['infobox_3_url'] ?>"><?php echo $infoboxes['infobox_3_heading'] ?></a></h2>
                                             <p><?php echo $infoboxes['infobox_3_copy'] ?></p>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+
                                 </div>
                             </div>
                         </section>
-<?php endif; ?>
+
                     <?php
+
                     //display the actual post content
                     the_post();
-                    
 
                     ?>
 
