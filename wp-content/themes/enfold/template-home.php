@@ -31,7 +31,9 @@
                         <section class="intro">
                             <h1>we are THE BROOKLYN TRI CLUB.</h1>
                             <p>
-                                <?php echo the_content(); ?>
+                                <?php echo the_content(); 
+var_dump($post);
+                                ?>
                             </p>
                             <footer>
                                 <span>Is the Brooklyn Tri Club right for you?</span>
