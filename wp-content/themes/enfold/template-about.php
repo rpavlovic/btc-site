@@ -24,33 +24,34 @@
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
-                        <h3><?php echo get_the_title( get_the_ID() ); ?></h3>
+                        <h3><?php the_title(); ?></h3>
 
-                        <p>content <?php the_content(); ?></p>
+                        <p><?php the_content(); ?></p>
 
                     <?php
 
-                    echo 'post';
                     //display the actual post content
                     the_post();
-                    
 
                     ?>
 
 
                     </div>
-                    <section class="clients-area">
-                        <div class="holder">
-                        <h1>our sponsors</h1>
-                            <ul class="clients-logo">
-                                <li><a href="#"><img src="images/img03.jpg" alt="jack rabbit"></a></li>
-                                <li><a href="#"><img src="images/img04.png" alt="a c m e bicycle co brooklyn ny"></a></li>
-                                <li><a href="#"><img src="images/img05.jpg" alt="priority fitness"></a></li>
-                                <li><a href="#"><img src="images/img06.jpg" alt="ride brooklyn"></a></li>
-                                <li><a href="#"><img src="images/img07.png" alt="race day professional triathlon coaching"></a></li>
-                            </ul>
-                        </div>
-                    </section>
+
+                    <aside id="sidebar">
+                        <a href="#" class="opener"><span>Menu</span></a>
+                        <nav class="aside-nav">
+                            <div class="drop">
+                                <a class="btn-link" href="#">ABOUT BTC</a>
+                                <ul>
+                                    <li><a href="#">MISSION</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">TRAINING</a></li>
+                                    <li class="active"><a href="#">BTC BOARD</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
 
 				<!--end content-->
 				</main>
