@@ -49,8 +49,8 @@ li.page_item {
 	border-color: #000 !important;
 }
 
-.current-menu-item, .page_item {
-	margin: 20px 0 0 0;
+.current-menu-item, .page_item, #menu-item-search {
+	margin: 15px 0 0 0;
 }
 
 }
