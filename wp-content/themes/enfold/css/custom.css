@@ -55,14 +55,14 @@ li.page_item {
 
 .current-menu-item a:hover, .page_item a:hover {
 	text-decoration: none !important;
-	font-size: 20px !important;
-	font-weight: 600 !important;
+	font-size: 18px !important;
+	font-weight: 400 !important;
 }
 
 .current-menu-item a:link, .page_item a:link {
 	text-decoration: none !important;
-	font-size: 20px !important;
-	font-weight: 600 !important;
+	font-size: 18px !important;
+	font-weight: 400 !important;
 }
 
 }
