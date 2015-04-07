@@ -51,7 +51,6 @@ li.page_item {
 
 .current-menu-item, .page_item, #menu-item-search {
 	margin: 15px 0 0 0;
-	font-color: #666;
 }
 
 .current-menu-item a:hover, .page_item a:hover {
@@ -76,6 +75,10 @@ li.page_item {
 	text-decoration: none !important;
 	font-size: 18px !important;
 	font-weight: 400 !important;
+}
+
+li.avia_mega, li.menu, li.av-main-nav {
+	font-size: 18px !important;
 }
 
 }
