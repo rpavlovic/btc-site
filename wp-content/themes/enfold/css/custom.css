@@ -53,6 +53,10 @@ li.page_item {
 	margin: 15px 0 0 0;
 }
 
+.current-menu-item a:hover, .page_item a:hover {
+	text-decoration: none !important;
+}
+
 }
 
 
