@@ -22,7 +22,7 @@
 
                 <main class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
-                    <div class="entry-content-wrapper entry-content clearfix">
+                    <div class="intro-area entry-content-wrapper entry-content clearfix">
 
                     <?php
                     //display the actual post content
