@@ -37,16 +37,9 @@
 
 
                     </div>
-
-                    <aside id="sidebar">
-                        <a href="#" class="opener"><span>Menu</span></a>
-                        <nav class="aside-nav">
-                            <div class="drop">
-                                <a class="btn-link" href="#">ABOUT BTC</a>
-                                <ul>
 <?php
 $parent = get_post( $post->post_parent );
-
+var_dump($parent);
 $section_pages = get_pages(array(
     'parent' => $parent->ID,
     'sort_column' => 'post_date',
@@ -54,9 +47,14 @@ $section_pages = get_pages(array(
     'sort_order' => 'ASC',
 ));
 ?>
-
+                    <aside id="sidebar">
+                        <a href="#" class="opener"><span>Menu</span></a>
+                        <nav class="aside-nav">
+                            <div class="drop">
+                                <a class="btn-link" href="#"><?php $parent->post_title ?></a>
+                                <ul>
                                 <?php foreach ( $section_pages as $sub_section ): ?>
-                                    <li><a href="<?php echo esc_url( get_permalink( $sub_section['ID'] ) ) ?>"><?php echo $sub_section['page_title'] ?></a></li>
+                                    <li><a href="<?php echo esc_url( get_permalink( $sub_section->ID ) ) ?>"><?php echo $sub_section->page_title ?></a></li>
                                 <?php endforeach; ?>
                                     <li class="active"><a href="#">BTC BOARD</a></li>
                                 </ul>
