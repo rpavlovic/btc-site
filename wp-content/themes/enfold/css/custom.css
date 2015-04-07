@@ -50,7 +50,7 @@ li.page_item {
 }
 
 .current-menu-item, .page_item {
-	margin: 20px;
+	margin: 20px 0 0 0;
 }
 
 }
