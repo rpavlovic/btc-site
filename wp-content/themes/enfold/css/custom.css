@@ -34,6 +34,11 @@ li.page_item {
 	background-color: #333;
 }
 
+.title_container {
+
+	height: 100px !important;
+}
+
 
 }
 
