@@ -43,7 +43,7 @@
 
 $infoboxes = get_fields( get_the_ID() );
 if ( $infoboxes && count( $infoboxes ) > 1 ):
-var_dump($infoboxes);
+
 ?>
 
                         <section class="box-area">
@@ -53,21 +53,21 @@ var_dump($infoboxes);
                                         <div class="col-holder">
                                             <div class="icon-holder"><i class="icon-star">&nbsp;</i></div>
                                             <h2><?php echo $infoboxes['infobox_1_heading'] ?></h2>
-                                            <p><?php echo $infoboxes['infobox_1'] ?></p>
+                                            <p><?php echo $infoboxes['infobox_1_copy'] ?></p>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder picton-blue"><i class="icon-star">&nbsp;</i></div>
                                             <h2><?php echo $infoboxes['infobox_2_heading'] ?></h2>
-                                            <p><?php echo $infoboxes['infobox_2'] ?></p>
+                                            <p><?php echo $infoboxes['infobox_2_copy'] ?></p>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
                                             <h2><?php echo $infoboxes['infobox_3_heading'] ?></h2>
-                                            <p><?php echo $infoboxes['infobox_3'] ?></p>
+                                            <p><?php echo $infoboxes['infobox_3_copy'] ?></p>
                                         </div>
                                     </div>
                                 </div>
