@@ -38,6 +38,9 @@
 
                     </div>
 
+				<!--end content-->
+				</main>
+
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
                         <nav class="aside-nav">
@@ -52,9 +55,6 @@
                             </div>
                         </nav>
                     </aside>
-
-				<!--end content-->
-				</main>
 
 				<?php
 				wp_reset_query();
