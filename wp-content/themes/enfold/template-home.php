@@ -52,25 +52,24 @@ var_dump($infoboxes);
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder"><i class="icon-star">&nbsp;</i></div>
-                                            <h2>our mission</h2>
-                                            <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
+                                            <h2><?php echo $infoboxes['infobox_1_heading'] ?></h2>
+                                            <p><?php echo $infoboxes['infobox_1'] ?></p>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder picton-blue"><i class="icon-star">&nbsp;</i></div>
-                                            <h2>member perks</h2>
-                                            <p>We enjoy <a href="#">member discounts</a> on products, services and race entries with dozens of companies, here in Brooklyn and online.</p>
+                                            <h2><?php echo $infoboxes['infobox_2_heading'] ?></h2>
+                                            <p><?php echo $infoboxes['infobox_2'] ?></p>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
-                                            <h2>faq</h2>
-                                            <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
+                                            <h2><?php echo $infoboxes['infobox_3_heading'] ?></h2>
+                                            <p><?php echo $infoboxes['infobox_3'] ?></p>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
                                 </div>
                             </div>
                         </section>
