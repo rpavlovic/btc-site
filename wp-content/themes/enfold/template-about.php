@@ -53,10 +53,10 @@ $section_pages = get_pages(array(
                         <a href="#" class="opener"><span>Menu</span></a>
                         <nav class="aside-nav">
                             <div class="drop">
-                                <a class="btn-link" href="#"><?php echo $parent->post_title; ?></a>
+                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>"><?= $parent->post_title; ?></a>
                                 <ul>
                                 <?php foreach ( $section_pages as $sub_section ): ?>
-                                    <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?php echo esc_url( get_permalink( $sub_section->ID ) ); ?>"><?php echo $sub_section->post_title; ?></a></li>
+                                    <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= $sub_section->post_title; ?></a></li>
                                 <?php endforeach; ?>
                                 </ul>
                             </div>
