@@ -38,23 +38,32 @@
 
                     </div>
 
-				<!--end content-->
-				</main>
-
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
                         <nav class="aside-nav">
                             <div class="drop">
                                 <a class="btn-link" href="#">ABOUT BTC</a>
                                 <ul>
-                                    <li><a href="#">MISSION</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">TRAINING</a></li>
+<?php 
+$section_pages = get_pages(array(
+    'parent' => get_the_ID(),
+    'sort_column' => 'post_date',
+    'child_of' => get_the_ID(),
+    'sort_order' => 'ASC',
+));
+?>
+
+                                <?php foreach ( $section_pages as $sub_section ) { ?>
+                                    <li><a href="<?php echo esc_url( get_permalink( $sub_section['ID'] ) ) ?>"><?php echo $sub_section['page_title'] ?></a></li>
+                                <?php endforeach; ?>
                                     <li class="active"><a href="#">BTC BOARD</a></li>
                                 </ul>
                             </div>
                         </nav>
                     </aside>
+
+				<!--end content-->
+				</main>
 
 				<?php
 				wp_reset_query();
