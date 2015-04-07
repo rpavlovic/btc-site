@@ -63,21 +63,22 @@ li.page_item {
 	text-decoration: none !important;
 	font-size: 18px !important;
 	font-weight: 400 !important;
-	font-color: #666 !important;
 }
 
 .current-menu-item a:visited, .page_item a:visited {
 	text-decoration: none !important;
 	font-size: 18px !important;
 	font-weight: 400 !important;
-	font-color: #666 !important;
 }
 
 .current-menu-item a:active, .page_item a:active {
 	text-decoration: none !important;
 	font-size: 18px !important;
 	font-weight: 400 !important;
-	font-color: #666 !important;
+}
+
+li.avia_mega a:link, li.menu a:link, li.av-main-nav a:link {
+	font color: #666;
 }
 
 }
