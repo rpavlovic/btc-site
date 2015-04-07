@@ -49,6 +49,10 @@ li.page_item {
 	border-color: #000 !important;
 }
 
+.avia_mega menu, .av-main-nav {
+	margin: 20px;
+}
+
 }
 
 
