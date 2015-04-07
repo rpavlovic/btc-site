@@ -47,7 +47,7 @@ $section_pages = get_pages(array(
     'sort_order' => 'ASC',
 ));
 
-var_dump($section_pages);
+//var_dump($section_pages);
 ?>
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
@@ -56,9 +56,9 @@ var_dump($section_pages);
                                 <a class="btn-link" href="#"><?php echo $parent->post_title; ?></a>
                                 <ul>
                                 <?php foreach ( $section_pages as $sub_section ): ?>
-                                    <li><a href="<?php echo esc_url( get_permalink( $sub_section['ID'] ) ); ?>"><?php echo $sub_section['page_title']; ?></a></li>
+                                    <li><a href="<?php echo esc_url( get_permalink( $sub_section->ID ) ); ?>"><?php echo $sub_section->page_title; ?></a></li>
                                 <?php endforeach; ?>
-                                    <!-- <li class="active"><a href="#">BTC BOARD</a></li> -->
+                                    <!--<li class="active"><a href="#">BTC BOARD</a></li>-->
                                 </ul>
                             </div>
                         </nav>
