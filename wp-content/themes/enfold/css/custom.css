@@ -65,6 +65,18 @@ li.page_item {
 	font-weight: 400 !important;
 }
 
+.current-menu-item a:visited, .page_item a:visited {
+	text-decoration: none !important;
+	font-size: 18px !important;
+	font-weight: 400 !important;
+}
+
+.current-menu-item a:active, .page_item a:active {
+	text-decoration: none !important;
+	font-size: 18px !important;
+	font-weight: 400 !important;
+}
+
 }
 
 
