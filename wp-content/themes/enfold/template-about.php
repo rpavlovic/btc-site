@@ -20,7 +20,7 @@
 
 			<div class='container'>
 
-				<main id="main" role="main" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
+				<main role="main" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
@@ -47,7 +47,7 @@ $section_pages = get_pages(array(
     'sort_order' => 'ASC',
 ));
 
-//var_dump($section_pages);
+var_dump($section_pages);
 ?>
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
