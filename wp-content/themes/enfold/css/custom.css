@@ -29,7 +29,7 @@ li.page_item {
 	height: 400px;
 }
 
-.stretch_full, .container_wrap, .alternate_color, .dark_bg_color, .title_container {
+.alternate_color, .dark_bg_color, .title_container {
 
 	background-color: #333;
 }
