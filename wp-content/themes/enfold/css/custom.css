@@ -77,7 +77,11 @@ li.page_item {
 	font-weight: 400 !important;
 }
 
+.template-archives, .content, .av-content-full, .alpha, .units {
+
+	background-color: #fff;
 }
+
 
 }
 
