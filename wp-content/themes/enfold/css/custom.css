@@ -40,8 +40,13 @@ li.page_item {
 }
 
 .inner-container {
-	height: 200px;
+	height: 125px;
 
+}
+
+.container_wrap, .container_wrap_logo {
+
+	border-color: #000;
 }
 
 }
