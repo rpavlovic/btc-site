@@ -31,15 +31,21 @@
                         <section class="intro">
                             <h1>we are THE BROOKLYN TRI CLUB.</h1>
                             <p>
-                                <?php echo the_content(); 
-var_dump($post);
-                                ?>
+                                <?php echo the_content(); ?>
                             </p>
                             <footer>
                                 <span>Is the Brooklyn Tri Club right for you?</span>
                                 <a href="/register" class="btn-join">JOIN US</a>
                             </footer>
                         </section>
+
+<?php
+
+$infoboxes = get_fields( get_the_ID() );
+if ( $infoboxes && count( $infoboxes ) > 1 ):
+var_dump($infoboxes);
+?>
+
                         <section class="box-area">
                             <div class="holder">
                                 <div class="frame">
@@ -60,14 +66,15 @@ var_dump($post);
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
-                                            <h2>faq<span class="lowercase">s</span></h2>
+                                            <h2>faq</h2>
                                             <p>BTC aims to make triathlon accessible and affordable for everyone. <a href="#">Learn more</a> about the club.</p>
                                         </div>
                                     </div>
+                                <?php endforeach; ?>
                                 </div>
                             </div>
                         </section>
-
+<?php endif; ?>
                     <?php
                     //display the actual post content
                     the_post();
