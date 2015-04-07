@@ -49,7 +49,7 @@ li.page_item {
 	border-color: #000 !important;
 }
 
-.avia_mega menu, .av-main-nav {
+.current-menu-item, .page_item {
 	margin: 20px;
 }
 
