@@ -26,7 +26,7 @@ li.page_item {
 }
 
 .container_wrap_logo {
-	height: 140px;
+	height: 120px;
 }
 
 .alternate_color, .dark_bg_color, .title_container {
@@ -40,8 +40,13 @@ li.page_item {
 }
 
 .inner-container {
-	height: 400px;
+	height: 120px;
 
+}
+
+.container_wrap, .container_wrap_logo {
+
+	border-color: #000 !important;
 }
 
 }
