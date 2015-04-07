@@ -13,7 +13,13 @@ Desktop Styles
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
-.main_menu .page_item_has_children .page_item {
+.main_menu .page_item_has_children {
+
+	text-transform: uppercase !important;
+
+}
+
+li.page_item {
 
 	text-transform: uppercase !important;
 
