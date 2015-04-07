@@ -13,6 +13,12 @@ Desktop Styles
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
+.avia_mega .menu .av-main-nav {
+
+	text-transform: uppercase !important;
+
+}
+
 
 }
 
