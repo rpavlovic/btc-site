@@ -13,8 +13,8 @@ Desktop Styles
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
-.container {
-background-color: #333;
+.container .main-title .entry-title  {
+background-color: #333 !important; 
  }
 
 }
