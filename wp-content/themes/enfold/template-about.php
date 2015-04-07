@@ -44,11 +44,13 @@
                             <div class="drop">
                                 <a class="btn-link" href="#">ABOUT BTC</a>
                                 <ul>
-<?php 
+<?php
+$parent = get_post( $post->post_parent );
+
 $section_pages = get_pages(array(
-    'parent' => get_the_ID(),
+    'parent' => $parent->ID,
     'sort_column' => 'post_date',
-    'child_of' => get_the_ID(),
+    'child_of' => $parent->ID,
     'sort_order' => 'ASC',
 ));
 ?>
