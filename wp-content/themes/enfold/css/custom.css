@@ -63,12 +63,14 @@ li.page_item {
 	text-decoration: none !important;
 	font-size: 18px !important;
 	font-weight: 400 !important;
+	font-color: #666;
 }
 
 .current-menu-item a:visited, .page_item a:visited {
 	text-decoration: none !important;
 	font-size: 18px !important;
 	font-weight: 400 !important;
+	font-color: #666;
 }
 
 .current-menu-item a:active, .page_item a:active {
