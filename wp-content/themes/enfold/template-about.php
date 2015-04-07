@@ -20,7 +20,7 @@
 
 			<div class='container'>
 
-				<main class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
+				<main id="main" role="main" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
                     <div class="entry-content-wrapper entry-content clearfix">
 
@@ -39,6 +39,18 @@
 
 
                     </div>
+                    <section class="clients-area">
+                        <div class="holder">
+                        <h1>our sponsors</h1>
+                            <ul class="clients-logo">
+                                <li><a href="#"><img src="images/img03.jpg" alt="jack rabbit"></a></li>
+                                <li><a href="#"><img src="images/img04.png" alt="a c m e bicycle co brooklyn ny"></a></li>
+                                <li><a href="#"><img src="images/img05.jpg" alt="priority fitness"></a></li>
+                                <li><a href="#"><img src="images/img06.jpg" alt="ride brooklyn"></a></li>
+                                <li><a href="#"><img src="images/img07.png" alt="race day professional triathlon coaching"></a></li>
+                            </ul>
+                        </div>
+                    </section>
 
 				<!--end content-->
 				</main>
