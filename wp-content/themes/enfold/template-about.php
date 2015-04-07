@@ -20,9 +20,9 @@
 
 			<div class='container'>
 
-				<main role="main" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
+				<main id="two-columns" role="main" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
-                    <div class="entry-content-wrapper entry-content clearfix">
+                    <div id="content" class="entry-content-wrapper entry-content clearfix">
 
                         <h3><?php the_title(); ?></h3>
 
