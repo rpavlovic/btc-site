@@ -117,8 +117,12 @@ h1.main-title, h1.entry-title {
 }
 
 .avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
-	margin: 15px 0 0 0 !important;
-	padding: 15px 0 0 0 !important;
+	margin: 5px 0 0 0 !important;
+	padding: 5px 0 0 0 !important;
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #666 !important;
 }
 
 
