@@ -22,9 +22,15 @@
 
                 <main id="two-columns" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
-                    <div id="content" class="entry-content-wrapper entry-content clearfix">
-                        <?php the_title('<h1>','</h1>'); ?>
-                        <p><?php the_content(); ?></p>
+                    <div id="content" class="content-holder entry-content-wrapper entry-content clearfix">
+
+                        <div class="intro-text">
+
+                            <?php the_title('<h2>','</h2>'); ?>
+
+                            <p><?php the_content(); ?></p>
+
+                        </div>
 
                     <?php
                     //display the actual post content
