@@ -34,6 +34,8 @@ li.page_item {
 	background-color: #333;
 }
 
+
+
 .title_container {
 
 	height: 50px !important;
@@ -94,11 +96,15 @@ li.page_item {
 	background-color: #fff !important;
 }
 
-
-.breadcrumb, .breadcrumbs, .avia-breadcrumbs {
-	margin: 50px !important;
-	padding: 50px !important;
+.main-title, .entry-title {
+	padding: -20px !important;
 }
+
+
+h1.main-title, h1.entry-title {
+	padding: -20px !important;
+}
+
 
 }
 
