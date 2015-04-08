@@ -52,8 +52,9 @@ li.page_item {
 }
 
 .container_wrap, .container_wrap_logo {
-
 	border-color: #000 !important;
+	background: url("http://66.147.247.44/dev/wp-content/uploads/2015/04/bg-header-holder.jpg") no-repeat 50% 0 !important;
+
 }
 
 .container .social_bookmarks {
@@ -149,10 +150,6 @@ h1.main-title, h1.entry-title {
 	color: #49beed !important;
 }
 
-.container {
-	background-image: url(http://66.147.247.44/dev/wp-content/uploads/2015/04/bg-header-holder.jpg) no-repeat 50% 0 !important;
-	background: url("http://66.147.247.44/dev/wp-content/uploads/2015/04/bg-header-holder.jpg") no-repeat 50% 0 !important;
-}
 
 
 /*
