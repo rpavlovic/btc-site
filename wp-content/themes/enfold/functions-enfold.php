@@ -1270,3 +1270,5 @@ if(!function_exists('avia_generate_stylesheet'))
 	    }
 	}
 }
+
+require_once( 'functions-custom.php');
