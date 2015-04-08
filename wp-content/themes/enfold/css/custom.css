@@ -149,8 +149,9 @@ h1.main-title, h1.entry-title {
 	color: #49beed !important;
 }
 
-
-
+.entry-content p {
+	margin: 1em 0px !important;
+}
 
 /*
 Mobile Styles
