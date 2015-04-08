@@ -119,11 +119,36 @@ h1.main-title, h1.entry-title {
 .avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
 	margin: 5px 0 0 0 !important;
 	padding: 5px 0 0 0 !important;
+}
+
+.avia_mega li:first-child a:hover, .menu li:first-child a:hover, .av-main-nav li:first-child a:hover {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
-	color: #666 !important;
+	color: #49beed !important;
 }
+
+.avia_mega li:first-child a:link, .menu li:first-child a:link, .av-main-nav li:first-child a:link {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+.avia_mega li:first-child a:visited, .menu li:first-child a:visited, .av-main-nav li:first-child a:visited {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+.avia_mega li:first-child a:active, .menu li:first-child a:active, .av-main-nav li:first-child a:active {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
 
 
 
