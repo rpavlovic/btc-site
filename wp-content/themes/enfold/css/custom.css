@@ -116,6 +116,9 @@ h1.main-title, h1.entry-title {
 	font-weight: 400 !important;
 }
 
+.avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
+	margin: 15px 0 0 0 !important;
+	padding: 15px 0 0 0 !important;
 }
 
 
