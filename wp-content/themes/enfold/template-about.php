@@ -28,7 +28,7 @@
 
                             <?php the_title('<h2>','</h2>'); ?>
 
-                            <p><?php the_content(); ?></p>
+                            <?php the_content(); ?>
 
                         </div>
 
@@ -39,9 +39,11 @@
 
                     ?>
 
-
                     </div>
-                    <? btc_leftnav(); ?>
+                    <?
+                        // in functions-custom.php
+                        btc_leftnav($post);
+                    ?>
 
 				<!--end content-->
 				</main>
