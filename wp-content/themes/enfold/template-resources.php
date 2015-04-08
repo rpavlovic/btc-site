@@ -11,7 +11,7 @@
 
      global $avia_config, $more;
      get_header();
-     echo 'avia title ' . avia_title();
+     echo avia_title();
      ?>
 
 
@@ -23,7 +23,7 @@
                 <main id="two-columns" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
                     <div id="content" class="entry-content-wrapper entry-content clearfix">
-                        <h2><?php echo 'the title ' . the_title(); ?></h2>
+                        <?php the_title('<h1>','</h1>'); ?>
                         <p><?php the_content(); ?></p>
 
                     <?php

@@ -24,7 +24,7 @@
 
                     <div id="content" class="entry-content-wrapper entry-content clearfix">
 
-                        <h3><?php the_title(); ?></h3>
+                        <?php the_title('<h1>','</h1>'); ?>
 
                         <p><?php the_content(); ?></p>
 
