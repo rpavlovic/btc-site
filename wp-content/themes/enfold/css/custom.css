@@ -60,9 +60,6 @@ li.page_item {
 	padding-left: 180px !important;
 }
 
-.page_item {
-	margin: 15px 0 0 0 !important;
-}
 
 .current-menu-item, .page_item, #menu-item-search {
 	margin: 15px 0 0 0;
@@ -71,28 +68,28 @@ li.page_item {
 	font-weight: 600 !important;
 }
 
-.current-menu-item a:hover, .page_item a:hover {
+.current-menu-item a:hover, .page_item a:hover, #menu-item-search a:hover {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
 	color: #49beed !important;
 }
 
-.current-menu-item a:link, .page_item a:link {
+.current-menu-item a:link, .page_item a:link, #menu-item-search a:link {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
 	color: #666 !important;
 }
 
-.current-menu-item a:visited, .page_item a:visited {
+.current-menu-item a:visited, .page_item a:visited, #menu-item-search a:visited {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
 	color: #666 !important;
 }
 
-.current-menu-item a:active, .page_item a:active {
+.current-menu-item a:active, .page_item a:active, #menu-item-search a:active {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
