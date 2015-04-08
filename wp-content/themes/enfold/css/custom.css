@@ -18,12 +18,12 @@ Desktop Styles
 
 }
 
-.main_menu {
+/* .main_menu {
 	margin-top: -5px !important;
-}
+} */
 
 .page_item_has_children {
-	margin-top: 5px !important;
+	margin-top: -5px !important;
 }
 
 li.page_item {
