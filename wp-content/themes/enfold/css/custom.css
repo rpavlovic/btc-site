@@ -60,6 +60,10 @@ li.page_item {
 	padding-left: 180px !important;
 }
 
+.page_item {
+	margin: 15px 0 0 0 !important;
+}
+
 .current-menu-item, .page_item, #menu-item-search {
 	margin: 15px 0 0 0;
 	text-decoration: none !important;
