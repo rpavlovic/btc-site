@@ -14,7 +14,7 @@ Desktop Styles
   /* Add your Desktop Styles here */
 
 .main_menu, .page_item_has_children {
-
+	padding: -25px !important;
 	text-transform: uppercase !important;
 
 }
