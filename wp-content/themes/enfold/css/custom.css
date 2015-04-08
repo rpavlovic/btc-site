@@ -49,129 +49,47 @@ li.page_item {
 	border-color: #000 !important;
 }
 
+.container_wrap .container {
+	padding-left: 200px !important;
+}
+
 .current-menu-item, .page_item, #menu-item-search {
 	margin: 15px 0 0 0;
 	text-decoration: none !important;
 	font-size: 16px !important;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 }
 
 .current-menu-item a:hover, .page_item a:hover {
 	text-decoration: none !important;
 	font-size: 16px !important;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 	color: #49beed !important;
 }
 
 .current-menu-item a:link, .page_item a:link {
 	text-decoration: none !important;
 	font-size: 16px !important;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 	color: #666 !important;
 }
 
 .current-menu-item a:visited, .page_item a:visited {
 	text-decoration: none !important;
 	font-size: 16px !important;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 	color: #666 !important;
 }
 
 .current-menu-item a:active, .page_item a:active {
 	text-decoration: none !important;
 	font-size: 16px !important;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 	color: #666 !important;
 }
 
 
-
-
-
-	#nav {
-		padding: 0;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: inherit;
-	}
-
-
-
-	#nav.active .drop {
-		max-height: 4000px;
-	}
-
-
-
-	#nav.active .drop > ul {
-		transform: translateY(0);
-		-moz-transform: translateY(0);
-		-ms-transform: translateY(0);
-		-o-transform: translateY(0);
-		-webkit-transform: translateY(0);
-	}
-
-
-
-	#nav .opener {
-		display: block;
-	}
-
-
-
-	#nav .drop {
-		max-height: 0;
-		overflow: hidden;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 100%;
-		-webkit-transition: all .25s ease;
-		transition: all .25s ease;
-	}
-
-
-
-	#nav .drop > ul {
-		-webkit-transition: all .25s ease;
-		transition: all .25s ease;
-		transform: translateY(-100%);
-		-moz-transform: translateY(-100%);
-		-ms-transform: translateY(-100%);
-		-o-transform: translateY(-100%);
-		-webkit-transform: translateY(-100%);
-		background: #020000;
-	}
-
-
-
-	#nav ul li {
-		padding: 0;
-		width: 100%;
-	}
-
-
-
-	#nav ul li.active a {
-		padding: 10px;
-	}
-
-
-
-	#nav ul a {
-		margin: 0;
-		padding: 10px;
-		border: none;
-	}
-
-
-
-	#nav ul a:hover {
-		padding: 10px;
-	}
-
+}
 
 
 .template-archives, .content, .av-content-full, .alpha, .units {
