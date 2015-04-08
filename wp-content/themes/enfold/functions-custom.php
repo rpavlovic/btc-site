@@ -50,9 +50,20 @@ function btc_leftnav($post=null) {
                             <div class="drop">
                                 <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>"><?= $parent->post_title; ?></a>
                                 <ul>
-                                <?php foreach ( $section_pages as $sub_section ): ?>
-                                    <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= $sub_section->post_title; ?></a></li>
-                                <?php endforeach; ?>
+<?
+	foreach ( $section_pages as $sub_section ):
+		$link_text = $sub_section->post_title;
+
+		// overwrite page title with custom link text
+		$fields = get_fields( $sub_section->ID );
+		if ( !empty( $fields['link_text'] ) ) {
+			$link_text = $fields['link_text'];
+		}
+?>
+                                    <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
+<?
+	endforeach;
+?>
                                 </ul>
                             </div>
                         </nav>
