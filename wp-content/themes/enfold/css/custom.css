@@ -95,7 +95,7 @@ li.page_item {
 }
 
 
-.breadcrumbs {
+.breadcrumb .breadcrumbs .avia-breadcrumbs {
 	margin-top: -50px !important;
 	padding-top: -50px !important;
 }
