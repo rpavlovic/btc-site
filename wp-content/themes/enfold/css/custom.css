@@ -14,9 +14,12 @@ Desktop Styles
   /* Add your Desktop Styles here */
 
 .main_menu, .page_item_has_children {
-	margin: -25px !important;
 	text-transform: uppercase !important;
 
+}
+
+.main_menu {
+	margin-top: -25px !important;
 }
 
 li.page_item {
