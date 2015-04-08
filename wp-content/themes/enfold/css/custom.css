@@ -89,14 +89,16 @@ li.page_item {
 }
 
 
-}
-
-
 .template-archives, .content, .av-content-full, .alpha, .units {
 
 	background-color: #fff !important;
 }
 
+
+.breadcrumbs {
+	margin-top: -50px !important;
+	padding-top: -50px !important;
+}
 
 }
 
