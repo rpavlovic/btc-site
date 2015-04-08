@@ -26,7 +26,7 @@ li.page_item {
 }
 
 .container_wrap_logo {
-	height: 120px;
+	height: 110px;
 }
 
 .alternate_color, .dark_bg_color, .title_container {
@@ -42,7 +42,7 @@ li.page_item {
 }
 
 .inner-container {
-	height: 120px;
+	height: 110px;
 
 }
 
@@ -96,14 +96,14 @@ li.page_item {
 	background-color: #fff !important;
 }
 
-/* .main-title, .entry-title {
+.main-title, .entry-title {
 	margin: -20px !important;
 }
 
 
 h1.main-title, h1.entry-title {
 	margin: -20px !important;
-} */
+}
 
 
 }
