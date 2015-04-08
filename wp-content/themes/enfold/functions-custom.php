@@ -48,7 +48,7 @@ function btc_leftnav($post=null) {
                         <a href="#" class="opener"><span>Menu</span></a>
                         <nav class="aside-nav">
                             <div class="drop">
-                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>"><?= esc_html( $parent->post_title; } ?></a>
+                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>"><?= esc_html( $parent->post_title; ) ?></a>
                                 <ul>
 <?
 	foreach ( $section_pages as $sub_section ):
