@@ -51,29 +51,32 @@ li.page_item {
 
 .current-menu-item, .page_item, #menu-item-search {
 	margin: 15px 0 0 0;
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
 }
 
 .current-menu-item a:hover, .page_item a:hover {
 	text-decoration: none !important;
-	font-size: 18px !important;
+	font-size: 16px !important;
 	font-weight: 400 !important;
 }
 
 .current-menu-item a:link, .page_item a:link {
 	text-decoration: none !important;
-	font-size: 18px !important;
+	font-size: 16px !important;
 	font-weight: 400 !important;
 }
 
 .current-menu-item a:visited, .page_item a:visited {
 	text-decoration: none !important;
-	font-size: 18px !important;
+	font-size: 16px !important;
 	font-weight: 400 !important;
 }
 
 .current-menu-item a:active, .page_item a:active {
 	text-decoration: none !important;
-	font-size: 18px !important;
+	font-size: 16px !important;
 	font-weight: 400 !important;
 }
 
