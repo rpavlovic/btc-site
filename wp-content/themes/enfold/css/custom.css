@@ -117,8 +117,8 @@ h1.main-title, h1.entry-title {
 }
 
 .avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
-	margin: 5px 0 0 0 !important;
-	padding: 5px 0 0 0 !important;
+	margin: 8px 0 0 0 !important;
+	padding: 8px 0 0 0 !important;
 }
 
 .avia_mega li:first-child a:hover, .menu li:first-child a:hover, .av-main-nav li:first-child a:hover {
