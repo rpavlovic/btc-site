@@ -19,7 +19,11 @@ Desktop Styles
 }
 
 .main_menu {
-	margin-top: -25px !important;
+	margin-top: -5px !important;
+}
+
+.page_item_has_children {
+	margin-top: 5px !important;
 }
 
 li.page_item {
