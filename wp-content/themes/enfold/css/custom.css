@@ -130,6 +130,10 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	text-align: right !important;
 }
 
+.breadcrumb, .breadcrumbs, .avia-breadcrumbs {
+	padding: 5px 0 0 0 !important;
+}
+
 
 .avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
 	margin: 7px 0 0 0 !important;
