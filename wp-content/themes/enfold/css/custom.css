@@ -107,17 +107,17 @@ li.page_item {
 	background-color: #fff !important;
 }
 
-.main-title {
-	width: 500px !important;
-}
+/* .main-title {
+	width: 200px !important;
+} */
 
 
 h1.entry-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	padding: 0 0 0 0px !important;
 	margin: 0px !important;
 	color: #49beed !important;
-	float: left !important;
-	text-align: left !important;
+	float: right !important;
+	text-align: right !important;
 	position: relative !important;
 	display: inline-block !important;
 	text-decoration: none !important;
