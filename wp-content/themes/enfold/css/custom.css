@@ -110,11 +110,11 @@ li.page_item {
 
 
 h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
-	padding: 0px !important;
+	padding: 0 0 0 50px !important;
 	margin: 0px !important;
 	color: #49beed !important;
-	float: right !important;
-	text-align: right !important;
+	float: left !important;
+	text-align: left !important;
 	position: relative !important;
 	display: inline-block !important;
 	text-decoration: none !important;
@@ -125,6 +125,7 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	font-size: 13px !important;
 	font-weight: 400 !important;
 }
+
 
 .avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
 	margin: 7px 0 0 0 !important;
