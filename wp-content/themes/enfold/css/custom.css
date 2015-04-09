@@ -193,7 +193,7 @@ h1.main-title, h1.main-title a {
 	margin: 1em 0px !important;
 	font: 13px/21px "Open Sans","Arial","Helvetica",sans-serif ;
 	color: #000;
-	display: inline;
+	display: inline-block;
 }
 
 .intro-text p:first-child {
