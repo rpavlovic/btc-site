@@ -110,8 +110,7 @@ li.page_item {
 .entry-title {
 	background-color: #ff0000;
 	padding: 0 0 0 0px !important;
-	float: left !important;
-	text-align: right !important;
+	float: right !important;
 	width: 150px !important;
 } 
 
@@ -120,8 +119,7 @@ h1.main-title, h1.main-title a {
 	padding: 0 0 0 0px !important;
 	margin: 0px !important;
 	color: #49beed !important;
-	float: right !important;
-	text-align: right !important;
+	float: left !important;
 	position: relative !important;
 	display: inline-block !important;
 	text-decoration: none !important;
