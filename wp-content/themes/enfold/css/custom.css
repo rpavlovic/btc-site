@@ -196,6 +196,10 @@ h1.main-title, h1.main-title a {
 	display: inline;
 }
 
+.intro-text p:first-child {
+	display: block;
+}
+
 }
 /*
 Mobile Styles
