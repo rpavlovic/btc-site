@@ -198,8 +198,7 @@ h1.main-title, h1.main-title a {
 }
 
 .intro-text h2, .intro-text h3 {
-	display: inline;
-	padding: 18px 0 0 0 !important;
+	display: inline-block;
 }
 
 
