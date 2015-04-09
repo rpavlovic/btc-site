@@ -102,10 +102,6 @@ li.page_item {
 }
 
 
-.entry-title, .main-title, .main-title a, .entry-title a {
-	text-decoration: none !important;
-}
-
 
 .entry-title, .main-title, .main-title a, .entry-title a {
 	padding: 50px 0 50px 0 !important;
@@ -138,6 +134,10 @@ h1.main-title a, h1.entry-title a {
 }
 
 
+
+.page-titleys {
+
+}
 
 .breadcrumb {
 	font-size: 13px !important;
@@ -177,7 +177,7 @@ h1.main-title a, h1.entry-title a {
 	color: #49beed !important;
 }
 
-
+}
 
 /*
 Mobile Styles
