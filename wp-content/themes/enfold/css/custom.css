@@ -44,7 +44,7 @@ li.page_item {
 }
 
 #top .title_container .container {
-	padding: 0px 0px 0px 80px !important;
+	padding: px 0px 0px 0px !important;
 }
 
 
@@ -107,10 +107,12 @@ li.page_item {
 	background-color: #fff !important;
 }
 
+.main-title {
+	width: 500px !important;
+}
 
-/* h1.main-title a, h1.entry-title a */
 
-h1.main-title, h1.main-title {
+h1.entry-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	padding: 0 0 0 0px !important;
 	margin: 0px !important;
 	color: #49beed !important;
