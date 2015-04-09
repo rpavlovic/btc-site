@@ -197,8 +197,8 @@ h1.main-title, h1.main-title a {
 }
 
 
-intro-text p:first-child {
-	display: inline-block;
+.intro-text p:first-child {
+	display: inline;
 }
 
 }
