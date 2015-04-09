@@ -11,7 +11,7 @@
 
      global $avia_config, $more;
      get_header();
-     //echo avia_title();
+     echo avia_title();
 
      $infoboxes = get_fields( get_the_ID() );
 
