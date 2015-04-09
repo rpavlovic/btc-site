@@ -141,11 +141,11 @@ h1.main-title, h1.main-title a {
 }
 
 
-.breadcrumb, .breadcrumbs, .avia-breadcrumbs {
+.breadcrumb .breadcrumbs .avia-breadcrumbs {
 	position: relative !important;
 	text-align: right !important;
 	float: right !important;
-	width: 100% !important; 
+	width: 70% !important; 
 }
 
 
