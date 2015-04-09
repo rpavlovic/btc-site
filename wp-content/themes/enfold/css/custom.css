@@ -43,6 +43,10 @@ li.page_item {
 	height: 55px !important;
 }
 
+#top .title_container .container {
+	padding: 0px 0px 0px 80px !important;
+}
+
 
 .inner-container {
 	height: 110px;
