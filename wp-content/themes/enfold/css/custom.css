@@ -136,6 +136,19 @@ h1.main-title, h1.main-title a {
 	text-align: right !important;
 }
 
+.breadcrumb-trail {
+	text-align: right !important;
+}
+
+
+.breadcrumb .breadcrumbs .avia-breadcrumbs, .breadcrumb, .breadcrumbs, .avia-breadcrumbs {
+	position: relative !important;
+	text-align: right !important;
+	float: right !important;
+}
+
+
+
 #top .title_container .container {
 	padding: 18px 0 0 0 !important;
 	float: right !important;
