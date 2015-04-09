@@ -70,3 +70,8 @@ function btc_leftnav($post=null) {
                     </aside>
 <?
 }
+
+
+function btc_relative_links($str) {
+	return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
+}

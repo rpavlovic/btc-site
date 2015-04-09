@@ -34,13 +34,13 @@
                         <section class="intro">
                             <?php the_title('<h1>','</h1>'); ?>
                             <p>
-                                <?php echo the_content(); ?>
+                                <?= the_content(); ?>
                             </p>
 
                             <?php if ( isset( $infoboxes['join_us_text'] ) && !empty( $infoboxes['join_us_text'] ) ): ?>
                             <footer>
-                                <span><?php echo $infoboxes['join_us_text'] ?></span>
-                                <a href="<?= WP_SITEURL . '/join' ?>" class="btn-join"><?php echo $infoboxes['join_us_button'] ?></a>
+                                <span><?= $infoboxes['join_us_text'] ?></span>
+                                <a href="<?= WP_SITEURL . '/join' ?>" class="btn-join"><?= $infoboxes['join_us_button'] ?></a>
                             </footer>
                             <?php endif; ?>
 
@@ -54,8 +54,8 @@
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder"><i class="icon-star">&nbsp;</i></div>
-                                            <h2><a href="<?php echo WP_SITEURL . '/' . $infoboxes['infobox_1_url'] ?>"><?php echo $infoboxes['infobox_1_heading'] ?></a></h2>
-                                            <p><?php echo $infoboxes['infobox_1_copy'] ?></p>
+                                            <h2><a href="<?= WP_SITEURL . '/' . $infoboxes['infobox_1_url'] ?>"><?= $infoboxes['infobox_1_heading'] ?></a></h2>
+                                            <p><?= btc_relative_links ( $infoboxes['infobox_1_copy'] ) ?></p>
                                         </div>
                                     </div>
                                     <?php endif; ?>
@@ -64,8 +64,8 @@
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder picton-blue"><i class="icon-star">&nbsp;</i></div>
-                                            <h2><a href="<?php echo WP_SITEURL . '/' . $infoboxes['infobox_2_url'] ?>"><?php echo $infoboxes['infobox_2_heading'] ?></a></h2>
-                                            <p><?php echo $infoboxes['infobox_2_copy'] ?></p>
+                                            <h2><a href="<?= WP_SITEURL . '/' . $infoboxes['infobox_2_url'] ?>"><?= $infoboxes['infobox_2_heading'] ?></a></h2>
+                                            <p><?= btc_relative_links ( $infoboxes['infobox_2_copy'] ) ?></p>
                                         </div>
                                     </div>
                                     <?php endif; ?>
@@ -74,8 +74,8 @@
                                     <div class="col">
                                         <div class="col-holder">
                                             <div class="icon-holder mantis"><i class="icon-star">&nbsp;</i></div>
-                                            <h2><a href="<?php echo WP_SITEURL . '/' . $infoboxes['infobox_3_url'] ?>"><?php echo $infoboxes['infobox_3_heading'] ?></a></h2>
-                                            <p><?php echo $infoboxes['infobox_3_copy'] ?></p>
+                                            <h2><a href="<?= WP_SITEURL . '/' . $infoboxes['infobox_3_url'] ?>"><?= $infoboxes['infobox_3_heading'] ?></a></h2>
+                                            <p><?= btc_relative_links ( $infoboxes['infobox_3_copy'] ) ?></p>
                                         </div>
                                     </div>
                                     <?php endif; ?>
