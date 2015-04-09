@@ -107,7 +107,10 @@ li.page_item {
 	background-color: #fff !important;
 }
 
-
+.entry-title {
+	background-color: #ff0000;
+	padding: 0 0 0 0px !important;
+} 
 
 
 h1.main-title, h1.main-title a {
