@@ -103,9 +103,10 @@ li.page_item {
 }
 
 
+
 h1.main-title, h1.entry-title {
 	padding: 50px 0 50px 0 !important;
-	margin: 50px !important;
+	margin: 0px !important;
 	text-transform: uppercase !important;
 	color: #49beed !important;
 	line-height: 28px !important;
@@ -115,21 +116,18 @@ h1.main-title, h1.entry-title {
 	font-weight: 800 !important;
 }
 
-h1.main-title a:hover, h1.entry-title a:hover {
+h1.main-title a, h1.entry-title a {
 	text-decoration: none !important;
 }
 
-h1.main-title a:link, h1.entry-title a:link {
+.container h1.main-title a, .container h1.entry-title a {
 	text-decoration: none !important;
 }
 
-h1.main-title a:visited, h1.entry-title a:visited {
+.container main-title a, .container entry-title a {
 	text-decoration: none !important;
 }
 
-h1.main-title a:active, h1.entry-title a:active {
-	text-decoration: none !important;
-}
 
 .breadcrumb {
 	font-size: 13px !important;
