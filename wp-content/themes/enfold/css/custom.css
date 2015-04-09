@@ -110,7 +110,7 @@ li.page_item {
 
 
 h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
-	padding: 0 0 0 50px !important;
+	padding: 0 0 0 0px !important;
 	margin: 0px !important;
 	color: #49beed !important;
 	float: left !important;
@@ -128,7 +128,6 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	font-weight: 400 !important;
 	position: relative !important;
 	text-align: right !important;
-	text-indent: 50px;
 }
 
 #top .title_container .container {
