@@ -125,6 +125,7 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 .breadcrumb {
 	font-size: 13px !important;
 	font-weight: 400 !important;
+	position: relative !important;
 }
 
 
