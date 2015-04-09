@@ -123,7 +123,7 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 
 
 .breadcrumb {
-	padding: -2px 0 0 0px !important;
+	padding: -2px 0 0 50px !important;
 	font-size: 13px !important;
 	font-weight: 400 !important;
 	position: relative !important;
@@ -132,6 +132,8 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 
 #top .title_container .container {
 	padding: 15px 0 0 0 !important;
+	float: right !important;
+	text-align: right !important;
 }
 
 
