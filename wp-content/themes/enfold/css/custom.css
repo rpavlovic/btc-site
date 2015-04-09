@@ -104,7 +104,7 @@ li.page_item {
 }
 
 
-/* .entry-title, .main-title, a.main-title, a.entry-title,  */
+/* .entry-title, .main-title, a.main-title, a.entry-title,  
 
 h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	padding: 0px 0 0px 0 !important;
@@ -118,7 +118,7 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	font-weight: 800 !important;
 	text-decoration: none !important;
 }
-
+*/
 
 .breadcrumb {
 	font-size: 13px !important;
