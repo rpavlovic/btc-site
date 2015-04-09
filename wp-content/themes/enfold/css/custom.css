@@ -109,7 +109,9 @@ li.page_item {
 }
 
 
-h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
+/* h1.main-title, h1.main-title, */
+
+h1.main-title a, h1.entry-title a {
 	padding: 0 0 0 0px !important;
 	margin: 0px !important;
 	color: #49beed !important;
