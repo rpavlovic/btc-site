@@ -189,17 +189,17 @@ h1.main-title, h1.main-title a {
 	color: #49beed !important;
 }
 
-h2.intro-text p {
+.intro-text p {
 	margin: 1em 0px !important;
 	font: 13px/21px "Open Sans","Arial","Helvetica",sans-serif ;
 	color: #000;
-	display: inline;
+	display: block;
 }
 
 
-/* intro-text p:first-child {
-	display: inline;
-} */
+intro-text p:first-child {
+	display: inline-block;
+}
 
 }
 /*
