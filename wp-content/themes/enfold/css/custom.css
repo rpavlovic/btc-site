@@ -98,10 +98,26 @@ li.page_item {
 
 
 .template-archives, .content, .av-content-full, .alpha, .units {
-
 	background-color: #fff !important;
 }
 
+
+.entry-title, .main-title, .main-title a, .entry-title a {
+	text-decoration: none !important;
+}
+
+
+.entry-title, .main-title, .main-title a, .entry-title a {
+	padding: 50px 0 50px 0 !important;
+	margin: 0px !important;
+	text-transform: uppercase !important;
+	color: #49beed !important;
+	line-height: 28px !important;
+	position: relative !important;
+	display: inline-block !important;
+	font-size: 24px !important;
+	font-weight: 800 !important;
+}
 
 
 h1.main-title, h1.entry-title {
@@ -116,17 +132,11 @@ h1.main-title, h1.entry-title {
 	font-weight: 800 !important;
 }
 
+
 h1.main-title a, h1.entry-title a {
 	text-decoration: none !important;
 }
 
-.container h1.main-title a, .container h1.entry-title a {
-	text-decoration: none !important;
-}
-
-.container main-title a, .container entry-title a {
-	text-decoration: none !important;
-}
 
 
 .breadcrumb {
