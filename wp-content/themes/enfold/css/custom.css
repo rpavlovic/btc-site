@@ -110,9 +110,9 @@ li.page_item {
 .entry-title {
 	background-color: #ff0000;
 	padding: 0 0 0 0px !important;
-	float: left !important;
+	float: right !important;
 	text-align: right !important;
-	width: 200px !important;
+	width: 150px !important;
 } 
 
 
