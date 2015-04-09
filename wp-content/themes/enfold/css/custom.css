@@ -111,6 +111,7 @@ li.page_item {
 	background-color: #ff0000;
 	padding: 0 0 0 0px !important;
 	float: right !important;
+	text-align: right !important;
 	width: 150px !important;
 } 
 
