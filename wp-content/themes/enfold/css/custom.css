@@ -126,6 +126,7 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	font-size: 13px !important;
 	font-weight: 400 !important;
 	position: relative !important;
+	text-align: right !important;
 }
 
 
