@@ -130,8 +130,8 @@ h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	text-align: right !important;
 }
 
-.breadcrumb, .breadcrumbs, .avia-breadcrumbs {
-	margin-top: 5px !important;
+#top .title_container .container {
+	padding-top: 10px !important;
 }
 
 
