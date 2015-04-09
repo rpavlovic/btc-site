@@ -110,7 +110,7 @@ li.page_item {
 .entry-title {
 	background-color: #ff0000;
 	padding: 0 0 0 0px !important;
-	float: right !important;
+	float: left !important;
 	text-align: right !important;
 	width: 150px !important;
 } 
