@@ -15,8 +15,8 @@ Desktop Styles
 
 .main_menu, .page_item_has_children {
 	text-transform: uppercase !important;
-
 }
+
 
  .main_menu {
 	margin-top: -5px !important;
@@ -25,36 +25,34 @@ Desktop Styles
 
 
 li.page_item {
-
 	text-transform: uppercase !important;
-
 }
 
 .container_wrap_logo {
 	height: 110px;
 }
 
-.alternate_color, .dark_bg_color, .title_container {
 
+.alternate_color, .dark_bg_color, .title_container {
 	background-color: #333;
 }
 
 
 
 .title_container {
-
 	height: 50px !important;
 }
 
+
 .inner-container {
 	height: 110px;
-
 }
+
 
 .container_wrap, .container_wrap_logo {
-
 	border-color: #000 !important;
 }
+
 
 .container .social_bookmarks {
 	padding-left: 180px !important;
@@ -68,12 +66,14 @@ li.page_item {
 	font-weight: 600 !important;
 }
 
+
 .current-menu-item a:hover, .page_item a:hover, #menu-item-search a:hover {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
 	color: #49beed !important;
 }
+
 
 .current-menu-item a:link, .page_item a:link, #menu-item-search a:link {
 	text-decoration: none !important;
@@ -82,12 +82,14 @@ li.page_item {
 	color: #666 !important;
 }
 
+
 .current-menu-item a:visited, .page_item a:visited, #menu-item-search a:visited {
 	text-decoration: none !important;
 	font-size: 16px !important;
 	font-weight: 600 !important;
 	color: #666 !important;
 }
+
 
 .current-menu-item a:active, .page_item a:active, #menu-item-search a:active {
 	text-decoration: none !important;
@@ -102,10 +104,9 @@ li.page_item {
 }
 
 
-
-.entry-title, .main-title, a.main-title, a.entry-title {
+.entry-title, .main-title, a.main-title, a.entry-title, h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
 	padding: 50px 0 50px 0 !important;
-	margin: 0px !important;
+	margin: 100px !important;
 	text-transform: uppercase !important;
 	color: #49beed !important;
 	line-height: 28px !important;
@@ -113,23 +114,6 @@ li.page_item {
 	display: inline-block !important;
 	font-size: 24px !important;
 	font-weight: 800 !important;
-}
-
-
-h1.main-title, h1.main-title, h1.main-title a, h1.entry-title a {
-	padding: 50px 0 50px 0 !important;
-	margin: 0px !important;
-	text-transform: uppercase !important;
-	color: #49beed !important;
-	line-height: 28px !important;
-	position: relative !important;
-	display: inline-block !important;
-	font-size: 24px !important;
-	font-weight: 800 !important;
-}
-
-
-h1.main-title a, h1.entry-title a {
 	text-decoration: none !important;
 }
 
