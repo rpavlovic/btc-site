@@ -22,9 +22,15 @@
 
                 <main id="two-columns" class='template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
-                    <div id="content" class="entry-content-wrapper entry-content clearfix">
-                        <?php the_title('<h1>','</h1>'); ?>
-                        <p><?php the_content(); ?></p>
+                    <div id="content" class="content-holder entry-content-wrapper entry-content clearfix">
+
+                        <div class="intro-text">
+
+                            <?php the_title('<h2>','</h2>'); ?>
+
+                            <?php the_content(); ?>
+
+                        </div>
 
                     <?php
                     //display the actual post content
@@ -125,7 +131,6 @@
                     }
                     else {
                         the_post();
-                        the_content();
 
                     }
 
@@ -133,31 +138,11 @@
 
 
                     </div>
-<?php
-$parent = get_post( $post->post_parent );
 
-$section_pages = get_pages(array(
-    'parent' => $parent->ID,
-    'sort_column' => 'post_date',
-    'child_of' => $parent->ID,
-    'sort_order' => 'ASC',
-));
-
-//var_dump($section_pages);
-?>
-                    <aside id="sidebar">
-                        <a href="#" class="opener"><span>Menu</span></a>
-                        <nav class="aside-nav">
-                            <div class="drop">
-                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>"><?= $parent->post_title; ?></a>
-                                <ul>
-                                <?php foreach ( $section_pages as $sub_section ): ?>
-                                    <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= $sub_section->post_title; ?></a></li>
-                                <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </nav>
-                    </aside>
+                    <?
+                        // in functions-custom.php
+                        btc_leftnav($post);
+                    ?>
 
                 <!--end content-->
                 </main>
