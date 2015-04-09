@@ -102,7 +102,7 @@ li.page_item {
 }
 
 
-
+/*
 .entry-title, .main-title, a.main-title, a.entry-title {
 	padding: 50px 0 50px 0 !important;
 	margin: 0px !important;
@@ -132,7 +132,7 @@ h1.main-title, h1.entry-title {
 h1.main-title a, h1.entry-title a {
 	text-decoration: none !important;
 }
-
+ */
 
 .page-titleys, a.page-titleys {
 	text-decoration: none !important;
