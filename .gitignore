@@ -18,3 +18,4 @@ wp-content/plugins/*
 # Ignore everything in the "themes" directory, except the themes you specify
 wp-content/themes/*
 !wp-content/themes/brooklyntri/
+wp-content/themes/brooklyntri/.DS_Store

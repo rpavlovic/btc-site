@@ -91,15 +91,15 @@
 						<li><a href="#">JOIN BTC</a></li>
 						<li><a href="#">RESOURCES</a></li>
 					</ul>
-					<span class="copyright">&copy; 2015 <a href="#">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
+					<span class="copyright">&copy; <?= date("Y") ?> <a href="#">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
 				</div>
 			</div>
 		</footer>
 		<a class="accessibility" href="#wrapper">Back to top</a>
 	</div>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-	<script type="text/javascript" src="js/jquery.main.js"></script>
+	<script type="text/javascript">window.jQuery || document.write('<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.main.js"></script>
 
 <?php wp_footer(); ?>
 
