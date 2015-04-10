@@ -75,9 +75,7 @@
 <?php
 $tabindex = 7;
 $top_level = get_pages(array(
-	'sort_order' => 'ASC',
-	'sort_column' => 'post_date',
-	'hierarchical' => 0
+	'parent=0',
 ));
 foreach ( $pages as $page ) :
 ?>
