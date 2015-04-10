@@ -89,10 +89,10 @@ function get_sponsor_logos() {
 						<ul class="clients-logo">
 <?
 	foreach ( $all_sponsors as $post ): setup_postdata( $post );
-		$feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID) );
+		$feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
 ?>
-							<li><a href="<? the_permalink(); ?>"><?= $feat_image ?></a></li>
+							<li><a href="<?= WP_SITEURL ?>/resources/member-discounts-members-only/"><img src="<?= $feat_image ?>" alt="<?= esc_html( $post->post_title ) ?>"></a></li>
 <?
 
 	endforeach;
