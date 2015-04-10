@@ -81,8 +81,6 @@ function get_sponsor_logos() {
 	$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	$all_sponsors = array_merge($premium, $sponsors);
 
-var_dump($all_sponsors);
-
 	if (count($all_sponsors) > 1) {
 ?>
 				<section class="clients-area">
@@ -91,12 +89,12 @@ var_dump($all_sponsors);
 						<ul class="clients-logo">
 <?
 	foreach ( $all_sponsors as $post ): setup_postdata( $post );
-		if ( has_post_thumbnail() ) {
+		//if ( has_post_thumbnail() ) {
 ?>
 							<li><a href="<? the_permalink(); ?>"><? the_post_thumbnail(); ?></a></li>
 <?
 			
-		}
+		//}
 	endforeach;
 	wp_reset_postdata();
 ?>
