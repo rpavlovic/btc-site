@@ -112,7 +112,7 @@ if( count( $sponsors ) > 1 ):
 <? endif; // if sponsors ?>
 
 <?php
-                    elseif:
+                    else:
 
                         the_post();
 
