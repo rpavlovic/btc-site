@@ -40,7 +40,7 @@
 						<nav class="menu">
 							<ul>
 								<li class="contact">
-									<a href="#" tabindex="4">LOGIN</a>
+									<a href="<?php echo esc_url( get_template_directory_uri() ); ?>/wp-login.php" tabindex="4">LOGIN</a>
 									<form action="#" class="login-form">
 										<fieldset>
 											<legend class="hidden">login form</legend>
@@ -73,14 +73,15 @@
 							<div class="drop">
 								<ul>
 <?php
-
-$top_level = get_pages( 'parent=0' );
-print_r($top_level);
+$tabindex = 7;
+$top_level = get_pages( 'parent=0', 'sort_order' => 'ASC', 'sort_column' => 'post_date', 'hierarchical' => 0 );
+foreach ( $pages as $page ) :
 ?>
-									<li class="active"><a href="#" tabindex="7">Home</a></li>
-									<li><a href="#" tabindex="8">ABOUT</a></li>
-									<li><a href="#" tabindex="9">JOIN BTC</a></li>
-									<li><a href="#" tabindex="10">RESOURCES</a></li>
+									<li<?= $page->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= get_page_link( $page->ID ) ?>" tabindex="<?= $tabindex ?>"><?= $page->post_title ?></a></li>
+<?php
+	$tabindex++;
+	endforeach;
+?>
 								</ul>
 							</div>
 						</nav>
@@ -88,3 +89,4 @@ print_r($top_level);
 				</div>
 			</header>
 			<main id="main" role="main">
+
