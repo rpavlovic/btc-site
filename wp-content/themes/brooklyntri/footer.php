@@ -22,7 +22,7 @@
 				<div class="col-holder">
 					<div class="col">
 						<h2>CONTACT BTC</h2>
-						<p>Want to contact BTC with questions? <a href="#">Please click here.</a></p>
+						<p>Want to contact BTC with questions? <a href="<?= WP_SITEURL . '/contact' ?>">Please click here.</a></p>
 						<h2>FOLLOW BTC</h2>
 						<ul class="social">
 							<li>
@@ -91,7 +91,7 @@
 						<li><a href="#">JOIN BTC</a></li>
 						<li><a href="#">RESOURCES</a></li>
 					</ul>
-					<span class="copyright">&copy; <?= date("Y") ?> <a href="#">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
+					<span class="copyright">&copy; <?= date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
 				</div>
 			</div>
 		</footer>

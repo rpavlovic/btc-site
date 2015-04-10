@@ -74,10 +74,10 @@
 								<ul>
 <?php
 $tabindex = 7;
-$top_level = get_pages(array(
-	'parent=0',
-));
-foreach ( $pages as $page ) :
+
+$menu_items = get_btc_parent_menu_items( get_btc_main_menu() );
+
+foreach ( $menu_items as $page ) :
 ?>
 									<li<?= $page->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= get_page_link( $page->ID ) ?>" tabindex="<?= $tabindex ?>"><?= $page->post_title ?></a></li>
 <?php

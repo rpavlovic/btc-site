@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Convert new lines to paragraph tag
  *
@@ -103,4 +102,72 @@ function btc_get_sponsor_logos() {
 <?
 
 	} // if sponsors
+}
+
+function register_btc_menu() {
+  register_nav_menu('header-menu',__( 'Main Navbar' ));
+
+}
+add_action( 'init', 'register_btc_menu' );
+
+/**
+ * Return a menu based on slug name.
+ *
+ * @return menu object.
+ */
+function get_btc_main_menu() {
+    $menu_name = 'header-menu';
+
+    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+		$menu_items = wp_get_nav_menu_items($menu->term_id, array('post_status' => 'any', 'output' => ARRAY_A,));
+
+		return $menu_items;
+	}
+	return null;
+}
+
+/**
+ * Return all parent menu items in menu
+ *
+ * @param object $menu Required. The WP menu to traverse.
+ * @return object $items The top level menu items in menu.
+ */
+function get_btc_parent_menu_items($menu) {
+	$items = array();
+	foreach ( $menu as $key=>$item ) {
+		if ( $item->menu_item_parent == 0 ) {
+			$items[] = $item;
+		}
+	}
+	return $items;
+}
+
+/**
+ * Return all child menu items of menu item
+ *
+ * @param object $menu Required. The WP menu to traverse.
+ * @param int $id Required. The id of the parent menu whose children you want to kidnap.
+ * @return object $items The all child menu items belonging to parent menu item.
+ */
+function get_btc_child_menu_items($menu, $id) {
+	$items = array();
+	foreach ( $menu as $key=>$item ) {
+		if ( $item->menu_item_parent == $id ) {
+			$items[] = $item;
+		}
+	}
+	return $items;
+}
+
+/**
+ * Returns a CSS friendly string.
+ *
+ * @param string $str Required. The string to escape.
+ * @return string $str The css friendly string.
+ */
+function esc_css( $str ) {
+	$str = strtolower( str_replace( ' ', '-', $str ) );
+	$str = strtolower( str_replace( '&', '', $str ) );
+	return $str;
 }
