@@ -89,6 +89,7 @@ function get_sponsor_logos() {
 						<ul class="clients-logo">
 <?
 	foreach ( $all_sponsors as $post ): setup_postdata( $post );
+	var_dump($post);
 		//if ( has_post_thumbnail() ) {
 ?>
 							<li><a href="<? the_permalink(); ?>"><? the_post_thumbnail(); ?></a></li>
