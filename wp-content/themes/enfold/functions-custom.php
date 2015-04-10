@@ -103,5 +103,5 @@ function get_sponsor_logos() {
 				</section>
 <?
 
-	
+	} // if sponsors
 }
