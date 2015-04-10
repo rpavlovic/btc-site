@@ -66,12 +66,17 @@
 				<div class="header-holder">
 					<div class="holder">
 						<div class="logo" itemprop="name">
-							<a tabindex="6" itemprop="url" href="#"><img src="images/logo.png" alt="est. 2004 brooklyn tri club"></a>
+							<a tabindex="6" itemprop="url" href="#"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt="est. 2004 Brooklyn Tri Club"></a>
 						</div>
 						<nav id="nav">
 							<a href="#" class="opener"><span>Menu</span></a>
 							<div class="drop">
 								<ul>
+<?php
+
+$top_level = get_pages( 'parent=0' );
+print_r($top_level);
+?>
 									<li class="active"><a href="#" tabindex="7">Home</a></li>
 									<li><a href="#" tabindex="8">ABOUT</a></li>
 									<li><a href="#" tabindex="9">JOIN BTC</a></li>
