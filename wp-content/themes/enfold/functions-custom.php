@@ -76,7 +76,7 @@ function btc_relative_links($str) {
 	return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
 }
 
-function get_sponsor_logos() {
+function btc_get_sponsor_logos() {
 	$premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	$all_sponsors = array_merge($premium, $sponsors);

@@ -142,6 +142,8 @@
                     <?
                         // in functions-custom.php
                         btc_leftnav($post);
+                        btc_get_sponsor_logos();
+
                     ?>
 
                 <!--end content-->

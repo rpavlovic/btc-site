@@ -34,15 +34,18 @@
 
                     <?php
 
-                    //display the actual post content
-                    the_post();
+                        //display the actual post content
+                        the_post();
 
                     ?>
 
                     </div>
-                    <?
+
+                    <?php
+
                         // in functions-custom.php
                         btc_leftnav($post);
+                        btc_get_sponsor_logos();
                     ?>
 
 				<!--end content-->

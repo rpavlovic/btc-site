@@ -32,8 +32,9 @@
 
                     ?>
 
-
                     </div>
+
+                    <?php btc_get_sponsor_logos(); ?>
 
                 <!--end content-->
                 </main>
