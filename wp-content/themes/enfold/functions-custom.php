@@ -89,13 +89,12 @@ function get_sponsor_logos() {
 						<ul class="clients-logo">
 <?
 	foreach ( $all_sponsors as $post ): setup_postdata( $post );
-	var_dump($post);
-		//if ( has_post_thumbnail() ) {
+		$feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID) );
+
 ?>
-							<li><a href="<? the_permalink(); ?>"><? the_post_thumbnail(); ?></a></li>
+							<li><a href="<? the_permalink(); ?>"><?= $feat_image ?></a></li>
 <?
-			
-		//}
+
 	endforeach;
 	wp_reset_postdata();
 ?>
