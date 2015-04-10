@@ -2000,7 +2000,12 @@ function wp_customize_url( $stylesheet = null ) {
 function wp_customize_support_script() {
 	$admin_origin = parse_url( admin_url() );
 	$home_origin  = parse_url( home_url() );
-	$cross_domain = ( strtolower( $admin_origin[ 'host' ] ) != strtolower( $home_origin[ 'host' ] ) );
+	if (isset($admin_origin[ 'host' ])) {
+		$cross_domain = ( strtolower( $admin_origin[ 'host' ] ) != strtolower( $home_origin[ 'host' ] ) );
+	}
+	else {
+		$cross_domain = ( strtolower( $_SERVER[ 'SERVER_NAME' ] ) != strtolower( $_SERVER[ 'SERVER_NAME' ] ) );
+	}
 
 	?>
 	<script type="text/javascript">
