@@ -116,7 +116,7 @@ add_action( 'init', 'register_btc_menu' );
  * @return menu object.
  */
 function get_btc_main_menu() {
-    $menu_name = 'header-menu';
+    $menu_name = 'primary-menu';
 
     if ( ( $locations = get_nav_menu_locations( $menu_name ) ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
