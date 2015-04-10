@@ -21,7 +21,7 @@
 
         <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 
-            <div id="main" class='container'>
+            <div class='container'>
 
                 <main role="main" class="template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>">
 
