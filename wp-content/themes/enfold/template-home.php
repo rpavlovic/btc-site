@@ -143,8 +143,9 @@
 
                     ?>
 
-
                     </div>
+
+                    <?php get_sponsor_logos(); ?>
 
                 <!--end content-->
                 </main>

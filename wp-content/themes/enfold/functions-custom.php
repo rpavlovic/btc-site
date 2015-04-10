@@ -75,3 +75,33 @@ function btc_leftnav($post=null) {
 function btc_relative_links($str) {
 	return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
 }
+
+function get_sponsor_logos() {
+	$premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+	$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+	$all_sponsors = $premium + $sponsors;
+
+	if (count($all_sponsors) > 1) {
+?>
+				<section class="clients-area">
+					<div class="holder">
+					<h1>our sponsors</h1>
+						<ul class="clients-logo">
+<?
+	foreach ( $all_sponsors as $post ): setup_postdata( $post );
+		if ( has_post_thumbnail() ) {
+?>
+							<li><a href="<? the_permalink(); ?>"><? the_post_thumbnail(); ?></a></li>
+<?
+			
+		}
+	endforeach;
+	wp_reset_postdata();
+?>
+						</ul>
+					</div>
+				</section>
+<?
+
+	
+}
