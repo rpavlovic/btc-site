@@ -79,7 +79,7 @@ function btc_relative_links($str) {
 function get_sponsor_logos() {
 	$premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
-	$all_sponsors = $premium + $sponsors;
+	$all_sponsors = array_merge($premium, $sponsors);
 
 var_dump($all_sponsors);
 
