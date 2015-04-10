@@ -40,18 +40,18 @@
 						<nav class="menu">
 							<ul>
 								<li class="contact">
-									<a href="<?php echo esc_url( get_template_directory_uri() ); ?>/wp-login.php" tabindex="4">LOGIN</a>
-									<form action="#" class="login-form">
+									<a href="#" tabindex="4">LOGIN</a>
+									<form action="<?php echo esc_url( get_template_directory_uri() ); ?>/wp-login.php" class="login-form">
 										<fieldset>
 											<legend class="hidden">login form</legend>
 											<div class="col">
 												<div class="row">
 													<label for="name03">USERNAME <span>*</span></label>
-													<input type="text" id="name03">
+													<input type="text" id="name03" name="username">
 												</div>
 												<div class="row">
 													<label for="password03">PASSWORD <span>*</span></label>
-													<input type="password" id="password03">
+													<input type="password" id="password03" name="username">
 												</div>
 											</div>
 											<input class="button" type="submit" value="LOGIN">
@@ -66,7 +66,7 @@
 				<div class="header-holder">
 					<div class="holder">
 						<div class="logo" itemprop="name">
-							<a tabindex="6" itemprop="url" href="#"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt="est. 2004 Brooklyn Tri Club"></a>
+							<a tabindex="6" itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt="est. 2004 Brooklyn Tri Club"></a>
 						</div>
 						<nav id="nav">
 							<a href="#" class="opener"><span>Menu</span></a>
