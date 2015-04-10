@@ -120,11 +120,36 @@ function get_btc_main_menu() {
 
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-		$menu_items = wp_get_nav_menu_items($menu->taxonomy_id, array('post_status' => 'any', 'output' => ARRAY_A,));
+		$menu_items = wp_get_nav_menu_items($menu->term_id, array('post_status' => 'any', 'output' => ARRAY_A,));
 
 		return $menu_items;
 	}
 	return null;
+}
+
+function test_menu() {
+	$locations = get_registered_nav_menus();
+	$menus = wp_get_nav_menus();
+	$menu_locations = get_nav_menu_locations();
+
+	$location_id = 'header-menu';
+	if (isset($menu_locations[ $location_id ])) {
+		foreach ($menus as $menu) {
+			// If the ID of this menu is the ID associated with the location we're searching for
+			if ($menu->term_id == $menu_locations[ $location_id ]) {
+				// This is the correct menu
+
+				// Get the items for this menu
+				$menu_items = wp_get_nav_menu_items($menu);
+
+				// Now do something with them here.
+				//
+				//
+				break;
+			}
+		}
+	}
+	return $menu_items;
 }
 
 /**

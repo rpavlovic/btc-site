@@ -76,7 +76,7 @@
 $tabindex = 7;
 
 $menu_items = get_btc_parent_menu_items( get_btc_main_menu() );
-
+$menu_items = test_menu();
 foreach ( $menu_items as $page ) :
 ?>
 									<li<?= $page->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= get_page_link( $page->ID ) ?>" tabindex="<?= $tabindex ?>"><?= $page->post_title ?></a></li>
