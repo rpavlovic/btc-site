@@ -23,7 +23,9 @@
                 <main class='contact-form-area template-archives content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
                     <div class="entry-content-wrapper entry-content clearfix">
+
                         <?php the_title('<h1>','</h1>'); ?>
+
                         <p><?php the_content(); ?></p>
 
                     <?php

@@ -71,7 +71,6 @@ function btc_leftnav($post=null) {
 <?
 }
 
-
 function btc_relative_links($str) {
 	return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
 }
@@ -80,7 +79,7 @@ function btc_get_sponsor_logos() {
 	$premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	$all_sponsors = array_merge($premium, $sponsors);
-
+var_dump($all_sponsors);
 	if (count($all_sponsors) > 1) {
 ?>
 				<section class="clients-area">
@@ -92,7 +91,9 @@ function btc_get_sponsor_logos() {
 		$feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
 ?>
+
 							<li><a href="<?= WP_SITEURL ?>/resources/member-discounts-members-only/"><img src="<?= $feat_image ?>" alt="<?= esc_html( $post->post_title ) ?>"></a></li>
+
 <?
 
 	endforeach;
