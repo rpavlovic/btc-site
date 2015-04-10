@@ -35,7 +35,8 @@
 <?php
 //display the actual post content
 
-if (get_the_ID() == 47) {
+if (get_the_ID() == 47):
+
     $premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );
     if( count( $premium ) > 1 ):
 ?>
@@ -65,7 +66,7 @@ if (get_the_ID() == 47) {
                                         </div>
                                     </div>
 <?php
-    foreach;
+    endforeach;
     wp_reset_postdata();
 ?>
 
@@ -73,7 +74,7 @@ if (get_the_ID() == 47) {
 
                             </div><!-- .info-area -->
 <?
-endif;
+endif; // if premium sponsors
 
 $sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 if( count( $sponsors ) > 1 ):
@@ -103,19 +104,19 @@ if( count( $sponsors ) > 1 ):
                                         </div>
                                     </div>
 <?php
-    foreach;
+    endforeach;
     wp_reset_postdata();
 ?>
                                 </div>
                             </div>
-<? endif; ?>
+<? endif; // if sponsors ?>
 
 <?php
-                    }
-                    else {
+                    elseif:
+
                         the_post();
 
-                    }
+                    endif;
 
                     ?>
 
