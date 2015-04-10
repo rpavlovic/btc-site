@@ -74,11 +74,11 @@
 								<ul>
 <?php
 $tabindex = 7;
-$top_level = get_pages(
+$top_level = get_pages(array(
 	'sort_order' => 'ASC',
 	'sort_column' => 'post_date',
 	'hierarchical' => 0
-);
+));
 foreach ( $pages as $page ) :
 ?>
 									<li<?= $page->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= get_page_link( $page->ID ) ?>" tabindex="<?= $tabindex ?>"><?= $page->post_title ?></a></li>
