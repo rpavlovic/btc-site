@@ -7,8 +7,6 @@
  * @since Brooklyn Tri 1.0
  */
 
-$infoboxes = get_fields( get_the_ID() );
-
 ?>
 
                         <div class="intro-text">
