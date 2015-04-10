@@ -61,7 +61,7 @@ if (get_the_ID() == 47):
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= esc_html( $content['discounts'] ) ?>
+                                                <?= $content['discounts'] ?>
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@ if( count( $sponsors ) > 1 ):
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= esc_html( $content['discounts'] ) ?>
+                                                <?= $content['discounts'] ?>
                                             </div>
                                         </div>
                                     </div>
