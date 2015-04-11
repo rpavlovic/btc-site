@@ -74,13 +74,11 @@
 								<ul>
 <?php
 $tabindex = 7;
-
-//$menu_items = get_btc_parent_menu_items( get_btc_main_menu() );
-$menu_items = get_pages('parent=0');
-
+$menu_items = get_pages( 'parent' => '0', 'sort_order' => 'DESC', 'sort_column' => 'post_date' );
 foreach ( $menu_items as $page ) :
+	$link_text = get_link_text( $page );
 ?>
-									<li<?= $page->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= get_page_link( $page->ID ) ?>" tabindex="<?= $tabindex ?>"><?= $page->post_title ?></a></li>
+									<li<?= $page->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= get_page_link( $page->ID ) ?>" tabindex="<?= $tabindex ?>"><?= $link_text ?></a></li>
 <?php
 	$tabindex++;
 	endforeach;

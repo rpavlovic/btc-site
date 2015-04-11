@@ -27,6 +27,26 @@ function nl2p($string, $line_breaks = false, $xml = true) {
 	return $string;
 }
 
+function btc_relative_links($str) {
+	return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
+}
+
+function get_link_text( $post=null ) {
+	if( is_null( $post ) ) {
+		$post = get_post( get_the_ID() );
+	}
+
+	$link_text = $post->post_title;
+
+	// overwrite page title with custom link text
+	$custom = get_fields( $post->ID );
+	if ( !empty( $custom['link_text'] ) ) {
+		$link_text = $custom['link_text'];
+	}
+
+	return $link_text;
+}
+
 function btc_leftnav($post=null) {
 
 	if(is_null($post)) {
@@ -51,13 +71,7 @@ function btc_leftnav($post=null) {
                                 <ul>
 <?
 	foreach ( $section_pages as $sub_section ):
-		$link_text = $sub_section->post_title;
-
-		// overwrite page title with custom link text
-		$fields = get_fields( $sub_section->ID );
-		if ( !empty( $fields['link_text'] ) ) {
-			$link_text = $fields['link_text'];
-		}
+		$link_text = get_link_text( $sub_section );
 ?>
                                     <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
 <?
@@ -68,10 +82,6 @@ function btc_leftnav($post=null) {
                         </nav>
                     </aside>
 <?
-}
-
-function btc_relative_links($str) {
-	return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
 }
 
 function btc_get_sponsor_logos() {
