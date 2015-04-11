@@ -19,7 +19,7 @@
 
 <?php
 //display the actual post content
-
+the_ID();
 if (get_the_ID() == 47):
 
     $premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );

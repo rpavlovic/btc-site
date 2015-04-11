@@ -86,10 +86,15 @@
 			<div class="footer-frame">
 				<div class="holder">
 					<ul class="add-nav">
-						<li><a href="#">HOME</a></li>
-						<li><a href="#">ABOUT</a></li>
-						<li><a href="#">JOIN BTC</a></li>
-						<li><a href="#">RESOURCES</a></li>
+<?php
+$menu_items = get_pages( array( 'parent' => '0', 'sort_column' => 'menu_order' ) );
+foreach ( $menu_items as $page ) :
+	$link_text = get_link_text( $page );
+?>
+						<li><a href="<?= get_page_link( $page->ID ) ?>"><?= $link_text ?></a></li>
+<?php
+	endforeach;
+?>
 					</ul>
 					<span class="copyright">&copy; <?= date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
 				</div>
