@@ -181,3 +181,130 @@ function esc_css( $str ) {
 	$str = strtolower( str_replace( '&', '', $str ) );
 	return $str;
 }
+
+/**
+ * Class to cache and retrieve cached data
+ *
+ * @since Brooklyn Tri 1.0
+ *
+ */
+class Cacher {
+	private $expiration = 360;
+
+	/**
+	 * Retrieve cache ID
+	 *
+	 * @since Brooklyn Tri 1.0
+	 *
+	 * @param int $id Optional. The (unique) ID of object to cache.
+	 * @return int The cache ID.
+	 */
+	public function get_cache_id($id=null) {
+		if(is_null($id) || empty($id)) {
+			$id = get_the_ID();
+		}
+		$id = esc_attribute( str_replace(array(':','/'),'-',$id) );
+		$id = substr( $id, 0, 45 );
+
+		return $id;
+	}
+
+	/**
+	 * Retrieve cached data
+	 *
+	 * @since Brooklyn Tri 1.0
+	 *
+	 * @param int $id Optional. The (unique) ID of object to cache.
+	 * @return mixed The cached data (string) or false (boolean).
+	 */
+	public function get_cache($id=null) {
+		$id = $this->get_cache_id($id);
+		return get_transient( $id );
+	}
+
+	/**
+	 * Save cached data
+	 *
+	 * @since Brooklyn Tri 1.0
+	 *
+	 * @param string $value Data to cache.
+	 * @param int $id Optional. The (unique) ID of object to cache.
+	 */
+	public function set_cache($value, $id=null) {
+		$id = $this->get_cache_id($id);
+		set_transient( $id, $value, $this->expiration );
+	}
+}
+
+/**
+ * Get number of Facebook shares
+ *
+ * @since Brooklyn Tri 1.0
+ *
+ * @param int $id ID of URL to retrieve data for.
+ * @return int The number of Facebook shares.
+ */
+function get_facebook_shares($id='') {
+	if(empty($id)) {
+		$id = get_the_ID();
+	}
+	$url = get_permalink($id); 
+
+	$fb_share_count = 0;
+	$cache = new Cacher();
+	$is_cached = $cache->get_cache('facebook' . $id);
+
+	if($is_cached === false) {
+		//$fb_url = 'https://graph.facebook.com/fql?q=SELECT url, normalized_url, share_count, like_count, comment_count, total_count,commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url=\'' . esc_url_raw(get_permalink()) . '\'';
+		$fb_url = 'https://api.facebook.com/method/links.getStats?urls=' . esc_url_raw( $url ) . '&format=json';
+		$fb_response = wp_remote_retrieve_body(wp_remote_get($fb_url, array('sslverify'=>false)));
+		if(!is_wp_error($fb_response)) {
+			$fb_response = json_decode($fb_response);
+			$fb_share_count = $fb_response[0]->total_count;
+			$cache->set_cache($fb_share_count, 'facebook' . $id);
+		}
+	}
+	else {
+		$fb_share_count = $is_cached;
+	}
+	return $fb_share_count;
+}
+
+
+/**
+ * Get number of Twitter shares
+ *
+ * @since Brooklyn Tri 1.0
+ *
+ * @param int $id ID of URL to retrieve data for.
+ * @return int The number of Twitter shares.
+ */
+function get_twitter_shares($id='') {
+	if(empty($id)) {
+		$id = get_the_ID();
+	}
+	$url = get_permalink($id); 
+
+	$tw_share_count = 0;
+	$cache = new Cacher();
+	$is_cached = $cache->get_cache('twitter' . $id);
+
+	if($is_cached === false) {
+		$tw_url = 'http://urls.api.twitter.com/1/urls/count.json?url=' . esc_url_raw( $url ) . '&callback=twttr.receiveCount';
+		$tw_response = wp_remote_retrieve_body(wp_remote_get($tw_url, array('sslverify'=>false)));
+
+		// HACK!
+		$tw_response = str_replace('/**/twttr.receiveCount(', '', $tw_response);
+		$tw_response = str_replace(');', '', $tw_response);
+		if(!is_wp_error($tw_response)) {
+			$tw_response = json_decode($tw_response);
+			$tw_share_count = $tw_response->count;
+			$cache->set_cache($tw_share_count, 'twitter' . $id);
+		}
+	}
+	else {
+		$tw_share_count = $is_cached;
+	}
+	return $tw_share_count;
+}
+
