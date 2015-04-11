@@ -74,7 +74,7 @@
 								<ul>
 <?php
 $tabindex = 7;
-$menu_items = get_pages( 'parent' => '0', 'sort_order' => 'DESC', 'sort_column' => 'post_date' );
+$menu_items = get_pages( array( 'parent' => '0', 'sort_order' => 'DESC', 'sort_column' => 'post_date' ) );
 foreach ( $menu_items as $page ) :
 	$link_text = get_link_text( $page );
 ?>
