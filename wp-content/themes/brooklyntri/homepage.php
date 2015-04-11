@@ -12,6 +12,8 @@
  */
 
 get_header(); ?>
+<?php do_action('slideshow_deploy', '49'); ?>
+
 
 				<div class="cycle-gallery">
 					<div class="mask">
