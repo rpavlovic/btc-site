@@ -19,7 +19,7 @@
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
 	<script>(function(){document.documentElement.className='js'})();</script>
-	<?php wp_head(); ?>
+	<?php wp_title(); ?>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
 	<link media="all" rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/all.css">
 </head>
