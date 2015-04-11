@@ -75,7 +75,8 @@
 <?php
 $tabindex = 7;
 
-$menu_items = get_btc_parent_menu_items( get_btc_main_menu() );
+//$menu_items = get_btc_parent_menu_items( get_btc_main_menu() );
+$menu_items = get_pages('parent=0');
 
 foreach ( $menu_items as $page ) :
 ?>
