@@ -32,8 +32,8 @@ if ( !empty( $slides ) ):
 											<div class="logo">
 												<a href="#"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
 											</div>
-											<h1>NEED A PLACE TO SWIM?</h1>
-											<span><a href="#">Click here to check out our list of Brooklyn pools </a></span>
+											<h1><?= esc_html( $slides[$i]['title'] ) ?></h1>
+											<span><a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= esc_html( $slides[$i]['description'] ) ?></a></span>
 										</div>
 									</div>
 								</div>
