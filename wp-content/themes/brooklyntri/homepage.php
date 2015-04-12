@@ -11,9 +11,11 @@
  * @since Brooklyn Tri 1.0
  */
 
-get_header(); ?>
-<?php do_action('slideshow_deploy', '49'); ?>
+get_header();
 
+get_slideshow();
+
+?>
 
 				<div class="cycle-gallery">
 					<div class="mask">

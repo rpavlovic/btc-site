@@ -308,3 +308,10 @@ function get_twitter_shares($id='') {
 	return $tw_share_count;
 }
 
+
+function get_slideshow() {
+	global $wpdb;
+	$sql = 'select * from ' . $wpdb->postmeta . ' where meta_key = \'slides\'';
+	$slides =  $wpdb->get_results($sql, OBJECT);
+	var_dump(unserialize($slides));
+}
