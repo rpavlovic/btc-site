@@ -311,7 +311,7 @@ function get_twitter_shares($id='') {
 
 function get_slideshow() {
 	global $wpdb;
-	$sql = 'select * from ' . $wpdb->postmeta . ' where meta_key = \'slides\'';
+	$sql = 'select * from ' . $wpdb->postmeta . ' where meta_key = \'slides\' limit 1';
 	$slides =  $wpdb->get_results($sql, OBJECT);
-	var_dump(unserialize($slides));
+	var_dump(unserialize($slides->meta_value));
 }
