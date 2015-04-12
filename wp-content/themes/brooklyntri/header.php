@@ -20,7 +20,10 @@
 	<![endif]-->
 	<script>(function(){document.documentElement.className='js'})();</script>
 	<?php
-	/* wp_head(); */
+	/*
+		TODO: output page title, or clean up wp_head()
+		wp_head();
+	*/
 	?>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
 	<link media="all" rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/all.css">
@@ -41,6 +44,7 @@
 						</ul>
 						<nav class="menu">
 							<ul>
+<?php if ( !is_user_logged_in() ): ?>
 								<li class="contact">
 									<a href="#" tabindex="4">LOGIN</a>
 									<form action="<?php echo esc_url( get_template_directory_uri() ); ?>/wp-login.php" class="login-form">
@@ -49,18 +53,19 @@
 											<div class="col">
 												<div class="row">
 													<label for="name03">USERNAME <span>*</span></label>
-													<input type="text" id="name03" name="username">
+													<input type="text" id="name03" name="log">
 												</div>
 												<div class="row">
 													<label for="password03">PASSWORD <span>*</span></label>
-													<input type="password" id="password03" name="username">
+													<input type="password" id="password03" name="pwd">
 												</div>
 											</div>
 											<input class="button" type="submit" value="LOGIN">
 										</fieldset>
 									</form>
 								</li>
-								<li><a href="#" tabindex="5">CONTACT</a></li>
+<?php endif; ?>
+								<li><a href="<?= WP_SITEURL ?>/contact" tabindex="5">CONTACT</a></li>
 							</ul>
 						</nav>
 					</div>
