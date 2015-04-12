@@ -16,7 +16,7 @@ get_header();
 $slides = get_slideshow();
 
 if ( !empty( $slides ) ):
-
+	print_r($slides);
 ?>
 				<div class="cycle-gallery">
 					<div class="mask">
