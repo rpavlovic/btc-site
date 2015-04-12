@@ -314,7 +314,8 @@ function get_slideshow() {
 	$sql = 'select * from ' . $wpdb->postmeta . ' where meta_key = \'slides\' limit 1';
 	$slides =  $wpdb->get_results($sql, OBJECT);
 	if($slides) {
-		var_dump(unserialize($slides->meta_value));
+		//var_dump(unserialize($slides->meta_value));
+		var_dump($slides);
 	}
 	else {
 		var_dump($sql);
