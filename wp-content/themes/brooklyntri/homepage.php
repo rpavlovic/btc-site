@@ -16,7 +16,6 @@ get_header();
 $slides = get_slideshow();
 
 if ( !empty( $slides ) ):
-	print_r($slides);
 ?>
 				<div class="cycle-gallery">
 					<div class="mask">
@@ -40,37 +39,6 @@ if ( !empty( $slides ) ):
 							</section>
 <?php endfor; ?>
 
-<!--
-							<section class="slide">
-								<div class="slide-holder">
-									<img src="images/img10.jpg" alt="image description">
-									<div class="caption">
-										<div class="caption-holder">
-											<div class="logo">
-												<a href="#"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
-											</div>
-											<h1>RACE WITH BTC</h1>
-											<span>Members enjoy discounts and more. <a href="#">Click here to learn more.</a></span>
-										</div>
-									</div>
-								</div>
-							</section>
-
-							<section class="slide">
-								<div class="slide-holder">
-									<img src="images/img11.jpg" alt="image description">
-									<div class="caption">
-										<div class="caption-holder">
-											<div class="logo">
-												<a href="#"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
-											</div>
-											<h1>26.2 IS BTC‘S IDEA OF FUN.</h1>
-											<span>We like to think so. <a href="#">Click here to find out what makes BTC tick.</a></span>
-										</div>
-									</div>
-								</div>
-							</section>
--->
 						</div>
 					</div>
 					<a class="btn-prev" href="#"><i class="icon-left-open-big">&nbsp;</i></a>
