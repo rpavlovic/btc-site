@@ -13,13 +13,17 @@
 
 get_header();
 
-get_slideshow();
+$slides = get_slideshow();
+
+if ( !empty( $slides ) ):
 
 ?>
-
 				<div class="cycle-gallery">
 					<div class="mask">
 						<div class="slideset">
+
+<? for ($i=0; $i < count($slides); $i++): ?>
+
 							<section class="slide right">
 								<div class="slide-holder">
 									<img src="images/img09.jpg" alt="image description">
@@ -34,6 +38,9 @@ get_slideshow();
 									</div>
 								</div>
 							</section>
+<?php endfor; ?>
+
+<!--
 							<section class="slide">
 								<div class="slide-holder">
 									<img src="images/img10.jpg" alt="image description">
@@ -48,6 +55,7 @@ get_slideshow();
 									</div>
 								</div>
 							</section>
+
 							<section class="slide">
 								<div class="slide-holder">
 									<img src="images/img11.jpg" alt="image description">
@@ -62,6 +70,7 @@ get_slideshow();
 									</div>
 								</div>
 							</section>
+-->
 						</div>
 					</div>
 					<a class="btn-prev" href="#"><i class="icon-left-open-big">&nbsp;</i></a>
@@ -70,6 +79,9 @@ get_slideshow();
 						<!-- pagination generated here -->
 					</div>
 				</div>
+		<?
+			endif;
+		?>
 
 		<?php
 		// Start the loop.
