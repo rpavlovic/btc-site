@@ -22,15 +22,15 @@ if ( !empty( $slides ) ):
 					<div class="mask">
 						<div class="slideset">
 
-<? for ($i=0; $i < count($slides); $i++): ?>
+<? for ($i=1; $i <= count($slides); $i++): ?>
 
 							<section class="slide right">
 								<div class="slide-holder">
-									<img src="images/img09.jpg" alt="image description">
+									<?= wp_get_attachment_image( $slides[$i]['postId'], 'full' ); ?>
 									<div class="caption">
 										<div class="caption-holder">
 											<div class="logo">
-												<a href="#"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
+												<a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
 											</div>
 											<h1><?= esc_html( $slides[$i]['title'] ) ?></h1>
 											<span><a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= esc_html( $slides[$i]['description'] ) ?></a></span>
