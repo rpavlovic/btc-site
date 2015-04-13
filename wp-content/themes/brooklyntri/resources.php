@@ -11,7 +11,11 @@
  * @since Brooklyn Tri 1.0
  */
 
-get_header(); ?>
+get_header();
+
+echo avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true));
+
+?>
 				<section class="page-title">
 					<div class="holder">
 						<nav class="breadcrumbs-nav">
@@ -25,6 +29,7 @@ get_header(); ?>
 						<h1>RESOURCES</h1>
 					</div>
 				</section>
+
 				<div id="two-columns">
 					<div id="content">
 
