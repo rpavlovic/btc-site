@@ -327,7 +327,6 @@ function get_slideshow() {
 	return null;
 }
 
-<?php
 
 if(!class_exists('avia_breadcrumb'))
 {
