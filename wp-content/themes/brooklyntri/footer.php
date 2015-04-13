@@ -62,6 +62,7 @@
 							</li>
 						</ul>
 					</div>
+<?php if ( !is_user_logged_in() ): ?>
 					<div class="col add">
 						<h2>MEMBER LOGIN</h2>
 						<form action="#" class="login-form">
@@ -70,17 +71,18 @@
 								<div class="form-holder">
 									<div class="row">
 										<label for="name02">USERNAME <span>*</span></label>
-										<input type="text" id="name02">
+										<input type="text" id="name02" name="log">
 									</div>
 									<div class="row">
 										<label for="password02">PASSWORD <span>*</span></label>
-										<input type="password" id="password02">
+										<input type="password" id="password02" name="pwd">
 									</div>
 								</div>
 								<input class="button" type="submit" value="LOGIN">
 							</fieldset>
 						</form>
 					</div>
+<?php endif; ?>
 				</div>
 			</div>
 			<div class="footer-frame">
