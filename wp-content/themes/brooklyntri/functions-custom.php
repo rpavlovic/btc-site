@@ -803,7 +803,7 @@ function avia_breadcrumbs( $args = array() ) {
 		{
 			if(!is_search())
 			{
-				$trail['trail_end'] =  avia_backend_truncate($trail['trail_end'], $truncate, " ", $pad="...", false, '<strong><em><span>', true);
+				$trail['trail_end'] =  ($trail['trail_end'], $truncate, " ", $pad="...", false, '<strong><em><span>', true);
 			}
 			$trail['trail_end'] = '<'.$el_tag.' class="trail-end">' . $trail['trail_end'] . '</'.$el_tag.'>';
 		}
