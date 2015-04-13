@@ -82,6 +82,28 @@
 							</fieldset>
 						</form>
 					</div>
+<?php else: ?>
+					<div class="col">
+						<h2>Upcoming Events</h2>
+						<ul class="list">
+							<li>
+								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
+								<p>Recovery Drinks</p>
+							</li>
+							<li>
+								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
+								<p>Recovery Drinks</p>
+							</li>
+							<li>
+								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
+								<p>Recovery Drinks</p>
+							</li>
+							<li>
+								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
+								<p>Recovery Drinks</p>
+							</li>
+						</ul>
+					</div>
 <?php endif; ?>
 				</div>
 			</div>
