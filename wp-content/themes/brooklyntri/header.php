@@ -64,6 +64,8 @@
 										</fieldset>
 									</form>
 								</li>
+<?php else: ?>
+									<li><a href="<?= WP_SITEURL ?>/profile" tabindex="4">My Profile</a></li>
 <?php endif; ?>
 								<li><a href="<?= WP_SITEURL ?>/contact" tabindex="5">CONTACT</a></li>
 							</ul>
