@@ -13,11 +13,12 @@
 
 get_header();
 
-echo avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true));
-
 ?>
+
 				<section class="page-title">
 					<div class="holder">
+					<?= avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true)); ?>
+					<!--
 						<nav class="breadcrumbs-nav">
 							<span>You are here:</span>
 							<ul class="breadcrumbs">
@@ -26,6 +27,7 @@ echo avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true));
 								<li>MEMBER DISCOUNTS</li>
 							</ul>
 						</nav>
+					-->
 						<h1>RESOURCES</h1>
 					</div>
 				</section>

@@ -328,8 +328,6 @@ function get_slideshow() {
 }
 
 
-
-
 /*-----------------------------------------------------------------------------------*/
 /* avia_breadcrumbs() - Custom breadcrumb generator function  */
 /*
@@ -368,7 +366,7 @@ function avia_breadcrumbs( $args = array() ) {
 	/* Set up the default arguments for the breadcrumb. */
 	$defaults = array(
 		'separator' => '&raquo;',
-		'before' => '<span class="breadcrumb-title">' . __( 'You are here:', 'avia_framework' ) . '</span>',
+		'before' => '<nav class="breadcrumbs-nav"><ul>' . __( '<span>You are here:</span>', 'avia_framework' ) . '</ul></nav>',
 		'after' => false,
 		'front_page' => true,
 		'show_home' => __( 'Home', 'avia_framework' ),
@@ -391,7 +389,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 	/* If $show_home is set and we're not on the front page of the site, link to the home page. */
 	if ( !is_front_page() && $show_home )
-		$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $show_home . '</a>';
+		$trail[] = '<li><a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $show_home . '</a></li>';
 
 	/* If viewing the front page of the site. */
 	if ( is_front_page() ) {
@@ -437,7 +435,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* If there's an archive page, add it to the trail. */
 			if ( !empty( $post_type_object->has_archive ) && function_exists( 'get_post_type_archive_link' ) )
-				$trail[] = '<a href="' . get_post_type_archive_link( $post_type ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . $post_type_object->labels->name . '</a>';
+				$trail[] = '<li><a href="' . get_post_type_archive_link( $post_type ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . $post_type_object->labels->name . '</a></li>';
 		}
 
 		/* try to build a generic taxonomy trail no matter the post type and taxonomy and terms
@@ -483,7 +481,7 @@ function avia_breadcrumbs( $args = array() ) {
                 
                 if(isset($category[0]) && empty($parents))
                 {
-                	$trail[] = '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+                	$trail[] = '<li><a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a></li>';
                 }
                 
         }
@@ -638,7 +636,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 	/* Connect the breadcrumb trail if there are items in the trail. */
 	if ( is_array( $trail ) ) {
-
+print_r($trail);
 		$el_tag = "span";
 		$vocabulary = "";
 
@@ -649,7 +647,7 @@ function avia_breadcrumbs( $args = array() ) {
 		}
 
 		/* Open the breadcrumb trail containers. */
-		$breadcrumb = '<div class="breadcrumb breadcrumbs avia-breadcrumbs"><div class="breadcrumb-trail" '.$vocabulary.'>';
+		$breadcrumb = '';//'<div class="breadcrumb breadcrumbs avia-breadcrumbs"><div class="breadcrumb-trail" '.$vocabulary.'>';
 
 		/* If $before was set, wrap it in a container. */
 		if ( !empty( $before ) )
