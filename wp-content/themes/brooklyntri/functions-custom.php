@@ -329,7 +329,7 @@ function get_slideshow() {
 
 
 /*-----------------------------------------------------------------------------------*/
-/* avia_breadcrumbs() - Custom breadcrumb generator function  */
+/* get_breadcrumbs() - Custom breadcrumb generator function  */
 /*
 /* Params:
 /*
@@ -352,7 +352,7 @@ function get_slideshow() {
  */
 
 
-function avia_breadcrumbs( $args = array() ) {
+function get_breadcrumbs( $args = array() ) {
 	echo 'here';
 	global $wp_query, $wp_rewrite;
 
@@ -382,7 +382,7 @@ function avia_breadcrumbs( $args = array() ) {
 		$defaults["singular_{$wp_query->post->post_type}_taxonomy"] = false;
 
 	/* Apply filters to the arguments. */
-	$args = apply_filters( 'avia_breadcrumbs_args', $args );
+	$args = apply_filters( 'get_breadcrumbs_args', $args );
 
 	/* Parse the arguments and extract them for easy variable naming. */
 	extract( wp_parse_args( $args, $defaults ) );
@@ -402,7 +402,7 @@ function avia_breadcrumbs( $args = array() ) {
 	/* If viewing the "home"/posts page. */
 	elseif ( is_home() ) {
 		$home_page = get_page( $wp_query->get_queried_object_id() );
-		$trail = array_merge( $trail, avia_breadcrumbs_get_parents( $home_page->post_parent, '' ) );
+		$trail = array_merge( $trail, get_breadcrumbs_get_parents( $home_page->post_parent, '' ) );
 		$trail['trail_end'] = get_the_title( $home_page->ID );
 	}
 
@@ -431,7 +431,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* If there's a path, check for parents. */
 			if ( !empty( $path ) )
-				$trail = array_merge( $trail, avia_breadcrumbs_get_parents( '', $path ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_parents( '', $path ) );
 
 			/* If there's an archive page, add it to the trail. */
 			if ( !empty( $post_type_object->has_archive ) && function_exists( 'get_post_type_archive_link' ) )
@@ -451,13 +451,13 @@ function avia_breadcrumbs( $args = array() ) {
 
 		/* If the post type path returns nothing and there is a parent, get its parents. */
 		if ( empty( $path ) && 0 !== $parent || 'attachment' == $post_type )
-			$trail = array_merge( $trail, avia_breadcrumbs_get_parents( $parent, '' ) );
+			$trail = array_merge( $trail, get_breadcrumbs_get_parents( $parent, '' ) );
 
 		/* Toggle the display of the posts page on single blog posts. */
 		if ( 'post' == $post_type && $show_posts_page == true && 'page' == get_option( 'show_on_front' ) ) {
 			$posts_page = get_option( 'page_for_posts' );
 			if ( $posts_page != '' && is_numeric( $posts_page ) ) {
-				$trail = array_merge( $trail, avia_breadcrumbs_get_parents( $posts_page, '' ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_parents( $posts_page, '' ) );
 			}
 		}
 
@@ -530,11 +530,11 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* Get parent pages by path if they exist. */
 			if ( $path )
-				$trail = array_merge( $trail, avia_breadcrumbs_get_parents( '', $path ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_parents( '', $path ) );
 
 			/* If the taxonomy is hierarchical, list its parent terms. */
 			if ( is_taxonomy_hierarchical( $term->taxonomy ) && $term->parent )
-				$trail = array_merge( $trail, avia_breadcrumbs_get_term_parents( $term->parent, $term->taxonomy ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_term_parents( $term->parent, $term->taxonomy ) );
 
 			/* Add the term name to the trail end. */
 			$trail['trail_end'] = $term->name;
@@ -556,7 +556,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* If there's a path, check for parents. */
 			if ( !empty( $path ) )
-				$trail = array_merge( $trail, avia_breadcrumbs_get_parents( '', $path ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_parents( '', $path ) );
 
 			/* Add the post type [plural] name to the trail end. */
 			$trail['trail_end'] = $post_type_object->labels->name;
@@ -575,7 +575,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* If $path exists, check for parent pages. */
 			if ( !empty( $path ) )
-				$trail = array_merge( $trail, avia_breadcrumbs_get_parents( '', $path ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_parents( '', $path ) );
 
 			/* Add the author's display name to the trail end. */
 			$trail['trail_end'] =  apply_filters('avf_author_name', get_the_author_meta('display_name', get_query_var('author')), get_query_var('author'));
@@ -599,7 +599,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* If $front has been set, check for parent pages. */
 			if ( $wp_rewrite->front )
-				$trail = array_merge( $trail, avia_breadcrumbs_get_parents( '', $wp_rewrite->front ) );
+				$trail = array_merge( $trail, get_breadcrumbs_get_parents( '', $wp_rewrite->front ) );
 
 			if ( is_day() ) {
 				$trail[] = '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y', 'avia_framework' ) ) . '">' . get_the_time( __( 'Y', 'avia_framework' ) ) . '</a>';
@@ -632,7 +632,7 @@ function avia_breadcrumbs( $args = array() ) {
 		$trail['trail_end'] = __( '404 Not Found', 'avia_framework' );
 
 	/* Allow child themes/plugins to filter the trail array. */
-	$trail = apply_filters( 'avia_breadcrumbs_trail', $trail, $args );
+	$trail = apply_filters( 'get_breadcrumbs_trail', $trail, $args );
 
 	/* Connect the breadcrumb trail if there are items in the trail. */
 	if ( is_array( $trail ) ) {
@@ -691,7 +691,7 @@ function avia_breadcrumbs( $args = array() ) {
 	}
 
 	/* Allow developers to filter the breadcrumb trail HTML. */
-	$breadcrumb = apply_filters( 'avia_breadcrumbs', $breadcrumb );
+	$breadcrumb = apply_filters( 'get_breadcrumbs', $breadcrumb );
 
 	/* Output the breadcrumb. */
 	if ( $echo )
@@ -699,10 +699,10 @@ function avia_breadcrumbs( $args = array() ) {
 	else
 		return $breadcrumb;
 
-} // End avia_breadcrumbs()
+} // End get_breadcrumbs()
 
 /*-----------------------------------------------------------------------------------*/
-/* avia_breadcrumbs_get_parents() - Retrieve the parents of the current page/post */
+/* get_breadcrumbs_get_parents() - Retrieve the parents of the current page/post */
 /*-----------------------------------------------------------------------------------*/
 /**
  * Gets parent pages of any post type or taxonomy by the ID or Path.  The goal of this function is to create
@@ -714,7 +714,7 @@ function avia_breadcrumbs( $args = array() ) {
  * @param string $path Path of a potential parent page.
  * @return array $trail Array of parent page links.
  */
-function avia_breadcrumbs_get_parents( $post_id = '', $path = '' ) {
+function get_breadcrumbs_get_parents( $post_id = '', $path = '' ) {
 
 	/* Set up an empty trail array. */
 	$trail = array();
@@ -814,10 +814,10 @@ function avia_breadcrumbs_get_parents( $post_id = '', $path = '' ) {
 	/* Return the trail of parent posts. */
 	return $trail;
 
-} // End avia_breadcrumbs_get_parents()
+} // End get_breadcrumbs_get_parents()
 
 /*-----------------------------------------------------------------------------------*/
-/* avia_breadcrumbs_get_term_parents() - Retrieve the parents of the current term */
+/* get_breadcrumbs_get_term_parents() - Retrieve the parents of the current term */
 /*-----------------------------------------------------------------------------------*/
 /**
  * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress
@@ -828,7 +828,7 @@ function avia_breadcrumbs_get_parents( $post_id = '', $path = '' ) {
  * @param object|string $taxonomy The taxonomy of the term whose parents we want.
  * @return array $trail Array of links to parent terms.
  */
-function avia_breadcrumbs_get_term_parents( $parent_id = '', $taxonomy = '' ) {
+function get_breadcrumbs_get_term_parents( $parent_id = '', $taxonomy = '' ) {
 
 	/* Set up some default arrays. */
 	$trail = array();
@@ -858,4 +858,4 @@ function avia_breadcrumbs_get_term_parents( $parent_id = '', $taxonomy = '' ) {
 	/* Return the trail of parent terms. */
 	return $trail;
 
-} // End avia_breadcrumbs_get_term_parents()
+} // End get_breadcrumbs_get_term_parents()

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Resources
+ * Template Name: Contact
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that
@@ -11,17 +11,9 @@
  * @since Brooklyn Tri 1.0
  */
 
-get_header();
-
-?>
-
+get_header(); ?>
 				<section class="page-title">
 					<div class="holder">
-					<?php
-						$breadcrumbs  = avia_breadcrumbs(array('separator' => '/', 'richsnippet' => false));
-						print_r($breadcrumbs);
-					?>
-					<!--
 						<nav class="breadcrumbs-nav">
 							<span>You are here:</span>
 							<ul class="breadcrumbs">
@@ -30,29 +22,13 @@ get_header();
 								<li>MEMBER DISCOUNTS</li>
 							</ul>
 						</nav>
-					-->
-						<h1><?php echo get_the_title( get_the_ID() ); ?></h1>
+						<h1>RESOURCES</h1>
 					</div>
 				</section>
-
 				<div id="two-columns">
 					<div id="content">
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
 
-			// Include the page content template.
-			get_template_part( 'content', 'resources' ); //content-resources.php
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		// End the loop.
-		endwhile;
-		?>
 					</div>
 					<?php btc_leftnav( $post ); ?>
 				</div>
