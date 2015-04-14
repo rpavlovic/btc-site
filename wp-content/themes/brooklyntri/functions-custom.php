@@ -636,6 +636,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 	/* Connect the breadcrumb trail if there are items in the trail. */
 	if ( is_array( $trail ) ) {
+		return $trail;
 
 		$el_tag = "li";
 		$vocabulary = "";

@@ -17,7 +17,10 @@ get_header();
 
 				<section class="page-title">
 					<div class="holder">
-					<?= avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true)); ?>
+					<?php
+						$breadcrumbs  = avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true));
+						print_r($breadcrumbs);
+					?>
 					<!--
 						<nav class="breadcrumbs-nav">
 							<span>You are here:</span>
