@@ -13,7 +13,7 @@
 
 get_header();
 
-// echo avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true));
+echo avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true));
 
 ?>
 				<section class="page-title">
