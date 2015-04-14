@@ -368,7 +368,7 @@ if(!class_exists('avia_breadcrumb'))
 		}
 
 		function simple_breadcrumb_case($der_post)
-		{
+		{echo 'there';
 			global $post;
 
 			$markup = $this->options['before'].$this->options['delimiter'].$this->options['after'];
@@ -499,6 +499,7 @@ if(!class_exists('avia_breadcrumb'))
 
 
 function avia_breadcrumbs( $args = array() ) {
+	echo 'here';
 	global $wp_query, $wp_rewrite;
 
 	/* Create an empty variable for the breadcrumb. */
