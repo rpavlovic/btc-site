@@ -28,7 +28,7 @@ get_header();
 							</ul>
 						</nav>
 					-->
-						<h1>RESOURCES</h1>
+						<h1><?php echo get_the_title( get_the_ID() ); ?></h1>
 					</div>
 				</section>
 
