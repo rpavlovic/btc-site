@@ -636,8 +636,8 @@ function avia_breadcrumbs( $args = array() ) {
 
 	/* Connect the breadcrumb trail if there are items in the trail. */
 	if ( is_array( $trail ) ) {
-print_r($trail);
-		$el_tag = "span";
+
+		$el_tag = "li";
 		$vocabulary = "";
 
 		//google rich snippets
@@ -686,7 +686,7 @@ print_r($trail);
 			$breadcrumb .= ' <span class="trail-after">' . $after . '</span>';
 
 		/* Close the breadcrumb trail containers. */
-		$breadcrumb .= '</div></div>';
+		//$breadcrumb .= '</div></div>';
 	}
 
 	/* Allow developers to filter the breadcrumb trail HTML. */
