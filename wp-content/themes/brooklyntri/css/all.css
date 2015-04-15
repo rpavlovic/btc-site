@@ -1971,12 +1971,11 @@ table {
       height: 1px; }
     
   .intro-text p {
-    margin: 20px 0px; 
+    margin: 0px 0px; 
     display: block;
     }
     
-    .intro-text p:first-child {
-    margin: 0px 0px; 
+.intro-text p:first-child {
     display: inline;
     color: #ff0000;
 }
