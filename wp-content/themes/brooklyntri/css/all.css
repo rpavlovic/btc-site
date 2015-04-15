@@ -1976,8 +1976,8 @@ table {
     }
     
     .intro-text p:first-child {
-    margin: -50px 0px 0px 0px; 
-    display: block;
+    margin: 0px 0px; 
+    display: inline;
 }
 
 .content-holder {
