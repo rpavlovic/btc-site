@@ -1961,17 +1961,9 @@ table {
       left: 100%;
       top: 15px;
       right: -9999px;
-      background: #818181;
-      height: 1px; }
-      
-.holder h2 {
-      content: "";
-      position: absolute;
-      left: 100%;
-      top: 15px;
-      right: -9999px;
-      background: #ffffff;
+      background: #fff;
       height: 0px; }
+    
       
   .intro-text p {
     margin: 0; }
