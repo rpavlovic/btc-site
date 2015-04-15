@@ -23,10 +23,7 @@ $breadcrumbs  = get_btc_breadcrumbs(array('separator' => '/', 'richsnippet' => f
 						<nav class="breadcrumbs-nav">
 							<span>You are here:</span>
 							<ul class="breadcrumbs">
-<?php
-	//print_r($breadcrumbs);
-	foreach ( $breadcrumbs as $crumb ):
-?>
+<?php foreach ( $breadcrumbs as $crumb ): ?>
 								<li><?= $crumb ?></li>
 <?php endforeach; ?>
 							</ul>
