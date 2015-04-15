@@ -1145,6 +1145,7 @@ table {
     display: block;
     width: 100%; }
   .person-info-area .designation {
+  text-transform: uppercase;
     display: block;
     color: #70d549;
     margin: 0 0 10px;
