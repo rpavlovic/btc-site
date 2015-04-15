@@ -975,6 +975,8 @@ table {
     text-align: right;
     line-height: 21px;
     padding: 1px 0 0 10px;
+    max-width: 400px;
+    color: #f00;
     font-size: 16px;
     font-weight: 600; }
 
