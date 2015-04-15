@@ -1116,6 +1116,7 @@ table {
           color: #70d549;
           text-decoration: none; }
           
+          
   .person-info-area .caption {
     background-color: #fcfcfc;
     background: rgba(252, 252, 252, 0.7);
@@ -1971,6 +1972,7 @@ table {
     
   .intro-text p {
     margin: 0; }
+    display: block;
 
 .content-holder {
   margin: 0 0 99px; }
