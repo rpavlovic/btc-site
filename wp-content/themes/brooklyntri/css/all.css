@@ -1978,6 +1978,7 @@ table {
     .intro-text p:first-child {
     margin: 0px 0px; 
     display: inline;
+    color: #ff0000;
 }
 
 .content-holder {
