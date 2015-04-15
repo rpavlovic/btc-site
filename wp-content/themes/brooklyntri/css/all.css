@@ -1964,7 +1964,7 @@ table {
       background: #818181;
       height: 1px; }
       
-       .intro-text h2.namey {
+.intro-text h2.namey {
       content: "";
       position: absolute;
       left: 100%;
