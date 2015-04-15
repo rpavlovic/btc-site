@@ -1971,11 +1971,14 @@ table {
       height: 1px; }
     
   .intro-text p {
-    margin: 20px 0px; }
+    margin: 20px 0px; 
     display: block;
+    }
     
     .intro-text p:first-child {
-    display: inline-block; }
+    margin: -50px 0px 0px 0px; 
+    display: block;
+}
 
 .content-holder {
   margin: 0 0 99px; }
