@@ -972,11 +972,9 @@ table {
     margin: 0;
     width: 9.6%;
     float: left;
-    text-align: left;
-    text-indent: 40px;
+    text-align: right;
     line-height: 21px;
     padding: 1px 0 0 10px;
-    width: 270px;
     font-size: 16px;
     font-weight: 600; }
 
