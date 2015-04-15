@@ -354,8 +354,7 @@ function get_slideshow() {
  */
 
 
-function get_breadcrumbs( $args = array() ) {
-	echo 'here';
+function avia_breadcrumbs( $args = array() ) {
 	global $wp_query, $wp_rewrite;
 
 	/* Create an empty variable for the breadcrumb. */
