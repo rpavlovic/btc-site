@@ -55,11 +55,13 @@ function get_link_text( $post=null ) {
 	return $link_text;
 }
 
-function btc_leftnav($post=null) {
+function btc_leftnav($id=null) {
 
-	if(is_null($post)) {
-		$post = get_post( get_the_ID() );
+	if (!is_numeric($id)) {
+		$id = get_the_ID();
 	}
+
+	$post = get_post( $id );
 
 	$parent = get_post( $post->post_parent );
 

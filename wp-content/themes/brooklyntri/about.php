@@ -44,7 +44,7 @@ get_header(); ?>
 		endwhile;
 		?>
 					</div>
-					<?php btc_leftnav( $post ); ?>
+					<?php btc_leftnav( get_the_ID() ); ?>
 				</div>
 
 <?php	
