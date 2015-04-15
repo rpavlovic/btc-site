@@ -48,7 +48,7 @@
 <?php if ( !is_user_logged_in() ): ?>
 								<li class="contact">
 									<a href="#" tabindex="4">LOGIN</a>
-									<form action="<?php echo site_url( '/wp-login.php' ); ?>" class="login-form">
+									<form action="<?php echo site_url( '/wp-login.php' ); ?>" method="post" class="login-form">
 										<fieldset>
 											<legend class="hidden">login form</legend>
 											<div class="col">
