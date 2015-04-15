@@ -1084,12 +1084,22 @@ table {
     color: #000100;
     line-height: 19px;
     font-size: 12px; }
+    
   .person-info-area .info {
     display: inline-block;
     vertical-align: top;
     letter-spacing: 0;
     width: 33.33%;
     padding: 0 28px 12px; }
+    
+    .person-info-area .info:first-child {
+	display: inline-block;
+	vertical-align: top;
+	letter-spacing: 0;
+	width: 33.33%;
+	padding: 0px;
+}
+
     .person-info-area .info h2 {
       margin: 0 0 2px;
       color: #4ac2f2;
