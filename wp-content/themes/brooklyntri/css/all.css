@@ -1975,7 +1975,8 @@ table {
     display: block;
     
     .intro-text p:first-child {
-    margin: -50px 0px 0px 0px; 
+    margin: 0px 0px; 
+    padding: -25px 0px 0px 0px;
     display: block; }
 
 .content-holder {
