@@ -1102,16 +1102,20 @@ table {
 
     .person-info-area .info h2 {
       margin: 0 0 2px;
+      display: inline-block;
       color: #4ac2f2;
       line-height: 19px;
       text-transform: uppercase;
       font-size: 17px;
       font-weight: 600; }
+      
       .person-info-area .info h2 a {
         color: #4ac2f2; }
+        
         .person-info-area .info h2 a:hover {
           color: #70d549;
           text-decoration: none; }
+          
   .person-info-area .caption {
     background-color: #fcfcfc;
     background: rgba(252, 252, 252, 0.7);
