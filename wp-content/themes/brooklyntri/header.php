@@ -44,6 +44,7 @@
 						</ul>
 						<nav class="menu">
 							<ul>
+								<li><a href="<?= WP_SITEURL ?>/contact" tabindex="5">CONTACT</a></li>
 <?php if ( !is_user_logged_in() ): ?>
 								<li class="contact">
 									<a href="#" tabindex="4">LOGIN</a>
@@ -65,9 +66,9 @@
 									</form>
 								</li>
 <?php else: ?>
-									<li><a href="<?= WP_SITEURL ?>/profile" tabindex="4">My Profile</a></li>
+									<li><a href="<?= WP_SITEURL ?>/profile" tabindex="4">MY PROFILE</a></li>
+									<li><a href="<?php echo wp_logout_url( get_permalink() ); ?>" tabindex="4">LOG OUT</a></li>
 <?php endif; ?>
-								<li><a href="<?= WP_SITEURL ?>/contact" tabindex="5">CONTACT</a></li>
 							</ul>
 						</nav>
 					</div>
