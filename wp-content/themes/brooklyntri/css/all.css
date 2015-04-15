@@ -1971,8 +1971,9 @@ table {
       height: 1px; }
     
   .intro-text p {
-    margin: 15px 0px; 
-    display: block; }
+    margin: 20px 0px; 
+    display: block; 
+    line-height: 24px; }
     
     .intro-text p:first-child {
     display: inline; }
