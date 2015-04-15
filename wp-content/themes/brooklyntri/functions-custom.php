@@ -354,7 +354,7 @@ function get_slideshow() {
  */
 
 
-function avia_breadcrumbs( $args = array() ) {
+function get_btc_breadcrumbs( $args = array(), $return_array = false ) {
 	global $wp_query, $wp_rewrite;
 
 	/* Create an empty variable for the breadcrumb. */
@@ -390,7 +390,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 	/* If $show_home is set and we're not on the front page of the site, link to the home page. */
 	if ( !is_front_page() && $show_home )
-		$trail[] = '<li><a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $show_home . '</a></li>';
+		$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $show_home . '</a>';
 
 	/* If viewing the front page of the site. */
 	if ( is_front_page() ) {
@@ -436,7 +436,7 @@ function avia_breadcrumbs( $args = array() ) {
 
 			/* If there's an archive page, add it to the trail. */
 			if ( !empty( $post_type_object->has_archive ) && function_exists( 'get_post_type_archive_link' ) )
-				$trail[] = '<li><a href="' . get_post_type_archive_link( $post_type ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . $post_type_object->labels->name . '</a></li>';
+				$trail[] = '<a href="' . get_post_type_archive_link( $post_type ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . $post_type_object->labels->name . '</a>';
 		}
 
 		/* try to build a generic taxonomy trail no matter the post type and taxonomy and terms
@@ -482,7 +482,7 @@ function avia_breadcrumbs( $args = array() ) {
                 
                 if(isset($category[0]) && empty($parents))
                 {
-                	$trail[] = '<li><a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a></li>';
+                	$trail[] = '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
                 }
                 
         }
@@ -637,7 +637,11 @@ function avia_breadcrumbs( $args = array() ) {
 
 	/* Connect the breadcrumb trail if there are items in the trail. */
 	if ( is_array( $trail ) ) {
-		return $trail;
+
+		if ( $return_array == true ) {
+			//$trail[0] = strip_tags($trail[0]);
+			return $trail;
+		}
 
 		$el_tag = "li";
 		$vocabulary = "";
