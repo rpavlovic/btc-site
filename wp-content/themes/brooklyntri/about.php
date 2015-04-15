@@ -11,20 +11,12 @@
  * @since Brooklyn Tri 1.0
  */
 
-get_header(); ?>
-				<section class="page-title">
-					<div class="holder">
-						<nav class="breadcrumbs-nav">
-							<span>You are here:</span>
-							<ul class="breadcrumbs">
-								<li><a href="#">Home</a></li>
-								<li class="active">RESOURCES</li>
-								<li>MEMBER DISCOUNTS</li>
-							</ul>
-						</nav>
-						<h1>RESOURCES</h1>
-					</div>
-				</section>
+get_header();
+
+btc_breadcrumbs();
+
+?>
+
 				<div id="two-columns">
 					<div id="content">
 

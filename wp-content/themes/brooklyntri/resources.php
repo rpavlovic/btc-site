@@ -13,25 +13,10 @@
 
 get_header();
 
-$breadcrumbs  = get_btc_breadcrumbs(array('separator' => '/', 'richsnippet' => false), $return_array = true);
+btc_breadcrumbs();
 
 ?>
 
-<?php if ( $breadcrumbs ): ?>
-				<section class="page-title">
-					<div class="holder">
-						<nav class="breadcrumbs-nav">
-							<span>You are here:</span>
-							<ul class="breadcrumbs">
-<?php foreach ( $breadcrumbs as $crumb ): ?>
-								<li><?= $crumb ?></li>
-<?php endforeach; ?>
-							</ul>
-						</nav>
-						<h1><?php echo get_the_title( get_the_ID(  ) ); ?></h1>
-					</div>
-				</section>
-<?php endif; ?>
 
 				<div id="two-columns">
 					<div id="content">
