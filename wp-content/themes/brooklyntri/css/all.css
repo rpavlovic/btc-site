@@ -1954,6 +1954,7 @@ table {
     line-height: 28px;
     font-size: 24px;
     font-weight: 600; }
+   
     .intro-text h2:after {
       content: "";
       position: absolute;
@@ -1962,6 +1963,16 @@ table {
       right: -9999px;
       background: #818181;
       height: 1px; }
+      
+       .intro-text h2.namey {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 15px;
+      right: -9999px;
+      background: #818181;
+      height: 1px; }
+      
   .intro-text p {
     margin: 0; }
 
