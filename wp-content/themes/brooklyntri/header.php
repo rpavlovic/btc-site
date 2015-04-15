@@ -44,11 +44,11 @@
 						</ul>
 						<nav class="menu">
 							<ul>
-								<li><a href="<?= WP_SITEURL ?>/contact" tabindex="5">CONTACT</a></li>
+								<li><a href="<?php echo site_url( '/contact' ); ?>" tabindex="5">CONTACT</a></li>
 <?php if ( !is_user_logged_in() ): ?>
 								<li class="contact">
 									<a href="#" tabindex="4">LOGIN</a>
-									<form action="<?php echo esc_url( get_template_directory_uri() ); ?>/wp-login.php" class="login-form">
+									<form action="<?php echo site_url( '/wp-login.php' ); ?>" class="login-form">
 										<fieldset>
 											<legend class="hidden">login form</legend>
 											<div class="col">
