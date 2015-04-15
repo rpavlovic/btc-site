@@ -1964,7 +1964,7 @@ table {
       background: #818181;
       height: 1px; }
       
-.intro-text .holder h2 {
+.holder h2 {
       content: "";
       position: absolute;
       left: 100%;
