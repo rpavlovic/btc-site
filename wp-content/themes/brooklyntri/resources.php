@@ -37,7 +37,7 @@ btc_breadcrumbs();
 		endwhile;
 		?>
 					</div>
-					<?php btc_leftnav( get_the_ID() ); ?>
+					<?php btc_leftnav( $post ); ?>
 				</div>
 
 <?php	

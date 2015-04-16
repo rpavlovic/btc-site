@@ -1,9 +1,5 @@
 <?php
 
 /*
-Template Name: Login
+echo nothing
 */
-
-get_header();
-
-get_footer();
