@@ -35,7 +35,9 @@ function btc_login() {
             echo $user_verify->get_error_message();
         }
         // redirect back to the requested page if login was successful
+        echo '<P>';
         var_dump( $_SERVER['REQUEST_URI'] );
+        echo '<P>';
         var_dump( $_SERVER['SCRIPT_NAME'] );
         die;  
         header('Location: ' . $_SERVER['REQUEST_URI']);
