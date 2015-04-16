@@ -65,7 +65,7 @@
 <?php if ( !is_user_logged_in() ): ?>
 					<div class="col add">
 						<h2>MEMBER LOGIN</h2>
-						<form action="#" class="login-form">
+						<form action="<?php echo site_url( '/login.php' ); ?>" class="login-form">
 							<fieldset>
 								<legend class="hidden">login form</legend>
 								<div class="form-holder">
