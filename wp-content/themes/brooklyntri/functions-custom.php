@@ -24,13 +24,8 @@ add_action('init', function(){
 	exit;
 });
 
-// lose the admin bar for non-admins
-if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) {
-	add_filter('show_admin_bar', '__return_true');
-}
-else {
-	add_filter('show_admin_bar', '__return_false');
-}
+// lose the admin bar
+add_filter('show_admin_bar', '__return_false');
 
 /**
  * Convert new lines to paragraph tag
@@ -59,16 +54,29 @@ function nl2p($string, $line_breaks = false, $xml = true) {
 	return $string;
 }
 
-function btc_relative_links($str) {
-	if (strstr($str, '<a href="/') != false) {
-		return str_replace('<a href="/', '<a href="' . WP_SITEURL . '/', $str);
+/**
+ * Convert hard-coded relative links to use absolute URLs
+ *
+ * @param string $str The string to convert.
+ * @return string The converted string.
+ */
+function btc_relative_links( $str ) {
+	if ( strstr( $str, '<a href="/' ) != false ) {
+		return str_replace( '<a href="/', '<a href="' . WP_SITEURL . '/', $str );
 	}
-	if (substr($str, 1) == '/') {
-		return str_replace('/', WP_SITEURL . '/', $str);
+	if ( substr( $str, 1 ) == '/') {
+		return str_replace( '/', WP_SITEURL . '/', $str );
 	}
 }
 
+/**
+ * Return the custom link text for post, if supplied.
+ *
+ * @param object $post Optional. The current post object.
+ * @return string The post title, or custom link text (if supplied).
+ */
 function get_link_text( $post=null ) {
+
 	if( is_null( $post ) ) {
 		$post = get_post( get_the_ID() );
 	}
@@ -84,13 +92,11 @@ function get_link_text( $post=null ) {
 	return $link_text;
 }
 
-function btc_leftnav($id=null) {
+function btc_leftnav( $post=null ) {
 
-	if (!is_numeric($id)) {
-		$id = get_the_ID();
+	if( is_null( $post ) ) {
+		$post = get_post( get_the_ID() );
 	}
-
-	$post = get_post( $id );
 
 	$parent = get_post( $post->post_parent );
 
@@ -152,7 +158,7 @@ function btc_get_sponsor_logos() {
 ?>
 				<section class="clients-area">
 					<div class="holder">
-					<h1>our sponsors</h1>
+					<h3>Our Sponsors</h3>
 						<ul class="clients-logo">
 <?
 	foreach ( $all_sponsors as $post ): setup_postdata( $post );
