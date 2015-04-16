@@ -6,10 +6,14 @@ Template Name: Login
 
 get_header();
 
+die('1');
+
 function btc_login() {
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
+        die('2');
+
         return;
     }
 
@@ -29,10 +33,9 @@ function btc_login() {
         $login_data['user_login'] = $username;
         $login_data['user_password'] = $password;
         $login_data['remember'] = false; //$remember;
+die('3');
 
-     echo 'here';
         $user_verify = wp_signon( $login_data, false ); 
-     echo 'there';
 
         if ( is_wp_error( $user_verifyv) )  {
             // error message
