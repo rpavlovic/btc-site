@@ -36,6 +36,7 @@ function btc_login() {
         }
         // redirect back to the requested page if login was successful
         var_dump( $_SERVER['REQUEST_URI'] );
+        var_dump( $_SERVER['SCRIPT_NAME'] );
         die;  
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
