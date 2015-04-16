@@ -1969,6 +1969,11 @@ table {
       right: -9999px;
       background: #818181;
       height: 1px; }
+      
+    .col h2:first-child:after {
+      right: -9999px;
+      background: #fff;
+      height: 0px; }
     
   .intro-text p {
     margin: 20px 0px; 
