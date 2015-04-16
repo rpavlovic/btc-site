@@ -885,6 +885,7 @@ function get_breadcrumbs_get_term_parents( $parent_id = '', $taxonomy = '' ) {
 
 } // End get_breadcrumbs_get_term_parents()
 
+/*
 add_action('init', function(){
 
 	// not the login request?
@@ -906,3 +907,4 @@ add_action('init', function(){
 	header('Location: ' . $_SERVER['REQUEST_URI']);
 	exit;
 });
+*/
