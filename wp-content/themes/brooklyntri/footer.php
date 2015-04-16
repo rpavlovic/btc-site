@@ -78,6 +78,8 @@
 										<input type="password" id="password02" name="pwd">
 									</div>
 								</div>
+								<input type="hidden" name="testcookie" value="1">
+								<input type="hidden" name="action" value="btc_login_jam">
 								<input class="button" type="submit" value="LOGIN">
 							</fieldset>
 						</form>
