@@ -71,11 +71,11 @@
 								<div class="form-holder">
 									<div class="row">
 										<label for="name02">USERNAME <span>*</span></label>
-										<input type="text" id="name02" name="log">
+										<input type="text" id="name02" name="user">
 									</div>
 									<div class="row">
 										<label for="password02">PASSWORD <span>*</span></label>
-										<input type="password" id="password02" name="pwd">
+										<input type="password" id="password02" name="pass">
 									</div>
 								</div>
 								<input type="hidden" name="testcookie" value="1">
