@@ -15,7 +15,7 @@ get_header();
 
 btc_breadcrumbs();
  ?>
-				<div class="contact-form-area">
+				
 
 		<?php
 		// Start the loop.
@@ -34,7 +34,7 @@ btc_breadcrumbs();
 		?>
 
 
-				</div>
+				
 
 <?php	
 	btc_get_sponsor_logos();
