@@ -21,7 +21,7 @@ if ( !empty( $slides ) ):
 					<div class="mask">
 						<div class="slideset">
 
-<? for ($i=1; $i <= count($slides); $i++): ?>
+<?php for ($i=1; $i <= count($slides); $i++): ?>
 
 							<section class="slide right">
 								<div class="slide-holder">
@@ -29,7 +29,7 @@ if ( !empty( $slides ) ):
 									<div class="caption">
 										<div class="caption-holder">
 											<div class="logo">
-												<a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= wp_get_attachment_image( 9 ) ?></a>
+												<a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= wp_get_attachment_image( 9, 'full' ) ?></a>
 											</div>
 											<h1><?= esc_html( $slides[$i]['title'] ) ?></h1>
 											<span><a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= esc_html( $slides[$i]['description'] ) ?></a></span>

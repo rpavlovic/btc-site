@@ -78,7 +78,7 @@
 				<div class="header-holder">
 					<div class="holder">
 						<div class="logo" itemprop="name">
-							<a tabindex="6" itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt="est. 2004 Brooklyn Tri Club"></a>
+							<a tabindex="6" itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?= wp_get_attachment_image( 8, 'full' ) ?></a>
 						</div>
 						<nav id="nav">
 							<a href="#" class="opener"><span>Menu</span></a>

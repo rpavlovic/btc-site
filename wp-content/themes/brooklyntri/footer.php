@@ -17,7 +17,7 @@
 		<footer id="footer" itemscope itemtype="http://schema.org/Organization">
 			<div class="footer-holder">
 				<div class="logo" itemprop="name">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9 ) ?></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9, 'full' ) ?></a>
 				</div>
 				<div class="col-holder">
 					<div class="col">
