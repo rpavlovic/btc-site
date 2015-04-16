@@ -333,11 +333,6 @@ add_action('init', function(){
 	exit;
 });
 
-// hide admin bar for non-admins
-if ( ! current_user_can( 'manage_options' ) ) {
-    show_admin_bar( false );
-}
-
 /**
  * Implement the Custom Header feature.
  *
