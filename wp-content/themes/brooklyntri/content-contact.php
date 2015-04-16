@@ -9,9 +9,6 @@
 
 ?>
 
-						<div class="img-holder">
-							<img src="images/img14.jpg" alt="image description">
-						</div>
 						<div class="text">
                             <?php the_title('<h2>','</h2>'); ?>
                             <?php the_content(); ?>
