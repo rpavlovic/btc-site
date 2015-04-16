@@ -8,9 +8,14 @@
  */
 
 ?>
-	
+	 <div class="intro-text">
+
                             <?php the_title('<h2>','</h2>'); ?>
+
                             <?php the_content(); ?>
+
+                        </div>
+
 		
 					<!-- <form action="#" class="contact-form">
 						<fieldset>
