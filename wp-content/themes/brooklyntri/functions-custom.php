@@ -39,7 +39,15 @@ function btc_login() {
         var_dump( $_SERVER['REQUEST_URI'] );
         echo '<P>';
         var_dump( $_SERVER['SCRIPT_NAME'] );
+        echo '<P>';
+        var_dump( $_SERVER['PATH_INFO'] );
+        echo '<P>';
+        var_dump( __FILE__  );
+        
+
+
         die;  
+
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
