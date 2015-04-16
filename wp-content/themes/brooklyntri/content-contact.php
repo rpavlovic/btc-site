@@ -8,12 +8,10 @@
  */
 
 ?>
-
-						<div class="text">
+	
                             <?php the_title('<h2>','</h2>'); ?>
                             <?php the_content(); ?>
-						</div>
-					</div>
+		
 					<!-- <form action="#" class="contact-form">
 						<fieldset>
 							<legend class="hidden">contact form</legend>
