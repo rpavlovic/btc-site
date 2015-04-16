@@ -34,21 +34,9 @@ function btc_login() {
             // error message
             echo $user_verify->get_error_message();
         }
+
         // redirect back to the requested page if login was successful
-        echo '<P>';
-        var_dump( $_SERVER['REQUEST_URI'] );
-        echo '<P>';
-        var_dump( $_SERVER['SCRIPT_NAME'] );
-        echo '<P>';
-        var_dump( $_SERVER['PATH_INFO'] );
-        echo '<P>';
-        var_dump( __FILE__  );
-        
-
-
-        die;  
-
-        header('Location: ' . $_SERVER['REQUEST_URI']);
+        header('Location: ' . $_SERVER['SCRIPT_NAME']);
         exit;
     }
     else {
