@@ -17,7 +17,7 @@
                             <?php the_content(); ?>
 						</div>
 					</div>
-					<form action="#" class="contact-form">
+					<!-- <form action="#" class="contact-form">
 						<fieldset>
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>SEND US AN EMAIL!</h2></div>
@@ -41,6 +41,6 @@
 							</div>
 							<input class="button" type="submit" value="SUBMIT">
 						</fieldset>
-					</form>
+					</form> -->
 
 
