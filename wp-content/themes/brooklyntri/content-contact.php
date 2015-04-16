@@ -8,39 +8,11 @@
  */
 
 ?>
-	 <div class="intro-text">
 
-                            <?php the_title('<h2>','</h2>'); ?>
+				<div class="intro-text">
 
-                            <?php the_content(); ?>
+                    <?php the_title('<h2>','</h2>'); ?>
 
-                        </div>
+                    <?php the_content(); ?>
 
-		
-					<!-- <form action="#" class="contact-form">
-						<fieldset>
-							<legend class="hidden">contact form</legend>
-							<div class="heading"><h2>SEND US AN EMAIL!</h2></div>
-							<div class="row">
-								<div class="col">
-									<label for="name">NAME <span>*</span></label>
-									<input type="text" id="name">
-								</div>
-								<div class="col">
-									<label for="email">E-MAIL <span>*</span></label>
-									<input type="email" id="email">
-								</div>
-							</div>
-							<div class="row">
-								<label for="subject">SUBJECT <span>*</span></label>
-								<input type="text" id="subject">
-							</div>
-							<div class="row">
-								<label for="message">MESSAGE <span>*</span></label>
-								<textarea id="message"></textarea>
-							</div>
-							<input class="button" type="submit" value="SUBMIT">
-						</fieldset>
-					</form> -->
-
-
+                </div>
