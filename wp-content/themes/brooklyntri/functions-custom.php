@@ -16,8 +16,8 @@ function btc_login() {
         global $wpdb;
 
         //We shall SQL escape all inputs
-        $username = $wpdb->escape( $_POST['user'] );
-        $password = $wpdb->escape( $_POST['pass'] );
+        $username = $wpdb->prepare( $_POST['user'] );
+        $password = $wpdb->prepare( $_POST['pass'] );
         //$remember = $wpdb->escape($_POST['rememberme']);
 
         //if($remember) $remember = "true";
@@ -30,7 +30,7 @@ function btc_login() {
 
         $user_verify = wp_signon( $login_data, false ); 
 
-        if ( is_wp_error( $user_verifyv) )  {
+        if ( is_wp_error( $user_verify ) )  {
             // error message
             echo $user_verify->get_error_message();
         }
