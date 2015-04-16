@@ -29,7 +29,7 @@ if ( !empty( $slides ) ):
 									<div class="caption">
 										<div class="caption-holder">
 											<div class="logo">
-												<a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
+												<a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= wp_get_attachment_image( 9 ) ?></a>
 											</div>
 											<h1><?= esc_html( $slides[$i]['title'] ) ?></h1>
 											<span><a href="<?= btc_relative_links( $slides[$i]['url'] ) ?>"><?= esc_html( $slides[$i]['description'] ) ?></a></span>

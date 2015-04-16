@@ -17,7 +17,7 @@
 		<footer id="footer" itemscope itemtype="http://schema.org/Organization">
 			<div class="footer-holder">
 				<div class="logo" itemprop="name">
-					<a href="#" itemprop="url"><img src="images/logo02.png" alt="BTC BROOKLYN TRIATHLON CLUB ESTABLISHED 2004"></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9 ) ?></a>
 				</div>
 				<div class="col-holder">
 					<div class="col">
@@ -65,7 +65,7 @@
 <?php if ( !is_user_logged_in() ): ?>
 					<div class="col add">
 						<h2>MEMBER LOGIN</h2>
-						<form action="<?php echo site_url( '/login.php' ); ?>" class="login-form">
+						<form action="<?php echo site_url( '/login.php' ); ?>" method="post" class="login-form">
 							<fieldset>
 								<legend class="hidden">login form</legend>
 								<div class="form-holder">
