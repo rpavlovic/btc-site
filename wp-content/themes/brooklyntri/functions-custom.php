@@ -884,3 +884,25 @@ function get_breadcrumbs_get_term_parents( $parent_id = '', $taxonomy = '' ) {
 	return $trail;
 
 } // End get_breadcrumbs_get_term_parents()
+
+add_action('init', function(){
+
+	// not the login request?
+	if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
+		// redirect back to the requested page
+		header('Location: ' . $_SERVER['REQUEST_URI']);
+		exit;
+	}
+
+	// see the codex for wp_signon()
+	$result = wp_signon();
+
+	if ( is_wp_error( $result ) ) {
+		wp_die('Login failed. Wrong password or user name?');
+	}
+	
+
+	// redirect back to the requested page if login was successful    
+	header('Location: ' . $_SERVER['REQUEST_URI']);
+	exit;
+});
