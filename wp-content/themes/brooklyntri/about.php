@@ -20,7 +20,7 @@ $current_post = $post;
 ?>
 
 				<div id="two-columns">
-					<div id="content">
+					<div id="content" class="holder">
 
 		<?php
 		// Start the loop.
