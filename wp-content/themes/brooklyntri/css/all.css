@@ -2078,7 +2078,7 @@ table {
     vertical-align: top;
     font-size: 24px;
     font-weight: 600; }
-    .info-holder h2:first-child {
+    .info-holder h2:after:first-child {
       content: "";
       position: absolute;
       left: 100%;
@@ -2086,13 +2086,7 @@ table {
       right: -9999px;
       background: #818181;
       height: 1px; }
-      .info-holder h2 {
-      position: absolute;
-      left: 100%;
-      top: 15px;
-      right: -9999px;
-      background: #fff;
-      height: 0px; }
+     
   .info-holder p {
     margin: 0; }
   .info-holder .bar {
