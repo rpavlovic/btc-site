@@ -744,6 +744,7 @@ table {
         
 .intro-text .img-holder img {
 	float: left;
+	padding: 0 10px 0 0;
 }
 
 .info-text {
