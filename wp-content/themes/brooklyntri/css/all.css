@@ -1122,12 +1122,15 @@ table {
           text-decoration: none; }
           
     .holder .info {
-        padding: 0px 30px;
+        padding: 0px 10px 0px 30px;
         width: 33.3%;
           }
           
     .holder h3 {
 		text-transform: uppercase;    
+		display: inline;
+		padding: 0px !important;
+		margin 0px !important;
     }
           
   .person-info-area .caption {
