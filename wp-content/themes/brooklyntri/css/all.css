@@ -1980,6 +1980,11 @@ table {
       background: #fff;
       height: 0px; }
       
+    .col h2:after a {
+      right: -9999px;
+      background: #fff;
+      height: 0px; }
+      
   .intro-text p {
     margin: 20px 0px; 
     display: block; 
