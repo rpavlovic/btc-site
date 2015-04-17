@@ -1996,11 +1996,12 @@ table {
   
   .intro-text p {
     margin: 20px 0px; 
-    display: inline-block; 
+    display: block; 
     line-height: 24px; }
     
     .intro-text p:first-child {
-    display: inline; }
+    margin: 0px; 
+    display: inline-block; }
 
 .content-holder {
   margin: 0 0 99px; }
