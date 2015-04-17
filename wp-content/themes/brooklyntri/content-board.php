@@ -28,7 +28,7 @@
     //var_dump($board);
     foreach ( $board as $member ): setup_postdata( $member );
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
-        $content = get_fields( $post->ID );
+        $content = get_fields( $member->ID );
 ?>
 								<article class="info" itemscope itemtype="http://schema.org/Person">
 									<div class="photo">
