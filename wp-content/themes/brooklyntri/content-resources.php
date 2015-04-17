@@ -30,14 +30,14 @@ if (get_the_ID() == 47):
                                 <h2>PREMIER LEVEL SPONSORS</h2>
                                 <div class="holder">
 <?php
-    foreach ( $premium as $post ): setup_postdata( $post );
-        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-        $content = get_fields( $post->ID );
+    foreach ( $premium as $sponsor ): setup_postdata( $sponsor );
+        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $sponsor->ID ) );
+        $content = get_fields( $sponsor->ID );
 
 ?>
                                     <div class="row">
                                         <div class="img-holder">
-                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $post->post_title ) ?>" title="<?= esc_html( $post->post_title ) ?>"></a>
+                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
                                         </div>
                                         <div class="text">
                                             <div class="col">
@@ -68,14 +68,14 @@ if( count( $sponsors ) > 1 ):
                                 <h2>SPONSORS</h2>
                                 <div class="holder">
 <?php
-    foreach ( $sponsors as $post ): setup_postdata( $post );
-        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-        $content = get_fields( $post->ID );
+    foreach ( $sponsors as $sponsor ): setup_postdata( $sponsor );
+        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $sponsor->ID ) );
+        $content = get_fields( $sponsor->ID );
 
 ?>
                                     <div class="row">
                                         <div class="img-holder">
-                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $post->post_title ) ?>" title="<?= esc_html( $post->post_title ) ?>"></a>
+                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
                                         </div>
                                         <div class="text">
                                             <div class="col">
