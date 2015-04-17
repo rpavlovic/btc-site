@@ -1121,8 +1121,12 @@ table {
           color: #70d549;
           text-decoration: none; }
           
+     .holder {
+        padding: 0px 0px 0px 30px;
+          }
+          
     .holder .info {
-        padding: 0px 10px 40px 30px;
+        padding: 0px 10px 40px 10px;
         width: 33.3%;
           }
           
