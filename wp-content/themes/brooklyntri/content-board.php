@@ -25,6 +25,7 @@
 							<div class="holder">
 <?php
     $board = get_posts( array( 'category' => 6, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+    var_dump($board);
     foreach ( $board as $member ): setup_postdata( $member );
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
         $content = get_fields( $post->ID );
