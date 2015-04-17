@@ -1121,6 +1121,10 @@ table {
           color: #70d549;
           text-decoration: none; }
           
+    .holder .info {
+        padding: 12px 0px;
+          }
+          
           
   .person-info-area .caption {
     background-color: #fcfcfc;
