@@ -1136,16 +1136,12 @@ table {
 		margin 0px !important;
     }
     
-    .designation, .holder p {
-		display: inline;
-		padding: 0px !important;
-		margin 0px !important;
-    }  
     
      .info .caption {
        	display: inline;
 		padding: 0px !important;
 		margin 0px !important;
+		width: 90%;
           }
           
   .person-info-area .caption {
