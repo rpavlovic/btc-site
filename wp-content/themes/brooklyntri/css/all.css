@@ -741,6 +741,10 @@ table {
       .box-area p a:hover {
         color: #010000;
         text-decoration: none; }
+        
+.intro-text .img-holder img {
+	float: left;
+}
 
 .info-text {
   margin: 0 auto;
