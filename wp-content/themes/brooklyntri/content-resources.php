@@ -36,9 +36,11 @@ if (get_the_ID() == 47):
 
 ?>
                                     <div class="row">
+                                    <?php if ( !empty( $feat_image ) ): ?>
                                         <div class="img-holder">
                                             <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
                                         </div>
+                                    <?php endif; ?>
                                         <div class="text">
                                             <div class="col">
                                                 <h3>WHAT:</h3>

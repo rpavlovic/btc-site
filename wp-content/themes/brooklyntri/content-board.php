@@ -32,8 +32,9 @@
 ?>
 								<article class="info" itemscope itemtype="http://schema.org/Person">
 									<div class="photo">
-										
+									<?php if ( !empty( $feat_image ) ): ?>
 										<img src="<?= $image ?>" itemprop="image" alt="<?= $member->post_title ?>">
+									<?php endif; ?>
 
 <?php
 	if ( !empty($content['linkedin']) || !empty($content['facebook'])):
