@@ -35,7 +35,9 @@
 										
 										<img src="<?= $image ?>" itemprop="image" alt="<?= $member->post_title ?>">
 
-										<?php if ( !empty($content['linkedin']) || !empty($content['facebook'])): ?>
+<?php
+	if ( !empty($content['linkedin']) || !empty($content['facebook'])):
+?>
 										<div class="caption">
 											<ul class="social">
 												<? if ( !empty($content['linkedin']) ): ?>
@@ -54,10 +56,12 @@
 
 											</ul>
 										</div>
-									<?php endif; ?>
+<?php
+	endif;
+?>
 
 									</div>
-									<h2><a href="#" itemprop="name"><?= $member->post_title ?></a></h2>
+									<h3><a href="#" itemprop="name"><?= $member->post_title ?></a></h3>
 									<span class="designation" itemprop="jobTitle"><?= $content['job_title'] ?></span>
 									<p><?= $member->post_content ?></p>
 								</article>
