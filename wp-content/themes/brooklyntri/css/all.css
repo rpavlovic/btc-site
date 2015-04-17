@@ -1996,9 +1996,8 @@ table {
   
   .intro-text p {
     margin: 20px 0px; 
-    display: block; 
-    line-height: 24px;
-    clear: all; }
+    display: inline-block; 
+    line-height: 24px; }
     
     .intro-text p:first-child {
     display: inline; }
