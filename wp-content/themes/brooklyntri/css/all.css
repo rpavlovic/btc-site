@@ -1138,6 +1138,12 @@ table {
 		padding: 0px !important;
 		margin 0px !important;
     }
+    
+    .holder .designation p {
+		display: inline;
+		padding: 0px !important;
+		margin 0px !important;
+    }
           
   .person-info-area .caption {
     background-color: #fcfcfc;
