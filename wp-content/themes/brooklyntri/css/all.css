@@ -2089,7 +2089,8 @@ table {
       height: 1px; }
       
      .info-holder h2:after {
-      display: none; }
+      background: #fff;
+      height: 0px; }
      
   .info-holder p {
     margin: 0; }
