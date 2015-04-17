@@ -122,10 +122,10 @@ function btc_leftnav( $post=null ) {
 
 	$parent = get_post( $post->post_parent );
 
-	$parent_post = $parent->ID;
+	$parent_post = $parent->ID; var_dump($parent_post);
 	if ( is_null( $parent_post ) ) {
 		$parent_post = $post->ID;
-	}
+	}var_dump($parent_post);
 
 	$section_pages = get_pages(array(
 	    'parent' => $parent_post,
