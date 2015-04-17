@@ -16,7 +16,7 @@
 						<?php the_content(); ?>
 					</header>
 
-<?php if ( !is_user_logged_in() ): ?>
+<?php if ( is_user_logged_in() ): ?>
 
 					<div class="divider">
 						<div class="holder"></div>
@@ -48,7 +48,7 @@
 
 				</section>
 
-<?php if ( is_user_logged_in() ): ?>
+<?php if ( !is_user_logged_in() ): ?>
 
 				<div class="intro-holder">
 					<div class="holder">
