@@ -1953,7 +1953,7 @@ table {
     padding: 0 7px 12px 0;
     margin: 0 0 0 -3px;
     text-transform: uppercase;
-    display: block;
+    display: inline-block;
     vertical-align: top;
     position: relative;
     color: #4abeed;
