@@ -1979,12 +1979,7 @@ table {
       right: -9999px;
       background: #fff;
       height: 0px; }
-      
-    .col h2:after a {
-      right: -9999px;
-      background: #fff;
-      height: 0px; }
-      
+  
   .intro-text p {
     margin: 20px 0px; 
     display: block; 
@@ -2083,7 +2078,7 @@ table {
     vertical-align: top;
     font-size: 24px;
     font-weight: 600; }
-    .info-holder h2:before {
+    .info-holder h2:before:first-child {
       content: "";
       position: absolute;
       left: 100%;
@@ -2091,6 +2086,13 @@ table {
       right: -9999px;
       background: #818181;
       height: 1px; }
+      .info-holder h2:before {
+      position: absolute;
+      left: 100%;
+      top: 15px;
+      right: -9999px;
+      background: #fff;
+      height: 0px; }
   .info-holder p {
     margin: 0; }
   .info-holder .bar {
