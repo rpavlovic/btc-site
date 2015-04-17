@@ -972,10 +972,10 @@ table {
     overflow: hidden;
     margin: 0 auto;
     max-width: 1220px;
-    padding: 16px 70px 18px 20px; }
+    padding: 16px 70px 18px 40px; }
   .page-title h1 {
     margin: 0;
- 	width: 400px;
+ 	width: 420px;
     float: left;
     text-align: left;
     line-height: 21px;
