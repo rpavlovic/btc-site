@@ -15,6 +15,9 @@
 						<?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
 					</header>
+
+<?php if ( !is_user_logged_in() ): ?>
+
 					<div class="divider">
 						<div class="holder"></div>
 					</div>
@@ -41,7 +44,12 @@
 						<p>Brooklyn Tri Club membership is based on the calendar year and is valid from <time datetime="2015-01-01">January 1st</time> to <time datetime="2015-12-31">December 31st</time>.</p>
 						<p>For more information on the club, see our <a href="#">FAQs</a>.</p>
 					</div>
+<?php endif; ?>
+
 				</section>
+
+<?php if ( is_user_logged_in() ): ?>
+
 				<div class="intro-holder">
 					<div class="holder">
 						<div class="photo">
@@ -70,3 +78,5 @@
 						</div>
 					</div>
 				</div>
+
+<?php endif; ?>
