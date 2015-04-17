@@ -145,7 +145,7 @@ function btc_leftnav( $post=null ) {
 	foreach ( $section_pages as $sub_section ):
 		$link_text = get_link_text( $sub_section );
 ?>
-                                    <li<?= $sub_section->ID == get_the_ID() ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
+                                    <li<?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
 <?
 	endforeach;
 ?>
