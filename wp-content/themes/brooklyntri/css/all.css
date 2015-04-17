@@ -1122,7 +1122,8 @@ table {
           text-decoration: none; }
           
     .holder .info {
-        padding: 0px 20px;
+        padding: 0px 30px;
+        width: 33.3%;
           }
           
     .holder h3 {
