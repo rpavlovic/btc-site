@@ -57,7 +57,7 @@
 									<?php endif; ?>
 
 									</div>
-									<h3><a href="#" itemprop="name"><?= $member->post_title ?></a></h3>
+									<h2><a href="#" itemprop="name"><?= $member->post_title ?></a></h2>
 									<span class="designation" itemprop="jobTitle"><?= $content['job_title'] ?></span>
 									<p><?= $member->post_content ?></p>
 								</article>
