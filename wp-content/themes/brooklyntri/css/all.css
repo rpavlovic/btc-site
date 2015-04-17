@@ -2088,7 +2088,7 @@ table {
       background: #fff;
       height: 0px; }
     
-    .info-holder h2:first-child:after {
+    .info-holder h2:after:first-child {
       position: absolute;
       background: #818181;
       height: 1px; }
