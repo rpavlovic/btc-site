@@ -10,7 +10,7 @@
 ?>
 
 					<header>
-						<?php the_title('<h2>','</h2>'); ?>
+                      <?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
 					</header>
 					<div class="bar">
