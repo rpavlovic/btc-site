@@ -10,11 +10,8 @@
 ?>
 
 					<header>
-
-                            <?php the_title('<h2>','</h2>'); ?>
-
-                            <?php the_content(); ?>
-
+						<?php the_title('<h2>','</h2>'); ?>
+						<?php the_content(); ?>
 					</header>
 					<div class="bar">
 						<p><i class="icon-star"></i> DENOTES 2015 CLUB RACE</p>

@@ -17,7 +17,8 @@ btc_breadcrumbs();
 
 ?>
 
-
+				<div id="two-columns">
+					<div id="content">
 				<section class="info-holder">
 
 
@@ -38,6 +39,9 @@ btc_breadcrumbs();
 		?>
 
 				</section>
+					</div>
+					<?php btc_leftnav( $post ); ?>
+				</div>
 
 <?php	
 	btc_get_sponsor_logos();
