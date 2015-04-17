@@ -71,20 +71,22 @@ $infoboxes = get_fields( get_the_ID() );
 								<h2>THE BTC FORUM</h2>
 								<p>The BTC forum is the best place to find up-to-the-minute BTC training-event info, along with heads-ups about new discounts, races, and other official news. It's also the best place for our members to talk to each other: Ask advice, share tips, post race reports, find training partners and more.</p>
 <?php if ( !is_user_logged_in() ): ?>
-								<form action="<?= WP_SITEURL ?>/wp-login.php" class="login-form">
+								<form action="<?php echo site_url( '/login.php' ); ?>" method="post" class="login-form">
 									<fieldset>
 										<legend class="hidden">login form</legend>
 										<p>This is a members <em>only</em> section. Please login to access the forum.</p>
 										<div class="row">
 											<div class="col">
 												<label for="name">USERNAME <span>*</span></label>
-												<input type="text" id="name" name="log">
+												<input type="text" id="name" name="user">
 											</div>
 											<div class="col">
 												<label for="password">PASSWORD <span>*</span></label>
-												<input type="password" id="password" name="pwd">
+												<input type="password" id="password" name="pass">
 											</div>
 										</div>
+										<input type="hidden" name="testcookie" value="1">
+										<input type="hidden" name="action" value="btc_login_jam">
 										<input class="button" type="submit" value="LOGIN">
 									</fieldset>
 								</form>
