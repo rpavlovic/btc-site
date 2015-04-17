@@ -1995,11 +1995,12 @@ table {
       height: 1px; }
   
   .intro-text p {
-    margin: 0px 0px; 
+    margin: 20px 0px; 
     display: block; 
     line-height: 24px; }
     
     .intro-text p:first-child {
+     margin: 0px 0px; 
     display: inline; }
 
 .content-holder {
