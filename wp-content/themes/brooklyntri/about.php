@@ -15,6 +15,8 @@ get_header();
 
 btc_breadcrumbs();
 
+$current_post = $post;
+
 ?>
 
 				<div id="two-columns">
@@ -36,7 +38,7 @@ btc_breadcrumbs();
 		endwhile;
 		?>
 					</div>
-					<?php btc_leftnav( $post ); ?>
+					<?php btc_leftnav( $current_post ); ?>
 				</div>
 
 <?php	

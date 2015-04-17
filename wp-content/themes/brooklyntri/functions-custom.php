@@ -117,12 +117,8 @@ function get_link_text( $post=null ) {
 function btc_leftnav( $post=null ) {
 
 	if( is_null( $post ) ) {
-
-		var_dump(get_the_ID()); 
 		$post = get_post( get_the_ID() );
 	}
-
-
 
 	$parent = get_post( $post->post_parent );
 
