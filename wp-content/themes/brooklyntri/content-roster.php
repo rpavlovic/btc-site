@@ -9,7 +9,7 @@
 
 ?>
 
-					<header>
+					<header class="rosta">
                       <?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
 					</header>

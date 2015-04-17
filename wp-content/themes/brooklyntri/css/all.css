@@ -1979,6 +1979,20 @@ table {
       right: -9999px;
       background: #fff;
       height: 0px; }
+      
+      .rosta h2:after {
+      right: -9999px;
+      background: #fff;
+      height: 0px; }
+      
+      .rosta h2:first-child:after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 15px;
+      right: -9999px;
+      background: #818181;
+      height: 1px; }
   
   .intro-text p {
     margin: 20px 0px; 
