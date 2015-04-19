@@ -33,9 +33,9 @@
 								</div>
 							</li>
 							<li>
-								<a class="facebook" href="#"><i class="icon-facebook">&nbsp;</i></a>
+								<a class="facebook" href="https://www.facebook.com/BrooklynTriClub"><i class="icon-facebook">&nbsp;</i></a>
 								<div class="text">
-									<span>665</span>
+									<span><?= get_btc_facebook_likes() ?></span>
 									<p>Likes</p>
 								</div>
 							</li>

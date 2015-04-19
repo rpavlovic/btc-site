@@ -885,3 +885,10 @@ function get_breadcrumbs_get_term_parents( $parent_id = '', $taxonomy = '' ) {
 	return $trail;
 
 } // End get_breadcrumbs_get_term_parents()
+
+
+function get_btc_facebook_likes() {
+	$likes = flc_update_like_count( 'https://www.facebook.com/BrooklynTriClub' );
+
+	return $likes;
+}
