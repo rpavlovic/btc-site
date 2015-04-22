@@ -24,6 +24,7 @@
 		TODO: output page title, or clean up wp_head()
 		wp_head();
 	*/
+		wp_head();
 	?>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
 	<link media="all" rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/all.css">
