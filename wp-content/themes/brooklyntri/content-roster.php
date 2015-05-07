@@ -19,9 +19,12 @@
 					</div>
 
 <?php
-
-$evts = query_posts('category_name=events&eventDisplay=list');
-var_dump($evts);
+$args = array(
+		'post_type' => 'tribe_events',
+		'posts_per_page' => -1,
+		'orderby' => 'title'
+);
+query_posts($args);
 ?>
 
 					<form action="#" class="info-form">
