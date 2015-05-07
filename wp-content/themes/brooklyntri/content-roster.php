@@ -19,12 +19,8 @@
 					</div>
 
 <?php
-$args = array(
-		'post_type' => 'tribe_events',
-		'posts_per_page' => -1,
-		'orderby' => 'title'
-);
-query_posts($args);
+$get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'past') );
+var_dump($get_posts);
 ?>
 
 					<form action="#" class="info-form">
