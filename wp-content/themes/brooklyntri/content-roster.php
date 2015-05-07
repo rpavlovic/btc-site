@@ -32,6 +32,8 @@ foreach($get_posts as $post): setup_postdata($post);
 
 	$categories = tribe_get_event_categories( $post->ID );
 
+var_dump($categories);
+
 	$categories = strip_tags($categories, '<a>');
 ?>
 								<li class="active">
