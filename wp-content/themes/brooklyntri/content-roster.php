@@ -30,6 +30,10 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 <?php
 foreach($get_posts as $post): setup_postdata($post);
 	$categories = get_the_category();
+
+	$ttt = tribe_get_event_categories($post->ID);
+
+	var_dump($ttt);
 ?>
 								<li class="active">
 									<input type="checkbox" title="checkbox" checked>
