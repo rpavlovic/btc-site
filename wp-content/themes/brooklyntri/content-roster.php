@@ -18,7 +18,7 @@
 						<p><i class="icon-star"></i> DENOTES 2015 CLUB RACE</p>
 					</div>
 
-<?php query_posts('category_name=events&eventDisplay=upcoming'); ?>
+<?php query_posts('category_name=events&eventDisplay=list'); ?>
 
 					<form action="#" class="info-form">
 						<fieldset>
