@@ -29,11 +29,10 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 							<ul class="info-list">
 <?php
 foreach($get_posts as $post): setup_postdata($post);
-	$categories = get_the_category();
 
-	$ttt = tribe_get_event_categories($post->ID);
+	$categories = tribe_get_event_categories( $post->ID );
 
-	var_dump($ttt);
+	$categories = strip_tags($categories, '<a>');
 ?>
 								<li class="active">
 									<input type="checkbox" title="checkbox" checked>
@@ -45,17 +44,15 @@ foreach($get_posts as $post): setup_postdata($post);
 											<span>50 BTCERS</span>
 										</div>
 										<div class="col">
-											<time datetime="2015-05-15"><?= $post->EventStartDate ?></time>
+											<time datetime="2015-05-15"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
 										</div>
 									</a>
 									<div class="slide">
 										<dl>
 											<dt>TYPE:</dt>
-											<?php foreach($categories as $category): ?>
-											<dd><?= $category->cat_name ?></dd>
-											<?php endforeach; ?>
+											<dd><?= $categories ?></dd>
 											<dt>LOCATION:</dt>
-											<dd>Brooklyn, NY</dd>
+											<dd><?= tribe_get_city( $post->ID ) ?>, <?= tribe_get_state( $post->ID ) ?></dd>
 										</dl>
 										<dl>
 											<dt>WEBSITE:</dt>
