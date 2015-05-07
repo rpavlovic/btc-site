@@ -19,7 +19,7 @@
 					</div>
 
 <?php
-$get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'past') );
+$get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
 var_dump($get_posts);
 ?>
 
