@@ -9,6 +9,7 @@
 
 ?>
 
+
 					<header class="rosta">
                       <?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
@@ -16,6 +17,9 @@
 					<div class="bar">
 						<p><i class="icon-star"></i> DENOTES 2015 CLUB RACE</p>
 					</div>
+
+<?php query_posts('category_name=events&eventDisplay=upcoming'); ?>
+
 					<form action="#" class="info-form">
 						<fieldset>
 							<legend class="hidden">info form</legend>
