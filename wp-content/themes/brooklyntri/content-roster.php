@@ -18,7 +18,11 @@
 						<p><i class="icon-star"></i> DENOTES 2015 CLUB RACE</p>
 					</div>
 
-<?php query_posts('category_name=events&eventDisplay=list'); ?>
+<?php
+
+$evts = query_posts('category_name=events&eventDisplay=list');
+var_dump($evts);
+?>
 
 					<form action="#" class="info-form">
 						<fieldset>
