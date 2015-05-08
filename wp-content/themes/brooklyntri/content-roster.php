@@ -39,7 +39,7 @@ foreach($get_posts as $post): setup_postdata($post);
 									<input type="checkbox" title="checkbox" checked>
 									<a class="opener" href="#">
 										<div class="col">
-											<h2><i class="icon-star"></i> <?= $post->post_title ?></h2>
+											<h2><?= in_array('Club Race', $categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
 											<span>50 BTCERS</span>
@@ -51,15 +51,15 @@ foreach($get_posts as $post): setup_postdata($post);
 									<div class="slide">
 										<dl>
 											<dt>TYPE:</dt>
-											<?php foreach($categories as $category): ?>
+										<?php foreach($categories as $category): ?>
 											<dd><?= str_replace('</li>','', $category) ?></dd>
-											<?php endforeach; ?>
+										<?php endforeach; ?>
 											<dt>LOCATION:</dt>
 											<dd><?= tribe_get_city( $post->ID ) ?>, <?= tribe_get_state( $post->ID ) ?></dd>
 										</dl>
 										<dl>
 											<dt>WEBSITE:</dt>
-											<dd><a href="#">www.nyrr.org/races-and-events/2015/...</a></dd>
+											<dd><?= tribe_get_event_website_link() ?></dd>
 											<dt>ATHLETE LIST:</dt>
 											<dd><a href="#">click to view</a></dd>
 										</dl>
