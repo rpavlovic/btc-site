@@ -32,7 +32,7 @@ foreach($get_posts as $post): setup_postdata($post);
 	$categories = tribe_get_event_categories( $post->ID );
 	$categories = strip_tags($categories, '<a><li>');
 	$categories = explode('<li>', $categories);
-	@unset($categories[0]);
+	unset($categories[0]);
 ?>
 
 								<li><!--  class="active" -->
