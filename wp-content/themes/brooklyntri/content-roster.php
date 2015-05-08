@@ -32,7 +32,7 @@ foreach($get_posts as $post): setup_postdata($post);
 	$categories = tribe_get_event_categories( $post->ID );
 	$categories = strip_tags($categories, '<a><li>');
 	$categories = explode('<li>', $categories);
-	print_r($categories);
+	@unset($categories[0]);
 ?>
 
 								<li><!--  class="active" -->
@@ -51,7 +51,9 @@ foreach($get_posts as $post): setup_postdata($post);
 									<div class="slide">
 										<dl>
 											<dt>TYPE:</dt>
-											<dd><?= $categories ?></dd>
+											<?php foreach($categories as $category): ?>
+											<dd><?= str_replace('</li>','', $category) ?></dd>
+											<?php endforeach; ?>
 											<dt>LOCATION:</dt>
 											<dd><?= tribe_get_city( $post->ID ) ?>, <?= tribe_get_state( $post->ID ) ?></dd>
 										</dl>
