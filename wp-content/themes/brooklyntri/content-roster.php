@@ -20,7 +20,6 @@
 
 <?php
 $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
-
 ?>
 
 					<form action="#" class="info-form">
@@ -31,12 +30,12 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 foreach($get_posts as $post): setup_postdata($post);
 
 	$categories = tribe_get_event_categories( $post->ID );
-
-var_dump($categories);
-
-	$categories = strip_tags($categories, '<a>');
+	$categories = strip_tags($categories, '<a><li>');
+	$categories = explode('<li>', $categories);
+	print_r($categories);
 ?>
-								<li class="active">
+
+								<li><!--  class="active" -->
 									<input type="checkbox" title="checkbox" checked>
 									<a class="opener" href="#">
 										<div class="col">
@@ -46,7 +45,7 @@ var_dump($categories);
 											<span>50 BTCERS</span>
 										</div>
 										<div class="col">
-											<time datetime="2015-05-15"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
+											<time datetime="<?= date("Y-m-d",strtotime($post->EventStartDate)) ?>"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
 										</div>
 									</a>
 									<div class="slide">
