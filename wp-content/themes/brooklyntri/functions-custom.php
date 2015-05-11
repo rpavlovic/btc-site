@@ -893,13 +893,18 @@ function get_btc_facebook_likes() {
 	return $likes;
 }
 
-function get_btc_form_registrants() {
+function get_btc_form_registrants( $form_id ) {
+	if(!is_numeric($form_id)) {
+		return null;
+	}
+
 	global $wpdb;
-	var_dump($wpdb);
-	$sql = 'select * from ' . $wpdb->postmeta . ' where meta_key = \'slides\' limit 1';
-	$slides =  $wpdb->get_results($sql, OBJECT);
-	if($slides && isset($slides[0])) {
-		return unserialize($slides[0]->meta_value);
+	$form_id = (int) $form_id;
+	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
+	$registrants =  $wpdb->get_results($sql, OBJECT);
+	$var_dump($registrants);
+	if($registrants && isset($registrants[0])) {
+		return $registrants;
 	}
 	return null;
 }
