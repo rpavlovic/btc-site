@@ -7,6 +7,8 @@
  * @since Brooklyn Tri 1.0
  */
 
+get_btc_form_registrants();
+
 ?>
 
 

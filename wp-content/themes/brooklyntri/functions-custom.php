@@ -892,3 +892,14 @@ function get_btc_facebook_likes() {
 	 //cache data
 	return $likes;
 }
+
+function get_btc_form_registrants() {
+	global $wpdb;
+	var_dump($wpdb);
+	$sql = 'select * from ' . $wpdb->postmeta . ' where meta_key = \'slides\' limit 1';
+	$slides =  $wpdb->get_results($sql, OBJECT);
+	if($slides && isset($slides[0])) {
+		return unserialize($slides[0]->meta_value);
+	}
+	return null;
+}
