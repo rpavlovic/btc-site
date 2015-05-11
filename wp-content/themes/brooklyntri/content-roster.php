@@ -63,8 +63,9 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dt>ATHLETE LIST:</dt>
 <?php
 $racers = get_btc_registrants(1, $post->ID);
+var_dump($racers);
 ?>
-											<dd><?= $racers[0]->value ?> <?= $racers[1]->value ?></dd>
+											<dd></dd>
 											<? /* <dd><a href="#">click to view</a></dd> */ ?>
 										</dl>
 									</div>
