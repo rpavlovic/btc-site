@@ -60,12 +60,21 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dl>
 											<dt>WEBSITE:</dt>
 											<dd><?= tribe_get_event_website_link() ?></dd>
-											<dt>ATHLETE LIST:</dt>
 <?php
 $racers = get_btc_registrants(1, $post->ID);
-var_dump($racers);
+if(!is_null($racers)):
 ?>
-											<dd></dd>
+											<dt>ATHLETE LIST:</dt>
+<?php
+	foreach($racers as $racer):
+?>
+											<dd><?= $racer->value ?></dd>
+<?php
+	endforeach;
+?>
+<?php
+endif; // if racers
+?>
 											<? /* <dd><a href="#">click to view</a></dd> */ ?>
 										</dl>
 									</div>

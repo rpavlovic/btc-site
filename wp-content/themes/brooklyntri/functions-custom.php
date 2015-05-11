@@ -893,16 +893,15 @@ function get_btc_facebook_likes() {
 	return $likes;
 }
 
-function get_btc_registrants( $form_id, $event_id ) {
-	if(!is_numeric($form_id) || !is_numeric($event_id)) {
+function get_btc_registrants( $form_id ) {
+	if(!is_numeric($form_id)) {
 		return null;
 	}
 
 	global $wpdb;
 	$form_id = (int) $form_id;
-	$event_id = (int) $event_id;
 
-	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where field_number in (1,2) and form_id = ' . $form_id . ' and value = \'' . $event_id . '\'';
+	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
 	$registrants =  $wpdb->get_results($sql, OBJECT);
 	if($registrants && is_array($registrants)) {
 		return $registrants;
