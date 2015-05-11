@@ -904,6 +904,7 @@ function get_btc_registrants( $form_id ) {
 	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
 	$registrants =  $wpdb->get_results($sql, OBJECT);
 	if($registrants && is_array($registrants)) {
+		$registrants = new RecursiveIteratorIterator(new RecursiveArrayIterator($registrants));
 		return $registrants;
 	}
 	return null;
