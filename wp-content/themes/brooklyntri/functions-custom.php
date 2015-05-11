@@ -922,10 +922,10 @@ function count_btc_form_registrants( $form_id, $event_id, $reg_array = null ) {
 		$event_id = (int) $event_id;
 
 		// I don't like this
-		$sql = 'select count(distinct lead_id) from ' . $wpdb->prefix . 'rg_lead_detail where field_number=7 and form_id = ' . $form_id . ' and value = \'' . $event_id . '\'';
+		$sql = 'select count(distinct lead_id) as btcers from ' . $wpdb->prefix . 'rg_lead_detail where field_number=7 and form_id = ' . $form_id . ' and value = \'' . $event_id . '\'';
 		$registrants =  $wpdb->get_results($sql, OBJECT);
 		if($registrants && is_array($registrants)) {
-			return $registrants[0];
+			return $registrants[0]->btcers;
 		}
 		return null;
 	}
