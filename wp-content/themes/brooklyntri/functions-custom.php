@@ -902,7 +902,7 @@ function get_btc_form_registrants( $form_id ) {
 	$form_id = (int) $form_id;
 	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
 	$registrants =  $wpdb->get_results($sql, OBJECT);
-	$var_dump($registrants);
+	var_dump($registrants);
 	if($registrants && isset($registrants[0])) {
 		return $registrants;
 	}
