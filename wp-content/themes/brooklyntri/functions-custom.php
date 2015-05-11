@@ -902,9 +902,28 @@ function get_btc_form_registrants( $form_id ) {
 	$form_id = (int) $form_id;
 	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
 	$registrants =  $wpdb->get_results($sql, OBJECT);
-	var_dump($registrants);
-	if($registrants && isset($registrants[0])) {
+	if($registrants && is_array($registrants)) {
 		return $registrants;
 	}
 	return null;
+}
+
+function count_btc_form_registrants( $form_id, $reg_array = null ) {
+	if(!is_numeric($form_id)) {
+		return null;
+	}
+
+	if (is_array( $reg_array )) {
+
+	}
+	else {
+		global $wpdb;
+		$form_id = (int) $form_id;
+		$sql = 'select count(distinct lead_id) from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
+		$registrants =  $wpdb->get_results($sql, OBJECT);
+		if($registrants && is_array($registrants)) {
+			return $registrants[0];
+		}
+		return null;
+	}
 }

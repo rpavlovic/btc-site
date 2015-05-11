@@ -22,6 +22,7 @@ get_btc_form_registrants(1);
 
 <?php
 $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
+var_dump($get_posts );
 ?>
 
 					<form action="#" class="info-form">
