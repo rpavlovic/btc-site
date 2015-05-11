@@ -36,7 +36,7 @@ foreach($get_posts as $post): setup_postdata($post);
 ?>
 
 								<li><!--  class="active" -->
-									<input type="checkbox" title="checkbox" checked>
+									<? /* <input type="checkbox" title="checkbox" checked> */ ?>
 									<a class="opener" href="#">
 										<div class="col">
 											<h2><?= in_array('Club Race', $categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
@@ -68,10 +68,12 @@ foreach($get_posts as $post): setup_postdata($post);
 <?php endforeach; ?>
 
 							</ul>
+<? /*
 							<div class="btn-holder">
 								<input type="submit" class="btn" value="SAVE CHANGES">
 								<a class="btn" href="#">SUGGEST A RACE</a>
 							</div>
+*/ ?>
 						</fieldset>
 					</form>
 
