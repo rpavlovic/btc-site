@@ -7,8 +7,6 @@
  * @since Brooklyn Tri 1.0
  */
 
-get_btc_form_registrants(1);
-
 ?>
 
 
@@ -22,7 +20,6 @@ get_btc_form_registrants(1);
 
 <?php
 $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
-//var_dump($get_posts );
 ?>
 
 					<form action="#" class="info-form">
@@ -31,7 +28,7 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 							<ul class="info-list">
 <?php
 foreach($get_posts as $post): setup_postdata($post);
-	$btcers = count_btc_form_registrants(1, $post->ID);
+	$btcers = count_btc_registrants(1, $post->ID);
 	$categories = tribe_get_event_categories( $post->ID );
 	$categories = strip_tags($categories, '<a><li>');
 	$categories = explode('<li>', $categories);
@@ -64,7 +61,11 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dt>WEBSITE:</dt>
 											<dd><?= tribe_get_event_website_link() ?></dd>
 											<dt>ATHLETE LIST:</dt>
-											<dd><a href="#">click to view</a></dd>
+<?php
+$racers = get_btc_registrants(1, $post->ID);
+?>
+											<dd><?= $racers[0]->value ?> <?= $racers[1]->value ?></dd>
+											<? /* <dd><a href="#">click to view</a></dd> */ ?>
 										</dl>
 									</div>
 								</li>
