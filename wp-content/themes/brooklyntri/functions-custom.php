@@ -908,8 +908,8 @@ function get_btc_form_registrants( $form_id ) {
 	return null;
 }
 
-function count_btc_form_registrants( $form_id, $reg_array = null ) {
-	if(!is_numeric($form_id)) {
+function count_btc_form_registrants( $form_id, $event_id, $reg_array = null ) {
+	if(!is_numeric($form_id) || !is_numeric($event_id)) {
 		return null;
 	}
 
@@ -919,7 +919,10 @@ function count_btc_form_registrants( $form_id, $reg_array = null ) {
 	else {
 		global $wpdb;
 		$form_id = (int) $form_id;
-		$sql = 'select count(distinct lead_id) from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
+		$event_id = (int) $event_id;
+
+		// I don't like this
+		$sql = 'select count(distinct lead_id) from ' . $wpdb->prefix . 'rg_lead_detail where field_number=7 and form_id = ' . $form_id . ' and value = \'' . $event_id . '\'';
 		$registrants =  $wpdb->get_results($sql, OBJECT);
 		if($registrants && is_array($registrants)) {
 			return $registrants[0];

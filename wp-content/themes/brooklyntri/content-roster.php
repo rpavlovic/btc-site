@@ -22,7 +22,7 @@ get_btc_form_registrants(1);
 
 <?php
 $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
-var_dump($get_posts );
+//var_dump($get_posts );
 ?>
 
 					<form action="#" class="info-form">
@@ -45,7 +45,7 @@ foreach($get_posts as $post): setup_postdata($post);
 											<h2><?= in_array('Club Race', $categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
-											<span>50 BTCERS</span>
+											<span><?= count_btc_form_registrants(1, $post->ID) ?> BTCERS</span>
 										</div>
 										<div class="col">
 											<time datetime="<?= date("Y-m-d",strtotime($post->EventStartDate)) ?>"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
