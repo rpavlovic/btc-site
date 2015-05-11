@@ -45,7 +45,7 @@ foreach($get_posts as $post): setup_postdata($post);
 											<h2><?= in_array('Club Race', $categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
-											<span><?= count_btc_form_registrants(1, $post->ID) ?> BTCERS</span>
+											<span><?= count_btc_form_registrants(1, 328) ?> BTCERS</span>
 										</div>
 										<div class="col">
 											<time datetime="<?= date("Y-m-d",strtotime($post->EventStartDate)) ?>"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
