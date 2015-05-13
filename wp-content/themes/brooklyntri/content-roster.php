@@ -63,6 +63,7 @@ foreach($get_posts as $post): setup_postdata($post);
 <?php
 $racers = get_btc_registrants(1, $post->ID);
 if(!is_null($racers)):
+	$racers = explode(',',$racers);
 	var_dump($racers);
 ?>
 											<dt>ATHLETE LIST:</dt>
