@@ -66,11 +66,9 @@ $racers = get_btc_registrants(1, $post->ID);
 if(!is_null($racers)):
 ?>
 											<dt>ATHLETE LIST:</dt>
-<?php
-foreach($racers as $racer):
-?>
-											<dd><?= $racer->value[0] ?> <?= $racer->value[1] ?></dd>
-<?php endforeach; ?>
+										<?php foreach($racers as $racer): ?>
+											<dd><?= $racer->fullname ?></dd>
+										<?php endforeach; ?>
 
 <?php
 endif; // if racers
