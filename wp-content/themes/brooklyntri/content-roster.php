@@ -69,7 +69,7 @@ if(!is_null($racers)):
 <?php
 foreach($racers as $racer):
 ?>
-											<dd><?= $racer ?></dd>
+											<dd><?= $racer->value[0] ?> <?= $racer->value[1] ?></dd>
 <?php endforeach; ?>
 
 <?php
