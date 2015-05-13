@@ -73,7 +73,7 @@
 								<div class="text-holder">
 									<p>By clicking on the right, I affirm that I am 18 years of age or older (18), I have read the waiver, and I understand its content.</p>
 								</div>
-								<a href="#" class="btn-join">JOIN BTC NOW</a>
+								<a href="<?php bloginfo('wpurl'); ?>/wp-login.php?action=register" class="btn-join">JOIN BTC NOW</a>
 							</div>
 						</div>
 					</div>
