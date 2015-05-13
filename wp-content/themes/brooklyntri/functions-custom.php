@@ -893,7 +893,7 @@ function get_btc_facebook_likes() {
 	return $likes;
 }
 
-function get_btc_registrants( $form_id ) {
+function get_btc_registrants( $form_id, $event_id ) {
 	if(!is_numeric($form_id)) {
 		return null;
 	}
@@ -902,10 +902,16 @@ function get_btc_registrants( $form_id ) {
 	$form_id = (int) $form_id;
 
 	$sql = 'select * from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id;
-	$registrants =  $wpdb->get_results($sql, OBJECT);
+	$registrants =  $wpdb->get_results($sql, ARRAY);
 	if($registrants && is_array($registrants)) {
-		$registrants = new RecursiveIteratorIterator(new RecursiveArrayIterator($registrants));
-		return $registrants;
+		for($i=0; $i<count($registrants); $i++) {
+			if($registrants[$i]['field_number']==7 && $registrants[$i]['value']==$event_id) {
+				return array(
+					'lead_id' => $registrants[$i]['lead_id'],
+					'registrants' => $registrants
+				);
+			}
+		}
 	}
 	return null;
 }
