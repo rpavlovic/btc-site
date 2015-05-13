@@ -1,3 +1,12 @@
+.tribe-events-button:before,
+.tribe-events-button:after {
+    content: "";
+    display: table;
+}
 .tribe-events-button {
+	clear: right;
 	float: right;
+}
+.tribe-events-button:after {
+	clear: both;
 }
