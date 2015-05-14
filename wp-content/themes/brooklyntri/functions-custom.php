@@ -903,7 +903,7 @@ function get_btc_registrants( $form_id, $event_id ) {
 	global $wpdb;
 	$form_id = (int) $form_id;
 
-	$sql = 'select group_concat(value, " ") as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and lead_id in (select lead_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) group by lead_id';
+	$sql = 'select value as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and lead_id in (select lead_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) group by lead_id';
 	$registrants =  $wpdb->get_results($sql, OBJECT);
 	if($registrants && is_array($registrants)) {
 		return $registrants;
