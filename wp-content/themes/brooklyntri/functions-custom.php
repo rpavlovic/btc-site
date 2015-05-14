@@ -896,11 +896,13 @@ function get_btc_facebook_likes() {
 }
 
 
-function get_btc_participants($form_id) {
+function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
 	$racers = array();
 	foreach ($registrants as $racer) {
-		$racers[] = $racer['1'] . ' ' .$racer['2'];
+		if($racer[EVENT_FIELD_ID] == $event_id) {
+			$racers[] = $racer['1'] . ' ' .$racer['2'];
+		}
 	}
 	return $racers;
 }

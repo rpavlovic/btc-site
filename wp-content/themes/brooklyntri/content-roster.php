@@ -61,20 +61,19 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dt>WEBSITE:</dt>
 											<dd><?= tribe_get_event_website_link() ?></dd>
 <?php
-$dudes = get_btc_participants(1);
+$dudes = get_btc_participants(1, $post->ID);
 
 var_dump($dudes);
 
 $racers = get_btc_registrants(1, $post->ID);
-if(!is_null($racers)):
-	$racers = explode(',',$racers[0]->racers);
-	//var_dump($racers);
+if(!is_null($dudes)):
+
 ?>
 											<dt>ATHLETE LIST:</dt>
 											<dd>
 												<ol>
-												<?php foreach($racers as $racer): ?>
-													<li><?= $racer->fullname ?></li>
+												<?php foreach($dudes as $racer): ?>
+													<li><?= $racer ?></li>
 												<?php endforeach; ?>
 												</ol>
 											</dd>
