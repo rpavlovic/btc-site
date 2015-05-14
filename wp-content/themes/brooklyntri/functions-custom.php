@@ -895,6 +895,31 @@ function get_btc_facebook_likes() {
 	return $likes;
 }
 
+/*
+<?php
+// http://www.gravityhelp.com/forums/topic/query-submitted-forms-from-custom-page#post-39607
+// create shortcode to return names of participants for a specific form
+// usage: [participants form=37] where 37 is the form ID
+add_shortcode('participants', 'troop24_participants');
+function troop24_participants($atts) {
+        $form_id = $atts['form'];
+        // function to pull entries from one form
+        $scouts = RGFormsModel::get_leads($form_id, '1.6', 'ASC');
+        $html = "<ul class='participants'>\n";
+        // loop through all the returned results
+        foreach ($scouts as $participant) {
+                // field 1.3 is the first name. I upper cased the first letter for consistency
+                $fname    = ucfirst($participant['1.3']);
+                // I wanted to show only the first initial of the last name, also upper case
+                $linitial = strtoupper(substr($participant['1.6'],0,1));
+                $html .= "\t<li>$fname $linitial</li>\n";
+        }
+        $html .= '</ul>';
+        // return the html output from the shorcode
+        return $html;
+}
+*/
+
 function get_btc_registrants( $form_id, $event_id ) {
 	if(!is_numeric($form_id)) {
 		return null;
@@ -903,7 +928,7 @@ function get_btc_registrants( $form_id, $event_id ) {
 	global $wpdb;
 	$form_id = (int) $form_id;
 
-	$sql = 'select value as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and lead_id in (select lead_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) group by lead_id';
+	$sql = 'select group_concat(value, " ") as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and (select form_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) = ' . $form_id;
 	$registrants =  $wpdb->get_results($sql, OBJECT);
 	if($registrants && is_array($registrants)) {
 		return $registrants;
