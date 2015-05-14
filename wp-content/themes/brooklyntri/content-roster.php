@@ -29,6 +29,8 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 <?php
 foreach($get_posts as $post): setup_postdata($post);
 	$btcers = count_btc_registrants(1, $post->ID);
+	$registrants = get_btc_participants(1, $post->ID);
+
 	$categories = tribe_get_event_categories( $post->ID );
 	$categories = strip_tags($categories, '<a><li>');
 	$categories = explode('<li>', $categories);
@@ -60,27 +62,18 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dl>
 											<dt>WEBSITE:</dt>
 											<dd><?= tribe_get_event_website_link() ?></dd>
-<?php
-$dudes = get_btc_participants(1, $post->ID);
 
-var_dump($dudes);
-
-$racers = get_btc_registrants(1, $post->ID);
-if(!is_null($dudes)):
-
-?>
 											<dt>ATHLETE LIST:</dt>
 											<dd>
 												<ol>
-												<?php foreach($dudes as $racer): ?>
+<?php
+	foreach($registrants as $racer):
+?>
 													<li><?= $racer ?></li>
-												<?php endforeach; ?>
+<?php endforeach; ?>
 												</ol>
 											</dd>
 
-<?php
-endif; // if racers
-?>
 											<? /* <dd><a href="#">click to view</a></dd> */ ?>
 										</dl>
 									</div>
