@@ -35,6 +35,7 @@ foreach($get_posts as $post): setup_postdata($post);
 	$categories = strip_tags($categories, '<a><li>');
 	$categories = explode('<li>', $categories);
 	unset($categories[0]);
+	var_dump($categories);
 ?>
 
 								<li><!--  class="active" -->
