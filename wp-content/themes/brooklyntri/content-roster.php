@@ -42,7 +42,7 @@ foreach($get_posts as $post): setup_postdata($post);
 									<? /* <input type="checkbox" title="checkbox" checked> */ ?>
 									<a class="opener" href="#">
 										<div class="col">
-											<h2><?= in_array('Club Race</li>', $categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
+											<h2><?= in_array('Club Race', strip_tags($categories)) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
 											<span><?= $btcers ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
