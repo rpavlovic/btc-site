@@ -33,17 +33,15 @@ foreach($get_posts as $post): setup_postdata($post);
 
 	$categories = tribe_get_event_categories( $post->ID );
 	$categories = strip_tags($categories, '<a><li>');
-	$raw_categories = strip_tags($categories);
 	$categories = explode('<li>', $categories);
 	unset($categories[0]);
-	//var_dump($categories);
 ?>
 
 								<li><!--  class="active" -->
 									<? /* <input type="checkbox" title="checkbox" checked> */ ?>
 									<a class="opener" href="#">
 										<div class="col">
-											<h2><?= in_array('Club Race', $raw_categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
+											<h2><?= is_club_race($categories) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
 											<span><?= $btcers ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>

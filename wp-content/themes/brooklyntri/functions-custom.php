@@ -896,6 +896,22 @@ function get_btc_facebook_likes() {
 }
 
 
+/**
+ * Resources
+ */
+
+function is_club_race($cats) {
+	if (is_array($cats)) {
+		foreach ($cats as $cat) {
+			$cat = strip_tags($cat);
+			if (n_array('Club Race', $cat)) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
 	$racers = array();
