@@ -904,12 +904,9 @@ function is_club_race($cats) {
 	if (is_array($cats)) {
 		foreach ($cats as $cat) {
 			$cat = strip_tags($cat);
-
-			var_dump($cat);
-
-			//if (in_array('Club Race', $cat)) {
-			//	return true;
-			//}
+			if ('club race' == strtolower($cat))) {
+				return true;
+			}
 		}
 	}
 	return false;
