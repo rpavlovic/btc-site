@@ -149,7 +149,7 @@ $infoboxes = get_fields( get_the_ID() );
 						<ul>
 <?php
 $races = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
-foreach($get_posts as $post): setup_postdata($post);
+foreach($races as $post): setup_postdata($post);
 ?>
 							<li><a href="<?= get_permalink( $post->ID ) ?>"><?= $post->post_title ?></a></li>
 <?php endforeach; ?>
