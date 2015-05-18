@@ -73,7 +73,13 @@
 								<div class="text-holder">
 									<p>By clicking on the right, I affirm that I am 18 years of age or older (18), I have read the waiver, and I understand its content.</p>
 								</div>
-								<a href="<?php bloginfo('wpurl'); ?>/wp-login.php?action=register" class="btn-join">JOIN BTC NOW</a>
+
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="cmd" value="_s-xclick" />
+									<input type="hidden" name="hosted_button_id" value="4KKBSMZH2Y94L" />
+									<input id="wp-submit" tabindex="100" type="submit" name="submit" value="CLICK HERE TO JOIN" class="btn-join">
+									<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
+								</form>
 							</div>
 						</div>
 					</div>
