@@ -65,7 +65,7 @@ $infoboxes = get_fields( get_the_ID() );
 						<h2>BTC FORUM</h2>
 						<div class="holder">
 							<div class="photo">
-								<img src="images/img02.jpg" alt="image description">
+								<img src="<?php bloginfo('wpurl'); ?>/images/img02.jpg" alt="image description">
 							</div>
 							<div class="text">
 								<h2>THE BTC FORUM</h2>
@@ -98,7 +98,7 @@ $infoboxes = get_fields( get_the_ID() );
 						<h2>BTC FORUM</h2>
 						<div class="holder">
 							<div class="photo">
-								<img src="images/img02.jpg" alt="image description">
+								<img src="<?php bloginfo('wpurl'); ?>/images/img02.jpg" alt="image description">
 							</div>
 							<div class="text">
 								<div class="desc-holder">
@@ -145,14 +145,14 @@ $infoboxes = get_fields( get_the_ID() );
 						</div>
 					</div>
 					<aside class="aside">
-						<h2>2015 CLUB RACES</h2>
+						<h2>UPCOMING RACES</h2>
 						<ul>
-							<li><a href="#">Brooklyn Half</a></li>
-							<li><a href="#">Flat as a Pancake Sprint</a></li>
-							<li><a href="#">NYC Triathlon</a></li>
-							<li><a href="#">Ironman Lake Placid</a></li>
-							<li><a href="#">Toughman 70.3</a></li>
-							<li><a href="#">NYC Marathon</a></li>
+<?php
+$races = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
+foreach($get_posts as $post): setup_postdata($post);
+?>
+							<li><a href="<?= get_permalink( $post->ID ) ?>"><?= $post->post_title ?></a></li>
+<?php endforeach; ?>
 						</ul>
 					</aside>
 				</div>
