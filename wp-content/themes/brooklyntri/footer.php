@@ -88,22 +88,15 @@
 					<div class="col">
 						<h2>Upcoming Events</h2>
 						<ul class="list">
+<?php
+$races = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
+foreach($races as $post): setup_postdata($post);
+?>
 							<li>
-								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
-								<p>Recovery Drinks</p>
+								<h3><a href="<?= get_permalink( $post->ID ) ?>"><?= date("F d, Y, ga",strtotime($post->EventStartDate)) ?></a></h3>
+								<p><?= $post->post_title ?></p>
 							</li>
-							<li>
-								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
-								<p>Recovery Drinks</p>
-							</li>
-							<li>
-								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
-								<p>Recovery Drinks</p>
-							</li>
-							<li>
-								<h3><a href="#">February 24, 2015, 6-9pm</a></h3>
-								<p>Recovery Drinks</p>
-							</li>
+<?php endforeach; ?>
 						</ul>
 					</div>
 <?php endif; ?>
