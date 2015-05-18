@@ -30,6 +30,7 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 foreach($get_posts as $post): setup_postdata($post);
 	$btcers = count_btc_registrants(1, $post->ID);
 	$registrants = get_btc_participants(1, $post->ID);
+	$event_link = tribe_get_event_website_link();
 
 	$categories = tribe_get_event_categories( $post->ID );
 	$categories = strip_tags($categories, '<a><li>');
@@ -60,9 +61,9 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dd><?= tribe_get_city( $post->ID ) ?>, <?= tribe_get_state( $post->ID ) ?></dd>
 										</dl>
 										<dl>
-<?php if( !empty( tribe_get_event_website_link() ) ): ?>
+<?php if( !empty( $event_link ) ): ?>
 											<dt>WEBSITE:</dt>
-											<dd><?= tribe_get_event_website_link() ?></dd>
+											<dd><?= $event_link ?></dd>
 <?php endif; ?>
 
 <?php if ( is_user_logged_in() && count( $registrants ) > 0): ?>
