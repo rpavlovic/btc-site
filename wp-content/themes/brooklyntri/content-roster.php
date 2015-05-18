@@ -60,20 +60,21 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dd><?= tribe_get_city( $post->ID ) ?>, <?= tribe_get_state( $post->ID ) ?></dd>
 										</dl>
 										<dl>
+<?php if( !empty( tribe_get_event_website_link() ) ): ?>
 											<dt>WEBSITE:</dt>
 											<dd><?= tribe_get_event_website_link() ?></dd>
+<?php endif; ?>
 
+<?php if ( is_user_logged_in() && count( $registrants ) > 0): ?>
 											<dt>ATHLETE LIST:</dt>
 											<dd>
 												<ol>
-<?php
-	foreach($registrants as $racer):
-?>
+												<?php foreach($registrants as $racer): ?>
 													<li><?= $racer ?></li>
-<?php endforeach; ?>
+												<?php endforeach; ?>
 												</ol>
 											</dd>
-
+<?php endif; ?>
 											<? /* <dd><a href="#">click to view</a></dd> */ ?>
 										</dl>
 									</div>
