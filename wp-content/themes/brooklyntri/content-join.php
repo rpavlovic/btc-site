@@ -53,7 +53,7 @@
 				<div class="intro-holder">
 					<div class="holder">
 						<div class="photo">
-							<img src="images/img16.jpg" alt="image description">
+							<img src="<?php bloginfo('wpurl'); ?>/images/img16.jpg" alt="image description">
 						</div>
 						<div class="text">
 							<h2>Join or Renew Your Membership</h2>
