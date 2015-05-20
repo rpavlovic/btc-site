@@ -77,23 +77,19 @@
 						</div>
 						<nav id="nav">
 							<a href="#" class="opener"><span>Menu</span></a>
-<!--
+
+							<div class="drop">
 <?php
 $menu_slug = is_user_logged_in() ? 'main-navbar' : 'not-logged-in';
-//$menu = get_btc_menu( $menu_slug );
 
-$menu = wp_nav_menu( array(
+wp_nav_menu( array(
 	'menu' => $menu_slug,
-	'container' => 'ul',
-	'echo'            => 0,
+	'container' => 'ul'
 ));
-
-var_dump($menu);
 ?>
--->
-							<div class="drop">
-								<ul>
+
 <?php
+/*
 $tabindex = 7;
 $menu_items = get_pages( array( 'parent' => '0', 'sort_column' => 'menu_order' ) );
 foreach ( $menu_items as $page ) :
@@ -103,8 +99,9 @@ foreach ( $menu_items as $page ) :
 <?php
 	$tabindex++;
 	endforeach;
+*/
 ?>
-								</ul>
+
 							</div>
 						</nav>
 					</div>
