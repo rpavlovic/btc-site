@@ -80,7 +80,7 @@
 <!--
 <?php
 $menu_slug = is_user_logged_in() ? 'main-navbar' : 'not-logged-in';
-$menu = get_btc_menu();
+$menu = get_btc_menu( $menu_slug );
 var_dump($menu);
 ?>
 -->
