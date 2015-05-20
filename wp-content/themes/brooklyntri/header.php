@@ -80,7 +80,14 @@
 <!--
 <?php
 $menu_slug = is_user_logged_in() ? 'main-navbar' : 'not-logged-in';
-$menu = get_btc_menu( $menu_slug );
+//$menu = get_btc_menu( $menu_slug );
+
+$menu = wp_nav_menu( array(
+	'menu' => $menu_slug,
+	'container' => 'ul',
+	'echo'            => 0,
+));
+
 var_dump($menu);
 ?>
 -->
