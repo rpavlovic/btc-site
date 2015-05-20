@@ -79,9 +79,9 @@
 							<a href="#" class="opener"><span>Menu</span></a>
 <!--
 <?php
-wp_nav_menu( array(
-	
-) );
+
+$menu = get_btc_menu($menu);
+var_dump($menu);
 ?>
 -->
 							<div class="drop">
