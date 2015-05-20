@@ -82,8 +82,8 @@ function brooklyntri_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu',      'brooklyntri' ),
-		'social'  => __( 'Social Links Menu', 'brooklyntri' ),
+		'primary' => __( 'Premium Menu',      'brooklyntri' ),
+		'anonymous'  => __( 'Anonymous Menu', 'brooklyntri' ),
 	) );
 
 	/*

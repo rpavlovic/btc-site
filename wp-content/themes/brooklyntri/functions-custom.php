@@ -2,6 +2,18 @@
 
 define('EVENT_FIELD_ID', 7);
 
+// lose the admin bar
+add_filter('show_admin_bar', '__return_false');
+
+/*
+function register_btc_menus() {
+  register_nav_menu('primary-menu',__( 'Header Menu' ));
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+
+}
+add_action( 'init', 'register_btc_menus' );
+*/
+
 /**
  * login capture
  */
@@ -48,8 +60,6 @@ function btc_login() {
 }
 add_action( 'after_setup_theme', 'btc_login' );
 
-// lose the admin bar
-add_filter('show_admin_bar', '__return_false');
 
 /**
  * Convert new lines to paragraph tag

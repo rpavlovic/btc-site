@@ -77,6 +77,13 @@
 						</div>
 						<nav id="nav">
 							<a href="#" class="opener"><span>Menu</span></a>
+<!--
+<?php
+wp_nav_menu( array(
+	
+) );
+?>
+-->
 							<div class="drop">
 								<ul>
 <?php
