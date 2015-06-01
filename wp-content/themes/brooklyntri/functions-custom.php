@@ -5,7 +5,7 @@ define('EVENT_FIELD_ID', 7);
 // lose the admin bar
 add_filter('show_admin_bar', '__return_false');
 
-function get_btc_menu($menu_name) {
+function get_btc_menu( $menu_name ) {
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
 		$menu_items = wp_get_nav_menu_items($menu->term_id, array('post_status' => 'any', 'output' => ARRAY_A,));
