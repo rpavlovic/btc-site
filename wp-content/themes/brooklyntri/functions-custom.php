@@ -157,7 +157,7 @@ function btc_leftnav( $post=null ) {
 <?
 	foreach ( $section_pages as $sub_section ):
 		$link_text = get_link_text( $sub_section );
-var_dump(get_current_user_id());
+
 		if ( check_user_access( get_current_user_id(), $sub_section->ID ) ):
 		//if ( member_can_access( get_current_user_id(), $sub_section->post_type, $sub_section->ID ) ):
 		//print_r(WLMAPI::GetPostLevels($sub_section->ID));
@@ -985,9 +985,6 @@ function check_user_access($userid, $postid){
 
 	// get the post levels
 	$post_levels = WLMAPI::GetPostLevels($postid);
-
-var_dump($user_levels);
-var_dump($post_levels);
 
 	// Compare user_levels with post_level
 	$result = '';
