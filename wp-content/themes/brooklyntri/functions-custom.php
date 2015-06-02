@@ -158,8 +158,8 @@ function btc_leftnav( $post=null ) {
 	foreach ( $section_pages as $sub_section ):
 		$link_text = get_link_text( $sub_section );
 
-		if ( true || member_can_access( get_current_user_id(), $sub_section->post_type, $sub_section->ID ) ):
-		print_r(WLMAPI::GetPostLevels($sub_section->ID));
+		if ( check_user_access( get_current_user_id(), $sub_section->ID ) ):
+		//print_r(WLMAPI::GetPostLevels($sub_section->ID));
 ?>
                                     <li<?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
 <?
@@ -977,6 +977,25 @@ function count_btc_registrants( $form_id, $event_id) {
 /**
  * WishList Member stuff
  */
+
+function check_user_access($userid, $postid){
+
+	// get user_levels
+	$user_levels = WLMAPI::GetUserLevels($userid);
+
+	// get the post levels
+	$post_levels = WLMAPI::GetPostLevels($postid);
+
+	// Compare user_levels with post_level
+	$result = '';
+	foreach($user_levels as $user_level) {
+	    $result .= array_search($user_level, $post_levels);
+	}
+	if ($result) {
+	    return true;
+	}
+	return false;
+}
 
 function member_can_access( $user_id, $object_type, $object_id ) {
     $levels = wlmapi_get_member_levels($user_id);
