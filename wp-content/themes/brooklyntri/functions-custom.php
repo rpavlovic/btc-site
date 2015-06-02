@@ -1016,7 +1016,7 @@ function member_can_access( $user_id, $object_type, $object_id ) {
     foreach ( $levels as $level ) {
         $objects[] = call_user_func( $map[$object_type], $level->Level_ID );
     }
-
+print_r($objects);
     foreach ( $objects as $object ) {
         foreach ( $object[$plurals[$object_type]][$object_type] as $item ) {
             $items[] = $item['ID'];
