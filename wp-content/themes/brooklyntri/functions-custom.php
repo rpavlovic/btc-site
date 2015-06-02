@@ -991,6 +991,7 @@ function check_user_access($userid, $postid){
 	foreach($user_levels as $user_level) {
 	    $result .= array_search($user_level, $post_levels);
 	}
+var_dump($result);
 	if ($result) {
 	    return true;
 	}
