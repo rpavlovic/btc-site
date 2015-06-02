@@ -158,8 +158,8 @@ function btc_leftnav( $post=null ) {
 	foreach ( $section_pages as $sub_section ):
 		$link_text = get_link_text( $sub_section );
 
-		if ( check_user_access( get_current_user_id(), $sub_section->ID ) ):
-		//if ( member_can_access( get_current_user_id(), $sub_section->post_type, $sub_section->ID ) ):
+		//if ( check_user_access( get_current_user_id(), $sub_section->ID ) ):
+		if ( member_can_access( get_current_user_id(), $sub_section->post_type, $sub_section->ID ) ):
 		//print_r(WLMAPI::GetPostLevels($sub_section->ID));
 ?>
                                     <li<?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
