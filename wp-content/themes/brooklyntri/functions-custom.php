@@ -157,7 +157,7 @@ function btc_leftnav( $post=null ) {
 <?
 	foreach ( $section_pages as $sub_section ):
 		$link_text = get_link_text( $sub_section );
-		//echo '<!-- '. print_r($sub_section) .' -->';
+		print_r($sub_section);
 ?>
                                     <li<?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
 <?
@@ -967,4 +967,43 @@ function count_btc_registrants( $form_id, $event_id) {
 		return $registrants[0]->btcers;
 	}
 	return null;
+}
+
+
+/**
+ * WishList Member stuff
+ */
+
+function member_can_access($user_id, $object_type, $object_id) {
+    $levels = wlmapi_get_member_levels($user_id);
+
+    $map = array(
+        'post' => 'wlmapi_get_level_posts',
+        'page' => 'wlmapi_get_level_pages',
+        'category' => 'wlmapi_get_level_categories'
+    );
+
+    $plurals = array(
+        'post' => 'posts',
+        'page' => 'pages',
+        'category' => 'categories'
+    );
+
+    foreach ( $levels as $level ) {
+        $objects[] = call_user_func($map[$object_type], $level->Level_ID);
+    }
+
+    foreach ( $objects as $object ) {
+        foreach ( $object[$plurals[$object_type]][$object_type] as $item ) {
+            $items[] = $item['ID'];
+        }
+    }
+
+    $items = array_unique($items);
+
+    if ( !in_array( $object_id, $items ) ) {
+        return false;
+    }
+
+    return true;
 }
