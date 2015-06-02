@@ -986,18 +986,20 @@ function check_user_access($userid, $postid){
 	// get the post levels
 	$post_levels = WLMAPI::GetPostLevels($postid);
 
-print_r($post_levels);
+	if ( array_key_exists('Protection', $post_levels) ) {
 
-	// Compare user_levels with post_level
-	$result = '';
-	foreach($user_levels as $user_level) {
-	    $result .= array_search( $user_level, $post_levels );
-	}
+		// Compare user_levels with post_level
+		$result = '';
+		foreach ( $user_levels as $user_level ) {
+		    $result .= array_search( $user_level, $post_levels );
+		}
 
-	if ($result) {
-	    return true;
+		if ($result) {
+		    return true;
+		}
+		return false;
 	}
-	return false;
+	return true;
 }
 
 function member_can_access( $user_id, $object_type, $object_id ) {
