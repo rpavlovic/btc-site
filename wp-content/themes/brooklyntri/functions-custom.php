@@ -986,6 +986,9 @@ function check_user_access($userid, $postid){
 	// get the post levels
 	$post_levels = WLMAPI::GetPostLevels($postid);
 
+var_dump($user_levels);
+var_dump($post_levels);
+
 	// Compare user_levels with post_level
 	$result = '';
 	foreach($user_levels as $user_level) {
