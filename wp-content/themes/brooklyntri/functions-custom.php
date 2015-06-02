@@ -978,6 +978,25 @@ function count_btc_registrants( $form_id, $event_id) {
  * WishList Member stuff
  */
 
+function check_user_access($userid, $postid){
+
+	// get user_levels
+	$user_levels = WLMAPI::GetUserLevels($userid);
+
+	// get the post levels
+	$post_levels = WLMAPI::GetPostLevels($postid);
+
+	// Compare user_levels with post_level
+	$result = '';
+	foreach($user_levels as $user_level) {
+	    $result .= array_search($user_level, $post_levels);
+	}
+	if ($result) {
+	    return true;
+	}
+	return false;
+}
+
 function member_can_access( $user_id, $object_type, $object_id ) {
     $levels = wlmapi_get_member_levels($user_id);
 
