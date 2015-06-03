@@ -52,6 +52,8 @@ $fields = get_fields( get_the_ID() );
 								<div class="text-holder">
 									<p>By clicking on the right, I affirm that I am 18 years of age or older (18), I have read the waiver, and I understand its content.</p>
 								</div>
+
+								<?php echo $fields['paypal_form'] ?>
 <? /*
 								<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 									<input type="hidden" name="cmd" value="_s-xclick">
