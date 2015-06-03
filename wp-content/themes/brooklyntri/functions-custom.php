@@ -1,5 +1,5 @@
 <?php
-echo $_SERVER['REQUEST_URI'];
+//echo $_SERVER['REQUEST_URI'];
 
 define('EVENT_FIELD_ID', 7);
 
