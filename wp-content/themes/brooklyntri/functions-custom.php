@@ -1063,4 +1063,6 @@ function add_user_jawn( $form ) {
 			$field->content = $u->email;
 		}
 	}
+
+	return $form;
 }
