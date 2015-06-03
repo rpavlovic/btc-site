@@ -1,6 +1,11 @@
 <?php
 //echo $_SERVER['REQUEST_URI'];
 
+echo $_SERVER['SERVER_NAME'];
+echo dirname(WP_SITEURL);
+
+setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, "/~rasmus/", "example.com", 1);
+
 define('EVENT_FIELD_ID', 7);
 
 // lose the admin bar
