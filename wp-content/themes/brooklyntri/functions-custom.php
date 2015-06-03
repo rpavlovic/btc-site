@@ -1064,6 +1064,7 @@ function add_user_jawn( $form ) {
 		if ( $field['id'] == '3' ) {
 			$field['content'] = $u->email;
 		}
+		var_dump($field['id']);
 	}
 
 	return $form;
