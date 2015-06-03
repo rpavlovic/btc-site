@@ -19,6 +19,12 @@ function get_btc_menu( $menu_name ) {
  * login capture
  */
 
+add_action('wp_logout','go_home');
+function go_home(){
+	wp_redirect( home_url() );
+	exit();
+}
+
 function btc_login() {
 
     // not the login request?
@@ -60,7 +66,6 @@ function btc_login() {
     }
 }
 add_action( 'after_setup_theme', 'btc_login' );
-
 
 /**
  * Convert new lines to paragraph tag
