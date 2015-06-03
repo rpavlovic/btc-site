@@ -1,9 +1,6 @@
 <?php
-//echo $_SERVER['REQUEST_URI'];
 
-echo str_replace('http://'.$_SERVER['SERVER_NAME'],'',WP_SITEURL);
-
-setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, "/~rasmus/", $_SERVER['SERVER_NAME'], 1);
+setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, str_replace('http://'.$_SERVER['SERVER_NAME'],'',WP_SITEURL).'/', $_SERVER['SERVER_NAME'], 1);
 
 define('EVENT_FIELD_ID', 7);
 
@@ -62,7 +59,7 @@ function btc_login() {
         }
 
         // redirect back to the requested page if login was successful
-        header('Location: ' . $_SERVER['REQUEST_URI']);
+        header('Location: ' . $_COOKIE['LastVisited']);
         exit;
     }
     else {
