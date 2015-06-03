@@ -1053,9 +1053,8 @@ function add_user_jawn( $form ) {
 	}
 
 	$u = get_userdata( get_current_user_id() );
-
-	var_dump(  $u->first_name );
 	foreach( $form['fields'] as &$field ) {
+		var_dump($field->id);
 		if ( $field->id == 1 ) {
 			$field->content = $u->first_name;
 		}
