@@ -1,10 +1,9 @@
 <?php
 //echo $_SERVER['REQUEST_URI'];
 
-echo $_SERVER['SERVER_NAME'];
-echo dirname(WP_SITEURL);
+//echo dirname(WP_SITEURL);
 
-setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, "/~rasmus/", "example.com", 1);
+setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, "/~rasmus/", $_SERVER['SERVER_NAME'], 1);
 
 define('EVENT_FIELD_ID', 7);
 
