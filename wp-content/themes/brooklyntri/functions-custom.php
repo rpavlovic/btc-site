@@ -1,7 +1,7 @@
 <?php
 //echo $_SERVER['REQUEST_URI'];
 
-//echo dirname(WP_SITEURL);
+echo str_replace('http://'.$_SERVER['SERVER_NAME'],'',WP_SITEURL);
 
 setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, "/~rasmus/", $_SERVER['SERVER_NAME'], 1);
 
