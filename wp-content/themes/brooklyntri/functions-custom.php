@@ -1,7 +1,5 @@
 <?php
 
-echo $_SERVER['SCRIPT_NAME'];
-
 define('EVENT_FIELD_ID', 7);
 
 // lose the admin bar
@@ -59,7 +57,7 @@ function btc_login() {
         }
 
         // redirect back to the requested page if login was successful
-        header('Location: ' . $_SERVER['SCRIPT_NAME']);
+        header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
     else {
