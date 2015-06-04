@@ -1046,25 +1046,25 @@ function member_can_access( $user_id, $object_type, $object_id ) {
 // Gravity forms
 // I don't like this one bit
 add_action("gform_pre_render", "add_user_jawn");
+
 function add_user_jawn( $form ) {
-return;
-	if ( get_current_user_id() == '0' ) {
-		return;
-	}
 
-	$u = get_userdata( get_current_user_id() );
-	foreach( $form['fields'] as &$field ) {
-		//var_dump($field);
-		if ( $field['id'] == '1' ) {
-			$field['content'] = $u->first_name;
-		}
-		if ( $field['id'] == '2' ) {
-			$field['content'] = $u->last_name;
-		}
-		if ( $field['id'] == '3' ) {
-			$field['content'] = $u->email;
-		}
+	if ( get_current_user_id() > '0' ) {
 
+		$u = get_userdata( get_current_user_id() );
+		foreach( $form['fields'] as &$field ) {
+			//var_dump($field);
+			if ( $field['id'] == '1' ) {
+				$field['content'] = $u->first_name;
+			}
+			if ( $field['id'] == '2' ) {
+				$field['content'] = $u->last_name;
+			}
+			if ( $field['id'] == '3' ) {
+				$field['content'] = $u->email;
+			}
+
+		}
 	}
 
 	return $form;
