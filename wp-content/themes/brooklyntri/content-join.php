@@ -27,7 +27,7 @@ $fields = get_fields( get_the_ID() );
 						<?= $fields['logged_in_text'] ?>
 					</div>
 					<div class="text">
-						<p>Brooklyn Tri Club membership is based on the calendar year and is valid from <time datetime="2015-01-01">January 1st</time> to <time datetime="2015-12-31">December 31st</time>.</p>
+						<p>Brooklyn Tri Club membership is based on the calendar year and is valid from <time datetime="<?= date("Y") ?>-01-01">January 1st</time> to <time datetime="<?= date("Y") ?>-12-31">December 31st</time>.</p>
 						<p>For more information on the club, see our <a href="<?= WP_SITEURL ?>/about-btc/faq/">FAQs</a>.</p>
 					</div>
 <?php endif; ?>
@@ -54,14 +54,7 @@ $fields = get_fields( get_the_ID() );
 								</div>
 
 								<?php echo $fields['paypal_form'] ?>
-<? /*
-								<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-									<input type="hidden" name="cmd" value="_s-xclick">
-									<input type="hidden" name="hosted_button_id" value="4KKBSMZH2Y94L">
-									<input id="wp-submit" tabindex="100" type="submit" name="submit" value="JOIN BTC NOW" class="btn-join">
-									<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0">
-								</form>
-*/ ?>
+
 							</div>
 						</div>
 					</div>
