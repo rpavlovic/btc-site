@@ -1056,14 +1056,13 @@ function add_user_jawn( $form ) {
 	foreach( $form['fields'] as &$field ) {
 		//var_dump($field);
 		if ( $field['id'] == '1' ) {
-			echo $u->first_name;
-			$field['content'] = $u->first_name;
+			$field->content = $u->first_name;
 		}
 		if ( $field['id'] == '2' ) {
-			$field['content'] = $u->last_name;
+			$field->content = $u->last_name;
 		}
 		if ( $field['id'] == '3' ) {
-			$field['content'] = $u->email;
+			$field->content = $u->email;
 		}
 
 	}
