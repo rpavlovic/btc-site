@@ -14,6 +14,7 @@
 /* contact-form-gfec-form */
 
 .btc-gform .btc-contact-form input[type="submit"] {
+	float: right;
 	background-color: #21759b;
 	color: #fff;
 	background-image: none;
