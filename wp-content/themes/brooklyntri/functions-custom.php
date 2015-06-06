@@ -1045,17 +1045,13 @@ function member_can_access( $user_id, $object_type, $object_id ) {
 
 // Gravity forms
 // I don't like this one bit
-add_action("gform_pre_render", "add_user_jawn");
+//add_action("gform_pre_render", "add_user_jawn");
 
 function add_user_jawn( $form ) {
 
 	if ( get_current_user_id() > '0' ) {
 
 		$u = get_userdata( get_current_user_id() );
-		var_dump($u->first_name);
-		var_dump($u->last_name);
-		var_dump($u->user_email);
-		var_dump($u->phone);
 		foreach( $form['fields'] as &$field ) {
 			
 			if ( $field['id'] == '1' ) {
