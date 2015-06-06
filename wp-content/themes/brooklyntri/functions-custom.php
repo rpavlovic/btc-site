@@ -1061,7 +1061,7 @@ function add_user_jawn( $form ) {
 				$field['content'] = $u->last_name;
 			}
 			if ( $field['id'] == '3' ) {
-				$field['content'] = $u->email;
+				$field['content'] = $u->user_email;
 			}
 
 		}

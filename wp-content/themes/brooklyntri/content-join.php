@@ -53,7 +53,13 @@ $fields = get_fields( get_the_ID() );
 									<p>By clicking on the right, I affirm that I am 18 years of age or older (18), I have read the waiver, and I understand its content.</p>
 								</div>
 
-								<?php echo $fields['paypal_form'] ?>
+								<?php
+									if ( !empty( $fields['paypal_form'] ) ) :
+
+										echo $fields['paypal_form'];
+
+									endif;
+								?>
 
 							</div>
 						</div>
