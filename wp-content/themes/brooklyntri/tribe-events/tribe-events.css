@@ -13,7 +13,7 @@
 
 /* contact-form-gfec-form */
 
-#btc-contact-form input[type="submit"] {
+.btc-gform .btc-contact-form input[type="submit"] {
 	background-color: #21759b;
 	color: #fff;
 	background-image: none;
