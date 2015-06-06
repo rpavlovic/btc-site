@@ -1055,7 +1055,7 @@ function add_user_jawn( $form ) {
 		var_dump($u->first_name);
 		var_dump($u->last_name);
 		var_dump($u->user_email);
-		var_dump($u->user_phone);
+		var_dump($u->phone);
 		foreach( $form['fields'] as &$field ) {
 			
 			if ( $field['id'] == '1' ) {
