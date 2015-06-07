@@ -298,6 +298,15 @@ class Cacher {
 	}
 }
 
+function btc_twitter_followers($screen_name='BrooklynTriClub') {
+	$data = file_get_contents("https://api.twitter.com/1.1/users/lookup.json?screen_name=" . $screen_name);
+	$data = json_decode($data, true);
+	if ( isset( $data[0] ) ) {
+		return $data[0];
+	}
+	return null;
+}
+
 /**
  * Get number of Facebook shares
  *

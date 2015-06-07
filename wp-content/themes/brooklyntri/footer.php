@@ -28,7 +28,7 @@
 							<li>
 								<a class="twitter" href="#"><i class="icon-twitter">&nbsp;</i></a>
 								<div class="text">
-									<span>6664</span>
+									<span><?= btc_twitter_followers() ?></span>
 									<p>Followers</p>
 								</div>
 							</li>
