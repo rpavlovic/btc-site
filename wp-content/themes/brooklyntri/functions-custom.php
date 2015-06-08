@@ -299,13 +299,30 @@ class Cacher {
 }
 
 function btc_twitter_followers($screen_name='BrooklynTriClub') {
-	$data = file_get_contents("https://api.twitter.com/1.1/users/lookup.json?screen_name=" . $screen_name);
-	$data = json_decode($data, true);
+	require( get_template_directory() . '/inc/TwitterAPIExchange.php' );
 
-	if ( isset( $data[0] ) ) {
-		return $data[0];
-	}
-	return null;
+	$api_key = '4ETfoce669duSNXbZ8fz45FBE';
+	$api_secret = 'I3sue8YfEEIFkO1H4SJ9XkW8UUpmXJDgDe4IHh9rTVk0jX5LRQ';
+	$token = '114321530-7X3xMbkwA24h6SCHJfXG9kXObMZZgs9ftWPLWa2O';
+	$token_secret = 'MDbochY5oRI30kVyQ4NOZvpnnh7CQpQua17BWfzRJDYXg';
+
+	$settings = array(
+        'oauth_access_token'        => $token,
+        'oauth_access_token_secret' => $token_secret,
+        'consumer_key'              => $api_key,
+        'consumer_secret'           => $api_secret
+    );
+ 
+    $url = 'https://api.twitter.com/1.1/users/show.json';
+    $getfield = '?screen_name=' . $screen_name;
+    $requestMethod = 'GET';
+    $twitter = new TwitterAPIExchange( $settings );
+    $follow_count = $twitter->setGetfield( $getfield )
+                    ->buildOauth( $url, $requestMethod )
+                    ->performRequest();
+    $get_count = json_decode( $follow_count, true );
+
+    return $get_count['followers_count'];
 }
 
 /**
