@@ -265,7 +265,7 @@ class Cacher {
 		if(is_null($id) || empty($id)) {
 			$id = get_the_ID();
 		}
-		$id = esc_attribute( str_replace(array(':','/'),'-',$id) );
+		$id = esc_attr( str_replace(array(':','/'),'-',$id) );
 		$id = substr( $id, 0, 45 );
 
 		return $id;
@@ -303,7 +303,7 @@ function btc_twitter_followers($screen_name='BrooklynTriClub') {
 	$cache = new Cacher();
 	$is_cached = $cache->get_cache('twitter_' . $screen_name);
 
-	if(true || $is_cached === false) {
+	if($is_cached === false) {
 		require( get_template_directory() . '/inc/TwitterAPIExchange.php' );
 
 		$api_key = '4ETfoce669duSNXbZ8fz45FBE';
