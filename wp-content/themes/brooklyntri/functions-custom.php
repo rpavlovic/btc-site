@@ -2,8 +2,6 @@
 
 setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, str_replace('http://'.$_SERVER['SERVER_NAME'],'',WP_SITEURL).'/', $_SERVER['SERVER_NAME'], 1);
 
-define('EVENT_FIELD_ID', 7);
-
 // lose the admin bar
 add_filter('show_admin_bar', '__return_false');
 
@@ -298,7 +296,7 @@ class Cacher {
 	}
 }
 
-function btc_twitter_followers($screen_name='BrooklynTriClub') {
+function get_btc_twitter_followers($screen_name='BrooklynTriClub') {
     $twitter_follower_count = null;
 	$cache = new Cacher();
 	$is_cached = $cache->get_cache('twitter_' . $screen_name);

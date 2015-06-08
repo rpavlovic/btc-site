@@ -17,7 +17,7 @@
 		<footer id="footer" itemscope itemtype="http://schema.org/Organization">
 			<div class="footer-holder">
 				<div class="logo" itemprop="name">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9, 'full' ) ?></a>
+					<a href="<?= esc_url( home_url( '/' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9, 'full' ) ?></a>
 				</div>
 				<div class="col-holder">
 					<div class="col">
@@ -26,14 +26,14 @@
 						<h2>FOLLOW BTC</h2>
 						<ul class="social">
 							<li>
-								<a class="twitter" href="#"><i class="icon-twitter">&nbsp;</i></a>
+								<a class="twitter" href="<?= TWITTER_URL ?>"><i class="icon-twitter">&nbsp;</i></a>
 								<div class="text">
-									<span><?= btc_twitter_followers() ?></span>
+									<span><?= get_btc_twitter_followers() ?></span>
 									<p>Followers</p>
 								</div>
 							</li>
 							<li>
-								<a class="facebook" href="https://www.facebook.com/BrooklynTriClub"><i class="icon-facebook">&nbsp;</i></a>
+								<a class="facebook" href="<?= FACEBOOK_URL ?>"><i class="icon-facebook">&nbsp;</i></a>
 								<div class="text">
 									<span><?= get_btc_facebook_likes() ?></span>
 									<p>Likes</p>
@@ -65,7 +65,7 @@
 <?php if ( !is_user_logged_in() ): ?>
 					<div class="col add">
 						<h2>MEMBER LOGIN</h2>
-						<form action="<?php echo site_url( '/login.php' ); ?>" method="post" class="login-form">
+						<form action="<?= site_url( '/login.php' ); ?>" method="post" class="login-form">
 							<fieldset>
 								<legend class="hidden">login form</legend>
 								<div class="form-holder">
@@ -113,7 +113,7 @@ wp_nav_menu( array(
 ));
 ?>
 					</ul>
-					<span class="copyright">&copy; <?= date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
+					<span class="copyright">&copy; <?= date("Y") ?> <a href="<?= esc_url( home_url( '/' ) ); ?>">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
 				</div>
 			</div>
 		</footer>

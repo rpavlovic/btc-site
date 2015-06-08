@@ -33,9 +33,9 @@
 				<div class="top-bar">
 					<div class="holder">
 						<ul class="social">
-							<li><a class="icon-facebook" tabindex="1" href="#">&nbsp;</a></li>
-							<li><a class="icon-twitter" tabindex="2" href="#">&nbsp;</a></li>
-							<li><a class="icon-mail" tabindex="3" href="<?php echo site_url( '/contact' ); ?>">&nbsp;</a></li>
+							<li><a class="icon-facebook" tabindex="1" href="<?= FACEBOOK_URL ?>">&nbsp;</a></li>
+							<li><a class="icon-twitter" tabindex="2" href="<?= TWITTER_URL ?>">&nbsp;</a></li>
+							<li><a class="icon-mail" tabindex="3" href="<?= site_url( '/contact' ); ?>">&nbsp;</a></li>
 						</ul>
 						<nav class="menu">
 							<ul>

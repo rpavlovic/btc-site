@@ -125,3 +125,8 @@ require_once(ABSPATH . 'wp-settings.php');
 if (file_exists(ABSPATH . 'hosting_provider_filters.php')) {
 	include('hosting_provider_filters.php');
 }
+
+define('EVENT_FIELD_ID', 7);
+define('TWITTER_URL', 'https://twitter.com/BrooklynTriClub');
+define('FACEBOOK_URL', 'https://www.facebook.com/BrooklynTriClub');
+
