@@ -303,7 +303,7 @@ function btc_twitter_followers($screen_name='BrooklynTriClub') {
 	$cache = new Cacher();
 	$is_cached = $cache->get_cache('twitter_' . $screen_name);
 
-	if($is_cached === false) {
+	if(true || $is_cached === false) {
 		require( get_template_directory() . '/inc/TwitterAPIExchange.php' );
 
 		$api_key = '4ETfoce669duSNXbZ8fz45FBE';
