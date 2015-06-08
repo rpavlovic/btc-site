@@ -75,7 +75,7 @@ foreach($get_posts as $post): setup_postdata($post);
 												<?php endforeach; ?>
 												</ol>
 											</dd>
-											<dd><?php echo gravity_form($post->ID, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
+											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
 <?php endif; ?>
 											<? /* <dd><a href="#">click to view</a></dd> */ ?>
 										</dl>
