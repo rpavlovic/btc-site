@@ -66,7 +66,7 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dd><?= $event_link ?></dd>
 <?php endif; ?>
 
-<?php if ( is_user_logged_in() && count( $registrants ) > 0): ?>
+<?php if ( count( $registrants ) > 0): ?>
 											<dt>ATHLETE LIST:</dt>
 											<dd>
 												<ol>
@@ -75,9 +75,12 @@ foreach($get_posts as $post): setup_postdata($post);
 												<?php endforeach; ?>
 												</ol>
 											</dd>
+<?php endif; ?>
+
+<?php if ( is_user_logged_in() ): ?>
 											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
 <?php endif; ?>
-											<? /* <dd><a href="#">click to view</a></dd> */ ?>
+
 										</dl>
 									</div>
 								</li>
