@@ -17,7 +17,7 @@ btc_breadcrumbs();
 
 ?>
 
-				<div id="two-columns">
+				<div id="fullwidth">
 					<div id="content">
 <?
 // Start the loop.
