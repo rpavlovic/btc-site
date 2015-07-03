@@ -113,7 +113,7 @@ wp_nav_menu( array(
 ));
 ?>
 					</ul>
-					<span class="copyright">&copy; <?= date("Y") ?> <a href="<?= esc_url( home_url( '/' ) ); ?>">Brooklyn Tri Club</a>. Some rights reserved. <a href="#" class="policy">Privacy Policy</a></span>
+					<span class="copyright">&copy; <?= date("Y") ?> <a href="<?= esc_url( home_url( '/' ) ); ?>">Brooklyn Tri Club</a>. Some rights reserved. <a href="<?= get_permalink( 457 ) ?>" class="policy">Privacy Policy</a></span>
 				</div>
 			</div>
 		</footer>
