@@ -101,6 +101,7 @@ function nl2p($string, $line_breaks = false, $xml = true) {
  * @return string The converted string.
  */
 function btc_relative_links( $str ) {
+	return $str ;
 	if ( strstr( $str, '<a href="/' ) != false ) {
 		return str_replace( '<a href="/', '<a href="' . WP_SITEURL . '/', $str );
 	}
