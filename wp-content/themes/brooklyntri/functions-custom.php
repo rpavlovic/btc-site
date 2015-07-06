@@ -101,9 +101,12 @@ function nl2p($string, $line_breaks = false, $xml = true) {
  * @return string The converted string.
  */
 function btc_relative_links( $str ) {
-	return $str ;
+	return WP_SITEURL ;
 	if ( strstr( $str, '<a href="/' ) != false ) {
 		return str_replace( '<a href="/', '<a href="' . WP_SITEURL . '/', $str );
+	}
+	if ( strstr( $str, "<a href='/" ) != false ) {
+		return str_replace( "<a href='/", "<a href='" . WP_SITEURL . '/', $str );
 	}
 	if ( substr( $str, 1 ) == '/') {
 		return str_replace( '/', WP_SITEURL . '/', $str );
