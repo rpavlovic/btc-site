@@ -8,14 +8,14 @@
  */
 
 ?>
-
-
-			    <div class="post" id="post-<?php the_ID(); ?>">
-			        <div class="entry">
-
+				<section class="intro">
 					<?php the_title('<h1>','</h1>'); ?>
 
 					<?= the_content(); ?>
+				</section>
+
+			    <div class="post" id="post-<?php the_ID(); ?>">
+			        <div class="entry">
 
 			        </div>
 			    </div>
