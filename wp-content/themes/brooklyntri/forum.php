@@ -16,11 +16,6 @@ get_header();
 btc_breadcrumbs();
 
 ?>
-				<section class="intro">
-					<?php the_title('<h1>','</h1>'); ?>
-
-					<?= the_content(); ?>
-				</section>
 
 				<div id="fullwidth">
 <?
