@@ -15,7 +15,7 @@
 				</section>
 
 			    <div class="post" id="post-<?php the_ID(); ?>">
-			        <div class="entry" style="text-align:left;">
+			        <div class="entry" style="text-align:left !important;">
 
 			        </div>
 			    </div>
