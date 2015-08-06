@@ -35,7 +35,7 @@ while ( have_posts() ) : the_post();
 endwhile;
 ?>
 					</div>
-					<?php btc_leftnav( $current_post ); ?>
+					<?php forum_leftnav( ); ?>
 				</div>
 
 <?
