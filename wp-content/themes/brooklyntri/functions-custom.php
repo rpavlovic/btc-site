@@ -138,6 +138,35 @@ function get_link_text( $post=null ) {
 	return $link_text;
 }
 
+function forum_leftnav ( ) {
+	// 
+	global $wpdb;
+	$form_id = (int) $form_id;
+
+	$sql = 'select forum_id, forum_name from ' . $wpdb->prefix . 'sfforums order by forum_id';
+	$forums =  $wpdb->get_results($sql, OBJECT);
+?>
+                    <aside id="sidebar">
+                        <a href="#" class="opener"><span>Menu</span></a>
+                        <nav class="aside-nav">
+                            <div class="drop">
+                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>">Forums</a>
+                                <ul>
+<?
+	foreach ( $forums as $forum ):
+?>
+                                    <!-- <?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?> --><li><a href="<?= esc_url( get_permalink( $forum_id ) ); ?>"><?= esc_html( $forum ) ?></a></li>
+<?
+
+	endforeach;
+?>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+<?
+}
+
 function btc_leftnav( $post=null ) {
 
 	if( is_null( $post ) ) {

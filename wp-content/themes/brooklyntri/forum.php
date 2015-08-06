@@ -17,7 +17,8 @@ btc_breadcrumbs();
 
 ?>
 
-				<div id="fullwidth">
+				<div id="two-columns">
+					<div id="fullwidth">
 <?
 // Start the loop.
 while ( have_posts() ) : the_post();
@@ -33,6 +34,8 @@ while ( have_posts() ) : the_post();
 // End the loop.
 endwhile;
 ?>
+					</div>
+					<?php btc_leftnav( $current_post ); ?>
 				</div>
 
 <?
