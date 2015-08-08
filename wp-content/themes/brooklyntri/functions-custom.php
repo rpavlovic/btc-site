@@ -145,7 +145,11 @@ function forum_leftnav ( ) {
 
 	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
+
+echo dirname($_SERVER['PHP_SELF']);
+
 ?>
+
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
                         <nav class="aside-nav">
