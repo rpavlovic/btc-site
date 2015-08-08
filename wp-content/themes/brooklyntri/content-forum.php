@@ -13,7 +13,7 @@ $infobox = get_fields( get_the_ID() );
 				<section class="forum-area">
 					<header>
 						<?php the_title('<h1>','</h1>'); ?>
-						<?php echo esc_html( $infobox['intro'] ); ?>
+						<?php echo $infobox['intro'] ; ?>
 					</header>
 
 					<div class="divider">
