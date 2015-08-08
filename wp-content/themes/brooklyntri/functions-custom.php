@@ -146,8 +146,6 @@ function forum_leftnav ( ) {
 	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
 
-echo $_SERVER['REQUEST_URI'];
-
 ?>
 
                     <aside id="sidebar">
@@ -159,7 +157,7 @@ echo $_SERVER['REQUEST_URI'];
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <li><a<?= strstr(dirname($_SERVER['REQUEST_URI']), $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
