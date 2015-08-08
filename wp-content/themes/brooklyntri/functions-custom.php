@@ -155,7 +155,7 @@ function forum_leftnav ( ) {
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <!-- <?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?> --><li><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li><a<?= strstr(dirname($_SERVER['PHP_SELF']), $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
