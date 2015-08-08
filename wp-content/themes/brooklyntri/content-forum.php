@@ -11,7 +11,7 @@
 				<section class="forum-area">
 					<header>
 						<?php the_title('<h1>','</h1>'); ?>
-						<?= the_content(); ?>
+						
 					</header>
 
 					<div class="divider">
@@ -31,7 +31,7 @@
 
 				    <div class="post" id="post-<?php the_ID(); ?>">
 				        <div class="entry forum-table">
-
+<?= the_content(); ?>
 				        </div>
 				    </div>
 
