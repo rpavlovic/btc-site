@@ -8,14 +8,31 @@
  */
 
 ?>
-				<section class="intro">
-					<?php the_title('<h1>','</h1>'); ?>
+				<section class="forum-area">
+					<header>
+						<?php the_title('<h1>','</h1>'); ?>
+						<?= the_content(); ?>
+					</header>
 
-					<?= the_content(); ?>
+					<div class="divider">
+						<div class="holder"></div>
+					</div>
+
+					<form action="#" class="search-form">
+						<fieldset>
+							<legend class="hidden">search form</legend>
+							<input class="button" type="submit" value="SEARCH">
+							<div class="input-holder">
+								<label for="search" class="hidden">search</label>
+								<input class="search" type="search" id="search">
+							</div>
+						</fieldset>
+					</form>
+
+				    <div class="post" id="post-<?php the_ID(); ?>">
+				        <div class="entry forum-table">
+
+				        </div>
+				    </div>
+
 				</section>
-
-			    <div class="post" id="post-<?php the_ID(); ?>">
-			        <div class="entry" style="text-align:left !important;">
-
-			        </div>
-			    </div>
