@@ -144,7 +144,7 @@ function forum_leftnav() {
 
 	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
-//var_dump($_SERVER['REQUEST_URI']);
+var_dump($_SERVER['REQUEST_URI']);
 
 ?>
 
@@ -157,7 +157,7 @@ function forum_leftnav() {
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <li><a<?= strstr($forum->forum_slug, $_SERVER['REQUEST_URI']) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
