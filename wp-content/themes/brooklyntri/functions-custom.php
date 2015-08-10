@@ -138,14 +138,14 @@ function get_link_text( $post=null ) {
 	return $link_text;
 }
 
-function forum_leftnav ( ) {
-	// 
+function forum_leftnav() {
 	global $wpdb;
 	$form_id = (int) $form_id;
 
 	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
-
+var_dump($_SERVER['REQUEST_URI']);
+var_dump($forum->forum_slug);
 ?>
 
                     <aside id="sidebar">
