@@ -156,7 +156,6 @@ function forum_leftnav() {
                                 <ul>
 <?
 	foreach ( $forums as $forum ):
-		echo $forum->forum_slug;
 ?>
                                     <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
