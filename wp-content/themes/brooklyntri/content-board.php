@@ -24,8 +24,8 @@
 							</div>
 							<div class="holder">
 <?php
-    //$board = get_posts( array( 'category' => '3,6,30,31,32,33', 'category__in' => array( 3,6,30,31,32,33 ), 'orderby' => 'post_date', 'order' => 'DESC' ) );
-	$board = new WP_Query( 'category_name=board-member,club-president,secretary,treasurer,vice-president&orderby=date&order=desc&posts_per_page=-1' );
+    $board = get_posts( array( 'category' => '3,6,30,31,32,33', 'category__in' => array( 3,6,30,31,32,33 ), 'orderby' => 'post_date', 'order' => 'DESC' ) );
+	//$board = new WP_Query( 'category_name=board-member,club-president,secretary,treasurer,vice-president&orderby=date&order=desc' );
 
     foreach ( $board as $member ): setup_postdata( $member );
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
