@@ -144,8 +144,6 @@ function forum_leftnav() {
 
 	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
-//var_dump($_SERVER['REQUEST_URI']);
-
 ?>
 
                     <aside id="sidebar">

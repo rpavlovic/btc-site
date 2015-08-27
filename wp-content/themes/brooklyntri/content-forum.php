@@ -31,10 +31,13 @@ $infobox = get_fields( get_the_ID() );
 						</fieldset>
 					</form>
 
+<?php
+/*
 				    <div class="post" id="post-<?php the_ID(); ?>">
 				        <div class="entry forum-table">
 							<?= the_content(); ?>
 				        </div>
 				    </div>
-
+*/
+?>
 				</section>
