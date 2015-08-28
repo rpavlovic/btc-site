@@ -102,7 +102,7 @@ $table_prefix = 'wp_ttyr_';
  * in their development environments.
  */
 if(strstr($_SERVER['SERVER_NAME'], 'dev') != false) {
-	
+	define('WP_DEBUG', true);
 }
 else {
 	define('WP_DEBUG', true);
