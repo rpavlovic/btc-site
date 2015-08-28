@@ -32,9 +32,9 @@ $categories = array(
 							</div>
 							<div class="holder">
 <?php
-foreach ($categories as $category):
+foreach ($categories as $cat => $slug):
 
-    $board = get_posts( array( 'category' => $category, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+    $board = get_posts( array( 'category' => $cat, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	//$board = new WP_Query( 'category_name=board-member,club-president,secretary,treasurer,vice-president&orderby=date&order=desc' );
 
     foreach ( $board as $member ): setup_postdata( $member );
