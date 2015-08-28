@@ -7,6 +7,8 @@
  * @since Brooklyn Tri 1.0
  */
 
+$categories = array( 3,6,30,31,32,33 );
+
 ?>
 
 <?php if(has_post_thumbnail()): ?>
@@ -24,7 +26,9 @@
 							</div>
 							<div class="holder">
 <?php
-    $board = get_posts( array( 'category' => '3,6,30,31,32,33', 'category__in' => array( 3,6,30,31,32,33 ), 'orderby' => 'post_date', 'order' => 'DESC' ) );
+foreach ($categories as $category):
+
+    $board = get_posts( array( 'category' => $category, 'orderby' => 'post_date', 'order' => 'DESC' ) );
 	//$board = new WP_Query( 'category_name=board-member,club-president,secretary,treasurer,vice-president&orderby=date&order=desc' );
 
     foreach ( $board as $member ): setup_postdata( $member );
@@ -70,6 +74,7 @@
 <?php
 	endforeach;
 	wp_reset_postdata();
+endforeach;
 ?>
 							</div>
                         </div>
