@@ -7,7 +7,13 @@
  * @since Brooklyn Tri 1.0
  */
 
-$categories = array( 3,6,30,31,32,33 );
+$categories = array(
+	6 => 'board-member',
+	30 => 'club-president',
+	31 => 'vice-president',
+	32 => 'treasurer',
+	33 => 'secretary'
+);
 
 ?>
 
