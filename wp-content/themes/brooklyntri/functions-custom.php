@@ -27,6 +27,7 @@ function go_home(){
 
 add_action( 'after_setup_theme', 'btc_login' );
 function btc_login() {
+echo 'bro'; die;
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
@@ -56,7 +57,7 @@ function btc_login() {
             // error message
             echo $user_verify->get_error_message();
         }
-echo 'bro'; die;
+
         // redirect back to the requested page if login was successful
         header('Location: ' . $_COOKIE['LastVisited']);
         exit;
