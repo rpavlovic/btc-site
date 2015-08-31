@@ -63,8 +63,8 @@
 									</form>
 								</li>
 <?php else: ?>
-									<li><a href="<?= WP_SITEURL ?>/profile" tabindex="4">MY PROFILE</a></li>
-									<li><a href="<?php echo wp_logout_url( get_permalink() ); ?>" tabindex="4">LOG OUT</a></li>
+								<li><a href="<?= WP_SITEURL ?>/profile" tabindex="4">MY PROFILE</a></li>
+								<li><a href="<?php echo wp_logout_url( get_permalink() ); ?>" tabindex="4">LOG OUT</a></li>
 <?php endif; ?>
 							</ul>
 						</nav>
