@@ -30,8 +30,6 @@ function btc_login() {
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
-    	print_r($_REQUEST); die;
-
         return;
     }
 
@@ -69,6 +67,22 @@ function btc_login() {
         echo "Invalid login details";
     }
 }
+function admin_login_redirect( $redirect_to, $request, $user )
+{
+global $user;
+if( isset( $user->roles ) && is_array( $user->roles ) ) {
+if( in_array( "administrator", $user->roles ) ) {
+return $redirect_to;
+} else {
+return home_url();
+}
+}
+else
+{
+return $redirect_to;
+}
+}
+add_filter("login_redirect", "admin_login_redirect", 10, 3);
 
 /**
  * Convert new lines to paragraph tag
