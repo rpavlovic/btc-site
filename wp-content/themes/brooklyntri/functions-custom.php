@@ -30,7 +30,7 @@ function btc_login() {
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
-        return;
+        //return;
     }
 
     if( isset( $_POST['action'] ) && $_POST['action'] === 'btc_login_jam') {
