@@ -65,7 +65,7 @@
 <?php if ( !is_user_logged_in() ): ?>
 					<div class="col add">
 						<h2>MEMBER LOGIN</h2>
-						<form action="<?= site_url( '/login.php' ); ?>" method="post" class="login-form">
+						<form action="<?php echo get_permalink(); ?>" method="post" class="login-form">
 							<fieldset>
 								<legend class="hidden">login form</legend>
 								<div class="form-holder">
