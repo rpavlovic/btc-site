@@ -27,14 +27,16 @@ function go_home(){
 
 add_action( 'after_setup_theme', 'btc_login' );
 function btc_login() {
-echo 'bro'; die;
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
+    	echo 'dude'; die;
+
         return;
     }
 
     if( isset( $_POST['action'] ) && $_POST['action'] === 'btc_login_jam') {
+echo 'bro'; die;
 
         global $wpdb;
 
@@ -63,6 +65,8 @@ echo 'bro'; die;
         exit;
     }
     else {
+    	echo 'man'; die;
+
         // No login details entered - you should probably add some more user feedback here, but this does the bare minimum
         echo "Invalid login details";
     }
