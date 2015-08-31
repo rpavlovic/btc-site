@@ -25,6 +25,7 @@ function go_home(){
 	exit();
 }
 
+add_action( 'after_setup_theme', 'btc_login' );
 function btc_login() {
 
     // not the login request?
@@ -55,7 +56,7 @@ function btc_login() {
             // error message
             echo $user_verify->get_error_message();
         }
-
+echo 'bro'; die;
         // redirect back to the requested page if login was successful
         header('Location: ' . $_COOKIE['LastVisited']);
         exit;
@@ -65,7 +66,6 @@ function btc_login() {
         echo "Invalid login details";
     }
 }
-add_action( 'after_setup_theme', 'btc_login' );
 
 /**
  * Convert new lines to paragraph tag
