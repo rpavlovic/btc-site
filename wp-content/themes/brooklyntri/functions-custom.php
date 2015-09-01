@@ -57,10 +57,7 @@ function btc_login() {
             // error message
             echo $user_verify->get_error_message();
         }
-        else {
-        	echo 'all good bra';
-        }
-
+var_dump($_COOKIE['LastVisited']);
         // redirect back to the requested page if login was successful
         header('Location: ' . $_COOKIE['LastVisited']);
         exit;
