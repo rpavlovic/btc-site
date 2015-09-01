@@ -57,15 +57,35 @@ function btc_login() {
             // error message
             echo $user_verify->get_error_message();
         }
-var_dump($_COOKIE['LastVisited']);
+
+		if(isset($_COOKIE['LastVisited'])) {
+			//header('Location: ' . $_COOKIE['LastVisited']);
+			$redirect = $_COOKIE['LastVisited'];
+		}
+		else if (isset($_SERVER['HTTP_REFERER'])) {
+			//header('location:' . $_SERVER['HTTP_REFERER']);
+			$redirect = $_SERVER['HTTP_REFERER'];
+		}
+		else if(defined('WP_SITEURL')) {
+			//header('location:' . WP_SITEURL);
+			$redirect = WP_SITEURL;
+		}
+		else if(file_exists('index.php')) {
+			//header('location:index.php');
+			$redirect = 'index.php';
+		}
+		else {
+			$redirect = '/';
+		}
+
         // redirect back to the requested page if login was successful
-        header('Location: ' . $_COOKIE['LastVisited']);
+        header('Location: ' . $redirect);
         exit;
     }
     else if (isset($_POST)) {
 
         // No login details entered - you should probably add some more user feedback here, but this does the bare minimum
-        echo "Invalid login details (".$_POST['action'].")";
+        echo "Invalid login details";
     }
     //echo 'nope';
     return;
