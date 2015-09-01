@@ -45,8 +45,6 @@ endwhile;
 
 <?
 
-btc_get_sponsor_logos();
-
 get_footer();
 
 ?>
