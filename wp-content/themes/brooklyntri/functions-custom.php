@@ -52,10 +52,13 @@ function btc_login() {
         $login_data['remember'] = false; //$remember;
 
         $user_verify = wp_signon( $login_data, false ); 
-var_dump($user_verify);
+
         if ( is_wp_error( $user_verify ) )  {
             // error message
             echo $user_verify->get_error_message();
+        }
+        else {
+        	echo 'all good bra';
         }
 
         // redirect back to the requested page if login was successful
