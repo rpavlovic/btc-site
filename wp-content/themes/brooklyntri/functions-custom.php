@@ -30,12 +30,12 @@ function btc_login() {
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
-    	//echo 'wtf bro'; die;
+    	echo 'wtf bro'; die;
         return;
     }
 
     if( isset( $_POST['action'] ) && $_POST['action'] === 'btc_login_jam') {
-
+echo 'so far so good';
         global $wpdb;
 
         //We shall SQL escape all inputs
@@ -67,6 +67,7 @@ function btc_login() {
         // No login details entered - you should probably add some more user feedback here, but this does the bare minimum
         echo "Invalid login details (".$_POST['action'].")";
     }
+    echo 'nope';
     return;
 }
 /*
