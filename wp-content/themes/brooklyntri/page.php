@@ -11,28 +11,37 @@
  * @since Brooklyn Tri 1.0
  */
 
-get_header(); ?>
+get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+btc_breadcrumbs();
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+?>
 
-			// Include the page content template.
-			get_template_part( 'content', 'page' );
+				<div id="two-columns">
+					<div id="content">
+<?
+// Start the loop.
+while ( have_posts() ) : the_post();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	// Include the page content template.
+	get_template_part( 'content', 'page' ); //content-page.php
 
-		// End the loop.
-		endwhile;
-		?>
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+// End the loop.
+endwhile;
+?>
 
-<?php get_footer(); ?>
+					</div>
+				</div>
+
+<?
+
+btc_get_sponsor_logos();
+
+get_footer();
+
+?>
