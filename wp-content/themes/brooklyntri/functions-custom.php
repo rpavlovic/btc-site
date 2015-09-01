@@ -50,9 +50,9 @@ function btc_login() {
         $login_data['user_login'] = $username;
         $login_data['user_password'] = $password;
         $login_data['remember'] = false; //$remember;
-echo 'so far so what';
-        $user_verify = wp_signon( $login_data, false ); 
 
+        $user_verify = wp_signon( $login_data, false ); 
+var_dump($user_verify);
         if ( is_wp_error( $user_verify ) )  {
             // error message
             echo $user_verify->get_error_message();
