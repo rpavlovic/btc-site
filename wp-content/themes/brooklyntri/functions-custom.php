@@ -67,6 +67,7 @@ function btc_login() {
         // No login details entered - you should probably add some more user feedback here, but this does the bare minimum
         echo "Invalid login details (".$_POST['action'].")";
     }
+    return;
 }
 /*
 function admin_login_redirect( $redirect_to, $request, $user )
