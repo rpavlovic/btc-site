@@ -6,8 +6,10 @@
  * @subpackage Brooklyn_Tri
  * @since Brooklyn Tri 1.0
  */
-?>
-<!-- content-page -->
+
+
+/*
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.
@@ -35,3 +37,30 @@
 	<?php edit_post_link( __( 'Edit', 'brooklyntri' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
 
 </article><!-- #post-## -->
+
+*/
+
+btc_breadcrumbs();
+
+?>
+
+				<div id="two-columns">
+					<div id="content">
+<?
+// Start the loop.
+while ( have_posts() ) : the_post();
+
+	// Include the page content template.
+	get_template_part( 'content', 'plain' ); //content-plain.php
+
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
+
+// End the loop.
+endwhile;
+?>
+
+					</div>
+				</div>
