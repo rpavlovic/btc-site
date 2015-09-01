@@ -40,27 +40,14 @@
 
 */
 
-btc_breadcrumbs();
+//btc_breadcrumbs();
 
 ?>
 
-				<div id="two-columns">
-					<div id="content">
-<?
-// Start the loop.
-while ( have_posts() ) : the_post();
+				<div class="intro-text">
 
-	// Include the page content template.
-	get_template_part( 'content', 'plain' ); //content-plain.php
+                    <?php the_title('<h2>','</h2>'); ?>
 
-	// If comments are open or we have at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
+                    <?php the_content(); ?>
 
-// End the loop.
-endwhile;
-?>
-
-					</div>
-				</div>
+                </div>
