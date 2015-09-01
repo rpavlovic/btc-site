@@ -7,7 +7,7 @@
  * @since Brooklyn Tri 1.0
  */
 ?>
-
+<!-- content-page -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.

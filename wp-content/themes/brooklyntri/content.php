@@ -8,34 +8,8 @@
  * @subpackage Brooklyn_Tri
  * @since Brooklyn Tri 1.0
  */
-
-btc_breadcrumbs();
-
 ?>
-
-				<div id="two-columns">
-					<div id="content">
-<?
-// Start the loop.
-while ( have_posts() ) : the_post();
-
-	// Include the page content template.
-	get_template_part( 'content', 'plain' ); //content-plain.php
-
-	// If comments are open or we have at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
-
-// End the loop.
-endwhile;
-?>
-
-					</div>
-				</div>
-<?php 
-/*
-
+<!-- content -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.
@@ -54,7 +28,7 @@ endwhile;
 
 	<div class="entry-content">
 		<?php
-
+			/* translators: %s: Name of current post */
 			the_content( sprintf(
 				__( 'Continue reading %s', 'brooklyntri' ),
 				the_title( '<span class="screen-reader-text">', '</span>', false )
@@ -84,7 +58,3 @@ endwhile;
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
-
-*/
-
-?>

@@ -9,7 +9,7 @@
  * @since Brooklyn Tri 1.0
  */
 ?>
-
+<!-- content-link -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php brooklyntri_post_thumbnail(); ?>
 
