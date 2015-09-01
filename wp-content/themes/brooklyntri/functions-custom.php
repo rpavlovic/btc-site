@@ -30,7 +30,7 @@ function btc_login() {
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
-        //return;
+        return;
     }
 
     if( isset( $_POST['action'] ) && $_POST['action'] === 'btc_login_jam') {
@@ -61,10 +61,10 @@ function btc_login() {
         header('Location: ' . $_COOKIE['LastVisited']);
         exit;
     }
-    else {
+    else if (isset($_POST)) {
 
         // No login details entered - you should probably add some more user feedback here, but this does the bare minimum
-        echo "Invalid login details";
+        echo "Invalid login details (".$_POST['action'].")";
     }
 }
 /*
