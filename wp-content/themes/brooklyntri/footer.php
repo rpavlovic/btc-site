@@ -35,7 +35,7 @@
 							<li>
 								<a class="facebook" href="<?= FACEBOOK_URL ?>"><i class="icon-facebook">&nbsp;</i></a>
 								<div class="text">
-									<span><?= get_btc_facebook_likes() ?></span>
+									<span><?php echo get_scp_counter( 'facebook' ); ?></span>
 									<p>Likes</p>
 								</div>
 							</li>
