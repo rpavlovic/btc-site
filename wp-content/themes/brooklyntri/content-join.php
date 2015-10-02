@@ -18,7 +18,7 @@ $fields = get_fields( get_the_ID() );
 						<?php the_content(); ?>
 					</header>
 
-<?php if ( is_user_logged_in() ): ?>
+
 
 					<div class="divider">
 						<div class="holder"></div>
@@ -28,13 +28,12 @@ $fields = get_fields( get_the_ID() );
 					</div>
 					<div class="text">
 						<p>Brooklyn Tri Club membership is based on the calendar year and is valid from <time datetime="<?= date("Y") ?>-01-01">January 1st</time> to <time datetime="<?= date("Y") ?>-12-31">December 31st</time>.</p>
-						<p>For more information on the club, see our <a href="<?= WP_SITEURL ?>/about-btc/faq/">FAQs</a>.</p>
+						<p>For more information on the club, see our <a href="<?= WP_SITEURL ?>/mission/faq/">FAQs</a>.</p>
 					</div>
-<?php endif; ?>
+
 
 				</section>
 
-<?php if ( !is_user_logged_in() ): ?>
 
 				<div class="intro-holder">
 					<div class="holder">
@@ -66,4 +65,3 @@ $fields = get_fields( get_the_ID() );
 					</div>
 				</div>
 
-<?php endif; ?>
