@@ -18,8 +18,6 @@ $fields = get_fields( get_the_ID() );
 						<?php the_content(); ?>
 					</header>
 
-
-
 					<div class="divider">
 						<div class="holder"></div>
 					</div>
@@ -31,9 +29,7 @@ $fields = get_fields( get_the_ID() );
 						<p>For more information on the club, see our <a href="<?= WP_SITEURL ?>/mission/faq/">FAQs</a>.</p>
 					</div>
 
-
 				</section>
-
 
 				<div class="intro-holder">
 					<div class="holder">
@@ -64,4 +60,3 @@ $fields = get_fields( get_the_ID() );
 						</div>
 					</div>
 				</div>
-
