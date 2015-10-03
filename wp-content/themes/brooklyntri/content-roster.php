@@ -7,6 +7,8 @@
  * @since Brooklyn Tri 1.0
  */
 
+$get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
+
 ?>
 
 
@@ -14,13 +16,14 @@
                       <?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
 					</header>
+<?php if (!$get_posts): ?>
+					<p>
+						Stay tuned for upcoming races.
+					</p>
+<?php else: ?>
 					<div class="bar">
 						<p><i class="icon-star"></i> DENOTES 2015 CLUB RACE</p>
 					</div>
-
-<?php
-$get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
-?>
 
 					<form action="#" class="info-form">
 						<fieldset>
@@ -95,4 +98,4 @@ foreach($get_posts as $post): setup_postdata($post);
 */ ?>
 						</fieldset>
 					</form>
-
+<?php endif; ?>
