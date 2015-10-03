@@ -7,6 +7,10 @@
  * @since Brooklyn Tri 1.0
  */
 
+global $current_user;
+get_currentuserinfo();
+$current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';
+
 $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
 
 ?>
@@ -80,7 +84,10 @@ foreach($get_posts as $post): setup_postdata($post);
 											</dd>
 <?php endif; ?>
 
-<?php if ( is_user_logged_in() ): ?>
+<?php
+if ( is_user_logged_in() && $current_person != $racer):
+
+?>
 											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
 <?php endif; ?>
 
