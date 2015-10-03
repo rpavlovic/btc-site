@@ -36,3 +36,12 @@
 	zoom: 1;
 	vertical-align: middle;
 }
+
+.btc-gform .gform_wrapper {
+	max-width: 100%;
+}
+
+.btc-gform .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
+	font-size: 11px;
+    font-weight: 700;
+}

@@ -13,7 +13,7 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 
 
 					<header class="rosta">
-                      <?php the_title('<h2>','</h2>'); ?>
+						<?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
 					</header>
 <?php if (!$get_posts): ?>
