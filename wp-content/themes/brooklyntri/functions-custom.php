@@ -1035,6 +1035,9 @@ function get_btc_facebook_likes() {
  * Resources
  */
 
+// Gravity Forms anchor - disable auto scrolling of forms
+add_filter("gform_confirmation_anchor", create_function("","return false;"));
+
 function is_club_race($cats) {
 	if (is_array($cats)) {
 		foreach ($cats as $cat) {
