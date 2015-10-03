@@ -87,13 +87,9 @@
 <?php else: ?>
 					<div class="col">
 						<h2>Upcoming Events</h2>
-<?php
-$races = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
-if ( $races ):
-?>
-
 						<ul class="list">
 <?php
+$races = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
 foreach($races as $post): setup_postdata($post);
 ?>
 							<li>
@@ -102,7 +98,7 @@ foreach($races as $post): setup_postdata($post);
 							</li>
 <?php endforeach; ?>
 						</ul>
-<?php else: ?>
+<?php if ( count($races) < 3 ): ?>
 						<p>
 							Stay tuned for upcoming races.
 						</p>
