@@ -1047,6 +1047,22 @@ function is_club_race($cats) {
 	return false;
 }
 
+function current_user_registered($event, $form=1) {
+	if ( is_user_logged_in() ) {
+		global $current_user;
+		get_currentuserinfo();
+		$current_person = $current_user->user_firstname . ' ' . $current_user->user_lastname;
+		$registrants = get_btc_participants($form, $event);
+
+		foreach($registrants as $racer) {
+			if ($current_person == $racer) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
 	$racers = array();
