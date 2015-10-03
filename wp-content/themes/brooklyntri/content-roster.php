@@ -69,7 +69,8 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dd><?= $event_link ?></dd>
 <?php endif; ?>
 
-<?php if ( count( $registrants ) > 0): ?>
+<?php if ( count( $registrants ) > 0): 
+	var_dump($registrants); ?>
 											<dt>ATHLETE LIST:</dt>
 											<dd>
 												<ol>
