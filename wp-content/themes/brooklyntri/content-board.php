@@ -7,6 +7,7 @@
  * @since Brooklyn Tri 1.0
  */
 
+$shown = array();
 $categories = array(
 	30 => 'club-president',
 	31 => 'vice-president',
@@ -46,6 +47,9 @@ foreach ($categories as $cat => $slug):
     foreach ( $board as $member ): setup_postdata( $member );
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
         $content = get_fields( $member->ID );
+
+        if ( !in_array($member->ID, $shown) ):
+        	$shown[] = $member->ID;
 ?>
 								<article class="info" itemscope itemtype="http://schema.org/Person">
 									<div class="photo">
@@ -84,6 +88,7 @@ foreach ($categories as $cat => $slug):
 									<p><?= $member->post_content ?></p>
 								</article>
 <?php
+		endif;
 	endforeach;
 	wp_reset_postdata();
 endforeach;
