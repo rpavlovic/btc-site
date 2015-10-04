@@ -34,7 +34,14 @@ $categories = array(
 <?php
 foreach ($categories as $cat => $slug):
 
-    $board = get_posts( array( 'category' => $cat, 'orderby' => 'title', 'order' => 'ASC' ) );
+    $board = get_posts(
+    		array(
+    			'category' => $cat,
+    			'post_type' => 'post',
+    			'orderby' => 'title',
+    			'order' => 'ASC'
+    		)
+    	);
 
     foreach ( $board as $member ): setup_postdata( $member );
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
