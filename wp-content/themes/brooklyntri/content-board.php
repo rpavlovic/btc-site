@@ -8,11 +8,11 @@
  */
 
 $categories = array(
-	6 => 'board-member',
 	30 => 'club-president',
 	31 => 'vice-president',
 	32 => 'treasurer',
-	33 => 'secretary'
+	33 => 'secretary',
+	6 => 'board-member',
 );
 
 ?>
@@ -34,8 +34,7 @@ $categories = array(
 <?php
 foreach ($categories as $cat => $slug):
 
-    $board = get_posts( array( 'category' => $cat, 'orderby' => 'post_date', 'order' => 'DESC' ) );
-	//$board = new WP_Query( 'category_name=board-member,club-president,secretary,treasurer,vice-president&orderby=date&order=desc' );
+    $board = get_posts( array( 'category' => $cat, 'orderby' => 'title', 'order' => 'ASC' ) );
 
     foreach ( $board as $member ): setup_postdata( $member );
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
@@ -44,7 +43,7 @@ foreach ($categories as $cat => $slug):
 								<article class="info" itemscope itemtype="http://schema.org/Person">
 									<div class="photo">
 									<?php if ( !empty( $feat_image ) ): ?>
-										<img src="<?= $image ?>" itemprop="image" alt="<?= $member->post_title ?>">
+										<img src="<?= $image ?>" itemprop="image" alt="<?= esc_attr( $member->post_title ) ?>">
 									<?php endif; ?>
 
 <?php
