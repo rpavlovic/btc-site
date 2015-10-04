@@ -224,7 +224,7 @@ function btc_leftnav( $post=null ) {
 
 	$section_pages = get_pages(array(
 	    'parent' => $parent_post,
-	    'sort_column' => 'post_date',
+	    'sort_column' => 'menu_order',
 	    'child_of' => $parent_post,
 	    'sort_order' => 'ASC',
 	));
