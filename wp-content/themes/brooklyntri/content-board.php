@@ -48,7 +48,7 @@ foreach ($categories as $cat => $slug):
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $member->ID ) );
         $content = get_fields( $member->ID );
 
-        if ( !in_array($member->ID, $shown) ):
+        if ( true || !in_array($member->ID, $shown) ):
         	$shown[] = $member->ID;
 ?>
 								<article class="info" itemscope itemtype="http://schema.org/Person">
