@@ -40,6 +40,7 @@ foreach ($categories as $cat => $slug):
     			'category' => $cat,
     			'post_type' => 'post',
 				'post_status' => 'publish',
+				'posts_per_page' => -1,
     			'orderby' => 'title',
     			'order' => 'ASC'
     		)
