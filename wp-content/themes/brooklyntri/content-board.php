@@ -39,7 +39,7 @@ foreach ($categories as $cat => $slug):
     		array(
     			'category' => $cat,
     			'post_type' => 'post',
-				'post_status' => 'publish'
+				'post_status' => 'publish',
     			'orderby' => 'title',
     			'order' => 'ASC'
     		)
