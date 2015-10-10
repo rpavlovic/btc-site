@@ -48,14 +48,15 @@ $forum = get_forum_id_by_url();
 <?php if ($forum == 'forum'):
 	$forums = get_all_forums();
 	foreach ( $forums as $f ):
+		$rel = get_post_topic_counts($f->forum_id);
 ?>
 								<tr>
 									<td class="col1">
-										<h2><a href="#"><?= esc_html( $f->forum_name ) ?></a></h2>
+										<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $f->forum_slug ); ?>"><?= esc_html( $f->forum_name ) ?></a></h2>
 										<p><?= esc_html( $f->forum_desc ) ?></p>
 									</td>
-									<td class="col2"><span>0</span></td>
-									<td class="last"><em>0</em></td>
+									<td class="col2"><span><?= $rel['topics'] ?></span></td>
+									<td class="last"><em><?= $rel['posts'] ?></em></td>
 								</tr>
 <?php endforeach; endif; ?>
 								</tbody>

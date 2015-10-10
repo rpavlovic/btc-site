@@ -183,36 +183,6 @@ function get_link_text( $post=null ) {
  * Forums
  */
 
-function forum_leftnav() {
-	global $wpdb;
-
-	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
-	$forums =  $wpdb->get_results($sql, OBJECT);
-	//var_dump($forums);
-?>
-BROOO
-
-                    <aside id="sidebar">
-                        <a href="#" class="opener"><span>Menu</span></a>
-                        <nav class="aside-nav">
-                            <div class="drop">
-                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>">Forums</a>
-                                <ul>
-<?
-	foreach ( $forums as $forum ):
-?>
-                                    <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
-<?
-
-	endforeach;
-?>
-                                </ul>
-                            </div>
-                        </nav>
-                    </aside>
-<?
-}
-
 function get_forum_id_by_url($url=null) {
 	if (is_null($url)) {
 		$url = $_SERVER['REQUEST_URI'];
@@ -237,6 +207,48 @@ function get_all_forums() {
 	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
 	return $forums;
+}
+
+function get_post_topic_counts($forum_id) {
+	$forum_id = (int) $forum_id;
+	$sql = 'select count(distinct topic_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
+	$forum_topics =  $wpdb->get_results($sql, OBJECT);
+
+	$sql = 'select count(distinct post_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
+	$forum_posts =  $wpdb->get_results($sql, OBJECT);
+
+	return array(
+		'topics' => $forum_topics->count,
+		'posts' => $forum_posts->count
+	);
+}
+
+function forum_leftnav() {
+	global $wpdb;
+
+	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
+	$forums =  $wpdb->get_results($sql, OBJECT);
+	//var_dump($forums);
+?>
+                    <aside id="sidebar">
+                        <a href="#" class="opener"><span>Menu</span></a>
+                        <nav class="aside-nav">
+                            <div class="drop">
+                                <a class="btn-link" href="<?= esc_url( get_permalink( $parent->ID ) ); ?>">Forums</a>
+                                <ul>
+<?
+	foreach ( $forums as $forum ):
+?>
+                                    <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+<?
+
+	endforeach;
+?>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+<?
 }
 
 function btc_leftnav( $post=null ) {
