@@ -193,7 +193,6 @@ function get_forum_id_by_url($url=null) {
 
 	if ($forum != 'forum') {
 		global $wpdb;
-		$form_id = (int) $form_id;
 
 		$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums where forum_slug = \'' . esc_sql( $forum ) . '\'';
 		$forum = $wpdb->get_results($sql, OBJECT);
@@ -203,7 +202,6 @@ function get_forum_id_by_url($url=null) {
 
 function get_all_forums() {
 	global $wpdb;
-	$form_id = (int) $form_id;
 
 	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
@@ -212,6 +210,7 @@ function get_all_forums() {
 
 function forum_leftnav() {
 	$forums =  get_all_forums();
+	print_r($forums );
 ?>
 
                     <aside id="sidebar">
