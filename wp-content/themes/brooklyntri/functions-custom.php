@@ -215,6 +215,7 @@ function forum_leftnav() {
 	$forums =  $wpdb->get_results($sql, OBJECT);
 	//var_dump($forums);
 ?>
+BROOO
 
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
