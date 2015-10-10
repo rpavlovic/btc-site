@@ -184,9 +184,9 @@ function get_forum_id_by_url($url=null) {
 	if (is_null($url)) {
 		$url = $_SERVER['REQUEST_URI'];
 		$url = parse_url($url, PHP_URL_PATH); //get the path
-		$req = str_split('/', $url); // split into parts
-		//$req = array_reverse($path); // make last is first
-		var_dump($req);
+		$req = explode('/', $url); // split into parts
+		$req = array_reverse($path); // make last is first
+		var_dump($req[0]);
 	}
 
 	global $wpdb;
