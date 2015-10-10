@@ -179,29 +179,39 @@ function get_link_text( $post=null ) {
 
 	return $link_text;
 }
-
+/**
+ * Forums
+ */
 function get_forum_id_by_url($url=null) {
 	if (is_null($url)) {
 		$url = $_SERVER['REQUEST_URI'];
-		$url = parse_url($url, PHP_URL_PATH); //get the path
-		$req = explode('/', $url); // split into parts
-		$req = array_reverse($req); // make last is first
-		var_dump($req[0]);
 	}
+	$url = parse_url($url, PHP_URL_PATH); //get the path
+	$req = explode('/', $url); // split into parts
+	$req = array_reverse($req); // make last is first
+	$forum = $req[0];
 
+	if ($forum != 'forum') {
+		global $wpdb;
+		$form_id = (int) $form_id;
+
+		$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums where forum_slug = \'' . esc_sql( $forum ) . '\'';
+		$forum = $wpdb->get_results($sql, OBJECT);
+	}
+	return $forum;
+}
+
+function get_all_forums() {
 	global $wpdb;
 	$form_id = (int) $form_id;
 
-	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
+	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
+	return $forums;
 }
 
 function forum_leftnav() {
-	global $wpdb;
-	$form_id = (int) $form_id;
-
-	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
-	$forums =  $wpdb->get_results($sql, OBJECT);
+	$forums =  get_all_forums();
 ?>
 
                     <aside id="sidebar">
