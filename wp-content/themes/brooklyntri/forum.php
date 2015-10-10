@@ -35,7 +35,7 @@ while ( have_posts() ) : the_post();
 endwhile;
 ?>
 					</div>
-					<?php forum_leftnav( ); ?>
+					<?php forum_leftnav(); ?>
 				</div>
 
 <?
