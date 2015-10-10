@@ -185,7 +185,7 @@ function get_forum_id_by_url($url=null) {
 		$url = $_SERVER['REQUEST_URI'];
 		$url = parse_url($url, PHP_URL_PATH); //get the path
 		$req = explode('/', $url); // split into parts
-		$req = array_reverse($path); // make last is first
+		$req = array_reverse($req); // make last is first
 		var_dump($req[0]);
 	}
 
