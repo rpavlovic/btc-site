@@ -209,8 +209,11 @@ function get_all_forums() {
 }
 
 function forum_leftnav() {
-	$forums =  get_all_forums();
-	var_dump($forums);
+	global $wpdb;
+
+	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
+	$forums =  $wpdb->get_results($sql, OBJECT);
+	//var_dump($forums);
 ?>
 
                     <aside id="sidebar">
