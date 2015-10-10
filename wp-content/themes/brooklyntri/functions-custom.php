@@ -210,7 +210,6 @@ function get_all_forums() {
 
 function forum_leftnav() {
 	$forums =  get_all_forums();
-	print_r($forums );
 ?>
 
                     <aside id="sidebar">
