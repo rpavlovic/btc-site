@@ -47,12 +47,12 @@ $forum = get_forum_id_by_url();
 								<tbody>
 <?php if ($forum == 'forum'):
 	$forums = get_all_forums();
-	foreach ( $forums as $forum ):
+	foreach ( $forums as $f ):
 ?>
 								<tr>
 									<td class="col1">
-										<h2><a href="#"><?= esc_html( $forum['forum_name'] ) ?></a></h2>
-										<p><?= esc_html( $forum['forum_desc'] ) ?></p>
+										<h2><a href="#"><?= esc_html( $f['forum_name'] ) ?></a></h2>
+										<p><?= esc_html( $f['forum_desc'] ) ?></p>
 									</td>
 									<td class="col2"><span>0</span></td>
 									<td class="last"><em>0</em></td>
