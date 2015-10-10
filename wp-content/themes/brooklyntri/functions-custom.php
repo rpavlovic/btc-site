@@ -183,9 +183,8 @@ function get_link_text( $post=null ) {
 function get_forum_id_by_url($url=null) {
 	if (is_null($url)) {
 		$url = $_SERVER['REQUEST_URI'];
-		list($path, $subpath) = split('[/.-]', $url);
-		var_dump($path);
-		var_dump($subpath);
+
+		var_dump(parse_url($url, PHP_URL_PATH));
 	}
 
 	global $wpdb;
