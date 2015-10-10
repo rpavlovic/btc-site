@@ -205,6 +205,7 @@ function get_all_forums() {
 
 	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
+	var_dump($forums);
 	return $forums;
 }
 
