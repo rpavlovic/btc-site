@@ -9,6 +9,8 @@
 
 $infobox = get_fields( get_the_ID() );
 
+$url = get_forum_id_by_url();
+
 ?>
 				<section class="forum-area">
 					<header>
