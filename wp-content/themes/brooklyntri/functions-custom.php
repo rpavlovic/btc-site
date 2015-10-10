@@ -180,6 +180,21 @@ function get_link_text( $post=null ) {
 	return $link_text;
 }
 
+function get_forum_id_by_url($url=null) {
+	if (is_null($url)) {
+		$url = $_SERVER['REQUEST_URI'];
+		list($path, $subpath) = split('[/.-]', $url);
+		var_dump($path);
+		var_dump($subpath);
+	}
+
+	global $wpdb;
+	$form_id = (int) $form_id;
+
+	$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums order by forum_id';
+	$forums =  $wpdb->get_results($sql, OBJECT);
+}
+
 function forum_leftnav() {
 	global $wpdb;
 	$form_id = (int) $form_id;
