@@ -15,7 +15,7 @@ $forum = get_forum_id_by_url();
 				<section class="forum-area">
 					<header>
 						<?php the_title('<h1>','</h1>'); ?>
-						<?= $infobox['intro'] ?>
+						<?= $forum == 'forum' ? $infobox['intro'] : '' ?>
 					</header>
 
 					<div class="divider">
@@ -37,6 +37,7 @@ $forum = get_forum_id_by_url();
 				        <div class="entry forum-table">
 							<table>
 								<caption class="hidden">this is forum table</caption>
+<?php if ($forum == 'forum'): ?>
 								<thead>
 									<tr>
 										<th class="col1">Forum</th>
@@ -45,10 +46,10 @@ $forum = get_forum_id_by_url();
 									</tr>
 								</thead>
 								<tbody>
-<?php if ($forum == 'forum'):
-	$forums = get_all_forums();
-	foreach ( $forums as $f ):
-		$rel = get_post_topic_counts($f->forum_id);
+<?php
+$forums = get_all_forums();
+foreach ( $forums as $f ):
+	$rel = get_post_topic_counts($f->forum_id);
 ?>
 								<tr>
 									<td class="col1">
@@ -58,8 +59,15 @@ $forum = get_forum_id_by_url();
 									<td class="col2"><span><?= $rel['topics'] ? $rel['topics'] : 0 ?></span></td>
 									<td class="last"><em><?= $rel['posts'] ? $rel['posts'] : 0 ?></em></td>
 								</tr>
-<?php endforeach; endif; ?>
+<?php endforeach; ?>
 								</tbody>
+<?php else:
+
+
+
+?>
+
+<?php endif; ?>
 							</table>
 				        </div>
 				    </div>
