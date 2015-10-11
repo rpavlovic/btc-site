@@ -195,7 +195,13 @@ function get_forum_slug_from_url($url=null) {
 }
 
 function get_forum_id_by_url($url=null) {
-	$forum = get_forum_slug_from_url($url);
+	if (is_null($url)) {
+		$url = $_SERVER['REQUEST_URI'];
+	}
+	$url = parse_url($url, PHP_URL_PATH); //get the path
+	$req = explode('/', $url); // split into parts
+	$req = array_reverse($req); // make last is first
+	$forum = $req[0];
 
 	if ($forum != 'forum') {
 		global $wpdb;
@@ -266,7 +272,7 @@ function forum_leftnav() {
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <li><a<?= get_forum_slug_from_url() == $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
