@@ -213,9 +213,11 @@ function get_post_topic_counts($forum_id) {
 	$forum_id = (int) $forum_id;
 	$sql = 'select count(distinct topic_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
 	$forum_topics =  $wpdb->get_results($sql, OBJECT);
+	var_dump($forum_topics);
 
 	$sql = 'select count(distinct post_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
 	$forum_posts =  $wpdb->get_results($sql, OBJECT);
+	var_dump($forum_posts);
 
 	return array(
 		'topics' => $forum_topics->count,

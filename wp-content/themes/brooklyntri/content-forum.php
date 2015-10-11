@@ -55,8 +55,8 @@ $forum = get_forum_id_by_url();
 										<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $f->forum_slug ); ?>"><?= esc_html( $f->forum_name ) ?></a></h2>
 										<p><?= esc_html( $f->forum_desc ) ?></p>
 									</td>
-									<td class="col2"><span><?= $rel['topics'] ?></span></td>
-									<td class="last"><em><?= $rel['posts'] ?></em></td>
+									<td class="col2"><span><?= $rel['topics'] ? $rel['topics'] : 0 ?></span></td>
+									<td class="last"><em><?= $rel['posts'] ? $rel['posts'] : 0 ?></em></td>
 								</tr>
 <?php endforeach; endif; ?>
 								</tbody>
