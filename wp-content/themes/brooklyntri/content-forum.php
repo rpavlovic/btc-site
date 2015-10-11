@@ -48,6 +48,7 @@ $forum = get_forum_id_by_url();
 <?php if ($forum == 'forum'):
 	$forums = get_all_forums();
 	foreach ( $forums as $f ):
+		var_dump($f);die;
 		$rel = get_post_topic_counts($f->forum_id);
 ?>
 								<tr>
