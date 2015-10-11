@@ -78,7 +78,7 @@ foreach ( $forum as $f ):
 								<tr>
 									<td class="col1">
 										<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $topic->topic_slug ); ?>"><?= esc_html( $topic->topic_name ) ?></a></h2>
-										<p></p>
+										<p>Posted on <?= date("m/d/Y", strtotime($topic->topic_date))?></p>
 									</td>
 									<td class="col2"><span><?= $topic->topic_opened ?></span></td>
 									<td class="last"><em><?= $topic->post_count ?></em></td>
