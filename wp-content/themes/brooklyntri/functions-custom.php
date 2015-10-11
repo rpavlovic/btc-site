@@ -195,8 +195,7 @@ function get_forum_slug_from_url($url=null) {
 }
 
 function get_forum_id_by_url($url=null) {
-
-	$forum = get_forum_slug_from_url();//$req[0];
+	$forum = get_forum_slug_from_url();
 
 	if ($forum != 'forum') {
 		global $wpdb;
@@ -256,7 +255,7 @@ function forum_leftnav() {
 
 	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
-	//var_dump($forums);
+	$url_slug = get_forum_slug_from_url();
 ?>
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
@@ -267,7 +266,7 @@ function forum_leftnav() {
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <li><a<?= strstr($_SERVER['REQUEST_URI'], $forum->forum_slug) ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li><a<?= $url_slug == $forum->forum_slug ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
