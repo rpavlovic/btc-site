@@ -225,11 +225,21 @@ function get_post_topic_counts($forum_id) {
 	);
 }
 
+function get_topic_by_forum($forum_id) {
+	global $wpdb;
+	$forum_id = (int) $forum_id;
+
+	$sql = 'select * from ' . $wpdb->prefix . 'sftopics where forum_id = ' . esc_sql($forum_id) . ' order by topic_date desc limit 12';
+	$forum_topics =  $wpdb->get_row($sql, OBJECT);
+
+	return $forum_topics;
+}
+
 function get_posts_by_forum($forum_id) {
 	global $wpdb;
 	$forum_id = (int) $forum_id;
 
-	$sql = 'select * from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id) . ' order by post_date desc limit 12';
+	$sql = 'select p.post_content, t.topic_name from ' . $wpdb->prefix . 'sfposts p, ' . $wpdb->prefix . 'sftopics t where p.forum_id = ' . esc_sql($forum_id) . ' and  order by post_date desc limit 12';
 	$forum_posts =  $wpdb->get_row($sql, OBJECT);
 
 	return $forum_posts;

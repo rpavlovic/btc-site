@@ -61,12 +61,29 @@ foreach ( $forums as $f ):
 								</tr>
 <?php endforeach; ?>
 								</tbody>
-<?php else:
-
-
-
+<?php else: ?>
+								<thead>
+									<tr>
+										<th class="col1">Post</th>
+										<th class="col2">Read</th>
+										<th class="last">Posts</th>
+									</tr>
+								</thead>
+								<tbody>
+<?php
+foreach ( $forum as $f ):
+	$topic = get_topic_by_forum($f->forum_id);
 ?>
-
+								<tr>
+									<td class="col1">
+										<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $topic->topic_slug ); ?>"><?= esc_html( $topic->topic_name ) ?></a></h2>
+										<p></p>
+									</td>
+									<td class="col2"><span><?= $topic->topic_opened ?></span></td>
+									<td class="last"><em><?= $topic->post_count ?>></em></td>
+								</tr>
+<?php endforeach; ?>
+								</tbody>
 <?php endif; ?>
 							</table>
 				        </div>
