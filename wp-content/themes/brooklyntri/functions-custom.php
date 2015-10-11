@@ -230,7 +230,7 @@ function get_topic_by_forum($forum_id) {
 	$forum_id = (int) $forum_id;
 
 	$sql = 'select * from ' . $wpdb->prefix . 'sftopics where forum_id = ' . esc_sql($forum_id) . ' order by topic_date desc limit 12';
-	$forum_topics =  $wpdb->get_row($sql, OBJECT);
+	$forum_topics =  $wpdb->get_results($sql, OBJECT);
 
 	return $forum_topics;
 }

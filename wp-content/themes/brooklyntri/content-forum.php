@@ -72,7 +72,8 @@ foreach ( $forums as $f ):
 								<tbody>
 <?php
 foreach ( $forum as $f ):
-	$topic = get_topic_by_forum($f->forum_id);
+	$topics = get_topic_by_forum($f->forum_id);
+	foreach ( $topics as $topic ):
 ?>
 								<tr>
 									<td class="col1">
@@ -80,9 +81,9 @@ foreach ( $forum as $f ):
 										<p></p>
 									</td>
 									<td class="col2"><span><?= $topic->topic_opened ?></span></td>
-									<td class="last"><em><?= $topic->post_count ?>></em></td>
+									<td class="last"><em><?= $topic->post_count ?></em></td>
 								</tr>
-<?php endforeach; ?>
+<?php endforeach; endforeach; ?>
 								</tbody>
 <?php endif; ?>
 							</table>
