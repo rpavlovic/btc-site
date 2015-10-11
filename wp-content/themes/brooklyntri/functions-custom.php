@@ -210,8 +210,9 @@ function get_all_forums() {
 }
 
 function get_post_topic_counts($forum_id) {
+	global $wpdb;
 	$forum_id = (int) $forum_id;
-	var_dump($forum_id);die;
+
 	$sql = 'select count(distinct topic_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
 	$forum_topics =  $wpdb->get_results($sql, OBJECT);
 	var_dump($forum_topics);
