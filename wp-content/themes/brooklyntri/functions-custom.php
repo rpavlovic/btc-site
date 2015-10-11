@@ -219,10 +219,14 @@ function get_post_topic_counts($forum_id) {
 	$forum_posts =  $wpdb->get_results($sql, OBJECT);
 	var_dump($forum_posts);
 
+	die;
+
+/*
 	return array(
 		'topics' => $forum_topics->count,
 		'posts' => $forum_posts->count
 	);
+*/
 }
 
 function forum_leftnav() {
