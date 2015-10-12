@@ -189,6 +189,7 @@ function get_forum_slug_from_url($url=null) {
 	$url = parse_url($url, PHP_URL_PATH); //get the path
 	$req = explode('/', $url); // split into parts
 	$req = array_reverse($req); // make last is first
+	var_dump(count($req));
 	$forum = $req[0];
 
 	return $forum;
