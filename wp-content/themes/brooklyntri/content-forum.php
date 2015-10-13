@@ -37,7 +37,7 @@ $forum = get_forum_id_by_url();
 			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
-<?php if ($forum == 'forum'): ?>
+<?php if ($forum['type'] == 'index'): ?>
 							<thead>
 								<tr>
 									<th class="col1">Forum</th>
