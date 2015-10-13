@@ -190,7 +190,7 @@ function get_forum_slug_from_url($url=null) {
 	$req = explode('/', $url); // split into parts
 	$req = array_reverse($req); // make last is first
 	$slug = $req[0];
-
+var_dump(count($req));
 	$count = DEV ? 1 : 0; 
 	if (count($req) == (1 + $count)) {
 		$type = 'index';
