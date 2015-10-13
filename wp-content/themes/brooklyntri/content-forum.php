@@ -51,17 +51,17 @@ $forums = get_all_forums();
 foreach ( $forums as $f ):
 	$rel = get_post_topic_counts($f->forum_id);
 ?>
-							<tr>
-								<td class="col1">
-									<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $f->forum_slug ); ?>"><?= esc_html( $f->forum_name ) ?></a></h2>
-									<p><?= esc_html( $f->forum_desc ) ?></p>
-								</td>
-								<td class="col2"><span><?= $rel['topics'] ? $rel['topics'] : 0 ?></span></td>
-								<td class="last"><em><?= $rel['posts'] ? $rel['posts'] : 0 ?></em></td>
-							</tr>
+								<tr>
+									<td class="col1">
+										<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $f->forum_slug ); ?>"><?= esc_html( $f->forum_name ) ?></a></h2>
+										<p><?= esc_html( $f->forum_desc ) ?></p>
+									</td>
+									<td class="col2"><span><?= $rel['topics'] ? $rel['topics'] : 0 ?></span></td>
+									<td class="last"><em><?= $rel['posts'] ? $rel['posts'] : 0 ?></em></td>
+								</tr>
 <?php endforeach; ?>
 							</tbody>
-<?php else: ?>
+<?php elseif ($forum['type'] == 'forum'): ?>
 							<thead>
 								<tr>
 									<th class="col1">Post</th>
@@ -75,15 +75,25 @@ foreach ( $forum as $f ):
 	$topics = get_topic_by_forum($f->forum_id);
 	foreach ( $topics as $topic ):
 ?>
-							<tr>
-								<td class="col1">
-									<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $topic->topic_slug ); ?>"><?= esc_html( $topic->topic_name ) ?></a></h2>
-									<p>Posted on <?= date("m/d/Y", strtotime($topic->topic_date))?></p>
-								</td>
-								<td class="col2"><span><?= $topic->topic_opened ?></span></td>
-								<td class="last"><em><?= $topic->post_count ?></em></td>
-							</tr>
+								<tr>
+									<td class="col1">
+										<h2><a href="<?= esc_url( get_permalink( $post->ID ) . '/' . $topic->topic_slug ); ?>"><?= esc_html( $topic->topic_name ) ?></a></h2>
+										<p>Posted on <?= date("m/d/Y", strtotime($topic->topic_date))?></p>
+									</td>
+									<td class="col2"><span><?= $topic->topic_opened ?></span></td>
+									<td class="last"><em><?= $topic->post_count ?></em></td>
+								</tr>
 <?php endforeach; endforeach; ?>
+							</tbody>
+<?php else: 
+echo $forum['slug'];
+?>
+							<tbody>
+								<tr>
+									<td>
+										
+									</td>
+								</tr>
 							</tbody>
 <?php endif; ?>
 						</table>

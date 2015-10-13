@@ -263,6 +263,16 @@ function get_posts_by_forum($forum_id) {
 	return $forum_posts;
 }
 
+function get_posts_by_topic($topic_id) {
+	global $wpdb;
+	$forum_id = (int) $forum_id;
+
+	$sql = 'select post_id, post_content, post_date, guest_name, guest_email from ' . $wpdb->prefix . 'sfposts order by post_date desc limit 12';
+	$forum_posts =  $wpdb->get_row($sql, OBJECT);
+
+	return $forum_posts;
+}
+
 function forum_leftnav() {
 	global $wpdb;
 
