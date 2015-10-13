@@ -38,6 +38,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
 	define('WP_HOME','http://devstack-wordpress.local/dev');
 	define('WP_SITEURL','http://devstack-wordpress.local/dev');
 	define('WP_DEBUG', true);
+	define('DEV', true);
 
 }
 else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44')) {
@@ -61,9 +62,11 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44')) {
 	define('WP_HOME','http://66.147.247.44/dev');
 	define('WP_SITEURL','http://66.147.247.44/dev');
 	define('WP_DEBUG', false);
+	define('DEV', true);
 }
 else {
 	define('WP_DEBUG', false);
+	define('DEV', false);
 }
 
 /**#@+

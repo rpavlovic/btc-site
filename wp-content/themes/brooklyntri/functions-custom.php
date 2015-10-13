@@ -189,16 +189,27 @@ function get_forum_slug_from_url($url=null) {
 	$url = parse_url($url, PHP_URL_PATH); //get the path
 	$req = explode('/', $url); // split into parts
 	$req = array_reverse($req); // make last is first
-	var_dump(count($req));
-	$forum = $req[0];
+	$slug = $req[0];
 
-	return $forum;
+	$count = DEV ? 1 : 0; 
+	if (count($req) == (1 + $count)) {
+		$type = 'index';
+	} else if (count($req) == (2 + $count)) {
+		$type = 'forum';
+	} else if (count($req) == (3 + $count)) {
+		$type = 'thread';
+	}
+
+	return array(
+		'type' => $type,
+		'slug' => $slug
+	);
 }
 
 function get_forum_id_by_url($url=null) {
 	$forum = get_forum_slug_from_url();
 
-	if ($forum != 'forum') {
+	if ($forum['type'] == 'forum') {
 		global $wpdb;
 
 		$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums where forum_slug = \'' . esc_sql( $forum ) . '\'';
@@ -256,7 +267,7 @@ function forum_leftnav() {
 
 	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
-	$url_slug = get_forum_slug_from_url();
+	$url = get_forum_slug_from_url();
 ?>
                     <aside id="sidebar">
                         <a href="#" class="opener"><span>Menu</span></a>
@@ -267,7 +278,7 @@ function forum_leftnav() {
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <li><a<?= $url_slug == $forum->forum_slug ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li><a<?= $url['slug'] == $forum->forum_slug ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
