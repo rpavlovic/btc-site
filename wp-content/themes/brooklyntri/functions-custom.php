@@ -213,7 +213,7 @@ function get_forum_id_by_url($url=null) {
 	if ($forum['type'] == 'forum') {
 		global $wpdb;
 
-		$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums where forum_slug = \'' . esc_sql( $forum ) . '\'';
+		$sql = 'select forum_id, forum_name, forum_slug from ' . $wpdb->prefix . 'sfforums where forum_slug = \'' . esc_sql( $forum['slug'] ) . '\'';
 		$forum = $wpdb->get_results($sql, OBJECT);
 	}
 	return $forum;
