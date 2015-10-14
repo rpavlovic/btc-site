@@ -103,7 +103,7 @@ else:
 					<div class="row">
 						<p>
 							Posted on <?= date("m/d/Y H:i:s", strtotime($msg->post_date)) ?> by <?= $msg->guest_name ?><br>
-							<?= nl2br(strip_tags($msg->post_content, "<p><a><blockquote><strong><b><i><em>")) ?>
+							<?= nl2br(strip_tags($msg->post_content, "<p><a><blockquote>")) ?>
 						</p>
 					</div>
 
