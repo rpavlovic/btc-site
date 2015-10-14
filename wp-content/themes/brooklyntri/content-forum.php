@@ -21,7 +21,7 @@ $forum = get_forum_id_by_url();
 					<div class="divider">
 						<div class="holder"></div>
 					</div>
-					<?php //echo the_content(); ?>
+
 					<form action="#" class="search-form">
 						<fieldset>
 							<legend class="hidden">search form</legend>
@@ -98,16 +98,19 @@ foreach ( $forum as $f ):
 // thread:
 else: 
 	$forum_posts = get_posts_by_topic($forum['slug']);
-	foreach( $forum_posts as $msg ):
-?>
+	//foreach( $forum_posts as $msg ):
+	/*
 					<div class="row">
 						<p>
 							Posted on <?= date("m/d/Y H:i:s", strtotime($msg->post_date)) ?> by <?= $msg->guest_name ?><br>
 							<?= nl2br(strip_tags($msg->post_content, "<p><a><blockquote>")) ?>
 						</p>
 					</div>
+	*/
+?>
+<?php the_content(); ?>
 
-<?php endforeach; ?>
+
 
 <?php endif; ?>
 
