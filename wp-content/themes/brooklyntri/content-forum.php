@@ -35,9 +35,10 @@ $forum = get_forum_id_by_url();
 
 
 			        <div class="forum-table">
+
+<?php if ($forum['type'] == 'index'): ?>
 						<table>
 							<caption class="hidden">this is forum table</caption>
-<?php if ($forum['type'] == 'index'): ?>
 							<thead>
 								<tr>
 									<th class="col1">Forum</th>
@@ -61,7 +62,11 @@ foreach ( $forums as $f ):
 								</tr>
 <?php endforeach; ?>
 							</tbody>
+						</table>
+
 <?php elseif ($forum['type'] == 'forum'): ?>
+						<table>
+							<caption class="hidden">this is forum table</caption>
 							<thead>
 								<tr>
 									<th class="col1">Post</th>
@@ -85,26 +90,23 @@ foreach ( $forum as $f ):
 								</tr>
 <?php endforeach; endforeach; ?>
 							</tbody>
+						</table>
+
 <?php
 
 // thread:
 else: 
 	$forum_posts = get_posts_by_topic($forum['slug']);
-//	var_dump($forum_posts);
+	foreach( $forum_posts as $msg ):
 ?>
-							<tbody>
-<?php foreach( $forum_posts as $msg ): ?>
-								<tr>
-									<td>
-										<?= $msg->post_content ?>
-									</td>
-								</tr>
+						<p>
+							<?= nl2br(strip_tags($msg->post_content, "<p><a><blockquote>")) ?>
+						</p>
+
 <?php endforeach; ?>
-							</tbody>
+
 <?php endif; ?>
-						</table>
+
 			        </div>
-
-
 
 				</section>
