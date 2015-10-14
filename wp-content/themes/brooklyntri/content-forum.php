@@ -85,15 +85,20 @@ foreach ( $forum as $f ):
 								</tr>
 <?php endforeach; endforeach; ?>
 							</tbody>
-<?php else: 
-echo $forum['slug'];
+<?php
+
+// thread:
+else: 
+	$forum_posts = get_posts_by_topic($forum['slug']);
 ?>
 							<tbody>
+<?php foreach( $forum_posts as $msg ): ?>
 								<tr>
 									<td>
-										
+										<?= $msg['post_content'] ?>
 									</td>
 								</tr>
+<?php endforeach; ?>
 							</tbody>
 <?php endif; ?>
 						</table>

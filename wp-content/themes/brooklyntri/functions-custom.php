@@ -231,10 +231,10 @@ function get_post_topic_counts($forum_id) {
 	global $wpdb;
 	$forum_id = (int) $forum_id;
 
-	$sql = 'select count(distinct topic_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
+	$sql = 'select count(distinct topic_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql( $forum_id );
 	$forum_topics =  $wpdb->get_row($sql, OBJECT);
 
-	$sql = 'select count(distinct post_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql($forum_id);
+	$sql = 'select count(distinct post_id) as count from ' . $wpdb->prefix . 'sfposts where forum_id = ' . esc_sql( $forum_id );
 	$forum_posts =  $wpdb->get_row($sql, OBJECT);
 
 	return array(
@@ -247,7 +247,7 @@ function get_topic_by_forum($forum_id) {
 	global $wpdb;
 	$forum_id = (int) $forum_id;
 
-	$sql = 'select * from ' . $wpdb->prefix . 'sftopics where forum_id = ' . esc_sql($forum_id) . ' order by topic_date desc limit 12';
+	$sql = 'select * from ' . $wpdb->prefix . 'sftopics where forum_id = ' . esc_sql( $forum_id ) . ' order by topic_date desc limit 12';
 	$forum_topics =  $wpdb->get_results($sql, OBJECT);
 
 	return $forum_topics;
@@ -257,17 +257,21 @@ function get_posts_by_forum($forum_id) {
 	global $wpdb;
 	$forum_id = (int) $forum_id;
 
-	$sql = 'select p.post_content, t.topic_name from ' . $wpdb->prefix . 'sfposts p, ' . $wpdb->prefix . 'sftopics t where p.forum_id = ' . esc_sql($forum_id) . ' and  order by post_date desc limit 12';
+	$sql = 'select p.post_content, t.topic_name from ' . $wpdb->prefix . 'sfposts p, ' . $wpdb->prefix . 'sftopics t where p.forum_id = ' . esc_sql( $forum_id ) . ' and  order by post_date desc limit 12';
 	$forum_posts =  $wpdb->get_row($sql, OBJECT);
 
 	return $forum_posts;
 }
 
-function get_posts_by_topic($topic_id) {
+function get_posts_by_topic($topic_slug=null) {
 	global $wpdb;
-	$forum_id = (int) $forum_id;
 
-	$sql = 'select post_id, post_content, post_date, guest_name, guest_email from ' . $wpdb->prefix . 'sfposts order by post_date desc limit 12';
+	if (is_null( $topic_slug )) {
+		$topic_slug = get_forum_slug_from_url();
+		$topic_slug = $topic_slug['slug'];
+	}
+
+	$sql = 'select p.post_id, p.post_content, p.post_date, p.guest_name, p.guest_email from ' . $wpdb->prefix . 'sfposts p, ' . $wpdb->prefix . 'sftopics t where topic_slug = \'' . esc_sql( topic_slug ) . '\' order by post_date desc limit 12';
 	$forum_posts =  $wpdb->get_row($sql, OBJECT);
 
 	return $forum_posts;
