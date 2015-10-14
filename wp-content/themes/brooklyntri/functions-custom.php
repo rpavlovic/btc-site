@@ -272,6 +272,7 @@ function get_posts_by_topic($topic_slug=null) {
 	}
 
 	$sql = 'select p.post_id, p.post_content, p.post_date, p.guest_name, p.guest_email from ' . $wpdb->prefix . 'sfposts p, ' . $wpdb->prefix . 'sftopics t where topic_slug = \'' . esc_sql( topic_slug ) . '\' order by post_date desc limit 12';
+var_dump($sql);
 	$forum_posts =  $wpdb->get_results($sql, OBJECT);
 
 	return $forum_posts;
