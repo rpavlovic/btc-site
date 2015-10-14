@@ -59,5 +59,6 @@
 }
 
 .forum-area .row {
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
+	padding: 5px;
 }
