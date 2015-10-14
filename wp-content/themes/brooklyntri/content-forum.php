@@ -90,7 +90,7 @@ foreach ( $forum as $f ):
 // thread:
 else: 
 	$forum_posts = get_posts_by_topic($forum['slug']);
-	var_dump($forum_posts);
+//	var_dump($forum_posts);
 ?>
 							<tbody>
 <?php foreach( $forum_posts as $msg ): ?>
