@@ -57,3 +57,7 @@
 .btc-gform #tribe-events .tribe-events-button, .tribe-events-button:last-child {
 	margin-bottom: 15px;
 }
+
+.forum-area .row {
+	border: 1px solid #ccc;
+}
