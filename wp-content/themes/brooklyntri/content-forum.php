@@ -33,10 +33,8 @@ $forum = get_forum_id_by_url();
 						</fieldset>
 					</form>
 
-
-			        <div class="forum-table">
-
 <?php if ($forum['type'] == 'index'): ?>
+			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
 							<thead>
@@ -63,8 +61,10 @@ foreach ( $forums as $f ):
 <?php endforeach; ?>
 							</tbody>
 						</table>
+					</div>
 
 <?php elseif ($forum['type'] == 'forum'): ?>
+			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
 							<thead>
@@ -91,6 +91,7 @@ foreach ( $forum as $f ):
 <?php endforeach; endforeach; ?>
 							</tbody>
 						</table>
+					</div>
 
 <?php
 
@@ -99,9 +100,12 @@ else:
 	$forum_posts = get_posts_by_topic($forum['slug']);
 	foreach( $forum_posts as $msg ):
 ?>
+					<div class="row">
 						<p>
-							<?= nl2br(strip_tags($msg->post_content, "<p><a><blockquote>")) ?>
+							Posted on <?= $date("m/d/Y H:i:s", strtotime($msg->post_date)) ?> by <?= $msg->guest_name ?><br>
+							<?= nl2br(strip_tags($msg->post_content, "<p><a><blockquote><strong><b><i><em><span>")) ?>
 						</p>
+					</div>
 
 <?php endforeach; ?>
 
