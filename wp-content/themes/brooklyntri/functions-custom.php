@@ -197,17 +197,19 @@ function get_forum_slug_from_url($url=null) {
 		$type = 'index';
 	} else if (count($req) == (3 + $count)) {
 		$type = 'forum';
-echo 'jere';
 	} else if (count($req) == (4 + $count)) {
 		$type = 'thread';
 	} else {
 
 	}
 
-	return array(
+	$forum = array(
 		'type' => $type,
 		'slug' => $slug
 	);
+	var_dump($forum);
+
+	return $forum;
 }
 
 function get_forum_id_by_url($url=null) {
