@@ -193,11 +193,11 @@ function get_forum_slug_from_url($url=null) {
 
 	// not the biggest fan of this:
 	$count = DEV == true ? 1 : 0;
-	var_dump(count($count));
 	if (count($req) == (2 + $count)) {
 		$type = 'index';
 	} else if (count($req) == (3 + $count)) {
 		$type = 'forum';
+echo 'jere';
 	} else if (count($req) == (4 + $count)) {
 		$type = 'thread';
 	} else {
