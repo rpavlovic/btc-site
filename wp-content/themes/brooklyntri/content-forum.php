@@ -10,8 +10,7 @@
 $infobox = get_fields( get_the_ID() );
 
 $forum = get_forum_id_by_url();
-echo 'forum time';
-var_dump($forum['type']) ;
+
 ?>
 				<section class="forum-area">
 					<header>
@@ -69,7 +68,6 @@ foreach ( $forums as $f ):
 					</div>
 
 <?php elseif ($forum['type'] == 'forum'): ?>
-	hi hi hi 
 			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
@@ -82,8 +80,8 @@ foreach ( $forums as $f ):
 							</thead>
 							<tbody>
 <?php
-$forums = get_all_forums();
-foreach ( $forums as $f ):
+//$forums = get_all_forums();
+foreach ( $forums['forum'] as $f ):
 	$topics = get_topic_by_forum($f->forum_id);
 	foreach ( $topics as $topic ):
 ?>
