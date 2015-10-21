@@ -97,7 +97,7 @@ foreach ( $forum as $f ):
 
 // thread:
 else: 
-	echo $forum['type'];
+	var_dump($forum['type']);
 	//$forum_posts = get_posts_by_topic($forum['slug']);
 	//foreach( $forum_posts as $msg ):
 	/*

@@ -18,7 +18,7 @@ btc_breadcrumbs();
 ?>
 
 				<div id="two-columns">
-				<?php forum_leftnav(); ?>
+					<?php forum_leftnav(); ?>
 					<div id="content">
 <?
 // Start the loop.
