@@ -22,7 +22,9 @@ $forum = get_forum_id_by_url();
 						<div class="holder"></div>
 					</div>
 
-<?php /*
+<?php
+echo $forum['type'];
+/*
 					<form action="#" class="search-form">
 						<fieldset>
 							<legend class="hidden">search form</legend>
@@ -66,6 +68,7 @@ foreach ( $forums as $f ):
 					</div>
 
 <?php elseif ($forum['type'] == 'forum'): ?>
+	hi hi hi 
 			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
