@@ -81,6 +81,7 @@ foreach ( $forums as $f ):
 							<tbody>
 <?php
 //$forums = get_all_forums();
+var_dump($forums);
 foreach ( $forums['forum'] as $f ):
 	$topics = get_topic_by_forum($f->forum_id);
 	foreach ( $topics as $topic ):
