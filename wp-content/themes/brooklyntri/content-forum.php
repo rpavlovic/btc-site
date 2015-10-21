@@ -23,6 +23,7 @@ $forum = get_forum_id_by_url();
 					</div>
 
 <?php
+echo 'forum time';
 var_dump($forum['type']) ;
 /*
 					<form action="#" class="search-form">
