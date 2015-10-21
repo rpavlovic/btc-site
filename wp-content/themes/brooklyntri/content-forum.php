@@ -15,7 +15,7 @@ $forum = get_forum_id_by_url();
 				<section class="forum-area">
 					<header>
 						<?php the_title('<h1>','</h1>'); ?>
-						<?= $forum['type'] == 'forum' ? $infobox['intro'] : '' ?>
+						<?= $forum['type'] == 'index' ? $infobox['intro'] : '' ?>
 					</header>
 
 					<div class="divider">
