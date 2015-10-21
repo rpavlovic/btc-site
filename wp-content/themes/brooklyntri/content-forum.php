@@ -10,7 +10,8 @@
 $infobox = get_fields( get_the_ID() );
 
 $forum = get_forum_id_by_url();
-
+echo 'forum time';
+var_dump($forum['type']) ;
 ?>
 				<section class="forum-area">
 					<header>
@@ -23,8 +24,7 @@ $forum = get_forum_id_by_url();
 					</div>
 
 <?php
-echo 'forum time';
-var_dump($forum['type']) ;
+
 /*
 					<form action="#" class="search-form">
 						<fieldset>
