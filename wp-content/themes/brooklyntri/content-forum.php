@@ -23,7 +23,7 @@ $forum = get_forum_id_by_url();
 					</div>
 
 <?php
-echo $forum['type'];
+var_dump($forum['type']) ;
 /*
 					<form action="#" class="search-form">
 						<fieldset>
