@@ -22,6 +22,7 @@ $forum = get_forum_id_by_url();
 						<div class="holder"></div>
 					</div>
 
+<?php /*
 					<form action="#" class="search-form">
 						<fieldset>
 							<legend class="hidden">search form</legend>
@@ -32,6 +33,7 @@ $forum = get_forum_id_by_url();
 							</div>
 						</fieldset>
 					</form>
+*/ ?>
 
 <?php if ($forum['type'] == 'index'): ?>
 			        <div class="forum-table">
