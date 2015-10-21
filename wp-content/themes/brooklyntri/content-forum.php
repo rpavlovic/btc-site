@@ -78,7 +78,8 @@ foreach ( $forums as $f ):
 							</thead>
 							<tbody>
 <?php
-foreach ( $forum as $f ):
+$forums = get_all_forums();
+foreach ( $forums as $f ):
 	$topics = get_topic_by_forum($f->forum_id);
 	foreach ( $topics as $topic ):
 ?>
@@ -99,7 +100,7 @@ foreach ( $forum as $f ):
 
 // thread:
 else: 
-	var_dump($forum['type']);
+	//var_dump($forum['type']);
 	//$forum_posts = get_posts_by_topic($forum['slug']);
 	//foreach( $forum_posts as $msg ):
 	/*

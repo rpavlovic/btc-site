@@ -207,7 +207,6 @@ function get_forum_slug_from_url($url=null) {
 		'type' => $type,
 		'slug' => $slug
 	);
-	var_dump($forum);
 
 	return $forum;
 }
