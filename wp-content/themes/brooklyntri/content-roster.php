@@ -35,8 +35,8 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 							<ul class="info-list">
 <?php
 foreach($get_posts as $post): setup_postdata($post);
-	$btcers = count_btc_registrants(1, $post->ID);
 	$registrants = get_btc_participants(1, $post->ID);
+	$btcers = count($registrants); // count_btc_registrants(1, $post->ID);
 	$event_link = tribe_get_event_website_link();
 
 	$categories = tribe_get_event_categories( $post->ID );
@@ -52,7 +52,7 @@ foreach($get_posts as $post): setup_postdata($post);
 											<h2><?= is_club_race( $categories ) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
-											<span><?= count($registrants) ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
+											<span><?= $btcers ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
 										</div>
 										<div class="col">
 											<time datetime="<?= date("Y-m-d",strtotime($post->EventStartDate)) ?>"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
