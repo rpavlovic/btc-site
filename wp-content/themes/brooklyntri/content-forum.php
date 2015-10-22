@@ -14,7 +14,7 @@ $forum = get_forum_id_by_url();
 ?>
 				<section class="forum-area">
 					<header>
-						<h1>Brooklyn Tri Club Forum</h1>
+						<h1><?= get_parent_forum_title( get_the_title() ) ?></h1>
 						<?php /* the_title('<h1>','</h1>'); */ ?>
 						<?= $forum['type'] == 'index' ? $infobox['intro'] : '' ?>
 					</header>
