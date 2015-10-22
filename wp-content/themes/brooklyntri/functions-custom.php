@@ -358,6 +358,15 @@ function btc_leftnav( $post=null ) {
 <?
 }
 
+function get_parent_forum_title($title) {
+	if (strstr($title, '|') != false) {
+		$title = explode("|", $title);
+		$title = array_reverse($title);
+		return trim($title[0]);
+	}
+	return $title;
+}
+
 function btc_breadcrumbs() {
 	$breadcrumbs  = get_btc_breadcrumbs(array('separator' => '/', 'richsnippet' => false), $return_array = true);
 
@@ -368,11 +377,18 @@ function btc_breadcrumbs() {
 							<span>You are here:</span>
 							<ul class="breadcrumbs">
 <?php foreach ( $breadcrumbs as $crumb ): ?>
+
+<?php
+
+$page_title = get_the_title( get_the_ID(  ) );
+if (strstr($crumb, 'Brooklyn Tri Club Forum') != false):
+	$crumb = get_parent_forum_title($crumb);
+?>
 								<li><?= $crumb ?></li>
-<?php endforeach; ?>
+<?php endif; endforeach; ?>
 							</ul>
 						</nav>
-						<h1><?php echo get_the_title( get_the_ID(  ) ); ?></h1>
+						<h1><?php echo get_parent_forum_title( $page_title ); ?></h1>
 					</div>
 				</section>
 <?php endif;
