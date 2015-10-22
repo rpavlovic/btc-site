@@ -38,7 +38,7 @@ $forum = get_forum_id_by_url();
 					</form>
 */ ?>
 
-<?php if (false && $forum['type'] == 'index'): ?>
+<?php if ($forum['type'] == 'index'): ?>
 			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
@@ -68,7 +68,7 @@ foreach ( $forums as $f ):
 						</table>
 					</div>
 
-<?php elseif ($forum['type'] == 'forum'): ?>
+<?php elseif (false && $forum['type'] == 'forum'): ?>
 			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
