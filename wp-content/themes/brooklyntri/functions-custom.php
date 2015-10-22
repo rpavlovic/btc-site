@@ -308,7 +308,7 @@ function forum_leftnav() {
 <?
 	foreach ( $forums as $forum ):
 ?>
-                                    <li><a<?= $url['slug'] == $forum->forum_slug ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
+                                    <li<?= $url['slug'] == $forum->forum_slug ? ' class="active"' : '' ?>><a<?= $url['slug'] == $forum->forum_slug ? ' class="active"' : '' ?> href="<?= esc_url( get_permalink( $post->ID ) . '/' . $forum->forum_slug ); ?>"><?= esc_html( $forum->forum_name ) ?></a></li>
 <?
 
 	endforeach;
