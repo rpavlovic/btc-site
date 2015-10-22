@@ -1442,7 +1442,7 @@ table {
     overflow: hidden;
     font-size: 16px;
     line-height: 24px;
-    padding: 0 80px 34px; }
+    padding: 0 80px 3px; }
   .forum-area h1 {
     margin: 0 0 39px;
     text-transform: uppercase;
