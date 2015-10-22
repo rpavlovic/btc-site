@@ -52,7 +52,7 @@ foreach($get_posts as $post): setup_postdata($post);
 											<h2><?= is_club_race( $categories ) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 										</div>
 										<div class="col">
-											<span><?= $btcers ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
+											<span><?= count($registrants) ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
 										</div>
 										<div class="col">
 											<time datetime="<?= date("Y-m-d",strtotime($post->EventStartDate)) ?>"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
@@ -77,9 +77,9 @@ foreach($get_posts as $post): setup_postdata($post);
 											<dt>ATHLETE LIST:</dt>
 											<dd>
 												<ol>
-												<?php foreach($registrants as $racer): ?>
+										<?php foreach($registrants as $racer): ?>
 													<li><?= $racer ?></li>
-												<?php endforeach; ?>
+										<?php endforeach; ?>
 												</ol>
 											</dd>
 <?php endif; ?>
