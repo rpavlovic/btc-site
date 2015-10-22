@@ -1527,7 +1527,7 @@ table {
 .forum-table {
   overflow: hidden;
   margin: 0 9px 0 14px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 22px;
   color: #666;
   border: 1px solid #e1e1e1;
@@ -1540,7 +1540,7 @@ table {
   .forum-table thead {
     background: #fcfcfc;
     text-align: left;
-    font-size: 19px; }
+    font-size: 17px; }
     .forum-table thead th {
       text-align: left;
       font-weight: 600;
@@ -1552,7 +1552,7 @@ table {
     color: #49beed;
     line-height: 22px;
     letter-spacing: 1px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600; }
     .forum-table h2 a:hover {
       color: #666;
@@ -1573,7 +1573,7 @@ table {
     margin: 0; }
   .forum-table span, .forum-table em {
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600; }
   .forum-table span {
     padding: 0 0 0 12px; }
