@@ -68,7 +68,7 @@ foreach ( $forums as $f ):
 						</table>
 					</div>
 
-<?php elseif (false && $forum['type'] == 'forum'): ?>
+<?php elseif ($forum['type'] == 'forum'): ?>
 			        <div class="forum-table">
 						<table>
 							<caption class="hidden">this is forum table</caption>
