@@ -34,6 +34,7 @@ $get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'futur
 							<legend class="hidden">info form</legend>
 							<ul class="info-list">
 <?php
+$form_set = false;
 foreach($get_posts as $post): setup_postdata($post);
 	$registrants = get_btc_participants(1, $post->ID);
 	$btcers = count($registrants); // count_btc_registrants(1, $post->ID);
@@ -85,7 +86,7 @@ foreach($get_posts as $post): setup_postdata($post);
 <?php endif; ?>
 
 <?php
-if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
+if ( !$form_set && is_user_logged_in() && !current_user_registered( $post->ID ) ): $form_set = true;
 
 ?>
 											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
