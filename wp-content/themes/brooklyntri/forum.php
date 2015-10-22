@@ -18,8 +18,8 @@ btc_breadcrumbs();
 ?>
 
 				<div id="two-columns">
-					<div id="content">
 					<?php forum_leftnav(); ?>
+					<div id="content">
 <?
 // Start the loop.
 while ( have_posts() ) : the_post();
