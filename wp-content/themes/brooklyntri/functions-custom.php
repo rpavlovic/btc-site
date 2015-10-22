@@ -182,6 +182,16 @@ function get_link_text( $post=null ) {
 /**
  * Forums
  */
+
+function get_parent_forum_title($title) {
+	if (strstr($title, '|') != false) {
+		$title = explode("|", $title);
+		$title = array_reverse($title);
+		return trim($title[0]);
+	}
+	return $title;
+}
+
 function get_forum_slug_from_url($url=null) {
 	if (is_null($url)) {
 		$url = $_SERVER['REQUEST_URI'];
@@ -356,15 +366,6 @@ function btc_leftnav( $post=null ) {
                         </nav>
                     </aside>
 <?
-}
-
-function get_parent_forum_title($title) {
-	if (strstr($title, '|') != false) {
-		$title = explode("|", $title);
-		$title = array_reverse($title);
-		return trim($title[0]);
-	}
-	return $title;
 }
 
 function btc_breadcrumbs() {
