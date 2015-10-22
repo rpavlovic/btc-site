@@ -85,14 +85,14 @@ foreach($get_posts as $post): setup_postdata($post);
 											</dd>
 <?php endif; ?>
 
-										</dl>
-
 <?php
 if ( !$form_set && is_user_logged_in() && !current_user_registered( $post->ID ) ): $form_set = true;
 
 ?>
-										<?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?>
+											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
 <?php endif; ?>
+
+										</dl>
 									</div>
 								</li>
 <?php endforeach; ?>
