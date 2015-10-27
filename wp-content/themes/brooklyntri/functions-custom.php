@@ -179,10 +179,10 @@ function get_link_text( $post=null ) {
 
 	return $link_text;
 }
+
 /**
  * Forums
  */
-
 function get_parent_forum_title($title) {
 	if (strstr($title, '|') != false) {
 		$title = explode("|", $title);
@@ -295,7 +295,7 @@ function get_posts_by_topic($topic_slug=null) {
 function forum_leftnav() {
 	global $wpdb;
 
-	$sql = 'select * from ' . $wpdb->prefix . 'sfforums order by forum_id';
+	$sql = 'select forum_id, forum_slug, forum_name from ' . $wpdb->prefix . 'sfforums order by forum_seq, forum_id';
 	$forums =  $wpdb->get_results($sql, OBJECT);
 	$url = get_forum_slug_from_url();
 ?>
@@ -1148,7 +1148,6 @@ function get_btc_facebook_likes() {
 	return $likes;
 }
 
-
 /**
  * Resources
  */
@@ -1186,6 +1185,7 @@ function current_user_registered($event, $form=1) {
 
 function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
+	var_dump();
 	$racers = array();
 	foreach ($registrants as $racer) {
 		if($racer[EVENT_FIELD_ID] == $event_id) {
