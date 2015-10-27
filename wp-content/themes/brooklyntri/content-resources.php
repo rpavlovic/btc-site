@@ -96,6 +96,41 @@ if( count( $sponsors ) > 1 ):
 ?>
                                 </div>
                             </div>
+<? endif; // if sponsors
+
+$sponsors = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+if( count( $sponsors ) > 1 ):
+?>
+                            <div class="info-area">
+                                <h2>DISCOUNTS</h2>
+                                <div class="holder">
+<?php
+    foreach ( $sponsors as $sponsor ): setup_postdata( $sponsor );
+        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $sponsor->ID ) );
+        $content = get_fields( $sponsor->ID );
+
+?>
+                                    <div class="row">
+                                        <div class="img-holder">
+                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
+                                        </div>
+                                        <div class="text">
+                                            <div class="col">
+                                                <h3>WHAT:</h3>
+                                                <?= esc_html( $content['what'] ) ?>
+                                            </div>
+                                            <div class="col">
+                                                <h3>BTC DISCOUNT:</h3>
+                                                <?= $content['discounts'] ?>
+                                            </div>
+                                        </div>
+                                    </div>
+<?php
+    endforeach;
+    wp_reset_postdata();
+?>
+                                </div>
+                            </div>
 <? endif; // if sponsors ?>
 
 <?php
