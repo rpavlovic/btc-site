@@ -89,7 +89,7 @@ foreach($get_posts as $post): setup_postdata($post);
 if ( is_user_logged_in() && !current_user_registered( $post->ID ) ): //!$form_set &&  $form_set = true;
 
 ?>
-											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null, $ajax=true); ?></dd>
+											<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=null); //, $ajax=true ?></dd>
 <?php endif; ?>
 
 										</dl>
