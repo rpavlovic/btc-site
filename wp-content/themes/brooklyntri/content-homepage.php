@@ -152,7 +152,7 @@ $races = tribe_get_events(array('posts_per_page'=>5, 'eventDisplay'=>'future') )
 foreach($races as $post): setup_postdata($post);
 ?>
 
-							<li><a href="<?= is_user_logged_in() ? get_permalink( $post->ID ) : '#' ?>"><?= esc_html( $post->post_title ) ?></a></li>
+							<li><a href="<?= is_user_logged_in() ? get_permalink( $post->ID ) : 'javascript:void(0)' ?>"><?= esc_html( $post->post_title ) ?></a></li>
 
 <?php endforeach; ?>
 						</ul>
