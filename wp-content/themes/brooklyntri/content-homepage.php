@@ -145,18 +145,14 @@ $infoboxes = get_fields( get_the_ID() );
 						</div>
 					</div>
 					<aside class="aside">
-						<h2>UPCOMING RACES</h2>
+						<h2>UPCOMING EVENTS</h2>
 						<ul>
 <?php
 $races = tribe_get_events(array('posts_per_page'=>5, 'eventDisplay'=>'future') );
 foreach($races as $post): setup_postdata($post);
 ?>
 
-<?php if ( is_user_logged_in() ): ?>
-							<li><a href="<?= get_permalink( $post->ID ) ?>"><?= esc_html( $post->post_title ) ?></a></li>
-<?php else: ?>
-							<li><?= esc_html( $post->post_title ) ?></li>
-<?php endif; ?>
+							<li><a href="<?= is_user_logged_in() ? get_permalink( $post->ID ) : '#' ?>"><?= esc_html( $post->post_title ) ?></a></li>
 
 <?php endforeach; ?>
 						</ul>
