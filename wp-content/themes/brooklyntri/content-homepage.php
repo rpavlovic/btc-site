@@ -151,7 +151,13 @@ $infoboxes = get_fields( get_the_ID() );
 $races = tribe_get_events(array('posts_per_page'=>5, 'eventDisplay'=>'future') );
 foreach($races as $post): setup_postdata($post);
 ?>
-							<li><a href="<?= get_permalink( $post->ID ) ?>"><?= $post->post_title ?></a></li>
+
+<?php if ( is_user_logged_in() ): ?>
+							<li><a href="<?= get_permalink( $post->ID ) ?>"><?= esc_html( $post->post_title ) ?></a></li>
+<?php else: ?>
+							<li><?= esc_html( $post->post_title ) ?></li>
+<?php endif; ?>
+
 <?php endforeach; ?>
 						</ul>
 <?php if ( count($races) < 3 ): ?>
