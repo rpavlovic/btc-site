@@ -89,7 +89,7 @@
 						<h2>Upcoming Events</h2>
 						<ul class="list">
 <?php
-$races = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
+$races = tribe_get_events(array('posts_per_page'=>5, 'eventDisplay'=>'future') );
 foreach($races as $post): setup_postdata($post);
 ?>
 							<li>
