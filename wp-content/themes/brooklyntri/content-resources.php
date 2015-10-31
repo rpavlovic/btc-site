@@ -98,21 +98,21 @@ if( count( $sponsors ) > 1 ):
                             </div>
 <? endif; // if sponsors
 
-$sponsors = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'order' => 'DESC' ) );
-if( count( $sponsors ) > 1 ):
+$discounts = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+if( count( $discounts ) > 1 ):
 ?>
                             <div class="info-area">
                                 <h2>DISCOUNTS</h2>
                                 <div class="holder">
 <?php
-    foreach ( $sponsors as $sponsor ): setup_postdata( $sponsor );
-        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $sponsor->ID ) );
-        $content = get_fields( $sponsor->ID );
+    foreach ( $discounts as $discount ): setup_postdata( $discount );
+        $feat_image = wp_get_attachment_url( get_post_thumbnail_id( $discount->ID ) );
+        $content = get_fields( $discount->ID );
 
 ?>
                                     <div class="row">
                                         <div class="img-holder">
-                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
+                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $discount->post_title ) ?>" title="<?= esc_html( $discount->post_title ) ?>"></a>
                                         </div>
                                         <div class="text">
                                             <div class="col">
