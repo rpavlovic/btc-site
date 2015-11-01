@@ -22,7 +22,7 @@ $current_post = $post;
 ?>
 
 
-					<div id="content" class="contact-form-area">
+				<div class="contact-form-area">
 
 		<?php
 		// Start the loop.
@@ -39,7 +39,7 @@ $current_post = $post;
 		// End the loop.
 		endwhile;
 		?>
-					</div>
+				</div>
 
 
 <?php	
