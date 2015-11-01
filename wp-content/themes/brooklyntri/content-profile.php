@@ -8,6 +8,10 @@
  */
 
 
+global $current_user;
+
+get_currentuserinfo();
+
 ?>
 
 					<div class="holder">
@@ -26,24 +30,24 @@
 							<div class="row">
 								<div class="col">
 									<label for="first_name">FIRST NAME <span>*</span></label>
-									<input type="text" name="first_name" id="first_name" value="Rahmin">
+									<input type="text" name="first_name" id="first_name" value="<?= sanitize_text_field( $current_user->first_name ) ?>">
 								</div>
 								<div class="col">
 									<label for="first_name">FIRST NAME <span>*</span></label>
-									<input type="text" name="last_name" id="last_name" value="Rahmin">
+									<input type="text" name="last_name" id="last_name" value="<?= sanitize_text_field( $current_user->last_name ) ?>">
 								</div>
 							</div>
 							<div class="row">
 								<label for="nickname">NICKNAME <span>*</span></label>
-								<input type="text" name="nickname" id="nickname" value="Rahmin">
+								<input type="text" name="nickname" id="nickname" value="<?= sanitize_text_field( $current_user->nickname ) ?>">
 							</div>
 							<div class="row">
 								<label for="email">E-MAIL <span>*</span></label>
-								<input type="text" name="email" id="email" value="Rahmin">
+								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->email ) ?>">
 							</div>
 							<div class="row">
 								<label for="email">WEBSITE <span>*</span></label>
-								<input type="text" name="website" id="website" value="Rahmin">
+								<input type="text" name="website" id="website" value="<?= sanitize_text_field( $current_user->website ) ?>">
 							</div>
 							<input class="button" type="submit" value="SUBMIT">
 						</fieldset>
