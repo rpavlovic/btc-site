@@ -19,7 +19,7 @@ $current_post = $post;
 
 ?>
 
-				<div id="two-columns">
+
 					<div id="content" class="contact-form-area">
 
 		<?php
@@ -39,8 +39,6 @@ $current_post = $post;
 		?>
 					</div>
 
-					<?php btc_leftnav( $current_post ); ?>
-				</div>
 
 <?php	
 	btc_get_sponsor_logos();
