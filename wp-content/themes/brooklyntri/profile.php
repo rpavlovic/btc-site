@@ -15,11 +15,12 @@ get_header();
 
 btc_breadcrumbs();
 
-//$current_post = $post;
+$current_post = $post;
 
 ?>
 
-				<div class="contact-form-area">
+				<div id="two-columns">
+					<div id="content" class="contact-form-area">
 
 		<?php
 		// Start the loop.
@@ -36,7 +37,9 @@ btc_breadcrumbs();
 		// End the loop.
 		endwhile;
 		?>
+					</div>
 
+					<?php btc_leftnav( $current_post ); ?>
 				</div>
 
 <?php	
