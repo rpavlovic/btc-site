@@ -11,7 +11,7 @@
  * @since Brooklyn Tri 1.0
  */
 
-auth_redirect();
+//auth_redirect();
 
 get_header();
 
