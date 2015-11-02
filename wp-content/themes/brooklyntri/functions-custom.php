@@ -93,7 +93,6 @@ function btc_login() {
 
 function admin_login_redirect( $redirect_to, $request, $user ) {
     return $request;
-	}
 }
 add_filter("login_redirect", "admin_login_redirect", 10, 3);
 
