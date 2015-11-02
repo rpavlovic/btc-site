@@ -25,23 +25,27 @@
 </head>
 
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1609626645924704',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
-  };
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '1609626645924704',
+	      xfbml      : true,
+	      version    : 'v2.4'
+	    });
+	  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript">window.jQuery || document.write('<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.main.js"></script>
+
 	<noscript>Javascript must be enabled for the correct page display</noscript>
 	<div id="wrapper">
 		<div class="w1">
