@@ -1159,8 +1159,7 @@ function current_user_registered($event, $form=1) {
 	if ( is_user_logged_in() ) {
 		global $current_user;
 		get_currentuserinfo();
-		$current_person = $current_user->user_firstname . ' ' . $current_user->user_lastname;
-var_dump($current_user);
+		$current_person = $current_user->display_name;//$current_user->user_firstname . ' ' . $current_user->user_lastname;
 		$registrants = get_btc_participants($form, $event);
 
 		foreach($registrants as $racer) {
