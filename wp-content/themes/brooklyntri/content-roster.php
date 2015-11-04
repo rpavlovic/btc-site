@@ -15,7 +15,13 @@ $get_posts = tribe_get_events(
 	array(
 		'posts_per_page'=>-1,
 		'eventDisplay'=>'future',
-        'tag'=> 'race'
+        'tax_query'=> array(
+            array(
+                'taxonomy' => 'tribe_events_cat',
+                'field' => 'slug',
+                'terms' => 'race'
+            )
+        )
 	)
 );
 
