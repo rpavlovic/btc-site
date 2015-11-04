@@ -11,7 +11,13 @@ global $current_user;
 get_currentuserinfo();
 $current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';
 
-$get_posts = tribe_get_events(array('posts_per_page'=>-1, 'eventDisplay'=>'future') );
+$get_posts = tribe_get_events(
+	array(
+		'posts_per_page'=>-1,
+		'eventDisplay'=>'future',
+        'tag'=> 'race'
+	)
+);
 
 ?>
 
