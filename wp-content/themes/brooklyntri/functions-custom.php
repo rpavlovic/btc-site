@@ -1160,9 +1160,11 @@ function current_user_registered($event, $form=1) {
 		global $current_user;
 		get_currentuserinfo();
 		$current_person = $current_user->user_firstname . ' ' . $current_user->user_lastname;
+		var_dump($current_person);
 		$registrants = get_btc_participants($form, $event);
 
 		foreach($registrants as $racer) {
+
 			if ($current_person == $racer) {
 				return true;
 			}
