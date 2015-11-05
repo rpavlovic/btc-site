@@ -2275,8 +2275,8 @@ table {
 #footer {
   width: 100%;
   overflow: hidden;
-  display: table-footer-group;
-  height: 1%;
+  /*display: table-footer-group;
+  height: 1%;*/
   background: url(/dev/images/bg-footer.png); }
 
 .footer-holder {
