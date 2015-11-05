@@ -79,3 +79,11 @@ body .ttip {
     -webkit-border-radius: 9px;
     border-radius: 9px;
 }
+
+#footer {
+    width: 100%;
+    overflow: hidden;
+    /* display: table-footer-group; */
+    /* height: 1%; */
+    background: url(/dev/images/bg-footer.png);
+}
