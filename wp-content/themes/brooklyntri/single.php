@@ -45,7 +45,4 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<?php	
-	btc_get_sponsor_logos();
-	get_footer();
-?>
+<?php get_footer(); ?>

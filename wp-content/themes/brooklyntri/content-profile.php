@@ -12,8 +12,11 @@ global $current_user;
 
 get_currentuserinfo();
 
+var_dump($current_user);
+
 ?>
 
+<?php /*
 					<div class="holder">
 						<div class="text">
 
@@ -23,7 +26,8 @@ get_currentuserinfo();
 
 						</div>
 					</div>
-					<form action="#" class="contact-form">
+*/ ?>
+					<form action="<?= esc_url( home_url( '/' ) ); ?>/wp-admin/profile.php" class="contact-form" method="post">
 						<fieldset>
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
