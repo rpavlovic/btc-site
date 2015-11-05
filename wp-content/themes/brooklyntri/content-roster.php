@@ -7,6 +7,7 @@
  * @since Brooklyn Tri 1.0
  */
 
+// stuff not being used?
 global $current_user;
 get_currentuserinfo();
 $current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';

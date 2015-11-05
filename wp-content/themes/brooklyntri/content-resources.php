@@ -99,6 +99,7 @@ if( count( $sponsors ) > 1 ):
 <? endif; // if sponsors
 
 $discounts = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+var_dump(count( $discounts ));
 if( count( $discounts ) > 1 ):
 ?>
                             <div class="info-area">
