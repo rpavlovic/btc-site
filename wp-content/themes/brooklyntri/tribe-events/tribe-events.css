@@ -63,15 +63,19 @@
 	padding: 5px;
 }
 
-p#vtip {
-	display: none !important;
-	color: #666;
-	font-family: inherit;
-	position: absolute;
-	padding: 10px;
+.ttip {
+    color: #4c5d77;
+    font-family: inherit;
     font-size: 12px;
-	line-height: 1.2em;
-	background: #dce7ee;
-	border: 1px solid #dddddd;
-	-webkit-gradientborder-radius: 9px; border-radius: 9px;	z-index: 9999;
+    line-height: 1.2em;
+    background: #dce7ee;
+    padding: 10px;
+    position: absolute;
+    z-index: 9999;
+    max-width: 300px;
+}
+body .ttip {
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
 }
