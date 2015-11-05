@@ -22,7 +22,7 @@
 
 if (get_the_ID() == 47):
 
-    $premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+    $premium = get_posts( array( 'category' => 2, 'orderby' => 'post_date', 'order' => 'DESC', 'posts_per_page' => -1 ) );
     if( count( $premium ) > 1 ):
 ?>
 
@@ -63,7 +63,7 @@ if (get_the_ID() == 47):
 <?
 endif; // if premium sponsors
 
-$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC' ) );
+$sponsors = get_posts( array( 'category' => 3, 'orderby' => 'post_date', 'order' => 'DESC', 'posts_per_page' => -1 ) );
 if( count( $sponsors ) > 1 ):
 ?>
                             <div class="info-area">
@@ -98,8 +98,8 @@ if( count( $sponsors ) > 1 ):
                             </div>
 <? endif; // if sponsors
 
-$discounts = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'order' => 'DESC' ) );
-var_dump(count( $discounts ));
+$discounts = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'order' => 'DESC', 'posts_per_page' => -1 ) );
+
 if( count( $discounts ) > 1 ):
 ?>
                             <div class="info-area">
