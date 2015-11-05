@@ -43,8 +43,7 @@ endwhile;
 					</aside>
 				</div>
 
-<?
-
-get_footer();
-
+<?php	
+	btc_get_sponsor_logos();
+	get_footer();
 ?>
