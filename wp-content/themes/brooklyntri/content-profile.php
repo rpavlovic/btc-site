@@ -12,7 +12,7 @@ global $current_user;
 
 get_currentuserinfo();
 
-var_dump($current_user);
+//var_dump($current_user);
 
 ?>
 
@@ -52,17 +52,17 @@ var_dump($current_user);
 								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->user_email ) ?>">
 							</div>
 							<div class="row">
-								<label for="email">WEBSITE <span>*</span></label>
-								<input type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
+								<label for="url">WEBSITE <span>*</span></label>
+								<input type="text" type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
 							</div>
 							<div class="row">
-								<label for="email">PASSWORD</label>
-								<input type="password" name="pass1" id="pass1" value="" autocomplete="off">
+								<label for="pass1">PASSWORD</label>
+								<input type="text" type="password" name="pass1" id="pass1" value="" autocomplete="off">
 								<p class="description">If you would like to change the password type a new one. Otherwise leave this blank.</p>
 							</div>
 							<div class="row">
-								<label for="email">PASSWORD AGAIN</label>
-								<input type="password" name="pass2" id="pass2" value="" autocomplete="off">
+								<label for="pass2">PASSWORD AGAIN</label>
+								<input type="text" type="password" name="pass2" id="pass2" value="" autocomplete="off">
 								<p class="description">Type your new password again.</p>
 							</div>
 
