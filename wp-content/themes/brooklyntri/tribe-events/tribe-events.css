@@ -62,3 +62,16 @@
 	border: 1px solid #ddd;
 	padding: 5px;
 }
+
+p#vtip {
+	display: none !important;
+	color: #666;
+	font-family: inherit;
+	position: absolute;
+	padding: 10px;
+    font-size: 12px;
+	line-height: 1.2em;
+	background: #dce7ee;
+	border: 1px solid #dddddd;
+	-webkit-gradientborder-radius: 9px; border-radius: 9px;	z-index: 9999;
+}
