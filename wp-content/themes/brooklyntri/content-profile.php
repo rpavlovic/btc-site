@@ -28,6 +28,8 @@ var_dump($current_user);
 					</div>
 */ ?>
 					<form action="<?= esc_url( home_url( '/' ) ); ?>/wp-admin/profile.php" class="contact-form" method="post">
+						<input type="hidden" name="from" value="profile">
+						<input type="hidden" name="checkuser_id" value="<?= sanitize_text_field( $current_user->ID ) ?>">
 						<fieldset>
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
@@ -47,12 +49,23 @@ var_dump($current_user);
 							</div>
 							<div class="row">
 								<label for="email">E-MAIL <span>*</span></label>
-								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->email ) ?>">
+								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->user_email ) ?>">
 							</div>
 							<div class="row">
 								<label for="email">WEBSITE <span>*</span></label>
-								<input type="text" name="website" id="website" value="<?= sanitize_text_field( $current_user->website ) ?>">
+								<input type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
 							</div>
+							<div class="row">
+								<label for="email">PASSWORD</label>
+								<input type="password" name="pass1" id="pass1" value="" autocomplete="off">
+								<p class="description">If you would like to change the password type a new one. Otherwise leave this blank.</p>
+							</div>
+							<div class="row">
+								<label for="email">PASSWORD AGAIN</label>
+								<input type="password" name="pass2" id="pass2" value="" autocomplete="off">
+								<p class="description">Type your new password again.</p>
+							</div>
+
 							<input class="button" type="submit" value="SUBMIT">
 						</fieldset>
 					</form>
