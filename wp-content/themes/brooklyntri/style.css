@@ -1409,7 +1409,7 @@ table {
     font-weight: 600; }
     .contact-form label span {
       color: #70d549; }
-  .contact-form textarea, .contact-form input[type="text"], .contact-form input[type="email"] {
+  .contact-form textarea, .contact-form input[type="text"], .contact-form input[type="email"] , .contact-form input[type="url"], .contact-form input[type="password"]  {
     width: 100%;
     outline: none;
     -webkit-border-radius: 2px;

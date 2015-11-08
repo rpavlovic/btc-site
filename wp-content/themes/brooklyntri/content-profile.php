@@ -34,12 +34,19 @@ get_currentuserinfo();
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
 							<div class="row">
+<?php
+
+$avatars  = new Simple_Local_Avatars;
+$avatars->edit_user_profile( $current_user );
+?>
+							</div>
+							<div class="row">
 								<div class="col">
 									<label for="first_name">FIRST NAME <span>*</span></label>
 									<input type="text" name="first_name" id="first_name" value="<?= sanitize_text_field( $current_user->first_name ) ?>">
 								</div>
 								<div class="col">
-									<label for="first_name">FIRST NAME <span>*</span></label>
+									<label for="first_name">LAST NAME <span>*</span></label>
 									<input type="text" name="last_name" id="last_name" value="<?= sanitize_text_field( $current_user->last_name ) ?>">
 								</div>
 							</div>
