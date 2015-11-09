@@ -38,7 +38,7 @@ $get_posts = tribe_get_events(
 					</p>
 <?php else: ?>
 					<div class="bar">
-						<p><i class="icon-star"></i> DENOTES 2015 CLUB RACE</p>
+						<p><i class="icon-star"></i> DENOTES CLUB RACE</p>
 					</div>
 
 					<fieldset class="info-form">
