@@ -41,11 +41,11 @@ $avatars->btc_edit_user_avatar( $current_user );
 
 							<div class="row">
 								<div class="col">
-									<label for="first_name">FIRST NAME <span>*</span></label>
+									<label for="first_name">FIRST NAME </label>
 									<input type="text" name="first_name" id="first_name" value="<?= sanitize_text_field( $current_user->first_name ) ?>">
 								</div>
 								<div class="col">
-									<label for="first_name">LAST NAME <span>*</span></label>
+									<label for="first_name">LAST NAME </label>
 									<input type="text" name="last_name" id="last_name" value="<?= sanitize_text_field( $current_user->last_name ) ?>">
 								</div>
 							</div>
@@ -58,7 +58,7 @@ $avatars->btc_edit_user_avatar( $current_user );
 								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->user_email ) ?>">
 							</div>
 							<div class="row">
-								<label for="url">WEBSITE <span>*</span></label>
+								<label for="url">WEBSITE </label>
 								<input type="text" type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
 							</div>
 							<div class="row">
