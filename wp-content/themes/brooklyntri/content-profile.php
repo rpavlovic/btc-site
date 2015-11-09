@@ -56,13 +56,23 @@ get_currentuserinfo();
 								<label for="url">WEBSITE <span>*</span></label>
 								<input type="text" type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
 							</div>
+							<div class="row">
+								<label for="description">Biographical Info</label>
+								<textarea name="description" id="description" rows="5" cols="30"></textarea>
+								<p class="description">Share a little biographical information to fill out your profile. This may be shown publicly.</p>
+							</div>
+							<div class="row">
+								<hr>
+							</div>
 
 <?php
 
 $avatars  = new Simple_Local_Avatars;
 $avatars->btc_edit_user_avatar( $current_user );
 ?>
-
+							<div class="row">
+								<hr>
+							</div>
 							<div class="row">
 								<label for="pass1">PASSWORD</label>
 								<input type="text" type="password" name="pass1" id="pass1" value="" autocomplete="off">
@@ -72,6 +82,9 @@ $avatars->btc_edit_user_avatar( $current_user );
 								<label for="pass2">PASSWORD AGAIN</label>
 								<input type="text" type="password" name="pass2" id="pass2" value="" autocomplete="off">
 								<p class="description">Type your new password again.</p>
+							</div>
+							<div class="row">
+								<hr>
 							</div>
 							<input class="button" type="submit" value="SUBMIT">
 						</fieldset>
