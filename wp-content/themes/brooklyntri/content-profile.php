@@ -35,7 +35,9 @@ get_currentuserinfo();
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
 
 <?php
-btc_edit_user_avatar( $current_user ); 
+
+$avatars  = new Simple_Local_Avatars;
+$avatars->btc_edit_user_avatar( $current_user );
 ?>
 
 							<div class="row">
