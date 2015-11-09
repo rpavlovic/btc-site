@@ -23,6 +23,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
 
 </head>
+
 <body>
 	<script>
 	  window.fbAsyncInit = function() {
@@ -79,7 +80,7 @@
 									</form>
 								</li>
 <?php else: ?>
-								<li><a href="<?= WP_SITEURL ?>/wp-admin/profile.php" tabindex="4">MY PROFILE</a></li>
+								<li><a href="<?= WP_SITEURL ?>/resources/profile" tabindex="4">MY PROFILE</a></li>
 								<li><a href="<?php echo wp_logout_url( get_permalink() ); ?>" tabindex="4">LOG OUT</a></li>
 <?php endif; ?>
 							</ul>
@@ -124,3 +125,4 @@ foreach ( $menu_items as $page ) :
 				</div>
 			</header>
 			<main id="main" role="main">
+
