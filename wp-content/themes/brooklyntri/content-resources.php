@@ -38,7 +38,7 @@ if (get_the_ID() == 47):
                                     <div class="row">
                                     <?php if ( !empty( $feat_image ) ): ?>
                                         <div class="img-holder">
-                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
+                                            <?php if(!empty( $content['sponsor_url'] )): ?><a href="<?= esc_url( $content['sponsor_url'] ) ?>"><?php endif; ?><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"><?php if(!empty( $content['sponsor_url'] )): echo '</a>'; endif; ?>
                                         </div>
                                     <?php endif; ?>
                                         <div class="text">
@@ -48,7 +48,7 @@ if (get_the_ID() == 47):
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= $content['discounts'] ?>
+                                                <?= esc_html( $content['discounts'] ) ?>
                                             </div>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@ if( count( $sponsors ) > 1 ):
 ?>
                                     <div class="row">
                                         <div class="img-holder">
-                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"></a>
+                                            <?php if(!empty( $content['sponsor_url'] )): ?><a href="<?= esc_url( $content['sponsor_url'] ) ?>"><?php endif; ?><img src="<?= $feat_image ?>" alt="<?= esc_html( $sponsor->post_title ) ?>" title="<?= esc_html( $sponsor->post_title ) ?>"><?php if(!empty( $content['sponsor_url'] )): echo '</a>'; endif; ?>
                                         </div>
                                         <div class="text">
                                             <div class="col">
@@ -86,7 +86,7 @@ if( count( $sponsors ) > 1 ):
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= $content['discounts'] ?>
+                                                <?= esc_html( $content['discounts'] ) ?>
                                             </div>
                                         </div>
                                     </div>
@@ -113,7 +113,7 @@ if( count( $discounts ) > 1 ):
 ?>
                                     <div class="row">
                                         <div class="img-holder">
-                                            <a href="#"><img src="<?= $feat_image ?>" alt="<?= esc_html( $discount->post_title ) ?>" title="<?= esc_html( $discount->post_title ) ?>"></a>
+                                            <?php if(!empty( $content['sponsor_url'] )): ?><a href="<?= esc_url( $content['sponsor_url'] ) ?>"><?php endif; ?><img src="<?= $feat_image ?>" alt="<?= esc_html( $discount->post_title ) ?>" title="<?= esc_html( $discount->post_title ) ?>"><?php if(!empty( $content['sponsor_url'] )): echo '</a>'; endif; ?>
                                         </div>
                                         <div class="text">
                                             <div class="col">
@@ -122,7 +122,7 @@ if( count( $discounts ) > 1 ):
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= $content['discounts'] ?>
+                                                <?= esc_html( $content['discounts'] ) ?>
                                             </div>
                                         </div>
                                     </div>
