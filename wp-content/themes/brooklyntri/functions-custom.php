@@ -126,11 +126,13 @@ function btc_edit_user_avatar( $profileuser ) {
 									if ( $upload_rights ) {
 										do_action( 'simple_local_avatar_notices' ); 
 										wp_nonce_field( 'simple_local_avatar_nonce', '_simple_local_avatar_nonce', false );
+										echo 'one';
 										$remove_url = add_query_arg(array(
 											'action'	=> 'remove-simple-local-avatar',
 											'user_id'	=> $profileuser->ID,
 											'_wpnonce'	=> $avatars->remove_nonce,
 										) );
+										echo 'two';
 								?>
 										<p style="display: inline-block; width: 26em;">
 											<span class="description"><?php _e( 'Choose an image from your computer:' ); ?></span><br />
