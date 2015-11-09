@@ -33,13 +33,6 @@ get_currentuserinfo();
 						<fieldset>
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
-
-<?php
-
-$avatars  = new Simple_Local_Avatars;
-$avatars->btc_edit_user_avatar( $current_user );
-?>
-
 							<div class="row">
 								<div class="col">
 									<label for="first_name">FIRST NAME <span>*</span></label>
@@ -62,6 +55,13 @@ $avatars->btc_edit_user_avatar( $current_user );
 								<label for="url">WEBSITE <span>*</span></label>
 								<input type="text" type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
 							</div>
+
+<?php
+
+$avatars  = new Simple_Local_Avatars;
+$avatars->btc_edit_user_avatar( $current_user );
+?>
+
 							<div class="row">
 								<label for="pass1">PASSWORD</label>
 								<input type="text" type="password" name="pass1" id="pass1" value="" autocomplete="off">
