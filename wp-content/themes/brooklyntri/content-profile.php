@@ -27,7 +27,7 @@ get_currentuserinfo();
 						</div>
 					</div>
 */ ?>
-					<form action="<?= esc_url( home_url( '/' ) ); ?>/wp-admin/profile.php" class="contact-form" method="post">
+					<form action="<?php the_permalink(); ?>" class="contact-form" method="post">
 						<input type="hidden" name="from" value="profile">
 						<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 						<input type="hidden" name="checkuser_id" value="<?= sanitize_text_field( $current_user->ID ) ?>">
