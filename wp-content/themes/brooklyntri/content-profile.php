@@ -34,6 +34,11 @@ get_currentuserinfo();
 						<fieldset>
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
+<?php
+$avatars  = new Simple_Local_Avatars;
+$avatars->btc_edit_user_avatar( $current_user );
+?>
+
 							<div class="row">
 								<div class="col">
 									<label for="first_name">FIRST NAME <span>*</span></label>
@@ -62,18 +67,6 @@ get_currentuserinfo();
 								<p class="description">Share a little biographical information to fill out your profile. This may be shown publicly.</p>
 							</div>
 							<div class="row">
-								<hr>
-							</div>
-
-<?php
-
-$avatars  = new Simple_Local_Avatars;
-$avatars->btc_edit_user_avatar( $current_user );
-?>
-							<div class="row">
-								<hr>
-							</div>
-							<div class="row">
 								<label for="pass1">PASSWORD</label>
 								<input type="text" type="password" name="pass1" id="pass1" value="" autocomplete="off">
 								<p class="description">If you would like to change the password type a new one. Otherwise leave this blank.</p>
@@ -82,9 +75,6 @@ $avatars->btc_edit_user_avatar( $current_user );
 								<label for="pass2">PASSWORD AGAIN</label>
 								<input type="text" type="password" name="pass2" id="pass2" value="" autocomplete="off">
 								<p class="description">Type your new password again.</p>
-							</div>
-							<div class="row">
-								<hr>
 							</div>
 							<input class="button" type="submit" value="SUBMIT">
 						</fieldset>
