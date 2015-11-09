@@ -21,7 +21,6 @@ $current_post = $post;
 
 ?>
 
-
 				<div class="contact-form-area">
 
 		<?php

@@ -33,13 +33,11 @@ get_currentuserinfo();
 						<fieldset>
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
-							<div class="row">
-<?php
 
-$avatars  = new Simple_Local_Avatars;
-$avatars->edit_user_profile( $current_user );
+<?php
+btc_edit_user_avatar( $current_user ); 
 ?>
-							</div>
+
 							<div class="row">
 								<div class="col">
 									<label for="first_name">FIRST NAME <span>*</span></label>
@@ -72,7 +70,6 @@ $avatars->edit_user_profile( $current_user );
 								<input type="text" type="password" name="pass2" id="pass2" value="" autocomplete="off">
 								<p class="description">Type your new password again.</p>
 							</div>
-
 							<input class="button" type="submit" value="SUBMIT">
 						</fieldset>
 					</form>

@@ -23,7 +23,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
 
 </head>
-
 <body>
 	<script>
 	  window.fbAsyncInit = function() {
@@ -125,4 +124,3 @@ foreach ( $menu_items as $page ) :
 				</div>
 			</header>
 			<main id="main" role="main">
-
