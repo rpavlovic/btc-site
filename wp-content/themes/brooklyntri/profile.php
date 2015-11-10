@@ -19,7 +19,7 @@ global $current_user, $wp_roles;
 //require_once( ABSPATH . WPINC . '/registration.php' ); //deprecated since 3.1
 $error = array();    
 /* If profile was saved, update profile. */
-if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update-user' ) {
+if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update' ) {
 
     /* Update user password. */
     if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
@@ -58,8 +58,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
         do_action( 'personal_options_update', $current_user->ID );
 
 die('bro');
-    	$av = new Simple_Local_Avatars;
-    	$av->edit_user_profile_update( $current_user->ID );
+//    	$av = new Simple_Local_Avatars; $av->edit_user_profile_update( $current_user->ID );
 
 
         wp_redirect( get_permalink() );
