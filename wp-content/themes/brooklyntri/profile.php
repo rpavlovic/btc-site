@@ -49,17 +49,19 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
     if ( !empty( $_POST['description'] ) )
         update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
 
+    if ( !empty( $_POST['url'] ) )
+        update_user_meta( $current_user->ID, 'url', esc_attr( $_POST['url'] ) );
+    if ( !empty( $_POST['nickname'] ) )
+        update_user_meta( $current_user->ID, 'nickname', esc_attr( $_POST['nickname'] ) );
+
     /* Redirect so the page will show updated info.*/
-  /*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){ */
+	/*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){ */
     if ( count($error) == 0 ) {
 
         //action hook for plugins and extra fields saving
         do_action('edit_user_profile_update', $current_user->ID);
         do_action( 'personal_options_update', $current_user->ID );
-
-//die('bro');
-//    	$av = new Simple_Local_Avatars; $av->edit_user_profile_update( $current_user->ID );
-
+		$av = new Simple_Local_Avatars; $av->edit_user_profile_update( $current_user->ID );
 
         wp_redirect( get_permalink() );
         exit;
