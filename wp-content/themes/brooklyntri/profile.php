@@ -52,6 +52,10 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
     /* Redirect so the page will show updated info.*/
   /*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){ */
     if ( count($error) == 0 ) {
+
+    	$av = new Simple_Local_Avatars;
+    	$av->edit_user_profile_update( $current_user->ID );
+
         //action hook for plugins and extra fields saving
         do_action('edit_user_profile_update', $current_user->ID);
         wp_redirect( get_permalink() );
