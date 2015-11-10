@@ -57,7 +57,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
         do_action('edit_user_profile_update', $current_user->ID);
         do_action( 'personal_options_update', $current_user->ID );
 
-die('bro');
+//die('bro');
 //    	$av = new Simple_Local_Avatars; $av->edit_user_profile_update( $current_user->ID );
 
 
