@@ -42,10 +42,10 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
         }
     }
 
-    if ( !empty( $_POST['first-name'] ) )
-        update_user_meta( $current_user->ID, 'first_name', esc_attr( $_POST['first-name'] ) );
-    if ( !empty( $_POST['last-name'] ) )
-        update_user_meta($current_user->ID, 'last_name', esc_attr( $_POST['last-name'] ) );
+    if ( !empty( $_POST['first_name'] ) )
+        update_user_meta( $current_user->ID, 'first_name', esc_attr( $_POST['first_name'] ) );
+    if ( !empty( $_POST['last_name'] ) )
+        update_user_meta($current_user->ID, 'last_name', esc_attr( $_POST['last_name'] ) );
     if ( !empty( $_POST['description'] ) )
         update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
 

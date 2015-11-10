@@ -28,7 +28,7 @@ get_currentuserinfo();
 					</div>
 */ ?>
 					<form action="<?php the_permalink(); ?>" class="contact-form" method="post" enctype="multipart/form-data">
-						<input type="hidden" name="from" value="profile">
+						<input type="hidden" name="action" value="update-user">
 						<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 						<input type="hidden" name="checkuser_id" value="<?= sanitize_text_field( $current_user->ID ) ?>">
 						<fieldset>
