@@ -314,9 +314,10 @@ function btc_leftnav( $post=null ) {
 	}
 
 	$parent = get_post( $post->post_parent );
-
 	$parent_post = $parent->ID;
+
 	if ( is_null( $parent_post ) ) {
+		$parent = get_post( $post->ID );
 		$parent_post = $post->ID;
 	}
 
