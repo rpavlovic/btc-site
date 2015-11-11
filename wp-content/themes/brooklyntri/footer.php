@@ -45,20 +45,20 @@
 						<h2>BTC GROUP WORKOUTS</h2>
 						<ul class="list">
 							<li>
-								<h3><a href="#">STRENGTH TRAIN BTC</a></h3>
-								<p>Monday Evening Strength Training Coached by <a href="#">Ben Kessel</a></p>
+								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">STRENGTH TRAIN BTC</a></h3>
+								<p>Monday Evening Strength Training Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">Ben Kessel</a></p>
 							</li>
 							<li>
-								<h3><a href="#">RIDE BTC</a></h3>
-								<p>Tuesday Morning Rides Coached by <a href="#">David Lipscomb</a></p>
+								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">RIDE BTC</a></h3>
+								<p>Tuesday Morning Rides Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">David Lipscomb</a></p>
 							</li>
 							<li>
-								<h3><a href="#">RUN BTC</a></h3>
-								<p>Wednesday Night Speed Runs Coached by <a href="#">Dave Mendelsohn</a></p>
+								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">RUN BTC</a></h3>
+								<p>Wednesday Night Speed Runs Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">Dave Mendelsohn</a></p>
 							</li>
 							<li>
-								<h3><a href="#">BRICK BTC</a></h3>
-								<p>Thursday Morning Bricks Coached by <a href="#">John Stewart</a></p>
+								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">BRICK BTC</a></h3>
+								<p>Thursday Morning Bricks Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">John Stewart</a></p>
 							</li>
 						</ul>
 					</div>
