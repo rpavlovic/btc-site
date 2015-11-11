@@ -358,7 +358,7 @@ function btc_leftnav( $post=null ) {
 function btc_breadcrumbs() {
 	$breadcrumbs  = get_btc_breadcrumbs(array('separator' => '/', 'richsnippet' => false), $return_array = true);
 
-	if ( $breadcrumbs ): ?>
+	if ( $breadcrumbs ): var_dump($breadcrumbs); ?>
 				<section class="page-title">
 					<div class="holder">
 						<nav class="breadcrumbs-nav">
