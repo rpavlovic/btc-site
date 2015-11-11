@@ -1085,7 +1085,7 @@ table {
           text-decoration: none; }
   .person-info-area .holder {
     letter-spacing: -6px;
-    margin: 0 -28px;
+    margin: 0; /*  -28px */
     color: #000100;
     line-height: 19px;
     font-size: 12px; }
