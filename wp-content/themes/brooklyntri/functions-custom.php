@@ -358,22 +358,23 @@ function btc_leftnav( $post=null ) {
 function btc_breadcrumbs() {
 	$breadcrumbs  = get_btc_breadcrumbs(array('separator' => '/', 'richsnippet' => false), $return_array = true);
 
-	if ( $breadcrumbs ): var_dump($breadcrumbs); ?>
+	if ( $breadcrumbs ): ?>
 				<section class="page-title">
 					<div class="holder">
 						<nav class="breadcrumbs-nav">
 							<span>You are here:</span>
 							<ul class="breadcrumbs">
-<?php foreach ( $breadcrumbs as $crumb ): ?>
-
 <?php
 
-$page_title = get_the_title( get_the_ID(  ) );
-if (strstr($crumb, 'Brooklyn Tri Club Forum') != false):
-	$crumb = get_parent_forum_title($crumb);
+foreach ( $breadcrumbs as $key => $crumb ):
+	$page_title = get_the_title( get_the_ID(  ) );
+
+	if (strstr($crumb, 'Brooklyn Tri Club Forum') != false):
+		$crumb = get_parent_forum_title($crumb);
+	endif;
 ?>
 								<li><?= $crumb ?></li>
-<?php endif; endforeach; ?>
+<?php endforeach; ?>
 							</ul>
 						</nav>
 						<h1><?php echo get_parent_forum_title( $page_title ); ?></h1>
