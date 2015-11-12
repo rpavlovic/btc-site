@@ -43,24 +43,10 @@
 					</div>
 					<div class="col">
 						<h2>BTC GROUP WORKOUTS</h2>
-						<ul class="list">
-							<li>
-								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">STRENGTH TRAIN BTC</a></h3>
-								<p>Monday Evening Strength Training Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">Ben Kessel</a></p>
-							</li>
-							<li>
-								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">RIDE BTC</a></h3>
-								<p>Tuesday Morning Rides Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">David Lipscomb</a></p>
-							</li>
-							<li>
-								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">RUN BTC</a></h3>
-								<p>Wednesday Night Speed Runs Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">Dave Mendelsohn</a></p>
-							</li>
-							<li>
-								<h3><a href="<?= WP_SITEURL ?>/mission/training-schedule">BRICK BTC</a></h3>
-								<p>Thursday Morning Bricks Coached by <a href="<?= WP_SITEURL ?>/mission/training-schedule">John Stewart</a></p>
-							</li>
-						</ul>
+<?php
+$content = get_fields( 471 );
+echo $content['footer_text'];
+?>
 					</div>
 <?php if ( !is_user_logged_in() ): ?>
 					<div class="col add">
