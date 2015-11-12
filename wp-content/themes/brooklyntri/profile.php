@@ -25,7 +25,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
     /* Update user password. */
     if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
         if ( $_POST['pass1'] == $_POST['pass2'] )
-            wp_update_user( array( 'ID' => $current_user->ID, 'user_pass' => esc_attr( $_POST['pass1'] ) ) );
+            wp_update_user( array( 'ID' => $current_user->ID, 'user_pass' => esc_sql( $_POST['pass1'] ) ) );
         else
             $error[] = __('The passwords you entered do not match.  Your password was not updated.', 'profile');
     }
@@ -34,22 +34,22 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
     if ( !empty( $_POST['url'] ) )
         wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => esc_url( $_POST['url'] ) ) );
     if ( !empty( $_POST['email'] ) ){
-        if (!is_email(esc_attr( $_POST['email'] )))
+        if (!is_email(esc_sql( $_POST['email'] )))
             $error[] = __('The Email you entered is not valid.  please try again.', 'profile');
-        elseif(email_exists(esc_attr( $_POST['email'] )) != $current_user->id )
+        elseif(email_exists(esc_sql( $_POST['email'] )) != $current_user->id )
             $error[] = __('This email is already used by another user.  try a different one.', 'profile');
         else{
-            wp_update_user( array ('ID' => $current_user->ID, 'user_email' => esc_attr( $_POST['email'] )));
+            wp_update_user( array ('ID' => $current_user->ID, 'user_email' => esc_sql( $_POST['email'] )));
         }
     }
 
-    update_user_meta( $current_user->ID, 'first_name', esc_attr( $_POST['first_name'] ) );
-    update_user_meta( $current_user->ID, 'last_name', esc_attr( $_POST['last_name'] ) );
+    update_user_meta( $current_user->ID, 'first_name', esc_sql( $_POST['first_name'] ) );
+    update_user_meta( $current_user->ID, 'last_name', esc_sql( $_POST['last_name'] ) );
     wp_update_user( array( 'ID' => $current_user->ID, 'description' => esc_url( $_POST['description'] ) ) );
-    update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
+    update_user_meta( $current_user->ID, 'description', esc_sql( $_POST['description'] ) );
 
-    update_user_meta( $current_user->ID, 'url', esc_attr( $_POST['url'] ) );
-    update_user_meta( $current_user->ID, 'nickname', esc_attr( $_POST['nickname'] ) );
+    update_user_meta( $current_user->ID, 'url', esc_sql( $_POST['url'] ) );
+    update_user_meta( $current_user->ID, 'nickname', esc_sql( $_POST['nickname'] ) );
 
     /* Redirect so the page will show updated info.*/
 	/*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){ */
