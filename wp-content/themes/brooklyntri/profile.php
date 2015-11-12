@@ -22,6 +22,11 @@ $error = array();
 if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update' ) {
 	//print_r($_POST);die;
 
+	var_dump($_POST['description']);
+	var_dump(esc_sql( $_POST['description']));
+	var_dump(esc_attr( $_POST['description']));
+die;
+
     /* Update user password. */
     if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
         if ( $_POST['pass1'] == $_POST['pass2'] )
