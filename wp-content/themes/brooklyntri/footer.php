@@ -44,8 +44,8 @@
 					<div class="col">
 						<h2>BTC GROUP WORKOUTS</h2>
 <?php
-$content = get_fields( 471 );
-echo $content['footer_text'];
+$workouts = get_fields( 471 );
+echo btc_relative_links( $workouts['footer_text'] );
 ?>
 					</div>
 <?php if ( !is_user_logged_in() ): ?>
