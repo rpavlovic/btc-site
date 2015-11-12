@@ -45,7 +45,7 @@
 						<h2>BTC GROUP WORKOUTS</h2>
 <?php
 $workouts = get_fields( 471 );
-echo btc_relative_links( $workouts['footer_text'] );
+echo btc_relative_links( $workouts['footer_list'] );
 ?>
 					</div>
 <?php if ( !is_user_logged_in() ): ?>
