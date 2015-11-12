@@ -20,6 +20,7 @@ global $current_user, $wp_roles;
 $error = array();    
 /* If profile was saved, update profile. */
 if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update' ) {
+	print_r($_POST);die;
 
     /* Update user password. */
     if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
@@ -45,7 +46,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
     update_user_meta( $current_user->ID, 'first_name', esc_attr( $_POST['first_name'] ) );
     update_user_meta( $current_user->ID, 'last_name', esc_attr( $_POST['last_name'] ) );
     wp_update_user( array( 'ID' => $current_user->ID, 'description' => esc_url( $_POST['description'] ) ) );
-    //update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
+    update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
 
     update_user_meta( $current_user->ID, 'url', esc_attr( $_POST['url'] ) );
     update_user_meta( $current_user->ID, 'nickname', esc_attr( $_POST['nickname'] ) );
