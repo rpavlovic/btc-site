@@ -20,7 +20,7 @@ global $current_user, $wp_roles;
 $error = array();    
 /* If profile was saved, update profile. */
 if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update' ) {
-	print_r($_POST);die;
+	//print_r($_POST);die;
 
     /* Update user password. */
     if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
