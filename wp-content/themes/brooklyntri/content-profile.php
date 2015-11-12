@@ -64,7 +64,7 @@ $avatars->btc_edit_user_avatar( $current_user );
 							</div>
 							<div class="row">
 								<label for="description">Biographical Info</label>
-								<textarea name="description" id="description" rows="5" cols="30"></textarea>
+								<textarea name="description" id="description" rows="5" cols="30"><?= sanitize_text_field( $current_user->description ) ?></textarea>
 								<p class="description">Share a little biographical information to fill out your profile. This may be shown publicly.</p>
 							</div>
 							<div class="row">
