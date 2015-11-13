@@ -36,8 +36,8 @@ get_currentuserinfo();
 							<legend class="hidden">contact form</legend>
 							<div class="heading"><h2>EDIT YOUR PROFILE</h2></div>
 <?php
-$avatars  = new Simple_Local_Avatars;
-$avatars->btc_edit_user_avatar( $current_user );
+global $simple_local_avatars;
+$simple_local_avatars->btc_edit_user_avatar( $current_user );
 ?>
 
 							<div class="row">
