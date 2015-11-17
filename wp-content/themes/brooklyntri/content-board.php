@@ -67,14 +67,14 @@ foreach ($categories as $cat => $slug):
 												<? if ( !empty($content['linkedin']) ): ?>
 												<li>
 													<i class="icon-linkedin"></i>
-													<a href="<?= $content['linkedin'] ?>"><span class="link-hover"><?= $member->post_title ?> on LinkedIn</span></a>
+													<a href="<?= esc_url( $content['linkedin'] ) ?>"><span class="link-hover"><?= esc_html( $member->post_title ) ?> on LinkedIn</span></a>
 												</li>
 												<? endif; ?>
 
 												<? if ( !empty($content['facebook']) ): ?>
 												<li>
 													<i class="icon-facebook-squared"></i>
-													<a href="<?= $content['facebook'] ?>"><span class="link-hover"><?= $member->post_title ?> on Facebook</span></a>
+													<a href="<?= esc_url( $content['facebook'] ) ?>"><span class="link-hover"><?= esc_html( $member->post_title ) ?> on Facebook</span></a>
 												</li>
 												<? endif; ?>
 
@@ -85,9 +85,9 @@ foreach ($categories as $cat => $slug):
 ?>
 
 									</div>
-									<h3><a href="#" itemprop="name"><?= $member->post_title ?></a></h3>
-									<span class="designation" itemprop="jobTitle"><?= $content['job_title'] ?></span>
-									<p><?= $member->post_content ?></p>
+									<h3><span itemprop="name"><?= esc_html( $member->post_title ) ?></span></h3>
+									<span class="designation" itemprop="jobTitle"><?= esc_html( $content['job_title'] ) ?></span>
+									<p><?= esc_html( $member->post_content ) ?></p>
 								</article>
 <?php
 		endif;
