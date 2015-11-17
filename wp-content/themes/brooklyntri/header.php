@@ -70,9 +70,7 @@
 												</div>
 												<div class="row">
 													<label for="password03">PASSWORD <span>*</span></label>
-													<input type="password" id="password03" name="pass">
-												</div>
-												<div class="row">
+													<input type="password" id="password03" name="pass"><br>
 													<input name="rememberme" type="checkbox" id="rememberme" value="forever">
 													<label for="rememberme">Remember Me</label>
 												</div>
@@ -80,7 +78,7 @@
 											<input type="hidden" name="testcookie" value="1">
 											<input type="hidden" name="action" value="btc_login_jam">
 											<input class="button" type="submit" value="LOGIN">
-											<input class="button" type="button" value="FORGOT" onclick="location='<?= WP_SITEURL ?>/lostpassword'">
+											<a href="<?= WP_SITEURL ?>/lostpassword">Forgot?</a>
 										</fieldset>
 									</form>
 								</li>
