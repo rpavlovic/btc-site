@@ -87,7 +87,7 @@ foreach ($categories as $cat => $slug):
 									</div>
 									<h3><span itemprop="name"><?= esc_html( $member->post_title ) ?></span></h3>
 									<span class="designation" itemprop="jobTitle"><?= esc_html( $content['job_title'] ) ?></span>
-									<p><?= esc_html( $member->post_content ) ?></p>
+									<p><?= $member->post_content ?></p>
 								</article>
 <?php
 		endif;
