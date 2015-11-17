@@ -20,6 +20,6 @@
 
 <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
 				<script type="text/javascript">
-				$( "#theme-my-login" ).prepend( '<p class="message">Either your username or password are incorrect. Please try logging in again. If you are having consistent issues, please email ITHelp@brooklyntri.org and we\'ll work to reset your credentials.</p>' );
+				jQuery( "#theme-my-login" ).prepend( '<p class="message">Either your username or password are incorrect. Please try logging in again. If you are having consistent issues, please email ITHelp@brooklyntri.org and we\'ll work to reset your credentials.</p>' );
 				</script>
 <?php endif; ?>
