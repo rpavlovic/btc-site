@@ -14,12 +14,11 @@
 
                     <?php the_title('<h2>','</h2>'); ?>
 
-                    <?php
-var_dump($_SERVER['REQUEST_URI']);
-var_dump($_SERVER['SCRIPT_NAME']);
-var_dump($_SERVER['QUERY_STRING']);
+                    <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
+                    
+                    <p class="message">You fucked up bro</p>
 
-                    ?>
+                    <?php endif; ?>
 
                     <?php the_content(); ?>
 
