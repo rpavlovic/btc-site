@@ -30,7 +30,6 @@ function btc_login() {
 
     // not the login request?
     if( !isset( $_POST['action'] ) || $_POST['action'] !== 'btc_login_jam') {
-    	//echo 'wtf bro'; die;
         return;
     }
 
@@ -89,6 +88,20 @@ function btc_login() {
     }
     //echo 'nope';
     return;
+}
+add_action( 'wp_login_failed', 'hex_front_end_login_fail' ); // hook failed login
+
+function hex_front_end_login_fail( $user ) {
+  $referrer = $_SERVER['HTTP_REFERER']; // where did the post submission come from?
+  // if there’s a valid referrer, and it’s not the default log-in screen
+  if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') && $user!=null ) {
+    if ( !strstr($referrer, '?login=failed' )) { // make sure we don’t append twice
+      wp_redirect( WP_SITEURL . '/login?login=failed'); // let’s append some information (login=failed) to the URL for the theme to use
+    } else {
+      wp_redirect( WP_SITEURL . '/login' );
+    }
+    exit;
+  }
 }
 
 function admin_login_redirect( $redirect_to, $request, $user ) {
