@@ -76,6 +76,7 @@
 											<input type="hidden" name="testcookie" value="1">
 											<input type="hidden" name="action" value="btc_login_jam">
 											<input class="button" type="submit" value="LOGIN">
+											<a href="<?= WP_SITEURL ?>/lostpassword">Forgot?</a>
 										</fieldset>
 									</form>
 								</li>
