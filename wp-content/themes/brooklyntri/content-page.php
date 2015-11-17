@@ -14,6 +14,13 @@
 
                     <?php the_title('<h2>','</h2>'); ?>
 
+                    <?php
+var_dump($_SERVER['REQUEST_URI']);
+var_dump($_SERVER['SCRIPT_NAME']);
+var_dump($_SERVER['QUERY_STRING']);
+
+                    ?>
+
                     <?php the_content(); ?>
 
                 </div>
