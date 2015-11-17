@@ -17,7 +17,7 @@
 		<footer id="footer" itemscope itemtype="http://schema.org/Organization">
 			<div class="footer-holder">
 				<div class="logo" itemprop="name">
-					<a href="<?= esc_url( home_url( '/' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9, 'full' ) ?></a>
+					<a href="<?= esc_url( site_url( '/mission' ) ); ?>" itemprop="url"><?= wp_get_attachment_image( 9, 'full' ) ?></a>
 				</div>
 				<div class="col-holder">
 					<div class="col">
@@ -35,7 +35,7 @@
 							<li>
 								<a class="facebook" href="<?= FACEBOOK_URL ?>"><i class="icon-facebook">&nbsp;</i></a>
 								<div class="text">
-									<span><?php echo get_scp_counter( 'facebook' ); ?></span>
+									<span><?= get_scp_counter( 'facebook' ) ?></span>
 									<p>Likes</p>
 								</div>
 							</li>
