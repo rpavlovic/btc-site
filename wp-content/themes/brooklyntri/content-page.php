@@ -16,10 +16,8 @@
 
                     <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
                     
-                    <p class="message">You fucked up bro</p>
+                    <?php the_content('','<p class="message">You fucked up bro</p>'); ?>
 
-                    <?php endif; ?>
-
-                    <?php the_content(); ?>
+                    <?php else: the_content(); endif; ?>
 
                 </div>
