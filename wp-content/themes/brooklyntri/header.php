@@ -59,7 +59,7 @@
 								<li><a href="<?php echo site_url( '/contact' ); ?>" tabindex="5">CONTACT</a></li>
 <?php if ( !is_user_logged_in() ): ?>
 								<li class="contact">
-									<a href="#" tabindex="4">LOGIN</a>
+									<a href="<?= WP_SITEURL ?>/login" tabindex="4">LOGIN</a>
 									<form action="<?php echo get_permalink(); ?>" method="post" class="login-form">
 										<fieldset>
 											<legend class="hidden">login form</legend>
@@ -71,6 +71,10 @@
 												<div class="row">
 													<label for="password03">PASSWORD <span>*</span></label>
 													<input type="password" id="password03" name="pass">
+												</div>
+												<div class="row">
+													<input name="rememberme" type="checkbox" id="rememberme" value="forever">
+													<label for="rememberme">Remember Me</label>
 												</div>
 											</div>
 											<input type="hidden" name="testcookie" value="1">
