@@ -67,11 +67,11 @@
 											<div class="col">
 												<div class="row">
 													<label for="name03">USERNAME <span>*</span></label>
-													<input type="text" id="name03" name="user">
+													<input type="text" id="name03" name="user" autocomplete="off">
 												</div>
 												<div class="row">
 													<label for="password03">PASSWORD <span>*</span></label>
-													<input type="password" id="password03" name="pass"><br>
+													<input type="password" id="password03" name="pass" autocomplete="off"><br>
 													<input name="rememberme" type="checkbox" id="rememberme" value="forever">
 													<label for="rememberme">Remember Me</label>
 												</div>
