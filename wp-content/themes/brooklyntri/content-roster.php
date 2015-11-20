@@ -11,7 +11,7 @@
 global $current_user;
 get_currentuserinfo();
 $current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';
-$current_nickname = is_user_logged_in() ? $current_user->nickname : '';
+$current_nickname = is_user_logged_in() ? $current_user->nickname  . ' ' . $current_user->user_lastname : '';
 
 //var_dump($current_nickname );
 
