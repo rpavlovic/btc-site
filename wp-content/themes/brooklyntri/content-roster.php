@@ -13,7 +13,7 @@ get_currentuserinfo();
 $current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';
 $current_nickname = is_user_logged_in() ? $current_user->nickname : '';
 
-var_dump($current_nickname );
+//var_dump($current_nickname );
 
 $get_posts = tribe_get_events(
 	array(
@@ -93,7 +93,7 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dd>
 											<ol>
 									<?php foreach($registrants as $key=>$racer): ?>
-												<li><?= $racer ?><?= $racer == $current_person ? '<a href="javascript:remove_racer(\'' . $key . '\')" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
+												<li><?= $racer ?><?= $racer == $current_person || $racer == $current_nickname? '<a href="javascript:remove_racer(\'' . $key . '\')" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
 									<?php endforeach; ?>
 											</ol>
 										</dd>
