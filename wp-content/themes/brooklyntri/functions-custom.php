@@ -1188,7 +1188,7 @@ function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
 	$racers = array();
 	foreach ($registrants as $racer) {
-		var_dump($racer);
+		var_dump($racer['id']);
 		if($racer[EVENT_FIELD_ID] == $event_id) {
 			$racers[] = $racer['92'];
 		}
