@@ -90,14 +90,14 @@ unset($categories[0]);
 										<dd>
 											<ol>
 									<?php foreach($registrants as $racer): ?>
-												<li><?= $racer ?></li>
+												<li><?= $racer ?><?= $racer == $current_person ? '<a href="#" class="close-thik"></a>' : '' ?></li>
 									<?php endforeach; ?>
 											</ol>
 										</dd>
 <?php endif; ?>
 
 <?php
-if ( is_user_logged_in() && !current_user_registered( $post->ID ) ): //!$form_set &&  $form_set = true;
+if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 
 ?>
 										<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=array('event_name' => $post->post_title), $ajax=true); ?></dd>
