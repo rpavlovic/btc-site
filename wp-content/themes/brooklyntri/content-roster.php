@@ -89,8 +89,8 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dt>ATHLETE LIST:</dt>
 										<dd>
 											<ol>
-									<?php foreach($registrants as $racer): ?>
-												<li><?= $racer ?><?= $racer == $current_person ? '<a href="javascript:remove_racer(\'' . key($racer) . '\')" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
+									<?php foreach($registrants as $key=>$racer): ?>
+												<li><?= $racer ?><?= $racer == $current_person ? '<a href="javascript:remove_racer(\'' . $key . '\')" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
 									<?php endforeach; ?>
 											</ol>
 										</dd>
