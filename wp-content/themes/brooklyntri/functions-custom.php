@@ -353,8 +353,6 @@ function btc_leftnav( $post=null ) {
 		$link_text = get_link_text( $sub_section );
 
 		if ( check_user_access( get_current_user_id(), $sub_section->ID ) ):
-		//if ( member_can_access( get_current_user_id(), $sub_section->post_type, $sub_section->ID ) ):
-		//print_r(WLMAPI::GetPostLevels($sub_section->ID));
 ?>
                                     <li<?= $sub_section->ID == $post->ID ? ' class="active"' : '' ?>><a href="<?= esc_url( get_permalink( $sub_section->ID ) ); ?>"><?= esc_html( $link_text ) ?></a></li>
 <?
@@ -1258,6 +1256,17 @@ function check_user_access($userid, $postid){
 		return false;
 	}
 	return true;
+}
+
+function auth_user() {
+
+	if( !is_user_logged_in() ) {
+		auth_redirect();
+	}
+
+	if ( !check_user_access( get_current_user_id(), get_the_ID() ) ) {
+		auth_redirect();
+	}
 }
 
 function member_can_access( $user_id, $object_type, $object_id ) {

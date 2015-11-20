@@ -61,7 +61,7 @@
 <?php if ( !is_user_logged_in() ): ?>
 								<li class="contact">
 									<a href="<?= WP_SITEURL ?>/login" tabindex="4">LOGIN</a>
-									<form action="<?php echo get_permalink(); ?>" method="post" class="login-form">
+									<form action="<?php echo get_permalink(); ?>" method="post" class="login-form" autocomplete="off">
 										<fieldset>
 											<legend class="hidden">login form</legend>
 											<div class="col">
