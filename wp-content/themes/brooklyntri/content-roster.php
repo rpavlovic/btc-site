@@ -47,14 +47,14 @@ $get_posts = tribe_get_events(
 <?php
 $form_set = false;
 foreach($get_posts as $post): setup_postdata($post);
-$registrants = get_btc_participants(1, $post->ID);
-$btcers = count($registrants); // count_btc_registrants(1, $post->ID);
-$event_link = tribe_get_event_website_link();
+	$registrants = get_btc_participants(1, $post->ID);
+	$btcers = count($registrants); // count_btc_registrants(1, $post->ID);
+	$event_link = tribe_get_event_website_link();
 
-$categories = tribe_get_event_categories( $post->ID );
-$categories = strip_tags($categories, '<a><li>');
-$categories = explode('<li>', $categories);
-unset($categories[0]);
+	$categories = tribe_get_event_categories( $post->ID );
+	$categories = strip_tags($categories, '<a><li>');
+	$categories = explode('<li>', $categories);
+	unset($categories[0]);
 ?>
 
 							<li><!--  class="active" -->
@@ -83,30 +83,30 @@ unset($categories[0]);
 <?php if( !empty( $event_link ) ): ?>
 										<dt>WEBSITE:</dt>
 										<dd><?= $event_link ?></dd>
-<?php endif; ?>
+<?php endif; /* event link */ ?>
 
 <?php if ( count( $registrants ) > 0): ?>
 										<dt>ATHLETE LIST:</dt>
 										<dd>
 											<ol>
 									<?php foreach($registrants as $racer): ?>
-												<li><?= $racer ?><?= $racer == $current_person ? '<a href="#" class="close-thik"></a>' : '' ?></li>
+												<li><?= $racer ?><?= $racer == $current_person ? '<a href="javascript:remove_racer(\'' . key($racer) . '\')" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
 									<?php endforeach; ?>
 											</ol>
 										</dd>
-<?php endif; ?>
+<?php endif; /* if has registrants */ ?>
 
 <?php
 if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 
 ?>
 										<dd><?php echo gravity_form(1, $display_title=false, $display_description=true, $display_inactive=false, $field_values=array('event_name' => $post->post_title), $ajax=true); ?></dd>
-<?php endif; ?>
+<?php endif; /* if not currently registered */ ?>
 
 									</dl>
 								</div>
 							</li>
-<?php endforeach; ?>
+<?php endforeach; /* for each event listed */ ?>
 
 						</ul>
 <? /*
@@ -117,4 +117,13 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 */ ?>
 					</fieldset>
 
-<?php endif; ?>
+<script type="text/javascript">
+	function remove_racer ( event_id ) {
+		if (confirm("Are you sure you want to remove yourself from this event?")) {
+			return true;
+		}
+		return false;
+	}
+</script>
+
+<?php endif; /* if has events */ ?>
