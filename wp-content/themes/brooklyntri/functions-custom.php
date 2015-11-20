@@ -1186,9 +1186,9 @@ function current_user_registered($event, $form=1) {
 
 function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
-	var_dump();
 	$racers = array();
 	foreach ($registrants as $racer) {
+		var_dump($racer);
 		if($racer[EVENT_FIELD_ID] == $event_id) {
 			$racers[] = $racer['92'];
 		}
@@ -1228,6 +1228,10 @@ function count_btc_registrants( $form_id, $event_id) {
 		return $registrants[0]->btcers;
 	}
 	return null;
+}
+
+function remove_form_entry( $entry_id ) {
+    GFAPI::delete_entry( $entry_id );
 }
 
 /**
