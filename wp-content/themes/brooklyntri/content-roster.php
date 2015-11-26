@@ -92,8 +92,33 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dt>ATHLETE LIST:</dt>
 										<dd>
 											<ol>
-									<?php foreach($registrants as $key=>$racer): ?>
-												<li><?= $racer ?><?= $racer == $current_person || $racer == $current_nickname? '<a id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-event="<?= $post->ID ?>" href="javascript:remove_racer(this)" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
+									<?php foreach ( $registrants as $key=>$racer ) : ?>
+												<li id="racer_<?= $key ?>">
+													<?= $racer ?>
+										<?php if ( $racer == $current_person || $racer == $current_nickname ) : ?>
+													<a id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-event="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
+
+													<script type="text/javascript">
+
+													$( "registrant_<?= $post->ID ?>_<?= $key ?>" ).click(function() {
+														if ( confirm( "Are you sure you want to remove yourself from this event?")) {
+
+															$( "registrant_<?= $post->ID ?>_<?= $key ?>" ).fadeOut( "slow", function() {
+																$.ajax({
+															        url: <?= admin_url('admin-ajax.php'); ?>,    
+															        type: "POST",
+															        cache: false,
+															        data: 'key=<?= $key ?>&action=remove_racer'
+																}).done(function() {
+																	$( "racer_<?= $key ?>" ).fadeOut( "slow" );
+																});
+															});
+														}
+													});
+
+													</script>
+										<?php endif; ?>
+												</li>
 									<?php endforeach; ?>
 											</ol>
 										</dd>
@@ -120,17 +145,5 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 */ ?>
 					</fieldset>
 
-<script type="text/javascript">
-	function remove_racer ( el ) {
-		if (confirm("Are you sure you want to remove yourself from this event?")) {
-			var eventID = el.dataset.event;
-			var entryID = el.dataset.key;
-			$( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
-				// Animation complete.
-			});
-		}
-		return false;
-	}
-</script>
 
 <?php endif; /* if has events */ ?>

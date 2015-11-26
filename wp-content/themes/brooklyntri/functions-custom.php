@@ -1188,7 +1188,6 @@ function get_btc_participants($form_id, $event_id) {
 	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
 	$racers = array();
 	foreach ($registrants as $racer) {
-		//var_dump($racer['id']);
 		if($racer[EVENT_FIELD_ID] == $event_id) {
 			$racers[$racer["id"]] = $racer['92'];
 		}
@@ -1230,9 +1229,12 @@ function count_btc_registrants( $form_id, $event_id) {
 	return null;
 }
 
-function remove_form_entry( $entry_id ) {
-    GFAPI::delete_entry( $entry_id );
+function btc_remove_racer() {
+	GFAPI::delete_entry( $entry_id );
 }
+
+add_action('wp_ajax_remove_racer', 'btc_remove_racer');
+add_action('wp_ajax_nopriv_remove_racer', 'btc_remove_racer');
 
 /**
  * WishList Member stuff
