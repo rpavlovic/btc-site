@@ -109,8 +109,9 @@ foreach($get_posts as $post): setup_postdata($post);
 															        type: "POST",
 															        cache: false,
 															        data: 'key=<?= $key ?>&action=remove_racer'
-																}).done(function() {
-																	$( "racer_<?= $key ?>" ).fadeOut( "slow" );
+																}).done(function(out) {
+																	//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
+																	$( "racer_<?= $key ?>" ).html(out);
 																});
 															});
 														}
