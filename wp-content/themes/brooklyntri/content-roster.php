@@ -152,6 +152,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 
 	function remove_racer ( el ) {
 		if (confirm("Are you sure you want to remove yourself from this event?")) {
+			alert(el.id);
 			var eventID = el.dataset.post;
 			var entryID = el.dataset.key;
 			jQuery( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
