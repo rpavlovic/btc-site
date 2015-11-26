@@ -60,7 +60,7 @@ foreach($get_posts as $post): setup_postdata($post);
 	unset($categories[0]);
 ?>
 
-							<li class="hidden" id="id_<?= $post->ID ?>"><!--  class="active" -->
+							<li><!--  class="active" -->
 								<? /* <input type="checkbox" title="checkbox" checked> */ ?>
 								<a class="opener" href="#">
 									<div class="col">
@@ -137,11 +137,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 									</dl>
 								</div>
 							</li>
-							<script type="text/javascript">
-							jQuery(function($) {
-								$( "id_<?= $post->ID ?>" ).show();
-							});
-							</script>
+
 <?php endforeach; /* for each event listed */ ?>
 
 						</ul>
