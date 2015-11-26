@@ -155,14 +155,14 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 			var eventID = el.dataset.post;
 			var entryID = el.dataset.key;
 			jQuery( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
-				jQuery.ajax({
+				$.ajax({
 			        url: <?= admin_url('admin-ajax.php'); ?>,    
 			        type: "POST",
 			        cache: false,
 			        data: 'key=' + entryID + '&action=remove_racer'
 				}).done(function(out) {
 					//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
-					jQuery( "racer_" + entryID ).html(out);
+					$( "racer_" + entryID ).html(out);
 				});
 			});
 		}
