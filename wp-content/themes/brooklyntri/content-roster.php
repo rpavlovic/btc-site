@@ -96,7 +96,7 @@ foreach($get_posts as $post): setup_postdata($post);
 												<li id="racer_<?= $key ?>">
 													<?= $racer ?>
 										<?php if ( $racer == $current_person || $racer == $current_nickname ) : ?>
-													<a href="javascript:void(0)" id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-event="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
+													<a href="javascript:remove_racer( this )" id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-post="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
 
 													<script type="text/javascript">
 
@@ -152,7 +152,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 
 	function remove_racer ( el ) {
 		if (confirm("Are you sure you want to remove yourself from this event?")) {
-			var eventID = el.dataset.event;
+			var eventID = el.dataset.post;
 			var entryID = el.dataset.key;
 			jQuery( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
 				// Animation complete.
