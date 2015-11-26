@@ -93,7 +93,7 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dd>
 											<ol>
 									<?php foreach($registrants as $key=>$racer): ?>
-												<li><?= $racer ?><?= $racer == $current_person || $racer == $current_nickname? '<a href="javascript:remove_racer(\'' . $key . '\')" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
+												<li><?= $racer ?><?= $racer == $current_person || $racer == $current_nickname? '<a id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-event="<?= $post->ID ?>" href="javascript:remove_racer(this)" title="Remove me from this event" class="close-thik"></a>' : '' ?></li>
 									<?php endforeach; ?>
 											</ol>
 										</dd>
@@ -121,9 +121,13 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 					</fieldset>
 
 <script type="text/javascript">
-	function remove_racer ( event_id ) {
+	function remove_racer ( el ) {
 		if (confirm("Are you sure you want to remove yourself from this event?")) {
-			return true;
+			var eventID = el.dataset.event;
+			var entryID = el.dataset.key;
+			$( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
+				// Animation complete.
+			});
 		}
 		return false;
 	}
