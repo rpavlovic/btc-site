@@ -60,7 +60,7 @@ foreach($get_posts as $post): setup_postdata($post);
 	unset($categories[0]);
 ?>
 
-							<li id="id_<?= $post->ID ?>"><!--  class="active" -->
+							<li class="hidden" id="id_<?= $post->ID ?>"><!--  class="active" -->
 								<? /* <input type="checkbox" title="checkbox" checked> */ ?>
 								<a class="opener" href="#">
 									<div class="col">
