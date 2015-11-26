@@ -139,7 +139,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 							</li>
 							<script type="text/javascript">
 							jQuery(function($) {
-								$( "id_<?= $post->ID ?>" ).fadeIn( "slow" );
+								$( "id_<?= $post->ID ?>" ).show();
 							});
 							</script>
 <?php endforeach; /* for each event listed */ ?>
