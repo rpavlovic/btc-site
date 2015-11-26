@@ -117,7 +117,7 @@ foreach($get_posts as $post): setup_postdata($post);
 																});
 															}
 														});
-													};
+													});
 
 													</script>
 										<?php endif; ?>
