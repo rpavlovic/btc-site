@@ -100,24 +100,24 @@ foreach($get_posts as $post): setup_postdata($post);
 
 													<script type="text/javascript">
 
-													jQuery(function($) {
-														$( "registrant_<?= $post->ID ?>_<?= $key ?>" ).click(function() {
+
+														jQuery( "registrant_<?= $post->ID ?>_<?= $key ?>" ).click(function() {
 															if ( confirm( "Are you sure you want to remove yourself from this event?")) {
 
-																$( "registrant_<?= $post->ID ?>_<?= $key ?>" ).fadeOut( "slow", function() {
-																	$.ajax({
+																jQuery( "registrant_<?= $post->ID ?>_<?= $key ?>" ).fadeOut( "slow", function() {
+																	jQuery.ajax({
 																        url: <?= admin_url('admin-ajax.php'); ?>,    
 																        type: "POST",
 																        cache: false,
 																        data: 'key=<?= $key ?>&action=remove_racer'
 																	}).done(function(out) {
 																		//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
-																		$( "racer_<?= $key ?>" ).html(out);
+																		jQuery( "racer_<?= $key ?>" ).html(out);
 																	});
 																});
 															}
 														});
-													});
+
 
 													</script>
 										<?php endif; ?>
