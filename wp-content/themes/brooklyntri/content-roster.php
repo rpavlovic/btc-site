@@ -96,7 +96,7 @@ foreach($get_posts as $post): setup_postdata($post);
 												<li id="racer_<?= $key ?>">
 													<?= $racer ?>
 										<?php if ( $racer == $current_person || $racer == $current_nickname ) : ?>
-													<a href="javascript:remove_racer( this )" id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-post="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
+													<a href="javascript:void(0)" onclick="remove_racer( this )" id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-post="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
 
 													<script type="text/javascript">
 
