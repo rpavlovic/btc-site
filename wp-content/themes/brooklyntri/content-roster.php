@@ -67,7 +67,7 @@ foreach($get_posts as $post): setup_postdata($post);
 										<h2><?= is_club_race( $categories ) ? '<i class="icon-star"></i>' : '' ?> <?= $post->post_title ?></h2>
 									</div>
 									<div class="col">
-										<span><?= $btcers ?> BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
+										<span id="total_<?= $post->ID ?>"><?= $btcers ?></span> <span>BTCER<?= ( $btcers !=1 ) ? 'S' : '' ?></span>
 									</div>
 									<div class="col">
 										<time datetime="<?= date("Y-m-d",strtotime($post->EventStartDate)) ?>"><?= date("m/d/Y",strtotime($post->EventStartDate)) ?></time>
@@ -97,29 +97,6 @@ foreach($get_posts as $post): setup_postdata($post);
 													<?= $racer ?>
 										<?php if ( $racer == $current_person || $racer == $current_nickname ) : ?>
 													<a href="javascript:void(0)" onclick="remove_racer( this )" id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-post="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
-
-													<script type="text/javascript">
-
-/*
-														jQuery( "registrant_<?= $post->ID ?>_<?= $key ?>" ).click(function() {
-															if ( confirm( "Are you sure you want to remove yourself from this event?")) {
-
-																jQuery( "registrant_<?= $post->ID ?>_<?= $key ?>" ).fadeOut( "slow", function() {
-																	jQuery.ajax({
-																        url: <?= admin_url('admin-ajax.php'); ?>,    
-																        type: "POST",
-																        cache: false,
-																        data: 'key=<?= $key ?>&action=remove_racer'
-																	}).done(function(out) {
-																		//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
-																		jQuery( "racer_<?= $key ?>" ).html(out);
-																	});
-																});
-															}
-														});
-
-*/
-													</script>
 										<?php endif; ?>
 												</li>
 									<?php endforeach; ?>
@@ -167,11 +144,10 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 							$( "#registrant_" + eventID + '_' + entryID ).show();
 						} else {
 							$( "#racer_" + eventID + '_' + entryID ).fadeOut( "slow" );
+							var totes = $( "#total_" + eventID ).html();
+							totes = Number(totes) - 1;
+							$( "#total_" + eventID ).html(totes);
 						}
-						
-						//
-						//prompt("",out);
-						//$( "racer_" + entryID ).html(out);
 					});
 				});
 			});
@@ -179,28 +155,6 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 		}
 		return false;
 	}
-
-</script>
-<script type="text/javascript">
-
-/*
-	jQuery( "registrant_<?= $post->ID ?>_<?= $key ?>" ).click(function() {
-		if ( confirm( "Are you sure you want to remove yourself from this event?")) {
-
-			jQuery( "registrant_<?= $post->ID ?>_<?= $key ?>" ).fadeOut( "slow", function() {
-				jQuery.ajax({
-			        url: <?= admin_url('admin-ajax.php'); ?>,    
-			        type: "POST",
-			        cache: false,
-			        data: 'key=<?= $key ?>&action=remove_racer'
-				}).done(function(out) {
-					//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
-					jQuery( "racer_<?= $key ?>" ).html(out);
-				});
-			});
-		}
-	});
-*/
 
 </script>
 <?php endif; /* if has events */ ?>
