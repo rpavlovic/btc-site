@@ -157,7 +157,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 			jQuery(function($) {
 				$( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
 					$.ajax({
-				        url: <?= admin_url('admin-ajax.php'); ?>,    
+				        url: '<?= admin_url('admin-ajax.php'); ?>',    
 				        type: "POST",
 				        cache: false,
 				        data: 'key=' + entryID + '&action=remove_racer'
