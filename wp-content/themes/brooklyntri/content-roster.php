@@ -163,7 +163,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 				        data: 'key=' + entryID + '&action=remove_racer'
 					}).done(function(out) {
 						if (out.indexOf('error') != -1) {
-							alert("There was an error deleting your entry");
+							alert("There was an error deleting your entry: "+out);
 							$( "#registrant_" + eventID + '_' + entryID ).show();
 						} else {
 							$( "racer_" + out ).fadeOut( "slow" );
