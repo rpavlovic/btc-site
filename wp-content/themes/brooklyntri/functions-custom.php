@@ -1234,6 +1234,9 @@ function btc_remove_racer() {
 		$res = GFAPI::delete_entry( $_POST['key'] );
 		var_dump( $res ) . var_dump($_POST['key']);
 	}
+	else {
+		echo 'error';
+	}
 	
 	wp_die();
 }
