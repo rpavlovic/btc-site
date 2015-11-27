@@ -162,7 +162,8 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 				        cache: false,
 				        data: 'key=' + entryID + '&action=remove_racer'
 					}).done(function(out) {
-						$( "racer_" + out ).fadeOut( "slow" );
+						alert(out);
+						//$( "racer_" + out ).fadeOut( "slow" );
 						//prompt("",out);
 						//$( "racer_" + entryID ).html(out);
 					});
