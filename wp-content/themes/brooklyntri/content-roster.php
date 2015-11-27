@@ -154,7 +154,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 		if (confirm("Are you sure you want to remove yourself from this event?")) {
 			var eventID = el.dataset.post;
 			var entryID = el.dataset.key;
-			jQuery({
+			jQuery(function($) {
 				$( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
 					$.ajax({
 				        url: <?= admin_url('admin-ajax.php'); ?>,    
