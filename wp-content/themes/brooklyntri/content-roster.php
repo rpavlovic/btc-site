@@ -162,8 +162,14 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 				        cache: false,
 				        data: 'key=' + entryID + '&action=remove_racer'
 					}).done(function(out) {
-						alert("output: "+out);
-						//$( "racer_" + out ).fadeOut( "slow" );
+						if (out.indexOf('error') != -1) {
+							alert("There was an error deleting your entry");
+							$( "#registrant_" + eventID + '_' + entryID ).show();
+						} else {
+							$( "racer_" + out ).fadeOut( "slow" );
+						}
+						
+						//
 						//prompt("",out);
 						//$( "racer_" + entryID ).html(out);
 					});

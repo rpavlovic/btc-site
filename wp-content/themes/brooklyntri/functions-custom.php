@@ -1235,7 +1235,7 @@ function btc_remove_racer() {
 		var_dump( $res ) . var_dump($_POST['key']);
 	}
 	else {
-		echo 'error';
+		echo 'error '.$_POST['key'];
 	}
 	
 	wp_die();
