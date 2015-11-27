@@ -1230,8 +1230,11 @@ function count_btc_registrants( $form_id, $event_id) {
 }
 
 function btc_remove_racer() {
-	#GFAPI::delete_entry( $entry_id );
-	echo $_POST['key'];
+	if (isset($_POST) && isset($_POST['key'])) {
+		# if( GFAPI::delete_entry( $_POST['key'] ) ) {  };
+	}
+	
+	echo $_SERVER['REQUEST_URI'];
 	wp_die();
 }
 

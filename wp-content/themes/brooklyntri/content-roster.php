@@ -163,7 +163,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 				        data: 'key=' + entryID + '&action=remove_racer'
 					}).done(function(out) {
 						//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
-						alert(out);
+						prompt("",out);
 						$( "racer_" + entryID ).html(out);
 					});
 				});
