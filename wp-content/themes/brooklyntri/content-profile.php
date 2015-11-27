@@ -12,21 +12,8 @@ global $current_user;
 
 get_currentuserinfo();
 
-//var_dump($current_user);
-
 ?>
 
-<?php /*
-					<div class="holder">
-						<div class="text">
-
-		                    <?php the_title('<h2>','</h2>'); ?>
-
-		                    <?php the_content(); ?>
-
-						</div>
-					</div>
-*/ ?>
 					<form action="<?php the_permalink(); ?>" class="contact-form" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="action" value="update">
 						<input type="hidden" name="user_id" value="<?= sanitize_text_field( $current_user->ID ) ?>">
@@ -61,6 +48,18 @@ $simple_local_avatars->btc_edit_user_avatar( $current_user );
 							<div class="row">
 								<label for="url">WEBSITE </label>
 								<input type="text" type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
+							</div>
+							<div class="row">
+								<label for="url">FACEBOOK </label>
+								<input type="text" type="url" name="facebook" id="facebook" value="<?= sanitize_text_field( get_the_author_meta( 'facebook', $current_user->ID ) ) ?>">
+							</div>
+							<div class="row">
+								<label for="url">TWITTER </label>
+								<input type="text" type="url" name="twitter" id="twitter" value="<?= sanitize_text_field( get_the_author_meta( 'twitter', $current_user->ID ) ) ?>">
+							</div>
+							<div class="row">
+								<label for="url">INSTAGRAM </label>
+								<input type="text" type="url" name="instagram" id="instagram" value="<?= sanitize_text_field( get_the_author_meta( 'instagram', $current_user->ID ) ) ?>">
 							</div>
 							<div class="row">
 								<label for="description">Biographical Info</label>
