@@ -1231,8 +1231,7 @@ function count_btc_registrants( $form_id, $event_id) {
 
 function btc_remove_racer() {
 	if (isset($_POST) && isset($_POST['key']) && is_numeric($_POST['key']) && $_SERVER['REQUEST_URI'] == admin_url('admin-ajax.php')) {
-		$_POST['key'] = intval($_POST['key']);
-		GFAPI::delete_entry( $_POST['key'] ;
+		GFAPI::delete_entry( $_POST['key'] );
 
 			echo $_POST['key'];
 
