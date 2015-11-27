@@ -154,17 +154,20 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 		if (confirm("Are you sure you want to remove yourself from this event?")) {
 			var eventID = el.dataset.post;
 			var entryID = el.dataset.key;
-			jQuery( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
-				$.ajax({
-			        url: <?= admin_url('admin-ajax.php'); ?>,    
-			        type: "POST",
-			        cache: false,
-			        data: 'key=' + entryID + '&action=remove_racer'
-				}).done(function(out) {
-					//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
-					$( "racer_" + entryID ).html(out);
+			jQuery({
+				$( "#registrant_" + eventID + '_' + entryID ).fadeOut( "slow", function() {
+					$.ajax({
+				        url: <?= admin_url('admin-ajax.php'); ?>,    
+				        type: "POST",
+				        cache: false,
+				        data: 'key=' + entryID + '&action=remove_racer'
+					}).done(function(out) {
+						//$( "racer_<?= $key ?>" ).fadeOut( "slow" );
+						$( "racer_" + entryID ).html(out);
+					});
 				});
 			});
+	
 		}
 		return false;
 	}
