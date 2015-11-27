@@ -93,7 +93,7 @@ foreach($get_posts as $post): setup_postdata($post);
 										<dd>
 											<ol>
 									<?php foreach ( $registrants as $key=>$racer ) : ?>
-												<li id="racer_<?= $key ?>">
+												<li id="racer_<?= $post->ID ?>_<?= $key ?>">
 													<?= $racer ?>
 										<?php if ( $racer == $current_person || $racer == $current_nickname ) : ?>
 													<a href="javascript:void(0)" onclick="remove_racer( this )" id="registrant_<?= $post->ID ?>_<?= $key ?>" data-key="<?= $key ?>" data-post="<?= $post->ID ?>" title="Remove me from this event" class="close-thik"></a>
@@ -166,7 +166,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 							alert("There was an error deleting your entry: "+out);
 							$( "#registrant_" + eventID + '_' + entryID ).show();
 						} else {
-							$( "racer_" + out ).fadeOut( "slow" );
+							$( "#racer_" + eventID + '_' + entryID ).fadeOut( "slow" );
 						}
 						
 						//
