@@ -1277,8 +1277,7 @@ function auth_user( $loc = null ) {
 		} else {
 			wp_redirect( site_url( $loc ) );
 			exit;			
-		}
-		
+		}		
 	}
 
 	if ( !check_user_access( get_current_user_id(), get_the_ID() ) ) {
