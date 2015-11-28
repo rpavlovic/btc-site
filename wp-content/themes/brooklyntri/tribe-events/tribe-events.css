@@ -79,6 +79,9 @@ body .ttip {
     -webkit-border-radius: 9px;
     border-radius: 9px;
 }
+.messaging {
+	float: right;
+}
 
 #footer {
     width: 100% !important;
@@ -89,7 +92,6 @@ body .ttip {
 }
 
 /* Close Button */
-
 [class*='close-'] {
   color: #777;
   font: 14px/100% arial, sans-serif;

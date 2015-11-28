@@ -18,7 +18,7 @@
 	                    <?php the_content(); ?>
                     </div>
 
-					<div class="col">
+					<div class="col messaging">
 <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
 	If you are seeing this message, one of three things is happening:
 	<ol>
@@ -36,8 +36,6 @@
 
                     </div>
                 </div>
-
-
 
 <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
 <script type="text/javascript">
