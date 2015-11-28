@@ -157,6 +157,13 @@ function btc_relative_links( $str ) {
 	return WP_SITEURL . $str;
 }
 
+function btc_social_links( $str, $type=null ) {
+	if (strstr($str, '.com') && strstr($str, 'http://')) {
+		return '<a href="'.$str.'">'.$str.'</a>';
+	}
+	
+}
+
 /**
  * Return the custom link text for post, if supplied.
  *
