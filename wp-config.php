@@ -17,6 +17,8 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
+var_dump(dirname($_SERVER['REQUEST_URI']); die;
+
 if (strstr($_SERVER['SERVER_NAME'], '.local')) {
 	define('DB_NAME', 'btc');
 
