@@ -17,31 +17,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if (strstr($_SERVER['SERVER_NAME'], '.local')) {
-	define('DB_NAME', 'btc');
-
-	/** MySQL database username */
-	define('DB_USER', 'vagrant');
-
-	/** MySQL database password */
-	define('DB_PASSWORD', 'vagrant');
-
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost');
-
-	/** Database Charset to use in creating database tables. */
-	define('DB_CHARSET', 'utf8');
-
-	/** The Database Collate type. Don't change this if in doubt. */
-	define('DB_COLLATE', '');
-
-	define('WP_HOME','http://devstack-wordpress.local/dev');
-	define('WP_SITEURL','http://devstack-wordpress.local/dev');
-	define('WP_DEBUG', true);
-	define('DEV', true);
-
-}
-else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['REQUEST_URI'], '/dev')) {
+if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['REQUEST_URI'], '/dev')) {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
@@ -59,8 +35,8 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['RE
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://66.147.247.44/dev');
-	define('WP_SITEURL','http://66.147.247.44/dev');
+	define('WP_HOME','http://'.$_SERVER['SERVER_NAME'].'/dev');
+	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'].'/dev');
 	define('WP_DEBUG', false);
 	define('DEV', true);
 }
@@ -82,12 +58,31 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['RE
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://66.147.247.44/stage');
-	define('WP_SITEURL','http://66.147.247.44/stage');
+	define('WP_HOME','http://'.$_SERVER['SERVER_NAME'].'/stage');
+	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'].'/stage');
 	define('WP_DEBUG', false);
-	define('DEV', true);
+	define('DEV', false);
 }
 else {
+	define('DB_NAME', 'brookmq9_prod');
+
+	/** MySQL database username */
+	define('DB_USER', 'brookmq9_derfnut');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'm~*]QzsTU9B,');
+
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+
+	define('WP_HOME','http://'.$_SERVER['SERVER_NAME'].'/stage');
+	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'].'/stage');
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }
