@@ -1269,14 +1269,21 @@ function check_user_access($userid, $postid){
 	return true;
 }
 
-function auth_user() {
+function auth_user( $loc = null ) {
 
 	if( !is_user_logged_in() ) {
-		auth_redirect();
+		if ( is_null( $loc ) ) {
+			auth_redirect();
+		} else {
+			wp_redirect( site_url( $loc ) );
+			exit;			
+		}
+		
 	}
 
 	if ( !check_user_access( get_current_user_id(), get_the_ID() ) ) {
-		auth_redirect();
+		wp_redirect( site_url( '/members-only' ) );
+		exit;
 	}
 }
 
