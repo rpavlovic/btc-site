@@ -158,10 +158,11 @@ function btc_relative_links( $str ) {
 }
 
 function btc_social_links( $str, $type=null ) {
-	if (strstr($str, '.com') && strstr($str, 'http://')) {
+	// try figuring stuff out first
+	if (strstr($str, '.com') && (strstr($str, 'http://') || strstr($str, 'https://') )) {
 		return '<a href="'.$str.'">'.$str.'</a>';
 	}
-	
+	return $str;
 }
 
 /**
