@@ -61,8 +61,10 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44')) {
 
 	define('WP_HOME','http://66.147.247.44/dev');
 	define('WP_SITEURL','http://66.147.247.44/dev');
-	define('WP_DEBUG', true);
+	define('WP_DEBUG', false);
 	define('DEV', true);
+
+	echo dirname($_SERVER['REQUEST_URI']);
 }
 else {
 	define('WP_DEBUG', false);
