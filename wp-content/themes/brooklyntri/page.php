@@ -38,6 +38,7 @@ endwhile;
 					</div>
 					<aside id="sidebar">
 						<div class="img-holder">
+						bro
 							<?= get_the_post_thumbnail( 15, 'full' ) ?>
 						</div>
 					</aside>
