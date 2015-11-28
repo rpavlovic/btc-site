@@ -25,8 +25,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: none; }
 
-* {
-  max-height: 1000000px; }
+* { max-height: 1000000px; }
 
 article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
   display: block; }
