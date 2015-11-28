@@ -159,19 +159,21 @@ function btc_relative_links( $str ) {
 
 function btc_social_links( $str, $type=null ) {
 
-	// looks like a link is already there
-	if ( strstr($str, '.com') && (strstr($str, 'http://') || strstr($str, 'https://') ) ) {
-		return '<a href="' . esc_url( $str ) . '">' . $str . '</a>';
+	// try figuring stuff out first
+	if ( is_null($type) ) {
+
+		// looks like a link is already there
+		if ( strstr($str, '.com') && (strstr($str, 'http://') || strstr($str, 'https://') ) ) {
+			return '<a href="' . esc_url( $str ) . '">' . $str . '</a>';
+		}
+
+		// link with no http
+		if ( strstr($str, '.com') && !(strstr($str, 'http://') || strstr($str, 'https://') ) ) {
+			return '<a href="https://' . esc_url( $str ) . '">' . $str . '</a>';
+		}
 	}
 
-	// link with no http
 	if ( strstr($str, '.com') && !(strstr($str, 'http://') || strstr($str, 'https://') ) ) {
-		return '<a href="https://' . esc_url( $str ) . '">' . $str . '</a>';
-	}
-
-	if ( strstr($str, '.com') && !(strstr($str, 'http://') || strstr($str, 'https://') ) ) {
-
-				var_dump($str);
 		$str = '<a href="https://' . esc_url( $str ) . '">'.$str.'</a>';
 		$str = str_replace('wwwwww', 'www', $str);
 	}
@@ -179,6 +181,7 @@ function btc_social_links( $str, $type=null ) {
 
 		switch ( $type ) {
 			case 'twitter':
+			var_dump($str);
 				$str = '<a href="https://twitter.com/' . esc_url( $str ) . '">'.$str.'</a>';
 				break;
 			case 'facebook':
