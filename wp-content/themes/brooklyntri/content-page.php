@@ -10,16 +10,21 @@
 
 ?>
 
-				<div class="contact-form-area">
+				<div class="contact-form-area row">
 
-                    <?php the_title('<h2>','</h2>'); ?>
+					<div class="col">
+	                    <?php the_title('<h2>','</h2>'); ?>
 
-                    <?php the_content(); ?>
+	                    <?php the_content(); ?>
+                    </div>
 
+					<div class="col">
+
+                    </div>
                 </div>
 
 <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
-	
+
 <?php endif; ?>
 
 <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
