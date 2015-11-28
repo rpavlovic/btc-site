@@ -41,7 +41,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
 	define('DEV', true);
 
 }
-else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && dirname($_SERVER['REQUEST_URI']) == '/dev') {
+else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr(dirname($_SERVER['REQUEST_URI']), '/dev')) {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
@@ -64,7 +64,7 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && dirname($_SERVER['R
 	define('WP_DEBUG', false);
 	define('DEV', true);
 }
-else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && dirname($_SERVER['REQUEST_URI']) == '/stage') {
+else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr(dirname($_SERVER['REQUEST_URI']), '/stage')) {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
