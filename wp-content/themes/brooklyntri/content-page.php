@@ -13,8 +13,11 @@
 				<div class="contact-form-area">
 
                     <?php the_title('<h2>','</h2>'); ?>
+
 				<?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
+					<p>
 					If you are seeing this message, one of three things is happening:
+					</p>
 					<ol>
 						<li>Either your username or password are incorrect. Try logging in again. If you're having consistent issues, please email <a href="mailto:ITHelp@brooklyntri.org">ITHelp@brooklyntri.org</a> and we'll work to reset your credentials.</li>
 						<li>Your membership has expired. You must be a member in active standing to login to the site. <a href="<?= site_url( '/join' ) ?>">Please renew your membership</a>.</li>
