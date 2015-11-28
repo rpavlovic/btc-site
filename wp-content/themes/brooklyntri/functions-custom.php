@@ -181,8 +181,8 @@ function btc_social_links( $str, $type=null ) {
 
 		switch ( $type ) {
 			case 'twitter':
-			var_dump($str);
 				$str = '<a href="https://twitter.com/' . esc_url( $str ) . '">'.$str.'</a>';
+				var_dump($str);
 				break;
 			case 'facebook':
 				$str = '<a href="https://www.facebook.com/' . esc_url( $str ) . '">'.$str.'</a>';
