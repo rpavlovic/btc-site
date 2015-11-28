@@ -42,11 +42,11 @@ if (get_the_ID() == 47):
                                         <div class="text">
                                             <div class="col">
                                                 <h3>WHAT:</h3>
-                                                <?= esc_html( $content['what'] ) ?>
+                                                <?= $content['what'] ?>
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= esc_html( $content['discounts'] ) ?>
+                                                <?= $content['discounts'] ?>
                                             </div>
                                         </div>
                                     </div>
@@ -80,11 +80,11 @@ if( count( $sponsors ) > 1 ):
                                         <div class="text">
                                             <div class="col">
                                                 <h3>WHAT:</h3>
-                                                <?= esc_html( $content['what'] ) ?>
+                                                <?= $content['what'] ?>
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= esc_html( $content['discounts'] ) ?>
+                                                <?= $content['discounts'] ?>
                                             </div>
                                         </div>
                                     </div>
@@ -116,11 +116,11 @@ if( count( $discounts ) > 1 ):
                                         <div class="text">
                                             <div class="col">
                                                 <h3>WHAT:</h3>
-                                                <?= esc_html( $content['what'] ) ?>
+                                                <?= $content['what'] ?>
                                             </div>
                                             <div class="col">
                                                 <h3>BTC DISCOUNT:</h3>
-                                                <?= esc_html( $content['discounts'] ) ?>
+                                                <?= $content['discounts'] ?>
                                             </div>
                                         </div>
                                     </div>
