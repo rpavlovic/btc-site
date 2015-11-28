@@ -182,15 +182,16 @@ function btc_social_links( $str, $type=null ) {
 		switch ( $type ) {
 			case 'twitter':
 				$str = '<a href="https://twitter.com/' . esc_url( $str ) . '">'.$str.'</a>';
-				break:
+				break;
 			case 'facebook':
 				$str = '<a href="https://www.facebook.com/' . esc_url( $str ) . '">'.$str.'</a>';
-				break:
+				break;
 			case 'instagram':
 				$str = '<a href="https://instagram.com/' . esc_url( $str ) . '">'.$str.'</a>';
-				break:
+				break;
 		}
 	}
+
 	return $str;
 }
 
