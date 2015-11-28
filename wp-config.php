@@ -41,7 +41,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
 	define('DEV', true);
 
 }
-else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44')) {
+else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && dirname($_SERVER['REQUEST_URI']) == '/dev') {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
@@ -63,8 +63,29 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44')) {
 	define('WP_SITEURL','http://66.147.247.44/dev');
 	define('WP_DEBUG', false);
 	define('DEV', true);
+}
+else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && dirname($_SERVER['REQUEST_URI']) == '/stage') {
+	define('DB_NAME', 'brookmq9_dev');
 
-	echo dirname($_SERVER['REQUEST_URI']);
+	/** MySQL database username */
+	define('DB_USER', 'brookmq9_derfnut');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'm~*]QzsTU9B,');
+
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+
+	define('WP_HOME','http://66.147.247.44/stage');
+	define('WP_SITEURL','http://66.147.247.44/stage');
+	define('WP_DEBUG', false);
+	define('DEV', true);
 }
 else {
 	define('WP_DEBUG', false);
