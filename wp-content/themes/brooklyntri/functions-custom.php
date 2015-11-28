@@ -174,6 +174,8 @@ function btc_social_links( $str, $type=null ) {
 	}
 
 	if ( strstr($str, '.com') && !(strstr($str, 'http://') || strstr($str, 'https://') ) ) {
+		
+				var_dump($str);
 		$str = '<a href="https://' . esc_url( $str ) . '">'.$str.'</a>';
 		$str = str_replace('wwwwww', 'www', $str);
 	}
@@ -181,7 +183,6 @@ function btc_social_links( $str, $type=null ) {
 
 		switch ( $type ) {
 			case 'twitter':
-				var_dump($str);
 				$str = '<a href="https://twitter.com/' . esc_url( $str ) . '">'.$str.'</a>';
 				break;
 			case 'facebook':
