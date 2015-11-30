@@ -17,7 +17,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['REQUEST_URI'], '/dev')) {
+if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org') {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
@@ -35,12 +35,12 @@ if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['REQUEST
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://'.$_SERVER['SERVER_NAME'].'/dev');
-	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'].'/dev');
+	define('WP_HOME','http://dev.brooklyntri.org');
+	define('WP_SITEURL','http://dev.brooklyntri.org');
 	define('WP_DEBUG', false);
 	define('DEV', true);
 }
-else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['REQUEST_URI'], '/stage')) {
+else if ($_SERVER['SERVER_NAME'] == 'stage.brooklyntri.org') {
 	define('DB_NAME', 'brookmq9_stage');
 
 	/** MySQL database username */
@@ -58,12 +58,12 @@ else if (strstr($_SERVER['SERVER_NAME'], '66.147.247.44') && strstr($_SERVER['RE
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://'.$_SERVER['SERVER_NAME'].'/stage');
-	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'].'/stage');
+	define('WP_HOME','http://stage.brooklyntri.org');
+	define('WP_SITEURL','http://stage.brooklyntri.org');
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }
-else {
+else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org') {
 	define('DB_NAME', 'brookmq9_prod');
 
 	/** MySQL database username */
@@ -81,8 +81,8 @@ else {
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://'.$_SERVER['SERVER_NAME'].'/');
-	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'].'/');
+	define('WP_HOME','http://www.brooklyntri.org');
+	define('WP_SITEURL','http://www.brooklyntri.org');
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }
