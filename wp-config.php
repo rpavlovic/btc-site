@@ -63,7 +63,7 @@ else if ($_SERVER['SERVER_NAME'] == 'stage.brooklyntri.org') {
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }
-else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org') {
+else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org' || $_SERVER['SERVER_NAME'] == 'brooklyntri.org') {
 	define('DB_NAME', 'brookmq9_prod');
 
 	/** MySQL database username */
@@ -81,8 +81,8 @@ else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org') {
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://www.brooklyntri.org');
-	define('WP_SITEURL','http://www.brooklyntri.org');
+	define('WP_HOME','http://' . $_SERVER['SERVER_NAME']);
+	define('WP_SITEURL','http://' . $_SERVER['SERVER_NAME']);
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }
