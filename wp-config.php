@@ -16,9 +16,8 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-var_dump($_SERVER['SERVER_NAME']);
-var_dump($_SERVER['REQUEST_URI']);
-if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME'] == '66.147.247.44' && dirname($_SERVER['REQUEST_URI']) == '/dev')) {
+
+if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME'] == '66.147.247.44' && $_SERVER['REQUEST_URI'] == '/dev/')) {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
