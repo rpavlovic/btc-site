@@ -17,7 +17,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org') {
+if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME'] == '66.147.247.44' && dirname($_SERVER['REQUEST_URI']) == '/dev')) {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
@@ -35,8 +35,8 @@ if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org') {
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://dev.brooklyntri.org');
-	define('WP_SITEURL','http://dev.brooklyntri.org');
+	define('WP_HOME','http://'.$_SERVER['SERVER_NAME']);
+	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME']);
 	define('WP_DEBUG', false);
 	define('DEV', true);
 }
