@@ -35,8 +35,14 @@ if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME']
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://'.$_SERVER['SERVER_NAME']);
-	define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME']);
+	if ($_SERVER['SERVER_NAME'] == '66.147.247.44') {
+		define('WP_HOME','http://'.$_SERVER['SERVER_NAME'] . '/dev');
+		define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'] . '/dev');
+	} else {
+		define('WP_HOME','http://'.$_SERVER['SERVER_NAME']);
+		define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME']);
+	}
+
 	define('WP_DEBUG', false);
 	define('DEV', true);
 }
