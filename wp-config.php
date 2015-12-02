@@ -17,7 +17,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME'] == '66.147.247.44' && $_SERVER['REQUEST_URI'] == '/dev/')) {
+if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME'] == '66.147.247.44' && strstr($_SERVER['REQUEST_URI'], '/dev'))) {
 	define('DB_NAME', 'brookmq9_dev');
 
 	/** MySQL database username */
@@ -36,8 +36,8 @@ if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME']
 	define('DB_COLLATE', '');
 
 	if ($_SERVER['SERVER_NAME'] == '66.147.247.44') {
-		define('WP_HOME','http://'.$_SERVER['SERVER_NAME'] . '/dev');
-		define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME'] . '/dev');
+		define('WP_HOME','http://66.147.247.44/dev');
+		define('WP_SITEURL','http://66.147.247.44/dev');
 	} else {
 		define('WP_HOME','http://'.$_SERVER['SERVER_NAME']);
 		define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME']);
