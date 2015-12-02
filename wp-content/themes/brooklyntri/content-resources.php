@@ -101,7 +101,7 @@ $discounts = get_posts( array( 'category' => 36, 'orderby' => 'post_date', 'orde
 if( count( $discounts ) > 1 ):
 ?>
                             <div class="info-area">
-                                <h2>DISCOUNTS</h2>
+                                <h2>SUPPORTERS</h2>
                                 <div class="holder">
 <?php
     foreach ( $discounts as $discount ): setup_postdata( $discount );
