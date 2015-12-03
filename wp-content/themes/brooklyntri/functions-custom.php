@@ -5,6 +5,14 @@ setcookie('LastVisited', $_SERVER['REQUEST_URI'], time()+3600, str_replace('http
 // lose the admin bar
 add_filter('show_admin_bar', '__return_false');
 
+// mail headers
+add_filter( 'wp_mail_from', function() {
+	return 'wordpress@brooklyntri.org';
+});
+add_filter( 'wp_mail_from_name', function() {
+	return 'Brooklyn Tri Club';
+});
+
 function get_btc_menu( $menu_name ) {
     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
