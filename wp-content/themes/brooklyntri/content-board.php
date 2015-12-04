@@ -18,11 +18,11 @@ $categories = array(
 
 ?>
 
-<?php if(has_post_thumbnail()): ?>
 						<div class="visual">
+<?php if(has_post_thumbnail()): ?>
 							<?= get_the_post_thumbnail( $post->ID, 'full' ) ?>
-						</div>
 <?php endif; ?>
+						</div>
 						<div class="person-info-area">
 							<div class="text">
 
