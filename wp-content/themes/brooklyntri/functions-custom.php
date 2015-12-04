@@ -7,7 +7,7 @@ add_filter('show_admin_bar', '__return_false');
 
 // mail headers
 add_filter( 'wp_mail_from', function() {
-	return 'wordpress@brooklyntri.org';
+	return 'info@brooklyntri.org';
 });
 add_filter( 'wp_mail_from_name', function() {
 	return 'Brooklyn Tri Club';
