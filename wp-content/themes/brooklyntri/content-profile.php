@@ -46,6 +46,12 @@ $simple_local_avatars->btc_edit_user_avatar( $current_user );
 								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->user_email ) ?>">
 							</div>
 							<div class="row">
+								<input type="radio" name="display_email" value="true"<?= $current_user->display_email == 'true' ? ' checked="checked"' : '' ?>>
+								<input type="radio" name="display_email" value="false"<?= $current_user->display_email == 'false' ? ' checked="checked"' : '' ?>>
+							</div>
+
+							<div class="heading"><h2>ADDITIONAL INFO</h2></div>
+							<div class="row">
 								<label for="url">WEBSITE </label>
 								<input type="text" type="url" name="url" id="url" value="<?= sanitize_text_field( $current_user->user_url ) ?>">
 							</div>
