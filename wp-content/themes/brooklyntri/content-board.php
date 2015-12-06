@@ -23,7 +23,7 @@ $categories = array(
 						</div>
 <?php endif; ?>
 
-						<div class="person-info-area">
+						<div class="person-info-area intro-text">
 							<div class="text">
 
 								<?php the_title('<h2>','</h2>'); ?>
