@@ -11,13 +11,14 @@
  * @since Brooklyn Tri 1.0
  */
 
-// Get user info.
-global $current_user, $wp_roles;
 
 // gotta be logged in first
 if( !is_user_logged_in() ) {
 	wp_redirect( site_url( '/login' ) );
 }
+
+// Get user info.
+global $current_user, $wp_roles;
 
 $error = array();    
 // If profile was saved, update profile.
@@ -56,8 +57,8 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
 	update_user_meta( $current_user->ID, 'instagram', esc_attr( $_POST['instagram'] ) );
 
 
-    // Redirect so the page will show updated info.*/
-	/*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){
+    // Redirect so the page will show updated info.
+	// I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){
     if ( count($error) == 0 ) {
 
         //action hook for plugins and extra fields saving
