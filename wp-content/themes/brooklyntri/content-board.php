@@ -17,13 +17,13 @@ $categories = array(
 );
 
 ?>
-<?php if(has_post_thumbnail()): ?>
+<?php if( has_post_thumbnail() ): ?>
 						<div class="visual">
 							<?= get_the_post_thumbnail( $post->ID, 'full' ) ?>
 						</div>
 <?php endif; ?>
 
-						<div class="person-info-area intro-text">
+						<div class="person-info-area<?php if( !has_post_thumbnail() ): ?> intro-text<?php endif; ?>">
 							<div class="text">
 
 								<?php the_title('<h2>','</h2>'); ?>
