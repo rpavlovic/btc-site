@@ -14,7 +14,7 @@
 
 // gotta be logged in first
 if( !is_user_logged_in() ) {
-	auth_redirect();
+	wp_redirect( site_url( '/login' ) );
 }
 
 // Get user info.
