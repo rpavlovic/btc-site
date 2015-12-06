@@ -48,7 +48,7 @@ $simple_local_avatars->btc_edit_user_avatar( $current_user );
 <?php
 // default to yes
 if ( empty( $current_user->display_email ) ) {
-	$current_user->display_email = true;
+	$current_user->display_email = 'true';
 }
 ?>
 							<div class="row">
