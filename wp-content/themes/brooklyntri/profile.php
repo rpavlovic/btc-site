@@ -13,9 +13,7 @@
 
 
 // gotta be logged in first
-if( !is_user_logged_in() ) {
-	wp_redirect( site_url( '/login' ) );
-}
+auth_user();
 
 // Get user info.
 global $current_user, $wp_roles;
