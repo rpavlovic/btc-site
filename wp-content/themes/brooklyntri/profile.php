@@ -11,18 +11,14 @@
  * @since Brooklyn Tri 1.0
  */
 
+// Get user info.
+global $current_user, $wp_roles;
 
 // gotta be logged in first
 if( !is_user_logged_in() ) {
 	wp_redirect( site_url( '/login' ) );
 }
 
-// Get user info.
-global $current_user, $wp_roles;
-//get_currentuserinfo(); //deprecated since 3.1
-
-// Load the registration file.
-//require_once( ABSPATH . WPINC . '/registration.php' ); //deprecated since 3.1
 $error = array();    
 // If profile was saved, update profile.
 if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update' ) {
