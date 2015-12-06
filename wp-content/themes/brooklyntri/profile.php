@@ -11,17 +11,21 @@
  * @since Brooklyn Tri 1.0
  */
 
-/* Get user info. */
+
+// gotta be logged in first
+auth_user();
+
+// Get user info.
 global $current_user, $wp_roles;
 //get_currentuserinfo(); //deprecated since 3.1
 
-/* Load the registration file. */
+// Load the registration file.
 //require_once( ABSPATH . WPINC . '/registration.php' ); //deprecated since 3.1
 $error = array();    
-/* If profile was saved, update profile. */
+// If profile was saved, update profile.
 if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update' ) {
 
-    /* Update user password. */
+    // Update user password.
     if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
         if ( $_POST['pass1'] == $_POST['pass2'] )
             wp_update_user( array( 'ID' => $current_user->ID, 'user_pass' => esc_attr( $_POST['pass1'] ) ) );
@@ -29,7 +33,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
             $error[] = __('The passwords you entered do not match.  Your password was not updated.', 'profile');
     }
 
-    /* Update user information. */
+    // Update user information.
     if ( !empty( $_POST['url'] ) )
         wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => esc_url( $_POST['url'] ) ) );
     if ( !empty( $_POST['email'] ) ){
@@ -54,8 +58,8 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
 	update_user_meta( $current_user->ID, 'instagram', esc_attr( $_POST['instagram'] ) );
 
 
-    /* Redirect so the page will show updated info.*/
-	/*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){ */
+    // Redirect so the page will show updated info.*/
+	/*I am not Author of this Code- i dont know why but it worked for me after changing below line to if ( count($error) == 0 ){
     if ( count($error) == 0 ) {
 
         //action hook for plugins and extra fields saving

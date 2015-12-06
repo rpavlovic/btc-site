@@ -45,6 +45,12 @@ $simple_local_avatars->btc_edit_user_avatar( $current_user );
 								<label for="email">E-MAIL <span>*</span></label>
 								<input type="text" name="email" id="email" value="<?= sanitize_text_field( $current_user->user_email ) ?>">
 							</div>
+<?php
+// default to yes
+if ( empty( $current_user->display_email ) ) {
+	$current_user->display_email = true;
+}
+?>
 							<div class="row">
 								<input type="radio" name="display_email" id="display_email_yes" value="true"<?= $current_user->display_email == 'true' ? ' checked="checked"' : '' ?>>
 								<label for="display_email_yes">Yes, display my e-mail address in my forum profile</label><br>
