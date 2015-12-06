@@ -13,7 +13,9 @@
 
 
 // gotta be logged in first
-auth_user();
+if( !is_user_logged_in() ) {
+	auth_redirect();
+}
 
 // Get user info.
 global $current_user, $wp_roles;
