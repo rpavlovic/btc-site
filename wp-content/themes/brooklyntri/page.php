@@ -11,9 +11,16 @@
  * @since Brooklyn Tri 1.0
  */
 
+
+if ( isset( $_GET['key'] ) && isset( $_GET['action'] ) && isset( $_GET['login'] ) && $_GET['action'] == 'rp' ) {
+	wp_redirect( '/wp-login.php?' . $_SERVER['QUERY_STRING'] );
+	exit;
+}
+
 get_header();
 
 btc_breadcrumbs();
+
 
 ?>
 

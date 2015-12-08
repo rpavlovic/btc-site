@@ -79,7 +79,7 @@ $races = tribe_get_events(array('posts_per_page'=>5, 'eventDisplay'=>'future') )
 foreach($races as $post): setup_postdata($post);
 ?>
 							<li>
-								<h3><a href="<?= get_permalink( $post->ID ) ?>"><?= date("F d, Y, ga",strtotime($post->EventStartDate)) ?></a></h3>
+								<h3><a href="<?= get_permalink( $post->ID ) ?>"><?= date("F d, Y, ga", strtotime( $post->EventStartDate ) ) ?></a></h3>
 								<p><?= $post->post_title ?></p>
 							</li>
 <?php endforeach; ?>

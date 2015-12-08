@@ -23,6 +23,7 @@
 						<li>Your membership has expired. You must be a member in active standing to login to the site. <a href="<?= site_url( '/join' ) ?>">Please renew your membership</a>.</li>
 						<li>You’ve never been a member at all. Please check out <a href="<?= site_url( '/join' ) ?>">our membership benefits</a> and considering joining the club!</li>
 					</ol>
+
 				<?php elseif (strstr($_SERVER['REQUEST_URI'], 'login?redirect_to') != false): ?>
 					<p>
 					If you are seeing this message, one of three things is happening:
@@ -33,7 +34,9 @@
 						<li>You’ve never been a member at all. Please check out <a href="<?= site_url( '/join' ) ?>">our membership benefits</a> and considering joining the club!</li>
 					</ol>
 				<?php endif; ?>
+
                     <?php the_content(); ?>
+
                 </div>
 
 <?php if (strstr($_SERVER['REQUEST_URI'], 'login?login=failed') != false): ?>
