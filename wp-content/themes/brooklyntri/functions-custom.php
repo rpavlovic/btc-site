@@ -1230,9 +1230,9 @@ function current_user_registered($event, $form=1) {
 }
 
 function get_btc_participants($form_id, $event_id) {
-	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC');
+	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC','',0,500000);
 	if (DEV) {
-		var_dump($registrants);
+		//var_dump($registrants);
 	}
 	
 	$racers = array();
