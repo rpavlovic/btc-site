@@ -87,8 +87,10 @@ else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org' || $_SERVER['SERVER_NA
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://' . $_SERVER['SERVER_NAME']);
-	define('WP_SITEURL','http://' . $_SERVER['SERVER_NAME']);
+	define('WP_HOME','http://brooklyntri.org');
+	define('WP_SITEURL','http://brooklyntri.org');
+	define('COOKIE_DOMAIN', 'brooklyntri.org');
+
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }

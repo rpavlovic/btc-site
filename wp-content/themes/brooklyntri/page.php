@@ -12,10 +12,9 @@
  */
 
 
-if ( isset( $_GET['key'] ) && isset( $_GET['action'] ) && isset( $_GET['login'] ) && $_GET['action'] == 'rp' ) {
-	wp_redirect( '/wp-login.php?' . $_SERVER['QUERY_STRING'] );
-	exit;
-}
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 get_header();
 
