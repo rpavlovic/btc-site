@@ -11,11 +11,18 @@
  * @since Brooklyn Tri 1.0
  */
 
+if ($_SERVER['REQUEST_URI'] == '/lostpassword') {
+	setcookie('forgot_pass_step1','true');
+}
+
+if ($_SERVER['REQUEST_URI'] == '/lostpassword') {
+	setcookie('forgot_pass_step1','true');
+}
+
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-echo $_SERVER['REQUEST_URI'];
 
 if ( is_user_logged_in() ) {
 	wp_redirect( '/resources/profile' );
