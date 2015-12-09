@@ -34,6 +34,11 @@
 					</ol>
 
 				<?php elseif ( isset($_GET['action']) && isset($_GET['key']) && isset($_GET['login']) ): ?>
+
+				<?php 
+				var_dump($_COOKIE);
+				var_dump($_SESSION);
+				?>
 					<form>
 						
 					</form>

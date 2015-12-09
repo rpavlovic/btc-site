@@ -11,13 +11,19 @@
  * @since Brooklyn Tri 1.0
  */
 
+session_start();
+
+if ( !isset($_SESSION['token']) ) {
+	$token = md5(uniqid(microtime(), true));
+	$_SESSION['token'] = $token;
+}
+
 if ($_SERVER['REQUEST_URI'] == '/lostpassword') {
-	var_dump($_COOKIE);
-	setcookie('forgot_pass_step1','true');
+	setcookie('forgot_pass_step1', $_SESSION['token']);
 }
 
 if ($_SERVER['REQUEST_URI'] == '/login?checkemail=confirm') {
-	setcookie('forgot_pass_step2','true');
+	setcookie('forgot_pass_step2', $_SESSION['token']);
 }
 
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
