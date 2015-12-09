@@ -15,6 +15,8 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
+echo $_SERVER['REQUEST_URI'];
+
 if ( is_user_logged_in() ) {
 	wp_redirect( '/resources/profile' );
 	exit;
@@ -23,7 +25,6 @@ if ( is_user_logged_in() ) {
 get_header();
 
 btc_breadcrumbs();
-
 
 ?>
 

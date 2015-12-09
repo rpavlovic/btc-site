@@ -7,7 +7,6 @@
  * @since Brooklyn Tri 1.0
  */
 
-
 ?>
 
 				<div class="contact-form-area">
@@ -35,6 +34,11 @@
 					</ol>
 				<?php endif; ?>
 
+				<?php elseif (strstr($_SERVER['REQUEST_URI'], 'login?redirect_to') != false): ?>
+					<form>
+						
+					</form>
+				<?php endif; ?>
                     <?php the_content(); ?>
 
                 </div>
