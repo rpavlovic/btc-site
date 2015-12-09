@@ -12,7 +12,7 @@
  */
 
 if ($_SERVER['REQUEST_URI'] == '/lostpassword') {
-	var_dump($_SESSION);
+	var_dump($_COOKIE);
 	setcookie('forgot_pass_step1','true');
 }
 
