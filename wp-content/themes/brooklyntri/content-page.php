@@ -32,7 +32,6 @@
 						<li>You logged in, but your membership has expired. You must be a member in active standing to view this page. <a href="<?= site_url( '/join' ) ?>">Please renew your membership</a>.</li>
 						<li>You’ve never been a member at all. Please check out <a href="<?= site_url( '/join' ) ?>">our membership benefits</a> and considering joining the club!</li>
 					</ol>
-				<?php endif; ?>
 
 				<?php elseif (strstr($_SERVER['REQUEST_URI'], 'login?redirect_to') != false): ?>
 					<form>
