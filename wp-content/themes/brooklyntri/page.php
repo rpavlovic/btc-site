@@ -12,12 +12,12 @@
  */
 
 if ($_SERVER['REQUEST_URI'] == '/lostpassword') {
+	var_dump($_SESSION);
 	setcookie('forgot_pass_step1','true');
 }
 
 if ($_SERVER['REQUEST_URI'] == '/login?checkemail=confirm') {
 	setcookie('forgot_pass_step2','true');
-	var_dump($_REQUEST);
 }
 
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");

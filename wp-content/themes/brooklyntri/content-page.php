@@ -33,7 +33,7 @@
 						<li>You’ve never been a member at all. Please check out <a href="<?= site_url( '/join' ) ?>">our membership benefits</a> and considering joining the club!</li>
 					</ol>
 
-				<?php elseif (strstr($_SERVER['REQUEST_URI'], 'login?redirect_to') != false): ?>
+				<?php elseif ( isset($_GET['action']) && isset($_GET['key']) && isset($_GET['login']) ): ?>
 					<form>
 						
 					</form>
