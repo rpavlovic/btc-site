@@ -1307,7 +1307,7 @@ function check_user_access($userid, $postid){
 
 		// Compare user_levels with post_level
 		$result = '';
-		if ( $user_levels ) {
+		if ( is_array( $user_levels ) ) {
 			foreach ( $user_levels as $user_level ) {
 			    $result .= array_search( $user_level, $post_levels );
 			}
