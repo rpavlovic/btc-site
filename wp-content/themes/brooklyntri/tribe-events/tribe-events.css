@@ -1,0 +1,114 @@
+/**
+ * Custom CSS to override tribe events/gravity form stuff
+ */
+
+.tribe-events-button:before,
+.tribe-events-button:after {
+    content: "";
+    display: table;
+}
+.tribe-events-button {
+	clear: right;
+	float: right;
+}
+.tribe-events-button:after {
+	clear: both;
+}
+
+/* contact-form-gfec-form */
+
+.btc-gform .btc-contact-form input[type="submit"] {
+	float: right;
+	background-color: #21759b;
+	color: #fff;
+	background-image: none;
+	font-size: 11px;
+
+	padding: 6px 9px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 0;
+	line-height: normal;
+	cursor: pointer;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-decoration: none;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+}
+
+.btc-gform .gform_wrapper {
+	max-width: 100%;
+}
+
+.btc-gform .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
+	font-size: 11px;
+    font-weight: 700;
+}
+
+.btc-gform #tribe-events .tribe-events-button, .tribe-events-button {
+	margin-right: 0;
+}
+
+.btc-gform #tribe-events .tribe-events-button, .tribe-events-button:last-child {
+	margin-bottom: 15px;
+}
+
+.forum-area .row {
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+.ttip {
+    color: #4c5d77;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.2em;
+    background: #dce7ee;
+    padding: 10px;
+    position: absolute;
+    z-index: 9999;
+    max-width: 300px;
+}
+body .ttip {
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+}
+
+#footer {
+    width: 100% !important;
+    overflow: hidden;
+    /* display: table-footer-group; */
+    /* height: 1%; */
+    background: url(/images/bg-footer.png);
+}
+
+/* Close Button */
+[class*='close-'] {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+}
+
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.close-thin:after {
+  content: '×'; /* UTF-8 symbol */
+}
+
+.close-thik:after {
+  content: '✖'; /* UTF-8 symbol */
+}
+
+

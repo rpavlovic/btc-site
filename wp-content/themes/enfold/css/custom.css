@@ -1,0 +1,200 @@
+/* Have fun adding your style here :) - PS: At all times this file should contain a comment or a rule, otherwise opera might act buggy :( */
+
+/* General Custom CSS */
+
+
+
+
+/*
+Desktop Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the desktop view of your site */
+
+@media only screen and (min-width: 768px) {
+  /* Add your Desktop Styles here */
+
+.main_menu, .page_item_has_children {
+	text-transform: uppercase !important;
+}
+
+
+ .main_menu {
+	margin-top: -5px !important;
+} 
+
+
+
+li.page_item {
+	text-transform: uppercase !important;
+}
+
+.container_wrap_logo {
+	height: 110px;
+}
+
+
+.alternate_color, .dark_bg_color, .title_container {
+	background-color: #333;
+}
+
+
+
+.title_container {
+	height: 55px !important;
+}
+
+#top .title_container .container {
+	padding: px 0px 0px 0px !important;
+}
+
+
+.inner-container {
+	height: 110px;
+}
+
+
+.container_wrap, .container_wrap_logo {
+	border-color: #000 !important;
+}
+
+
+.container .social_bookmarks {
+	padding-left: 180px !important;
+}
+
+
+.current-menu-item, .page_item, #menu-item-search {
+	margin: 15px 0 0 -7px;
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+}
+
+
+.current-menu-item a:hover, .page_item a:hover, #menu-item-search a:hover {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+
+.current-menu-item a:link, .page_item a:link, #menu-item-search a:link, .current-menu-item a:visited, .page_item a:visited, #menu-item-search a:visited, .current-menu-item a:active, .page_item a:active, #menu-item-search a:active {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #666 !important;
+}
+
+
+
+.template-archives, .content, .av-content-full, .alpha, .units {
+	background-color: #fff !important;
+}
+
+.entry-title {
+	padding: 0px !important;
+	float: right !important;
+	text-align: right !important;
+	width: 140px !important;
+	text-transform: uppercase !important;
+} 
+
+
+h1.main-title, h1.main-title a {
+	padding: 0 0 0 0px !important;
+	margin: 0px !important;
+	color: #49beed !important;
+	float: left !important;
+	position: relative !important;
+	display: inline-block !important;
+	text-decoration: none !important;
+	font-weight: 800 !important;
+}
+
+
+.breadcrumb {
+	padding: 0px !important;
+	margin: 0px !important;
+	font-size: 13px !important;
+	font-weight: 400 !important;
+	position: relative !important;
+	text-align: right !important;
+}
+
+.breadcrumb-trail {
+	text-align: right !important;
+}
+
+
+.breadcrumb .breadcrumbs .avia-breadcrumbs {
+	position: relative !important;
+	text-align: right !important;
+	float: right !important;
+}
+
+
+
+#top .title_container .container {
+	padding: 18px 0 0 0 !important;
+	float: right !important;
+	text-align: right !important;
+}
+
+
+.avia_mega li:first-child, .menu li:first-child, .av-main-nav li:first-child {
+	margin: 7px 0 0 0 !important;
+	padding: 7px 0 0 0 !important;
+}
+
+.avia_mega li:first-child a:hover, .menu li:first-child a:hover, .av-main-nav li:first-child a:hover {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+.avia_mega li:first-child a:link, .menu li:first-child a:link, .av-main-nav li:first-child a:link {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+.avia_mega li:first-child a:visited, .menu li:first-child a:visited, .av-main-nav li:first-child a:visited {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+.avia_mega li:first-child a:active, .menu li:first-child a:active, .av-main-nav li:first-child a:active {
+	text-decoration: none !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #49beed !important;
+}
+
+.intro-text p {
+	margin: 1em 0px !important;
+	font: 13px/21px "Open Sans","Arial","Helvetica",sans-serif ;
+	color: #000;
+	display: block;
+
+}
+
+/* .intro-text h2, .intro-text h3 {
+	display: inline;
+} */
+
+
+}
+/*
+Mobile Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the Mobile and Tablet Portrait view */
+
+@media only screen and (max-width: 767px) {
+  /* Add your Mobile Styles here */
+
+}
