@@ -43,7 +43,7 @@ if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME']
 		define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME']);
 	}
 
-	define('WP_DEBUG', false);
+	define('WP_DEBUG', true);
 	define('DEV', true);
 }
 else if ($_SERVER['SERVER_NAME'] == 'stage.brooklyntri.org') {
