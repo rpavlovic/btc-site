@@ -43,7 +43,12 @@ if ($_SERVER['SERVER_NAME'] == 'dev.brooklyntri.org' || ($_SERVER['SERVER_NAME']
 		define('WP_SITEURL','http://'.$_SERVER['SERVER_NAME']);
 	}
 
-	define('WP_DEBUG', true);
+	// debugging
+	ini_set('display_startup_errors',1);
+	ini_set('display_errors',1);
+	error_reporting(-1);
+
+	define('WP_DEBUG', false);
 	define('DEV', true);
 }
 else if ($_SERVER['SERVER_NAME'] == 'stage.brooklyntri.org') {
@@ -134,7 +139,7 @@ if(strstr($_SERVER['SERVER_NAME'], 'dev') != false) {
 	define('WP_DEBUG', true);
 }
 else {
-	define('WP_DEBUG', true);
+	define('WP_DEBUG', false);
 }
 
 /* That's all, stop editing! Happy blogging. */
