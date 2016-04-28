@@ -1216,7 +1216,7 @@ function current_user_registered($event, $form=1) {
 	if ( is_user_logged_in() ) {
 		global $current_user;
 		get_currentuserinfo();
-		$current_person = $current_user->display_name;//$current_user->user_firstname . ' ' . $current_user->user_lastname;
+		$current_person = $current_user->display_name;
 		$registrants = get_btc_participants($form, $event);
 
 		foreach($registrants as $racer) {
@@ -1230,11 +1230,15 @@ function current_user_registered($event, $form=1) {
 }
 
 function get_btc_participants($form_id, $event_id) {
-	$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC','',0,500000);
-	if (DEV) {
-		//var_dump($registrants);
+
+	// cache participants per form
+	$cacher = new Cacher();
+	$registrants = $cacher->get_cache('gravity_forms_' . $form_id);
+
+	if ($registrants == false) {
+		$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC','',0,500000);
 	}
-	
+
 	$racers = array();
 	foreach ($registrants as $racer) {
 		if($racer[EVENT_FIELD_ID] == $event_id) {
@@ -1249,11 +1253,18 @@ function get_btc_registrants( $form_id, $event_id ) {
 		return null;
 	}
 
-	global $wpdb;
 	$form_id = (int) $form_id;
 
-	$sql = 'select group_concat(value, " ") as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and (select form_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) = ' . $form_id;
-	$registrants =  $wpdb->get_results($sql, OBJECT);
+	// cache registrants per form/event
+	$cacher = new Cacher();
+	$registrants = $cacher->get_cache('btc_registrants_' . $form_id . '_' . $event_id);
+
+	if ($registrants == false) {
+		global $wpdb;
+		$sql = 'select group_concat(value, " ") as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and (select form_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) = ' . $form_id;
+		$registrants =  $wpdb->get_results($sql, OBJECT);
+	}
+
 	if($registrants && is_array($registrants)) {
 		return $registrants;
 	}
