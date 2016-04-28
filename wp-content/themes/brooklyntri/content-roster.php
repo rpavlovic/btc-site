@@ -20,7 +20,7 @@ $get_posts = $cacher->get_cache('tribe_get_events_roster');
 if ( $get_posts == false ) {
 	$get_posts = tribe_get_events(
 		array(
-			'posts_per_page' => 10,
+			'posts_per_page' => 20,
 			'eventDisplay' => 'future',
 	        'tax_query' => array(
 	            array(
