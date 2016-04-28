@@ -1237,6 +1237,8 @@ function get_btc_participants($form_id, $event_id) {
 
 	if ($registrants == false) {
 		$registrants = RGFormsModel::get_leads($form_id, '2', 'ASC','',0,500000);
+
+		$cacher->set_cache($registrants, 'gravity_forms_' . $form_id);
 	}
 
 	$racers = array();
@@ -1261,8 +1263,13 @@ function get_btc_registrants( $form_id, $event_id ) {
 
 	if ($registrants == false) {
 		global $wpdb;
+
+		// this should probably be two queries
 		$sql = 'select group_concat(value, " ") as racers from ' . $wpdb->prefix . 'rg_lead_detail where form_id = ' . $form_id . ' and field_number in (1,2) and (select form_id from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and value = \'' . $event_id . '\' ) = ' . $form_id;
 		$registrants =  $wpdb->get_results($sql, OBJECT);
+
+		// cache results
+		$cacher->set_cache($registrants, 'btc_registrants_' . $form_id . '_' . $event_id);
 	}
 
 	if($registrants && is_array($registrants)) {
@@ -1276,13 +1283,24 @@ function count_btc_registrants( $form_id, $event_id) {
 		return null;
 	}
 
-	global $wpdb;
 	$form_id = (int) $form_id;
 	$event_id = (int) $event_id;
 
-	// I don't like this:
-	$sql = 'select count(distinct lead_id) as btcers from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and form_id = ' . $form_id . ' and value = \'' . $event_id . '\'';
-	$registrants =  $wpdb->get_results($sql, OBJECT);
+	// cache registrants per form/event
+	$cacher = new Cacher();
+	$registrants = $cacher->get_cache('btc_registrant_count_' . $form_id . '_' . $event_id);
+
+	if ($registrants == false) {
+		global $wpdb;
+
+		// I don't like this:
+		$sql = 'select count(distinct lead_id) as btcers from ' . $wpdb->prefix . 'rg_lead_detail where field_number=' . EVENT_FIELD_ID . ' and form_id = ' . $form_id . ' and value = \'' . $event_id . '\'';
+		$registrants =  $wpdb->get_results($sql, OBJECT);
+
+		// cache results
+		$cacher->set_cache($registrants, 'btc_registrant_count_' . $form_id . '_' . $event_id);
+	}
+
 	if($registrants && is_array($registrants)) {
 		return $registrants[0]->btcers;
 	}
@@ -1290,7 +1308,7 @@ function count_btc_registrants( $form_id, $event_id) {
 }
 
 function btc_remove_racer() {
-	if (isset($_POST) && isset($_POST['key']) && is_numeric($_POST['key'])) {// && $_SERVER['REQUEST_URI'] == admin_url('admin-ajax.php')
+	if (isset($_POST) && isset($_POST['key']) && is_numeric($_POST['key'])) {
 		$res = GFAPI::delete_entry( $_POST['key'] );
 	} else {
 		echo 'error '.$_POST['key'];
