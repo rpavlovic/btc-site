@@ -15,7 +15,7 @@ $current_nickname = is_user_logged_in() ? $current_user->nickname  . ' ' . $curr
 
 // cache total events
 $cacher = new Cacher();
-$get_posts = $cache->get_cache('tribe_get_events_roster');
+$get_posts = $cacher->get_cache('tribe_get_events_roster');
 
 if ( $get_posts == false ) {
 	$get_posts = tribe_get_events(
@@ -31,6 +31,7 @@ if ( $get_posts == false ) {
 	        )
 		)
 	);
+	$cacher->set_cache($get_posts, 'tribe_get_events_roster');
 }
 
 ?>
