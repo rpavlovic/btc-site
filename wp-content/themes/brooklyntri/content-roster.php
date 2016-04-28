@@ -13,19 +13,25 @@ get_currentuserinfo();
 $current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';
 $current_nickname = is_user_logged_in() ? $current_user->nickname  . ' ' . $current_user->user_lastname : '';
 
-$get_posts = tribe_get_events(
-	array(
-		'posts_per_page'=>-1,
-		'eventDisplay'=>'future',
-        'tax_query'=> array(
-            array(
-                'taxonomy' => 'tribe_events_cat',
-                'field' => 'slug',
-                'terms' => 'race'
-            )
-        )
-	)
-);
+// cache total events
+$cacher = new Cacher();
+$get_posts = $cache->get_cache('tribe_get_events_roster');
+
+if ( $get_posts == false ) {
+	$get_posts = tribe_get_events(
+		array(
+			'posts_per_page'=>-1,
+			'eventDisplay'=>'future',
+	        'tax_query'=> array(
+	            array(
+	                'taxonomy' => 'tribe_events_cat',
+	                'field' => 'slug',
+	                'terms' => 'race'
+	            )
+	        )
+		)
+	);
+}
 
 ?>
 
@@ -43,7 +49,7 @@ $get_posts = tribe_get_events(
 					</div>
 
 					<fieldset class="info-form">
-						<legend class="hidden">info form</legend>
+						<legend class="hidden">roster form</legend>
 						<ul class="info-list">
 <?php
 $form_set = false;
