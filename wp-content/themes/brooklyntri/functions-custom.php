@@ -489,7 +489,7 @@ function esc_css( $str ) {
  *
  */
 class Cacher {
-	private $expiration = 360;
+	private $expiration = 999;
 
 	/**
 	 * Retrieve cache ID
