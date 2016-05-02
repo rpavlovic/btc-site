@@ -55,7 +55,7 @@ if ( $total_posts == false ) {
 }
 
 // total records on current page
-$records_total = (($record_count + ($record_start-1)) > count($total_posts)) ? count($total_posts) : ($record_count + ($record_start-1));
+$page_total = (($record_count + ($record_start-1)) > count($total_posts)) ? count($total_posts) : ($record_count + ($record_start-1));
 
 ?>
 
@@ -69,11 +69,9 @@ $records_total = (($record_count + ($record_start-1)) > count($total_posts)) ? c
 					</p>
 <?php else: ?>
 					<p>
-						Viewing events <?= $record_start ?> to <?= $records_total ?> of <?= count($total_posts) ?>
+						Viewing events <?= $record_start ?> to <?= $page_total ?> of <?= count($total_posts) ?>
 					</p>
-<?php
-echo get_pagination(count($total_posts), $record_count, $record_begin, $record_start);
-?>
+
 					<div class="bar">
 						<p><i class="icon-star"></i> DENOTES CLUB RACE</p>
 					</div>
@@ -191,5 +189,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 	}
 
 </script>
-
+<?php
+echo get_pagination(count($total_posts), $record_count, $record_begin, $record_start);
+?>
 <?php endif; /* if has events */ ?>
