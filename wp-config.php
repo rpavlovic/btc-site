@@ -93,6 +93,31 @@ else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org' || $_SERVER['SERVER_NA
 	define('WP_DEBUG', false);
 	define('DEV', false);
 }
+else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.local' || $_SERVER['SERVER_NAME'] == 'brooklyntri.local') {
+	define('DB_NAME', 'wordpress');
+
+	/** MySQL database username */
+	define('DB_USER', 'vagrant');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'vagrant');
+
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+
+	define('WP_HOME','http://brooklyntri.local');
+	define('WP_SITEURL','http://brooklyntri.local');
+	define('COOKIE_DOMAIN', 'brooklyntri.local');
+
+	define('WP_DEBUG', true);
+	define('DEV', true);
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -129,7 +154,7 @@ $table_prefix = 'wp_ttyr_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-if(strstr($_SERVER['SERVER_NAME'], 'dev') != false) {
+if(strstr($_SERVER['SERVER_NAME'], 'dev') != false || strstr($_SERVER['SERVER_NAME'], 'dev') != false) {
 	define('WP_DEBUG', true);
 }
 else {

@@ -7,21 +7,29 @@
  * @since Brooklyn Tri 1.0
  */
 
-// stuff not being used?
+// pagination vars
+$record_start = 1;
+$record_count = 10; // no. of records per page
+$record_begin = 1;  // start at record no.
+
+$record_start = (isset($_GET['start'])) ? (int) $_GET['start'] : $record_start;
+$record_start = ($record_start > 0) ? $record_start : $record_begin;
+
+// store user info
 global $current_user;
 get_currentuserinfo();
 $current_person = is_user_logged_in() ? $current_user->user_firstname . ' ' . $current_user->user_lastname : '';
 $current_nickname = is_user_logged_in() ? $current_user->nickname  . ' ' . $current_user->user_lastname : '';
 
-// cache total events
+// cache all events per page
 $cacher = new Cacher();
-$get_posts = $cacher->get_cache('tribe_get_events_roster');
-
+$get_posts = $cacher->get_cache('tribe_get_events_roster_' . $record_start . '_' . $record_count);
 if ( $get_posts == false ) {
 	$get_posts = tribe_get_events(
 		array(
-			'posts_per_page' => 10,
+			'posts_per_page' => $record_count,
 			'eventDisplay' => 'future',
+			'offset' => ($record_start-1),
 	        'tax_query' => array(
 	            array(
 	                'taxonomy' => 'tribe_events_cat',
@@ -34,17 +42,36 @@ if ( $get_posts == false ) {
 	$cacher->set_cache($get_posts, 'tribe_get_events_roster');
 }
 
+// TODO: just use this thing
+$total_posts = $cacher->get_cache('tribe_get_events_roster_total');
+if ( $total_posts == false ) {
+	$total_posts = tribe_get_events(
+		array(
+			'posts_per_page' => -1,
+			'eventDisplay' => 'future',
+		)
+	);
+	$cacher->set_cache($total_posts, 'tribe_get_events_roster_total');
+}
+
+// total records on current page
+$page_total = (($record_count + ($record_start-1)) > count($total_posts)) ? count($total_posts) : ($record_count + ($record_start-1));
+
 ?>
 
 					<header class="rosta">
 						<?php the_title('<h2>','</h2>'); ?>
 						<?php the_content(); ?>
 					</header>
-<?php if (!$get_posts): ?>
+<?php if (!$total_posts): ?>
 					<p>
 						Stay tuned for upcoming races.
 					</p>
 <?php else: ?>
+					<p>
+						Viewing events <?= $record_start ?> to <?= $page_total ?> of <?= count($total_posts) ?>
+					</p>
+
 					<div class="bar">
 						<p><i class="icon-star"></i> DENOTES CLUB RACE</p>
 					</div>
@@ -162,4 +189,7 @@ if ( is_user_logged_in() && !current_user_registered( $post->ID ) ):
 	}
 
 </script>
+<?php
+echo get_pagination(count($total_posts), $record_count, $record_begin, $record_start);
+?>
 <?php endif; /* if has events */ ?>

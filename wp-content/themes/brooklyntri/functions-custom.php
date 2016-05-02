@@ -483,6 +483,138 @@ function esc_css( $str ) {
 }
 
 /**
+ * @name: 			get_pagination
+ * @description: 	routine to generate HTML pagination
+ * @author: 		Rahmin Pavlovic
+ * @date: 			2006-06-01
+ * @version: 		2016-04-30
+ * @param:			($total_count) The total number fo things to paginate through
+ * @param:			($pagination_limit) Number of records per page
+ * @param:			($record_count) Number of records per page
+ * @param:			($record_start) ??
+ */
+function get_pagination($total_count, $record_count, $record_begin, $record_start=0, $opt_params='', $pagination_limit=6, $css_id = null, $get_variable = 'start' ) {
+	$output = array();
+
+	// setup vars
+	$pagination = array();
+	$page_count = $record_begin;
+	$total_pages = $record_count > 0 ? ceil($total_count / $record_count) : 0;
+
+	// paginate only if we have more than one screen
+	if($total_pages > 1) {
+		// store page/start-counts into array
+		for($i = 1; $i <= $total_pages; $i++) {
+			$pagination[$page_count] = $i;
+			$page_count = ($page_count + $record_count);
+		}
+
+		if(!isset($pagination[$record_start])) {
+			// user input out of range
+			return null;
+		}
+
+		// pagination vars
+		$n = 1;
+		$page_start=array_flip($pagination);
+		$pagination_begin=(($pagination[$record_start]-3)<1)?1 : ($pagination[$record_start]-3);
+		$pagination_total=($pagination[$record_start]+3>$total_pages)?$total_pages : ($pagination[$record_start]+3);
+
+		$pagination_total=($pagination_total < $pagination_limit)?$pagination_limit : $pagination_total;
+		$pagination_begin=(($pagination_total-$pagination_begin) < $pagination_limit)?(($pagination_total-$pagination_limit)+1) : $pagination_begin;
+
+		if(is_null($css_id)) {
+			$_trace = debug_backtrace();
+			$css_id = esc_attr( basename( $_trace[0]['file'] ) ) . '_' . $_trace[0]['line'];
+		}
+
+		// current request
+		$current_url = strtok( $_SERVER['REQUEST_URI'], '?' );
+
+		// build html
+		$output[] = '<div class="roster"><span>';
+		//$output[] = '<li class="page"></li>';
+
+		// rwd button
+		if($record_start > $record_begin) {
+			/* this rwd's back to first page */
+			$output[] = '<span class="pagination btn-next"><a href="' . esc_url( $current_url ) . '" title="First page">&#8249;&#8249;</a></span>';
+			
+		}
+		// prev button
+		if(($record_start - ($record_count * $pagination_limit)) > 0) {
+			/* this jumps to last set of pages */
+			$output[] = '<span class="pagination btn-prev"><a href="'
+				. esc_url( $current_url )
+				. '?'
+				. $get_variable
+				. '='
+				. ($record_start - ($record_count * $pagination_limit))
+				. $opt_params . '">&#8249;</a></span>';
+		}
+
+		// create pagination
+		for($i=$pagination_begin; $i<=$pagination_total; $i++) {
+
+			// make sure pagination exists in stored array
+			if(isset($page_start[$i])) {
+
+				$output[] = '<span class="pagination ';
+				$output[] = ($record_start==$page_start[$i])? 'active' : '';
+				$string    = '"><a href="'
+						. esc_url( $current_url );
+
+				if (($page_start[$i] != 0 && $i != 1)) {
+					$string .= '?'
+						. $get_variable
+						. '='
+						. $page_start[$i]
+						. $opt_params;
+				}
+				
+				$string .= '" title="Page '
+					. $i
+					. '">'
+					. $i
+					. '</a></span>';
+
+				$output[] = $string;
+				if($n==$pagination_limit) { break; }
+				$n++;
+			}
+		}
+		// next button
+		if(($record_start + ($record_count * $pagination_limit)) <= $page_start[count($page_start)]) {
+
+			/* commented out line below goes to next page */
+			//$output[] = '<a href="'.str_replace('.php', '', $_SERVER['SCRIPT_NAME']).'?start='.($record_start + $record_count) . $opt_params . '" title="Next '.$record_count.'">&#8250;</a>';
+
+			/* this jumps to next set of pages */
+			//$output[] = '<a href="'.str_replace('.php', '', $_SERVER['SCRIPT_URL']).'?'.$get_variable.'='. ($record_start + ($record_count * $pagination_limit)) . $opt_params . '" title="Next set of pages">&#8250;</a>';
+
+			$output[] = '<span class="pagination btn-next"><a href="'
+				. esc_url( $current_url )
+				. '?'
+				. $get_variable
+				. '='
+				. ($record_start + ($record_count * $pagination_limit))
+				. $opt_params
+				. '">&#8250;</a></span>';
+
+		}
+
+		// fwd button
+		if(count($pagination) > $pagination[$record_start]) {
+			/* this fwds to end of page-list */
+			$output[] = '<span class="pagination btn-next"><a href="' . esc_url( $current_url ) . '?' . $get_variable . '=' . $page_start[count($page_start)] . $opt_params . '" title="Last page">&#8250;&#8250;</a></span>';
+		}
+		//$output[] = '</ul>';
+		$output[] = '</div>';
+	}
+	return implode('', $output);
+}
+
+/**
  * Class to cache and retrieve cached data
  *
  * @since Brooklyn Tri 1.0
@@ -653,7 +785,6 @@ function get_slideshow() {
 	}
 	return null;
 }
-
 
 /*-----------------------------------------------------------------------------------*/
 /* get_breadcrumbs() - Custom breadcrumb generator function  */
