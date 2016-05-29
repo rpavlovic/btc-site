@@ -3212,10 +3212,29 @@ table {
     .calendar-area .month-holder {
       padding: 5px 10px 0; } }
 
-/*# sourceMappingURL=all.css.map */
-
 #fullwidth {
     float: left;
     padding: 5px 5px 5px 5px;
     width: 100%;
+}
+.roster {
+  text-align: center;
+}
+.roster .pagination {
+  margin: 4px;
+  color: #000;
+  padding: 5px;
+  background: #49beed;
+  border: 1px solid #000;
+}
+
+.roster .pagination a {
+  color: #fff;
+  padding: 5px;
+  display: inline-block;
+}
+
+.roster .active a {
+  color: #000;
+  font-weight: bold;
 }
