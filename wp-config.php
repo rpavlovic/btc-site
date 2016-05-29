@@ -182,4 +182,5 @@ if (file_exists(ABSPATH . 'hosting_provider_filters.php')) {
 define('EVENT_FIELD_ID', 7);
 define('TWITTER_URL', 'https://twitter.com/BrooklynTriClub');
 define('FACEBOOK_URL', 'https://www.facebook.com/BrooklynTriClub');
+define('STRAVA_URL', 'https://www.strava.com/clubs/brooklyn-tri-club');
 

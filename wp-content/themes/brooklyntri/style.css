@@ -112,8 +112,8 @@ table {
 
 @font-face {
   font-family: fontello;
-  src: url('/dev/fonts/fontello.eot');
-  src: url('/dev/fonts/fontello.eot?#iefix') format('embedded-opentype'), url('/dev/fonts/fontello.woff') format('woff'), url('/dev/fonts/fontello.woff2') format('woff2'), url('/dev/fonts/fontello.ttf') format('truetype'), url('/dev/fonts/fontello.svgfontello') format('svg');
+  src: url('/fonts/fontello.eot');
+  src: url('/fonts/fontello.eot?#iefix') format('embedded-opentype'), url('/fonts/fontello.woff') format('woff'), url('/fonts/fontello.woff2') format('woff2'), url('/fonts/fontello.ttf') format('truetype'), url('/fonts/fontello.svgfontello') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -160,6 +160,9 @@ table {
 
 .icon-plus:before {
   content: '\e80a'; }
+
+.icon-strava:before {
+  content: '\e80b'; }
 
 #wrapper {
   width: 100%;
@@ -2316,12 +2319,13 @@ table {
     letter-spacing: -6px;
     padding: 13px 0 0; }
     .footer-holder .social li {
-      display: inline-block;
       vertical-align: top;
       letter-spacing: 0;
       width: 50%;
       overflow: hidden;
       padding: 0 10px 0 0; }
+      .footer-holder .social li:not(:first-child) {
+        margin-top: -30px; }
     .footer-holder .social a {
       margin: 1px 7px 0 0;
       float: left;
@@ -2341,6 +2345,12 @@ table {
         padding: 0 0 0 8px; }
       .footer-holder .social a.facebook {
         background: #3c5b9a;
+        text-align: right;
+        font-size: 29px;
+        line-height: 36px;
+        padding: 0 3px 0 5px; }
+      .footer-holder .social a.strava {
+        background: url(/dev/images/strava-icon.png) no-repeat;
         text-align: right;
         font-size: 29px;
         line-height: 36px;
@@ -3208,25 +3218,4 @@ table {
     float: left;
     padding: 5px 5px 5px 5px;
     width: 100%;
-}
-
-.roster {
-  text-align: center;
-}
-.roster .pagination {
-  margin: 4px;
-  color: #000;
-  padding: 5px;
-  background: #49beed;
-  border: 1px solid #000;
-}
-
-.roster .pagination a {
-  color: #fff;
-  padding: 5px;
-  display: inline-block;
-}
-.roster .active a {
-  color: #000;
-  font-weight: bold;
 }

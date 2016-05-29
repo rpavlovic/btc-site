@@ -39,6 +39,13 @@
 									<p>Likes</p>
 								</div>
 							</li>
+							<li>
+								<a class="strava" href="<?= STRAVA_URL ?>"><i class="icon-strava">&nbsp;</i></a>
+								<div class="text">
+									<span>Strava</span>
+									<p>Club</p>
+								</div>
+							</li>
 						</ul>
 					</div>
 					<div class="col">
