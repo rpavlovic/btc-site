@@ -2352,8 +2352,7 @@ table {
       .footer-holder .social a.strava {
         background: url(/images/strava-icon.png) no-repeat;
         text-align: right;
-        font-size: 29px;
-        line-height: 36px;
+        font-size: 0;
         padding: 0 3px 0 5px; }
       .footer-holder .social a:hover {
         opacity: .9;
