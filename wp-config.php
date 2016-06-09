@@ -90,7 +90,9 @@ else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.org' || $_SERVER['SERVER_NA
 	define('WP_SITEURL','http://brooklyntri.org');
 	define('COOKIE_DOMAIN', 'brooklyntri.org');
 
-	define('WP_DEBUG', false);
+	define('WP_DEBUG_DISPLAY', false);
+	define('WP_DEBUG_LOG', true);
+	define('WP_DEBUG', true);
 	define('DEV', false);
 }
 else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.local' || $_SERVER['SERVER_NAME'] == 'brooklyntri.local') {
@@ -115,6 +117,8 @@ else if ($_SERVER['SERVER_NAME'] == 'www.brooklyntri.local' || $_SERVER['SERVER_
 	define('WP_SITEURL','http://brooklyntri.local');
 	define('COOKIE_DOMAIN', 'brooklyntri.local');
 
+	define('WP_DEBUG_DISPLAY', true);
+	define('WP_DEBUG_LOG', true);
 	define('WP_DEBUG', true);
 	define('DEV', true);
 }
