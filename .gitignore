@@ -5,11 +5,11 @@
 !.gitignore
 !wp-content/
 !fonts/
-!wp-includes
 
-# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+.DS_Store
+
+# Ignore everything in the "wp-content" directory, except the "themes" directories.
 wp-content/*
-wp-content/plugins/*
 !wp-content/themes/
  
 # Ignore everything in the "plugins" directory, except the plugins you specify
@@ -20,4 +20,3 @@ wp-content/plugins/*
 # Ignore everything in the "themes" directory, except the themes you specify
 wp-content/themes/*
 !wp-content/themes/brooklyntri/
-wp-content/themes/brooklyntri/.DS_Store
